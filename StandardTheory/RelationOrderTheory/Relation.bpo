@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="S" org.eventb.core.type="ℙ(S)"/>
+<org.eventb.core.poIdentifier name="U" org.eventb.core.type="ℙ(U)"/>
+<org.eventb.core.poIdentifier name="V" org.eventb.core.type="ℙ(V)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="thm1/S-THM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Therorem Soundness" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/RelationOrderTheory/Relation.bpo|org.eventb.core.poFile#Relation|org.eventb.core.poPredicateSet#ABSHYP"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀T⦂ℙ(S),r⦂ℙ(S×S),V⦂ℙ(U),f⦂ℙ(U×S)·T⊆S∧r∈T ↔ T∧well_order(r,T)∧V⊆U∧f∈V ↣ T⇒well_order(f;r;f∼,V)" org.eventb.core.source="/RelationOrderTheory/Relation.tuf|org.eventb.theory.core.theoryRoot#Relation|org.eventb.theory.core.theorem#1"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/RelationOrderTheory/Relation.tcf|org.eventb.theory.core.scTheoryRoot#Relation|org.eventb.theory.core.scTheorem#generatedBlocl"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/RelationOrderTheory/Relation.tuf|org.eventb.theory.core.theoryRoot#Relation|org.eventb.theory.core.theorem#1"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/RelationOrderTheory/Relation.bpo|org.eventb.core.poFile#Relation|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/RelationOrderTheory/Relation.bpo|org.eventb.core.poFile#Relation|org.eventb.core.poSequent#thm1\/S-THM|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="inf1/S-INF" org.eventb.core.accurate="true" org.eventb.core.poDesc="Inference Rule Soundness" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/RelationOrderTheory/Relation.bpo|org.eventb.core.poFile#Relation|org.eventb.core.poPredicateSet#ABSHYP"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀a⦂ℙ(S),b⦂ℙ(S),c⦂ℙ(S)·⊤⇒(a⊆b∧b⊆c⇒a⊆c)" org.eventb.core.source="/RelationOrderTheory/Relation.tuf|org.eventb.theory.core.theoryRoot#Relation|org.eventb.theory.core.proofRulesBlock#3|org.eventb.theory.core.inferenceRule#*"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/RelationOrderTheory/Relation.tcf|org.eventb.theory.core.scTheoryRoot#Relation|org.eventb.theory.core.scProofRulesBlock#generatedBlocm|org.eventb.theory.core.scInferenceRule#d"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/RelationOrderTheory/Relation.tuf|org.eventb.theory.core.theoryRoot#Relation|org.eventb.theory.core.proofRulesBlock#3|org.eventb.theory.core.inferenceRule#*"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/RelationOrderTheory/Relation.bpo|org.eventb.core.poFile#Relation|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/RelationOrderTheory/Relation.bpo|org.eventb.core.poFile#Relation|org.eventb.core.poSequent#inf1\/S-INF|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="inf21/S-INF" org.eventb.core.accurate="true" org.eventb.core.poDesc="Inference Rule Soundness" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/RelationOrderTheory/Relation.bpo|org.eventb.core.poFile#Relation|org.eventb.core.poPredicateSet#ABSHYP"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀r1⦂ℙ(S×U),r2⦂ℙ(S×U),s1⦂ℙ(U×V)·⊤⇒(r1⊆r2⇒r1;s1⊆r2;s1)" org.eventb.core.source="/RelationOrderTheory/Relation.tuf|org.eventb.theory.core.theoryRoot#Relation|org.eventb.theory.core.proofRulesBlock#4|org.eventb.theory.core.inferenceRule#*"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/RelationOrderTheory/Relation.tcf|org.eventb.theory.core.scTheoryRoot#Relation|org.eventb.theory.core.scProofRulesBlock#generatedBlocn|org.eventb.theory.core.scInferenceRule#s3"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/RelationOrderTheory/Relation.tuf|org.eventb.theory.core.theoryRoot#Relation|org.eventb.theory.core.proofRulesBlock#4|org.eventb.theory.core.inferenceRule#*"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/RelationOrderTheory/Relation.bpo|org.eventb.core.poFile#Relation|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/RelationOrderTheory/Relation.bpo|org.eventb.core.poFile#Relation|org.eventb.core.poSequent#inf21\/S-INF|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="inf22/S-INF" org.eventb.core.accurate="true" org.eventb.core.poDesc="Inference Rule Soundness" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/RelationOrderTheory/Relation.bpo|org.eventb.core.poFile#Relation|org.eventb.core.poPredicateSet#ABSHYP"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀r1⦂ℙ(S×U),s1⦂ℙ(U×V),s2⦂ℙ(U×V)·⊤⇒(s1⊆s2⇒r1;s1⊆r1;s2)" org.eventb.core.source="/RelationOrderTheory/Relation.tuf|org.eventb.theory.core.theoryRoot#Relation|org.eventb.theory.core.proofRulesBlock#4|org.eventb.theory.core.inferenceRule#,"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/RelationOrderTheory/Relation.tcf|org.eventb.theory.core.scTheoryRoot#Relation|org.eventb.theory.core.scProofRulesBlock#generatedBlocn|org.eventb.theory.core.scInferenceRule#s4"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/RelationOrderTheory/Relation.tuf|org.eventb.theory.core.theoryRoot#Relation|org.eventb.theory.core.proofRulesBlock#4|org.eventb.theory.core.inferenceRule#,"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/RelationOrderTheory/Relation.bpo|org.eventb.core.poFile#Relation|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/RelationOrderTheory/Relation.bpo|org.eventb.core.poFile#Relation|org.eventb.core.poSequent#inf22\/S-INF|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+</org.eventb.core.poFile>

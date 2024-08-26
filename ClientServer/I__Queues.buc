@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd" version="3">
+    <org.eventb.core.extendsContext name="'" org.eventb.core.target="E__Messages"/>
+    <org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="(" org.eventb.core.identifier="Queue"/>
+    <org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="cst1" org.eventb.core.identifier="size"/>
+    <org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="cst2" org.eventb.core.identifier="append"/>
+    <org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="cst3" org.eventb.core.identifier="head"/>
+    <org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="cst4" org.eventb.core.identifier="tail"/>
+    <org.eventb.core.axiom name="cst5" org.eventb.core.label="axm1" org.eventb.core.predicate="Queue ∈ ℙ(ℕ → ℕ)"/>
+    <org.eventb.core.axiom name="cst6" org.eventb.core.label="axm2" org.eventb.core.predicate="Queue = {∅} ∪ union({n · n ∈ ℕ ∣ 0 ‥ n → ℕ})"/>
+    <org.eventb.core.axiom name="cst@" org.eventb.core.label="thm1" org.eventb.core.predicate="∀ q · q ∈ Queue ⇒ finite(q)" org.eventb.core.theorem="true"/>
+    <org.eventb.core.axiom name="cst7" org.eventb.core.label="axm3" org.eventb.core.predicate="size ∈ Queue → ℕ"/>
+    <org.eventb.core.axiom name="cst8" org.eventb.core.label="axm4" org.eventb.core.predicate="∀ q · q ∈ Queue ⇒ (∃ n · n ∈ ℕ ∧ dom(q) = 0 ‥ n ∧ size(q) = n)"/>
+    <org.eventb.core.axiom name="cst9" org.eventb.core.label="axm5" org.eventb.core.predicate="append ∈ ℕ × Queue → Queue "/>
+    <org.eventb.core.axiom name="cst:" org.eventb.core.label="axm6" org.eventb.core.predicate="∀ q, m · q ∈ Queue ∧ m ∈ ℕ ⇒ append(m ↦ q) = q ∪ {size(q) + 1 ↦ m}"/>
+    <org.eventb.core.axiom name="cst;" org.eventb.core.label="axm7" org.eventb.core.predicate="head ∈ Queue ∖ {∅} → ℕ"/>
+    <org.eventb.core.axiom name="cst=" org.eventb.core.label="axm8" org.eventb.core.predicate="∀ q · q ∈ Queue ∖ {∅} ⇒ head(q) = q(0)"/>
+    <org.eventb.core.axiom name="cst&gt;" org.eventb.core.label="axm9" org.eventb.core.predicate="tail ∈ Queue ∖ {∅} → Queue"/>
+    <org.eventb.core.axiom name="cst?" org.eventb.core.label="axm10" org.eventb.core.predicate="∀ q · q ∈ Queue ∖ {∅} ⇒ tail(q) = {i · i ∈ 0 ‥ size(q) − 1 ∣ i ↦ q(i + 1)}"/>
+    <org.eventb.core.axiom name="cstA" org.eventb.core.label="axm11" org.eventb.core.predicate="prefix ∈ Queue → ℙ(Queue)"/>
+    <org.eventb.core.axiom name="cstB" org.eventb.core.label="axm12" org.eventb.core.predicate="∀ p, q · p ∈ Queue ∧ q ∈ Queue ∧ p ∈ prefix(q) ⇒ (size (p) ≤ size(q) ∧ (∀ i · i ∈ ℕ ∧ i &lt; size(p) ⇒ p(i)=q(i)))"/>
+    <org.eventb.core.constant name="cstC" org.eventb.core.identifier="prefix"/>
+</org.eventb.core.contextFile>

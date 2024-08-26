@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.theory.core.theoryRoot org.eventb.core.comment="A theory of well-founded relations &#10;&#10;@author Jean-Raymond Abrial&#10;@2014" org.eventb.core.configuration="org.eventb.theory.core.thy">
+<org.eventb.theory.core.typeParameter name="'" org.eventb.core.identifier="S"/>
+<org.eventb.theory.core.newOperatorDefinition name="(" org.eventb.core.label="wf" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="S↔S" org.eventb.core.identifier="r"/>
+<org.eventb.theory.core.directOperatorDefinition name="(" org.eventb.theory.core.formula="∀p·p⊆r∼[p]⇒p=∅"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.theorem name=")" org.eventb.core.comment="an alternative definition" org.eventb.core.label="thm1" org.eventb.core.predicate="∀r·r∈S↔S ∧ wf(r) ⇒ (∀p·p≠∅ ⇒ (∃x·x∈p ∧ (∀z·z∈p ⇒ x↦z∉r)))"/>
+<org.eventb.theory.core.theorem name="*" org.eventb.core.comment="of well-foundedness" org.eventb.core.label="thm2" org.eventb.core.predicate="∀r·r∈S↔S ∧ (∀p·p≠∅ ⇒ (∃x·x∈p ∧ (∀z·z∈p ⇒ x↦z∉r))) ⇒ wf(r) "/>
+<org.eventb.theory.core.theorem name="+" org.eventb.core.comment="Inductive rule for well-foundedness" org.eventb.core.label="thm3" org.eventb.core.predicate="∀r· r∈S↔S ∧ &#10;    wf(r) &#10;   ⇒&#10;    (∀q· q⊆S ∧&#10;        (∀x·r[{x}]⊆q ⇒ x∈q) &#10;        ⇒ &#10;         S⊆q&#10;    )"/>
+<org.eventb.theory.core.theorem name="," org.eventb.core.comment="proving that a relation is well-founded " org.eventb.core.label="thm4" org.eventb.core.predicate="∀p,q·p∈S↔S ∧ q∈S↔S ∧ p⊆q ∧ wf(q) ⇒ wf(p) "/>
+<org.eventb.theory.core.theorem name="-" org.eventb.core.comment="proving that a relation is well-founded" org.eventb.core.label="thm5" org.eventb.core.predicate="∀p,q,v· p∈S↔S ∧ &#10;        q∈T↔T ∧  &#10;        wf(q) ∧ &#10;        v∈S↔T ∧ &#10;        dom(p)⊆dom(v) ∧ &#10;        v∼;p⊆q;v∼ &#10;       ⇒ &#10;        wf(p)"/>
+<org.eventb.theory.core.typeParameter name="." org.eventb.core.identifier="T"/>
+<org.eventb.theory.core.theorem name="/" org.eventb.core.comment="the &quot;&lt;&quot; relation for natural numbers is &#10;well-founded" org.eventb.core.label="thm6" org.eventb.core.predicate="wf({x↦y∣x∈ℕ ∧ y∈ℕ ∧ y&lt;x})"/>
+<org.eventb.theory.core.theorem name="0" org.eventb.core.comment="The notion of variant to &#10;prove well-foundedness" org.eventb.core.label="thm7" org.eventb.core.predicate="∀p,v·p∈S↔S ∧ v∈S→ℕ ∧(∀x,y·x↦y∈p ⇒ v(y)&lt;v(x)) ⇒ wf(p)"/>
+</org.eventb.theory.core.theoryRoot>

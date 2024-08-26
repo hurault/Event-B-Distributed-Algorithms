@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.prFile version="1">
+    <org.eventb.core.prProof name="axm1/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="m1,c1" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="COM,EVENT,MESSAGE">
+        <org.eventb.core.lang name="L">
+            <org.eventb.theory.core.scNewOperatorDefinition name="seq" org.eventb.core.label="seq" org.eventb.core.predicate="⊤" org.eventb.core.source="/BasicTheory/Seq.tuf|org.eventb.theory.core.theoryRoot#Seq|org.eventb.theory.core.newOperatorDefinition#(" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(ℙ(ℤ×A))" org.eventb.theory.core.wd="∀n⦂ℤ,f⦂ℙ(ℤ×A)·(n∈ℕ∧f∈1 ‥ n → a)∨¬n∈ℕ∨¬f∈1 ‥ n → a">
+                <org.eventb.theory.core.scOperatorArgument name="a" org.eventb.core.source="/BasicTheory/Seq.tuf|org.eventb.theory.core.theoryRoot#Seq|org.eventb.theory.core.newOperatorDefinition#(|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="ℙ(A)"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name="(" org.eventb.core.source="/BasicTheory/Seq.tuf|org.eventb.theory.core.theoryRoot#Seq|org.eventb.theory.core.newOperatorDefinition#(|org.eventb.theory.core.directOperatorDefinition#(" org.eventb.theory.core.formula="{n⦂ℤ,f⦂ℙ(ℤ×A)·n∈ℕ∧f∈1 ‥ n → a ∣ f}"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+            <org.eventb.theory.core.scNewOperatorDefinition name="seqSize" org.eventb.core.label="seqSize" org.eventb.core.predicate="s∈seq(A)" org.eventb.core.source="/BasicTheory/Seq.tuf|org.eventb.theory.core.theoryRoot#Seq|org.eventb.theory.core.newOperatorDefinition#)" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℤ" org.eventb.theory.core.wd="finite(s)">
+                <org.eventb.theory.core.scOperatorArgument name="s" org.eventb.core.source="/BasicTheory/Seq.tuf|org.eventb.theory.core.theoryRoot#Seq|org.eventb.theory.core.newOperatorDefinition#)|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="ℙ(ℤ×A)"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name="(" org.eventb.core.source="/BasicTheory/Seq.tuf|org.eventb.theory.core.theoryRoot#Seq|org.eventb.theory.core.newOperatorDefinition#)|org.eventb.theory.core.directOperatorDefinition#(" org.eventb.theory.core.formula="card(s)"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+            <org.eventb.theory.core.scNewOperatorDefinition name="emptySeq" org.eventb.core.label="emptySeq" org.eventb.core.predicate="⊤" org.eventb.core.source="/BasicTheory/Seq.tuf|org.eventb.theory.core.theoryRoot#Seq|org.eventb.theory.core.newOperatorDefinition#5" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.atomicExpr" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(A)" org.eventb.theory.core.wd="⊤">
+                <org.eventb.theory.core.scDirectOperatorDefinition name="'" org.eventb.core.source="/BasicTheory/Seq.tuf|org.eventb.theory.core.theoryRoot#Seq|org.eventb.theory.core.newOperatorDefinition#5|org.eventb.theory.core.directOperatorDefinition#'" org.eventb.theory.core.formula="∅ ⦂ ℙ(A)"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+            <org.eventb.theory.core.scNewOperatorDefinition name="seqHead" org.eventb.core.label="seqHead" org.eventb.core.predicate="s∈seq(A)∧s≠(emptySeq ⦂ ℙ(ℤ×A))" org.eventb.core.source="/BasicTheory/Seq.tuf|org.eventb.theory.core.theoryRoot#Seq|org.eventb.theory.core.newOperatorDefinition#+" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="A" org.eventb.theory.core.wd="1∈dom(s)∧s∈ℤ ⇸ A">
+                <org.eventb.theory.core.scOperatorArgument name="s" org.eventb.core.source="/BasicTheory/Seq.tuf|org.eventb.theory.core.theoryRoot#Seq|org.eventb.theory.core.newOperatorDefinition#+|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="ℙ(ℤ×A)"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/BasicTheory/Seq.tuf|org.eventb.theory.core.theoryRoot#Seq|org.eventb.theory.core.newOperatorDefinition#+|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="s(1)"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+            <org.eventb.theory.core.scNewOperatorDefinition name="seqTail" org.eventb.core.label="seqTail" org.eventb.core.predicate="s∈seq(A)∧s≠(emptySeq ⦂ ℙ(ℤ×A))" org.eventb.core.source="/BasicTheory/Seq.tuf|org.eventb.theory.core.theoryRoot#Seq|org.eventb.theory.core.newOperatorDefinition#," org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(ℤ×A)" org.eventb.theory.core.wd="∀i⦂ℤ·finite(s)∧(i∈1 ‥ card(s) − 1⇒i+1∈dom(s)∧s∈ℤ ⇸ A)">
+                <org.eventb.theory.core.scOperatorArgument name="s" org.eventb.core.source="/BasicTheory/Seq.tuf|org.eventb.theory.core.theoryRoot#Seq|org.eventb.theory.core.newOperatorDefinition#,|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="ℙ(ℤ×A)"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/BasicTheory/Seq.tuf|org.eventb.theory.core.theoryRoot#Seq|org.eventb.theory.core.newOperatorDefinition#,|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="λi⦂ℤ·i∈1 ‥ card(s) − 1 ∣ s(i+1)"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+            <org.eventb.theory.core.scNewOperatorDefinition name="seqPrepend" org.eventb.core.label="seqPrepend" org.eventb.core.predicate="s∈seq(A)" org.eventb.core.source="/BasicTheory/Seq.tuf|org.eventb.theory.core.theoryRoot#Seq|org.eventb.theory.core.newOperatorDefinition#-" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(ℤ×A)" org.eventb.theory.core.wd="∀i⦂ℤ·i∈2 ‥ seqSize(s)+1⇒i − 1∈dom(s)∧s∈ℤ ⇸ A">
+                <org.eventb.theory.core.scOperatorArgument name="s" org.eventb.core.source="/BasicTheory/Seq.tuf|org.eventb.theory.core.theoryRoot#Seq|org.eventb.theory.core.newOperatorDefinition#-|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="ℙ(ℤ×A)"/>
+                <org.eventb.theory.core.scOperatorArgument name="e" org.eventb.core.source="/BasicTheory/Seq.tuf|org.eventb.theory.core.theoryRoot#Seq|org.eventb.theory.core.newOperatorDefinition#-|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="A"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/BasicTheory/Seq.tuf|org.eventb.theory.core.theoryRoot#Seq|org.eventb.theory.core.newOperatorDefinition#-|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="{1 ↦ e}∪(λi⦂ℤ·i∈2 ‥ seqSize(s)+1 ∣ s(i − 1))"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+            <org.eventb.theory.core.scNewOperatorDefinition name="seqAppend" org.eventb.core.label="seqAppend" org.eventb.core.predicate="s∈seq(A)" org.eventb.core.source="/BasicTheory/Seq.tuf|org.eventb.theory.core.theoryRoot#Seq|org.eventb.theory.core.newOperatorDefinition#." org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(ℤ×A)" org.eventb.theory.core.wd="finite(s)">
+                <org.eventb.theory.core.scOperatorArgument name="s" org.eventb.core.source="/BasicTheory/Seq.tuf|org.eventb.theory.core.theoryRoot#Seq|org.eventb.theory.core.newOperatorDefinition#.|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="ℙ(ℤ×A)"/>
+                <org.eventb.theory.core.scOperatorArgument name="e" org.eventb.core.source="/BasicTheory/Seq.tuf|org.eventb.theory.core.theoryRoot#Seq|org.eventb.theory.core.newOperatorDefinition#.|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="A"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/BasicTheory/Seq.tuf|org.eventb.theory.core.theoryRoot#Seq|org.eventb.theory.core.newOperatorDefinition#.|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="s∪{card(s)+1 ↦ e}"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+        </org.eventb.core.lang>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(COM,{Send},{Receive}))" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p2" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p3,p4"/>
+                <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p3,p4"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p5">
+                        <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p5" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p6">
+                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p6" org.eventb.core.prHyps="">
+                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p7">
+                                        <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∀ goal (frees c1,m1)" org.eventb.core.prGoal="p7" org.eventb.core.prHyps="">
+                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p8">
+                                                <org.eventb.core.prIdent name="c1" org.eventb.core.type="COM"/>
+                                                <org.eventb.core.prIdent name="m1" org.eventb.core.type="MESSAGE"/>
+                                                <org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p8" org.eventb.core.prHyps="p1">
+                                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p9">
+                                                        <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prGoal="p9" org.eventb.core.prHyps="">
+                                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p10">
+                                                                <org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p10" org.eventb.core.prHyps=""/>
+                                                            </org.eventb.core.prAnte>
+                                                        </org.eventb.core.prRule>
+                                                    </org.eventb.core.prAnte>
+                                                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+                                                    <org.eventb.core.prExprRef name=".subst" org.eventb.core.prRef="e0"/>
+                                                </org.eventb.core.prRule>
+                                            </org.eventb.core.prAnte>
+                                        </org.eventb.core.prRule>
+                                    </org.eventb.core.prAnte>
+                                    <org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p11">
+                                        <org.eventb.core.prRule name="r7" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p11" org.eventb.core.prHyps="p1"/>
+                                    </org.eventb.core.prAnte>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="eventmapper" org.eventb.core.type="ℙ(COM×MESSAGE×EVENT)"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="∀c1⦂COM,c2⦂COM,m1⦂MESSAGE,m2⦂MESSAGE·⊤∧⊤∧⊤∧⊤⇒c1 ↦ m1∈dom(eventmapper)∧eventmapper∈COM × MESSAGE ⇸ EVENT∧c2 ↦ m2∈dom(eventmapper)"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="⊤"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="∀c1⦂COM,m1⦂MESSAGE·c1 ↦ m1∈dom(eventmapper)"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="c1 ↦ m1∈dom(eventmapper)">
+            <org.eventb.core.prIdent name="c1" org.eventb.core.type="COM"/>
+            <org.eventb.core.prIdent name="m1" org.eventb.core.type="MESSAGE"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀c1⦂COM,c2⦂COM,m1⦂MESSAGE,m2⦂MESSAGE·c1∈COM∧c2∈COM∧m1∈MESSAGE∧m2∈MESSAGE⇒c1 ↦ m1∈dom(eventmapper)∧eventmapper∈COM × MESSAGE ⇸ EVENT∧c2 ↦ m2∈dom(eventmapper)"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="¬Send=Receive">
+            <org.eventb.core.prIdent name="Receive" org.eventb.core.type="COM"/>
+            <org.eventb.core.prIdent name="Send" org.eventb.core.type="COM"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="COM={Send,Receive}">
+            <org.eventb.core.prIdent name="Receive" org.eventb.core.type="COM"/>
+            <org.eventb.core.prIdent name="Send" org.eventb.core.type="COM"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="eventmapper∈COM × MESSAGE ⤖ EVENT"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="c1 ↦ m1∈COM × MESSAGE">
+            <org.eventb.core.prIdent name="c1" org.eventb.core.type="COM"/>
+            <org.eventb.core.prIdent name="m1" org.eventb.core.type="MESSAGE"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="partition(COM,{Send},{Receive})">
+            <org.eventb.core.prIdent name="Receive" org.eventb.core.type="COM"/>
+            <org.eventb.core.prIdent name="Send" org.eventb.core.type="COM"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="eventmapper∈COM × MESSAGE ⇸ EVENT"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="(∀c1⦂COM,m1⦂MESSAGE·c1 ↦ m1∈dom(eventmapper))∧eventmapper∈COM × MESSAGE ⇸ EVENT"/>
+        <org.eventb.core.prExpr name="e0" org.eventb.core.expression="COM × MESSAGE"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+        <org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.core.seqprover.isFunGoal"/>
+        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.totalDom:2"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
+        <org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="axm1/THM" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="COM,EVENT,MESSAGE">
+        <org.eventb.core.lang name="L">
+            <org.eventb.theory.core.scNewOperatorDefinition name="seq" org.eventb.core.label="seq" org.eventb.core.predicate="⊤" org.eventb.core.source="/BasicTheory/Seq.tuf|org.eventb.theory.core.theoryRoot#Seq|org.eventb.theory.core.newOperatorDefinition#(" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(ℙ(ℤ×A))" org.eventb.theory.core.wd="∀n⦂ℤ,f⦂ℙ(ℤ×A)·(n∈ℕ∧f∈1 ‥ n → a)∨¬n∈ℕ∨¬f∈1 ‥ n → a">
+                <org.eventb.theory.core.scOperatorArgument name="a" org.eventb.core.source="/BasicTheory/Seq.tuf|org.eventb.theory.core.theoryRoot#Seq|org.eventb.theory.core.newOperatorDefinition#(|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="ℙ(A)"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name="(" org.eventb.core.source="/BasicTheory/Seq.tuf|org.eventb.theory.core.theoryRoot#Seq|org.eventb.theory.core.newOperatorDefinition#(|org.eventb.theory.core.directOperatorDefinition#(" org.eventb.theory.core.formula="{n⦂ℤ,f⦂ℙ(ℤ×A)·n∈ℕ∧f∈1 ‥ n → a ∣ f}"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+            <org.eventb.theory.core.scNewOperatorDefinition name="seqSize" org.eventb.core.label="seqSize" org.eventb.core.predicate="s∈seq(A)" org.eventb.core.source="/BasicTheory/Seq.tuf|org.eventb.theory.core.theoryRoot#Seq|org.eventb.theory.core.newOperatorDefinition#)" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℤ" org.eventb.theory.core.wd="finite(s)">
+                <org.eventb.theory.core.scOperatorArgument name="s" org.eventb.core.source="/BasicTheory/Seq.tuf|org.eventb.theory.core.theoryRoot#Seq|org.eventb.theory.core.newOperatorDefinition#)|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="ℙ(ℤ×A)"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name="(" org.eventb.core.source="/BasicTheory/Seq.tuf|org.eventb.theory.core.theoryRoot#Seq|org.eventb.theory.core.newOperatorDefinition#)|org.eventb.theory.core.directOperatorDefinition#(" org.eventb.theory.core.formula="card(s)"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+            <org.eventb.theory.core.scNewOperatorDefinition name="emptySeq" org.eventb.core.label="emptySeq" org.eventb.core.predicate="⊤" org.eventb.core.source="/BasicTheory/Seq.tuf|org.eventb.theory.core.theoryRoot#Seq|org.eventb.theory.core.newOperatorDefinition#5" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.atomicExpr" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(A)" org.eventb.theory.core.wd="⊤">
+                <org.eventb.theory.core.scDirectOperatorDefinition name="'" org.eventb.core.source="/BasicTheory/Seq.tuf|org.eventb.theory.core.theoryRoot#Seq|org.eventb.theory.core.newOperatorDefinition#5|org.eventb.theory.core.directOperatorDefinition#'" org.eventb.theory.core.formula="∅ ⦂ ℙ(A)"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+            <org.eventb.theory.core.scNewOperatorDefinition name="seqHead" org.eventb.core.label="seqHead" org.eventb.core.predicate="s∈seq(A)∧s≠(emptySeq ⦂ ℙ(ℤ×A))" org.eventb.core.source="/BasicTheory/Seq.tuf|org.eventb.theory.core.theoryRoot#Seq|org.eventb.theory.core.newOperatorDefinition#+" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="A" org.eventb.theory.core.wd="1∈dom(s)∧s∈ℤ ⇸ A">
+                <org.eventb.theory.core.scOperatorArgument name="s" org.eventb.core.source="/BasicTheory/Seq.tuf|org.eventb.theory.core.theoryRoot#Seq|org.eventb.theory.core.newOperatorDefinition#+|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="ℙ(ℤ×A)"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/BasicTheory/Seq.tuf|org.eventb.theory.core.theoryRoot#Seq|org.eventb.theory.core.newOperatorDefinition#+|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="s(1)"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+            <org.eventb.theory.core.scNewOperatorDefinition name="seqTail" org.eventb.core.label="seqTail" org.eventb.core.predicate="s∈seq(A)∧s≠(emptySeq ⦂ ℙ(ℤ×A))" org.eventb.core.source="/BasicTheory/Seq.tuf|org.eventb.theory.core.theoryRoot#Seq|org.eventb.theory.core.newOperatorDefinition#," org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(ℤ×A)" org.eventb.theory.core.wd="∀i⦂ℤ·finite(s)∧(i∈1 ‥ card(s) − 1⇒i+1∈dom(s)∧s∈ℤ ⇸ A)">
+                <org.eventb.theory.core.scOperatorArgument name="s" org.eventb.core.source="/BasicTheory/Seq.tuf|org.eventb.theory.core.theoryRoot#Seq|org.eventb.theory.core.newOperatorDefinition#,|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="ℙ(ℤ×A)"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/BasicTheory/Seq.tuf|org.eventb.theory.core.theoryRoot#Seq|org.eventb.theory.core.newOperatorDefinition#,|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="λi⦂ℤ·i∈1 ‥ card(s) − 1 ∣ s(i+1)"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+            <org.eventb.theory.core.scNewOperatorDefinition name="seqPrepend" org.eventb.core.label="seqPrepend" org.eventb.core.predicate="s∈seq(A)" org.eventb.core.source="/BasicTheory/Seq.tuf|org.eventb.theory.core.theoryRoot#Seq|org.eventb.theory.core.newOperatorDefinition#-" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(ℤ×A)" org.eventb.theory.core.wd="∀i⦂ℤ·i∈2 ‥ seqSize(s)+1⇒i − 1∈dom(s)∧s∈ℤ ⇸ A">
+                <org.eventb.theory.core.scOperatorArgument name="s" org.eventb.core.source="/BasicTheory/Seq.tuf|org.eventb.theory.core.theoryRoot#Seq|org.eventb.theory.core.newOperatorDefinition#-|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="ℙ(ℤ×A)"/>
+                <org.eventb.theory.core.scOperatorArgument name="e" org.eventb.core.source="/BasicTheory/Seq.tuf|org.eventb.theory.core.theoryRoot#Seq|org.eventb.theory.core.newOperatorDefinition#-|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="A"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/BasicTheory/Seq.tuf|org.eventb.theory.core.theoryRoot#Seq|org.eventb.theory.core.newOperatorDefinition#-|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="{1 ↦ e}∪(λi⦂ℤ·i∈2 ‥ seqSize(s)+1 ∣ s(i − 1))"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+            <org.eventb.theory.core.scNewOperatorDefinition name="seqAppend" org.eventb.core.label="seqAppend" org.eventb.core.predicate="s∈seq(A)" org.eventb.core.source="/BasicTheory/Seq.tuf|org.eventb.theory.core.theoryRoot#Seq|org.eventb.theory.core.newOperatorDefinition#." org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.groupID="org.eventb.core.ast.closed" org.eventb.theory.core.hasError="false" org.eventb.theory.core.notationType="PREFIX" org.eventb.theory.core.type="ℙ(ℤ×A)" org.eventb.theory.core.wd="finite(s)">
+                <org.eventb.theory.core.scOperatorArgument name="s" org.eventb.core.source="/BasicTheory/Seq.tuf|org.eventb.theory.core.theoryRoot#Seq|org.eventb.theory.core.newOperatorDefinition#.|org.eventb.theory.core.operatorArgument#'" org.eventb.core.type="ℙ(ℤ×A)"/>
+                <org.eventb.theory.core.scOperatorArgument name="e" org.eventb.core.source="/BasicTheory/Seq.tuf|org.eventb.theory.core.theoryRoot#Seq|org.eventb.theory.core.newOperatorDefinition#.|org.eventb.theory.core.operatorArgument#(" org.eventb.core.type="A"/>
+                <org.eventb.theory.core.scDirectOperatorDefinition name=")" org.eventb.core.source="/BasicTheory/Seq.tuf|org.eventb.theory.core.theoryRoot#Seq|org.eventb.theory.core.newOperatorDefinition#.|org.eventb.theory.core.directOperatorDefinition#)" org.eventb.theory.core.formula="s∪{card(s)+1 ↦ e}"/>
+            </org.eventb.theory.core.scNewOperatorDefinition>
+        </org.eventb.core.lang>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Z3" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1">
+            <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+            <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="Z3"/>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="eventmapper" org.eventb.core.type="ℙ(COM×MESSAGE×EVENT)"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀c1⦂COM,c2⦂COM,m1⦂MESSAGE,m2⦂MESSAGE·c1∈COM∧c2∈COM∧m1∈MESSAGE∧m2∈MESSAGE⇒(c1≠c2∨m1≠m2⇔eventmapper(c1 ↦ m1)≠eventmapper(c2 ↦ m2))"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="eventmapper∈COM × MESSAGE ⤖ EVENT"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+    </org.eventb.core.prProof>
+</org.eventb.core.prFile>

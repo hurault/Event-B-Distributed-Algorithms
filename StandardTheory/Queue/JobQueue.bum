@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.comment="Model of a job queue that uses the sequence theory.&#10;&#10;@author Michael Butler&#10;@June 2014" org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="'" org.eventb.core.assignment="queue ≔ emptySeq" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="job ≔ ∅" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="(" org.eventb.core.identifier="queue"/>
+<org.eventb.core.event name="*" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="QueueJob">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="j"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="j ∈ job"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="queue ≔ seqAppend(queue,j)" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.seesContext name="+" org.eventb.core.target="C1"/>
+<org.eventb.core.event name="," org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="DeQueueJob">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="j"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="queue ∈ seq(job)" org.eventb.core.theorem="true"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="queue ≠ emptySeq"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd2" org.eventb.core.predicate="j = seqHead(queue)"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="queue ≔ seqTail(queue)" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="-" org.eventb.core.identifier="job"/>
+<org.eventb.core.invariant name="." org.eventb.core.comment="job represents existing jobs" org.eventb.core.label="inv1" org.eventb.core.predicate="job ⊆ JOB"/>
+<org.eventb.core.event name="/" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="NewJob">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="j"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="j ∉ job"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="job ≔ job ∪ {j}" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.invariant name=")" org.eventb.core.comment="Queue only contains existing jobs" org.eventb.core.label="inv2" org.eventb.core.predicate="queue ∈ seq(job)"/>
+<org.eventb.core.event name="0" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="DestroyJob">
+<org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="j ∈ job"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="job ≔ job ∖ {j}" org.eventb.core.label="act1"/>
+<org.eventb.core.parameter name=")" org.eventb.core.identifier="j"/>
+<org.eventb.core.guard name="*" org.eventb.core.comment="Cannot destroy job that is still in the queue" org.eventb.core.label="grd2" org.eventb.core.predicate="j ∉ ran(queue)"/>
+</org.eventb.core.event>
+</org.eventb.core.machineFile>

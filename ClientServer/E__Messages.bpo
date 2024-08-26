@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="EVENT" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.poIdentifier name="PEER" org.eventb.core.type="ℙ(PEER)"/>
+        <org.eventb.core.poIdentifier name="MESSAGE" org.eventb.core.type="ℙ(MESSAGE)"/>
+        <org.eventb.core.poIdentifier name="COM" org.eventb.core.type="ℙ(COM)"/>
+        <org.eventb.core.poIdentifier name="Receive" org.eventb.core.type="COM"/>
+        <org.eventb.core.poIdentifier name="Send" org.eventb.core.type="COM"/>
+        <org.eventb.core.poIdentifier name="eventmapper" org.eventb.core.type="ℙ(COM×MESSAGE×EVENT)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="axm1/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Theorem" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ClientServer/E__Messages.bpo|org.eventb.core.poFile#E__Messages|org.eventb.core.poPredicateSet#HYPC__Peeru"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀c1⦂COM,c2⦂COM,m1⦂MESSAGE,m2⦂MESSAGE·c1∈COM∧c2∈COM∧m1∈MESSAGE∧m2∈MESSAGE⇒c1 ↦ m1∈dom(eventmapper)∧eventmapper∈COM × MESSAGE ⇸ EVENT∧c2 ↦ m2∈dom(eventmapper)" org.eventb.core.source="/ClientServer/E__Messages.buc|org.eventb.core.contextFile#E__Messages|org.eventb.core.axiom#\/"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ClientServer/E__Messages.buc|org.eventb.core.contextFile#E__Messages|org.eventb.core.axiom#\/"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/ClientServer/E__Messages.bpo|org.eventb.core.poFile#E__Messages|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/ClientServer/E__Messages.bpo|org.eventb.core.poFile#E__Messages|org.eventb.core.poPredicateSet#HYPC__Peeru"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="axm1/THM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Theorem" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ClientServer/E__Messages.bpo|org.eventb.core.poFile#E__Messages|org.eventb.core.poPredicateSet#HYPC__Peeru"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀c1⦂COM,c2⦂COM,m1⦂MESSAGE,m2⦂MESSAGE·c1∈COM∧c2∈COM∧m1∈MESSAGE∧m2∈MESSAGE⇒(c1≠c2∨m1≠m2⇔eventmapper(c1 ↦ m1)≠eventmapper(c2 ↦ m2))" org.eventb.core.source="/ClientServer/E__Messages.buc|org.eventb.core.contextFile#E__Messages|org.eventb.core.axiom#\/"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ClientServer/E__Messages.buc|org.eventb.core.contextFile#E__Messages|org.eventb.core.axiom#\/"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/ClientServer/E__Messages.bpo|org.eventb.core.poFile#E__Messages|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/ClientServer/E__Messages.bpo|org.eventb.core.poFile#E__Messages|org.eventb.core.poPredicateSet#HYPC__Peeru"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="HYPC__Peeru" org.eventb.core.parentSet="/ClientServer/E__Messages.bpo|org.eventb.core.poFile#E__Messages|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="partition(COM,{Send},{Receive})" org.eventb.core.source="/ClientServer/E__Messages.buc|org.eventb.core.contextFile#E__Messages|org.eventb.core.axiom#)"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="eventmapper∈COM × MESSAGE ⤖ EVENT" org.eventb.core.source="/ClientServer/E__Messages.buc|org.eventb.core.contextFile#E__Messages|org.eventb.core.axiom#-"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/ClientServer/E__Messages.bpo|org.eventb.core.poFile#E__Messages|org.eventb.core.poPredicateSet#HYPC__Peeru" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="∀c1⦂COM,c2⦂COM,m1⦂MESSAGE,m2⦂MESSAGE·c1∈COM∧c2∈COM∧m1∈MESSAGE∧m2∈MESSAGE⇒(c1≠c2∨m1≠m2⇔eventmapper(c1 ↦ m1)≠eventmapper(c2 ↦ m2))" org.eventb.core.source="/ClientServer/E__Messages.buc|org.eventb.core.contextFile#E__Messages|org.eventb.core.axiom#\/"/>
+    </org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.comment="This machine introduces the notion of link between an event and its cause. This link will be later realized with an explicit message." org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.refinesMachine name="'" org.eventb.core.target="A__Events"/>
+<org.eventb.core.seesContext name="*" org.eventb.core.target="A__Event"/>
+<org.eventb.core.variable name="(" org.eventb.core.identifier="past"/>
+<org.eventb.core.event name="+" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="'" org.eventb.core.assignment="links ≔ ∅" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="," org.eventb.core.comment="A new event occurs" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="create">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="happen"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt1" org.eventb.core.comment="A link is made between a new event and its cause" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="link">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="happen"/>
+<org.eventb.core.parameter name="(" org.eventb.core.comment="Corresponding send event" org.eventb.core.identifier="cause"/>
+<org.eventb.core.guard name=")" org.eventb.core.comment="The send event has already happened" org.eventb.core.label="grd2" org.eventb.core.predicate="cause ∈ past"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="links :∣ links' = links ∪ {cause ↦ e}" org.eventb.core.label="act2"/>
+<org.eventb.core.guard name="," org.eventb.core.comment="A cause serves once only" org.eventb.core.label="grd3" org.eventb.core.predicate="cause ∉ dom(links)"/>
+<org.eventb.core.guard name="-" org.eventb.core.comment="A cause is not itself a consequence" org.eventb.core.label="grd4" org.eventb.core.predicate="cause ∉ ran(links)"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="evt2" org.eventb.core.comment="Relation between an event and its cause (cause ↦ event)" org.eventb.core.identifier="links"/>
+<org.eventb.core.invariant name="evt3" org.eventb.core.label="Tlinks" org.eventb.core.predicate="links ∈ past ↔ past"/>
+<org.eventb.core.invariant name="evt4" org.eventb.core.comment="Causes (emissions) and consequences (receptions) are distinct" org.eventb.core.label="inv1" org.eventb.core.predicate="dom(links) ∩ ran(links) = ∅"/>
+<org.eventb.core.invariant name="evt5" org.eventb.core.comment="A consequence has only one (direct) cause" org.eventb.core.label="inv2" org.eventb.core.predicate="∀ e1, e2, c · e1 ↦ c ∈ links ∧ e2 ↦ c ∈ links ⇒ e1 = e2"/>
+<org.eventb.core.invariant name="evt6" org.eventb.core.comment="A cause has at most one consequence" org.eventb.core.label="inv3" org.eventb.core.predicate="∀ e, c1, c2 · e ↦ c1 ∈ links ∧ e ↦ c2 ∈ links ⇒ c1 = c2"/>
+</org.eventb.core.machineFile>

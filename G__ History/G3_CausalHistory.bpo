@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+    <org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="EVENT" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.poIdentifier name="PEER" org.eventb.core.type="ℙ(PEER)"/>
+        <org.eventb.core.poIdentifier name="MESSAGE" org.eventb.core.type="ℙ(MESSAGE)"/>
+        <org.eventb.core.poIdentifier name="COM" org.eventb.core.type="ℙ(COM)"/>
+        <org.eventb.core.poIdentifier name="Receive" org.eventb.core.type="COM"/>
+        <org.eventb.core.poIdentifier name="Send" org.eventb.core.type="COM"/>
+        <org.eventb.core.poIdentifier name="eventmapper" org.eventb.core.type="ℙ(COM×MESSAGE×EVENT)"/>
+        <org.eventb.core.poPredicate name="eventmappes" org.eventb.core.predicate="partition(COM,{Send},{Receive})" org.eventb.core.source="/G__ History/E__Messages.buc|org.eventb.core.contextFile#E__Messages|org.eventb.core.axiom#)"/>
+        <org.eventb.core.poPredicate name="eventmappet" org.eventb.core.predicate="eventmapper∈COM × MESSAGE ⤖ EVENT" org.eventb.core.source="/G__ History/E__Messages.buc|org.eventb.core.contextFile#E__Messages|org.eventb.core.axiom#-"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/G__ History/G3_CausalHistory.bpo|org.eventb.core.poFile#G3_CausalHistory|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="origOf" org.eventb.core.type="ℙ(MESSAGE×PEER)"/>
+        <org.eventb.core.poIdentifier name="destOf" org.eventb.core.type="ℙ(MESSAGE×PEER)"/>
+        <org.eventb.core.poIdentifier name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.poIdentifier name="net" org.eventb.core.type="ℙ(MESSAGE)"/>
+        <org.eventb.core.poIdentifier name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.poIdentifier name="run" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.poIdentifier name="comOf" org.eventb.core.type="ℙ(EVENT×COM)"/>
+        <org.eventb.core.poIdentifier name="hgOf" org.eventb.core.type="ℙ(MESSAGE×ℙ(MESSAGE))"/>
+        <org.eventb.core.poIdentifier name="mesOf" org.eventb.core.type="ℙ(EVENT×MESSAGE)"/>
+        <org.eventb.core.poIdentifier name="hcOf" org.eventb.core.type="ℙ(MESSAGE×ℙ(MESSAGE))"/>
+        <org.eventb.core.poIdentifier name="past" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.poIdentifier name="hc" org.eventb.core.type="ℙ(PEER×ℙ(MESSAGE))"/>
+        <org.eventb.core.poIdentifier name="hg" org.eventb.core.type="ℙ(MESSAGE)"/>
+        <org.eventb.core.poIdentifier name="peerOf" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.poPredicate name="peerOg" org.eventb.core.predicate="past∈ℙ(EVENT)" org.eventb.core.source="/G__ History/A__Events.bum|org.eventb.core.machineFile#A__Events|org.eventb.core.invariant#)"/>
+        <org.eventb.core.poPredicate name="peerOh" org.eventb.core.predicate="links∈past ↔ past" org.eventb.core.source="/G__ History/B__Communication.bum|org.eventb.core.machineFile#B__Communication|org.eventb.core.invariant#evt3"/>
+        <org.eventb.core.poPredicate name="peerOi" org.eventb.core.predicate="dom(links)∩ran(links)=(∅ ⦂ ℙ(EVENT))" org.eventb.core.source="/G__ History/B__Communication.bum|org.eventb.core.machineFile#B__Communication|org.eventb.core.invariant#inv1"/>
+        <org.eventb.core.poPredicate name="peerOj" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT,c⦂EVENT·e1 ↦ c∈links∧e2 ↦ c∈links⇒e1=e2" org.eventb.core.source="/G__ History/B__Communication.bum|org.eventb.core.machineFile#B__Communication|org.eventb.core.invariant#inv2"/>
+        <org.eventb.core.poPredicate name="peerOk" org.eventb.core.predicate="∀e⦂EVENT,c1⦂EVENT,c2⦂EVENT·e ↦ c1∈links∧e ↦ c2∈links⇒c1=c2" org.eventb.core.source="/G__ History/B__Communication.bum|org.eventb.core.machineFile#B__Communication|org.eventb.core.invariant#inv3"/>
+        <org.eventb.core.poPredicate name="peerOl" org.eventb.core.predicate="prec∈past  past" org.eventb.core.source="/G__ History/C__DistributedExecutions.bum|org.eventb.core.machineFile#C__DistributedExecutions|org.eventb.core.invariant#evt7"/>
+        <org.eventb.core.poPredicate name="peerOm" org.eventb.core.predicate="peerOf∈past → PEER" org.eventb.core.source="/G__ History/C__DistributedExecutions.bum|org.eventb.core.machineFile#C__DistributedExecutions|org.eventb.core.invariant#inv1"/>
+        <org.eventb.core.poPredicate name="peerOn" org.eventb.core.predicate="past ◁ (id ⦂ ℙ(EVENT×EVENT))⊆prec" org.eventb.core.source="/G__ History/C__DistributedExecutions.bum|org.eventb.core.machineFile#C__DistributedExecutions|org.eventb.core.invariant#inv2"/>
+        <org.eventb.core.poPredicate name="peerOo" org.eventb.core.predicate="prec;prec⊆prec" org.eventb.core.source="/G__ History/C__DistributedExecutions.bum|org.eventb.core.machineFile#C__DistributedExecutions|org.eventb.core.invariant#inv3"/>
+        <org.eventb.core.poPredicate name="peerOp" org.eventb.core.predicate="prec∩prec∼⊆(id ⦂ ℙ(EVENT×EVENT))" org.eventb.core.source="/G__ History/C__DistributedExecutions.bum|org.eventb.core.machineFile#C__DistributedExecutions|org.eventb.core.invariant#inv4"/>
+        <org.eventb.core.poPredicate name="peerOq" org.eventb.core.predicate="links⊆prec" org.eventb.core.source="/G__ History/C__DistributedExecutions.bum|org.eventb.core.machineFile#C__DistributedExecutions|org.eventb.core.invariant#inv5"/>
+        <org.eventb.core.poPredicate name="peerOr" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1∈past∧e2∈past∧peerOf(e1)=peerOf(e2)⇒e1 ↦ e2∈prec∨e2 ↦ e1∈prec" org.eventb.core.source="/G__ History/C__DistributedExecutions.bum|org.eventb.core.machineFile#C__DistributedExecutions|org.eventb.core.invariant#inv6"/>
+        <org.eventb.core.poPredicate name="peerOs" org.eventb.core.predicate="run∈past  past" org.eventb.core.source="/G__ History/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#evt&gt;"/>
+        <org.eventb.core.poPredicate name="peerOt" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1∈past∧e2∈past⇒e1 ↦ e2∈run∨e2 ↦ e1∈run" org.eventb.core.source="/G__ History/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv1"/>
+        <org.eventb.core.poPredicate name="peerOu" org.eventb.core.predicate="past ◁ (id ⦂ ℙ(EVENT×EVENT))⊆run" org.eventb.core.source="/G__ History/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv2"/>
+        <org.eventb.core.poPredicate name="peerOv" org.eventb.core.predicate="run;run⊆run" org.eventb.core.source="/G__ History/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv3"/>
+        <org.eventb.core.poPredicate name="peerOw" org.eventb.core.predicate="run∩run∼⊆(id ⦂ ℙ(EVENT×EVENT))" org.eventb.core.source="/G__ History/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv4"/>
+        <org.eventb.core.poPredicate name="peerOx" org.eventb.core.predicate="prec⊆run" org.eventb.core.source="/G__ History/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv5"/>
+        <org.eventb.core.poPredicate name="peerOy" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1∈past∧e2∈past∧peerOf(e1)=peerOf(e2)⇒(e1 ↦ e2∈prec⇔e1 ↦ e2∈run)" org.eventb.core.source="/G__ History/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv6"/>
+        <org.eventb.core.poPredicate name="peerOz" org.eventb.core.predicate="comOf∈past → COM" org.eventb.core.source="/G__ History/E__RunWithMessages.bum|org.eventb.core.machineFile#E__RunWithMessages|org.eventb.core.invariant#evtD"/>
+        <org.eventb.core.poPredicate name="peerO{" org.eventb.core.predicate="mesOf∈past → MESSAGE" org.eventb.core.source="/G__ History/E__RunWithMessages.bum|org.eventb.core.machineFile#E__RunWithMessages|org.eventb.core.invariant#inv2"/>
+        <org.eventb.core.poPredicate name="peerO|" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1∈past∧e2∈past∧comOf(e1)=comOf(e2)∧mesOf(e1)=mesOf(e2)⇒e1=e2" org.eventb.core.source="/G__ History/E__RunWithMessages.bum|org.eventb.core.machineFile#E__RunWithMessages|org.eventb.core.invariant#inv3"/>
+        <org.eventb.core.poPredicate name="peerO}" org.eventb.core.predicate="∀e⦂EVENT·e∈past∧comOf(e)=Receive⇒(∃es⦂EVENT·es∈past∧comOf(es)=Send∧mesOf(e)=mesOf(es)∧es ↦ e∈prec)" org.eventb.core.source="/G__ History/E__RunWithMessages.bum|org.eventb.core.machineFile#E__RunWithMessages|org.eventb.core.invariant#inv4"/>
+        <org.eventb.core.poPredicate name="peerO~" org.eventb.core.predicate="∀es⦂EVENT,er⦂EVENT·es ↦ er∈links⇒comOf(es)=Send∧comOf(er)=Receive∧mesOf(es)=mesOf(er)" org.eventb.core.source="/G__ History/E__RunWithMessages.bum|org.eventb.core.machineFile#E__RunWithMessages|org.eventb.core.invariant#inv5"/>
+        <org.eventb.core.poPredicate name="peerP'" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1 ↦ e2∈prec∧peerOf(e1)≠peerOf(e2)⇒(∃es⦂EVENT,er⦂EVENT·e1 ↦ es∈prec∧es ↦ er∈prec∧er ↦ e2∈prec∧peerOf(e1)=peerOf(es)∧comOf(es)=Send∧comOf(er)=Receive∧mesOf(es)=mesOf(er))" org.eventb.core.source="/G__ History/E__RunWithMessages.bum|org.eventb.core.machineFile#E__RunWithMessages|org.eventb.core.invariant#inv6"/>
+        <org.eventb.core.poPredicate name="peerP(" org.eventb.core.predicate="hg∈ℙ(MESSAGE)" org.eventb.core.source="/G__ History/F1_AsyncHistory.bum|org.eventb.core.machineFile#F1_AsyncHistory|org.eventb.core.invariant#inv1"/>
+        <org.eventb.core.poPredicate name="peerP)" org.eventb.core.predicate="hc∈PEER → ℙ(hg)" org.eventb.core.source="/G__ History/F1_AsyncHistory.bum|org.eventb.core.machineFile#F1_AsyncHistory|org.eventb.core.invariant#inv2"/>
+        <org.eventb.core.poPredicate name="peerP*" org.eventb.core.predicate="net∈ℙ(hg)" org.eventb.core.source="/G__ History/F1_AsyncHistory.bum|org.eventb.core.machineFile#F1_AsyncHistory|org.eventb.core.invariant#inv3"/>
+        <org.eventb.core.poPredicate name="peerP+" org.eventb.core.predicate="origOf∈hg → PEER" org.eventb.core.source="/G__ History/F1_AsyncHistory.bum|org.eventb.core.machineFile#F1_AsyncHistory|org.eventb.core.invariant#inv4"/>
+        <org.eventb.core.poPredicate name="peerP," org.eventb.core.predicate="destOf∈hg → PEER" org.eventb.core.source="/G__ History/F1_AsyncHistory.bum|org.eventb.core.machineFile#F1_AsyncHistory|org.eventb.core.invariant#inv5"/>
+        <org.eventb.core.poPredicate name="peerP-" org.eventb.core.predicate="hgOf∈hg → ℙ(hg)" org.eventb.core.source="/G__ History/F1_AsyncHistory.bum|org.eventb.core.machineFile#F1_AsyncHistory|org.eventb.core.invariant#inv6"/>
+        <org.eventb.core.poPredicate name="peerP." org.eventb.core.predicate="hcOf∈hg → ℙ(hg)" org.eventb.core.source="/G__ History/F1_AsyncHistory.bum|org.eventb.core.machineFile#F1_AsyncHistory|org.eventb.core.invariant#inv7"/>
+        <org.eventb.core.poPredicate name="peerP/" org.eventb.core.predicate="hg=ran(mesOf)" org.eventb.core.source="/G__ History/F1_AsyncHistory.bum|org.eventb.core.machineFile#F1_AsyncHistory|org.eventb.core.invariant#inv9"/>
+        <org.eventb.core.poPredicate name="peerP0" org.eventb.core.predicate="∀m⦂MESSAGE·m∈hg∧¬(∃e2⦂EVENT·e2∈past∧comOf(e2)=Receive∧mesOf(e2)=m)⇒m∈net" org.eventb.core.source="/G__ History/F1_AsyncHistory.bum|org.eventb.core.machineFile#F1_AsyncHistory|org.eventb.core.invariant#inv1:"/>
+        <org.eventb.core.poPredicate name="peerP1" org.eventb.core.predicate="∀e⦂EVENT·e∈past∧comOf(e)=Send∧¬(∃e2⦂EVENT·e2∈past∧comOf(e2)=Receive∧mesOf(e2)=mesOf(e))⇒mesOf(e)∈net" org.eventb.core.source="/G__ History/F1_AsyncHistory.bum|org.eventb.core.machineFile#F1_AsyncHistory|org.eventb.core.invariant#inv1;"/>
+        <org.eventb.core.poPredicate name="peerP2" org.eventb.core.predicate="∀e⦂EVENT·e∈past∧comOf(e)=Send⇒origOf(mesOf(e))=peerOf(e)" org.eventb.core.source="/G__ History/F1_AsyncHistory.bum|org.eventb.core.machineFile#F1_AsyncHistory|org.eventb.core.invariant#inv19"/>
+        <org.eventb.core.poPredicate name="peerP3" org.eventb.core.predicate="∀e⦂EVENT·e∈past∧comOf(e)=Receive⇒mesOf(e)∉net" org.eventb.core.source="/G__ History/F1_AsyncHistory.bum|org.eventb.core.machineFile#F1_AsyncHistory|org.eventb.core.invariant#inv1&gt;"/>
+        <org.eventb.core.poPredicate name="peerP4" org.eventb.core.predicate="∀e⦂EVENT·e∈past∧comOf(e)=Receive⇒destOf(mesOf(e))=peerOf(e)" org.eventb.core.source="/G__ History/F1_AsyncHistory.bum|org.eventb.core.machineFile#F1_AsyncHistory|org.eventb.core.invariant#inv12"/>
+        <org.eventb.core.poPredicate name="peerP5" org.eventb.core.predicate="∀es1⦂EVENT,es2⦂EVENT·es1 ↦ es2∈run∧es1≠es2∧comOf(es2)=Send⇒mesOf(es1)∈hgOf(mesOf(es2))" org.eventb.core.source="/G__ History/F1_AsyncHistory.bum|org.eventb.core.machineFile#F1_AsyncHistory|org.eventb.core.invariant#inv13"/>
+        <org.eventb.core.poPredicate name="peerP6" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT,m1⦂MESSAGE,m2⦂MESSAGE·m1∈hg∧m2∈hg∧m1≠m2∧e1 ↦ e2∈run∧comOf(e1)=Send∧comOf(e2)=Send∧mesOf(e1)=m1∧mesOf(e2)=m2⇒m1∈hgOf(m2)" org.eventb.core.source="/G__ History/F1_AsyncHistory.bum|org.eventb.core.machineFile#F1_AsyncHistory|org.eventb.core.invariant#inv1?"/>
+        <org.eventb.core.poPredicate name="peerP7" org.eventb.core.predicate="∀m⦂MESSAGE·m∈hg⇒origOf(m)∈{e⦂EVENT·e∈past∧comOf(e)=Send∧mesOf(e)=m ∣ peerOf(e)}" org.eventb.core.source="/G__ History/F1_AsyncHistory.bum|org.eventb.core.machineFile#F1_AsyncHistory|org.eventb.core.invariant#inv1@"/>
+        <org.eventb.core.poPredicate name="peerP8" org.eventb.core.predicate="∀es1⦂EVENT,es2⦂EVENT·es1 ↦ es2∈prec∧es1≠es2∧comOf(es2)=Send⇒mesOf(es1)∈hcOf(mesOf(es2))" org.eventb.core.source="/G__ History/F1_AsyncHistory.bum|org.eventb.core.machineFile#F1_AsyncHistory|org.eventb.core.invariant#inv1A"/>
+        <org.eventb.core.poPredicate name="peerP9" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT,m1⦂MESSAGE,m2⦂MESSAGE·m1∈hg∧m2∈hg∧m1≠m2∧e1 ↦ e2∈prec∧comOf(e2)=Send∧mesOf(e1)=m1∧mesOf(e2)=m2⇒m1∈hcOf(m2)" org.eventb.core.source="/G__ History/F1_AsyncHistory.bum|org.eventb.core.machineFile#F1_AsyncHistory|org.eventb.core.invariant#inv1C"/>
+        <org.eventb.core.poPredicate name="peerP:" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1 ↦ e2∈prec⇒mesOf(e1)∈hc(peerOf(e2))" org.eventb.core.source="/G__ History/F1_AsyncHistory.bum|org.eventb.core.machineFile#F1_AsyncHistory|org.eventb.core.invariant#inv1B"/>
+        <org.eventb.core.poPredicate name="peerP;" org.eventb.core.predicate="net⊆hg" org.eventb.core.source="/G__ History/F1_AsyncHistory.bum|org.eventb.core.machineFile#F1_AsyncHistory|org.eventb.core.invariant#inv14"/>
+        <org.eventb.core.poPredicate name="peerP=" org.eventb.core.predicate="∀m⦂MESSAGE·m∈hg⇒m∉hgOf(m)" org.eventb.core.source="/G__ History/F1_AsyncHistory.bum|org.eventb.core.machineFile#F1_AsyncHistory|org.eventb.core.invariant#inv15"/>
+        <org.eventb.core.poPredicate name="peerP&gt;" org.eventb.core.predicate="∀m⦂MESSAGE·m∈hg⇒m∉hcOf(m)" org.eventb.core.source="/G__ History/F1_AsyncHistory.bum|org.eventb.core.machineFile#F1_AsyncHistory|org.eventb.core.invariant#inv16"/>
+        <org.eventb.core.poPredicate name="peerP?" org.eventb.core.predicate="∀m⦂MESSAGE,m2⦂MESSAGE·m∈hg∧m2∉hgOf(m)⇒m2∉hcOf(m)" org.eventb.core.source="/G__ History/F1_AsyncHistory.bum|org.eventb.core.machineFile#F1_AsyncHistory|org.eventb.core.invariant#inv17"/>
+        <org.eventb.core.poPredicate name="peerP@" org.eventb.core.predicate="hg∈ℙ(MESSAGE)" org.eventb.core.source="/G__ History/G1_AsyncHistory.bum|org.eventb.core.machineFile#G1_AsyncHistory|org.eventb.core.invariant#inv1"/>
+        <org.eventb.core.poPredicate name="peerPA" org.eventb.core.predicate="hc∈PEER → ℙ(hg)" org.eventb.core.source="/G__ History/G1_AsyncHistory.bum|org.eventb.core.machineFile#G1_AsyncHistory|org.eventb.core.invariant#inv1C"/>
+        <org.eventb.core.poPredicate name="peerPB" org.eventb.core.predicate="net∈ℙ(hg)" org.eventb.core.source="/G__ History/G1_AsyncHistory.bum|org.eventb.core.machineFile#G1_AsyncHistory|org.eventb.core.invariant#inv2"/>
+        <org.eventb.core.poPredicate name="peerPC" org.eventb.core.predicate="origOf∈hg → PEER" org.eventb.core.source="/G__ History/G1_AsyncHistory.bum|org.eventb.core.machineFile#G1_AsyncHistory|org.eventb.core.invariant#inv5"/>
+        <org.eventb.core.poPredicate name="peerPD" org.eventb.core.predicate="destOf∈hg → PEER" org.eventb.core.source="/G__ History/G1_AsyncHistory.bum|org.eventb.core.machineFile#G1_AsyncHistory|org.eventb.core.invariant#inv6"/>
+        <org.eventb.core.poPredicate name="peerPE" org.eventb.core.predicate="hgOf∈hg → ℙ(hg)" org.eventb.core.source="/G__ History/G1_AsyncHistory.bum|org.eventb.core.machineFile#G1_AsyncHistory|org.eventb.core.invariant#inv7"/>
+        <org.eventb.core.poPredicate name="peerPF" org.eventb.core.predicate="hcOf∈hg → ℙ(hg)" org.eventb.core.source="/G__ History/G1_AsyncHistory.bum|org.eventb.core.machineFile#G1_AsyncHistory|org.eventb.core.invariant#inv19"/>
+        <org.eventb.core.poPredicate name="peerPG" org.eventb.core.predicate="eventmapper[{Send} × hg]∪eventmapper[{Receive} × (hg ∖ net)]=past" org.eventb.core.source="/G__ History/G1_AsyncHistory.bum|org.eventb.core.machineFile#G1_AsyncHistory|org.eventb.core.invariant#inv1A"/>
+        <org.eventb.core.poPredicate name="peerPH" org.eventb.core.predicate="hg=ran(mesOf)" org.eventb.core.source="/G__ History/G1_AsyncHistory.bum|org.eventb.core.machineFile#G1_AsyncHistory|org.eventb.core.invariant#inv12"/>
+        <org.eventb.core.poPredicate name="peerPI" org.eventb.core.predicate="net={e⦂EVENT·e∈past∧comOf(e)=Send∧¬(∃e2⦂EVENT·e2∈past∧comOf(e2)=Receive∧mesOf(e2)=mesOf(e)) ∣ mesOf(e)}" org.eventb.core.source="/G__ History/G1_AsyncHistory.bum|org.eventb.core.machineFile#G1_AsyncHistory|org.eventb.core.invariant#inv13"/>
+        <org.eventb.core.poPredicate name="peerPJ" org.eventb.core.predicate="∀m⦂MESSAGE·m∈hg⇒origOf(m)∈{e⦂EVENT·e∈past∧comOf(e)=Send∧mesOf(e)=m ∣ peerOf(e)}" org.eventb.core.source="/G__ History/G1_AsyncHistory.bum|org.eventb.core.machineFile#G1_AsyncHistory|org.eventb.core.invariant#inv15"/>
+        <org.eventb.core.poPredicate name="peerPK" org.eventb.core.predicate="∀e⦂EVENT·e∈past∧comOf(e)=Receive⇒destOf(mesOf(e))=peerOf(e)" org.eventb.core.source="/G__ History/G1_AsyncHistory.bum|org.eventb.core.machineFile#G1_AsyncHistory|org.eventb.core.invariant#inv18"/>
+        <org.eventb.core.poPredicate name="peerPL" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT,m1⦂MESSAGE,m2⦂MESSAGE·m1∈hg∧m2∈hg∧m1≠m2∧e1 ↦ e2∈run∧comOf(e1)=Send∧comOf(e2)=Send∧mesOf(e1)=m1∧mesOf(e2)=m2⇒m1∈hgOf(m2)" org.eventb.core.source="/G__ History/G1_AsyncHistory.bum|org.eventb.core.machineFile#G1_AsyncHistory|org.eventb.core.invariant#inv39"/>
+        <org.eventb.core.poPredicate name="peerPM" org.eventb.core.predicate="net⊆hg" org.eventb.core.source="/G__ History/G1_AsyncHistory.bum|org.eventb.core.machineFile#G1_AsyncHistory|org.eventb.core.invariant#inv21"/>
+        <org.eventb.core.poPredicate name="peerPN" org.eventb.core.predicate="∀m⦂MESSAGE·m∈hg⇒m∉hgOf(m)" org.eventb.core.source="/G__ History/G1_AsyncHistory.bum|org.eventb.core.machineFile#G1_AsyncHistory|org.eventb.core.invariant#inv26"/>
+        <org.eventb.core.poPredicate name="peerPO" org.eventb.core.predicate="∀m⦂MESSAGE·m∈hg⇒m∉hcOf(m)" org.eventb.core.source="/G__ History/G1_AsyncHistory.bum|org.eventb.core.machineFile#G1_AsyncHistory|org.eventb.core.invariant#inv32"/>
+        <org.eventb.core.poPredicate name="peerPP" org.eventb.core.predicate="∀m⦂MESSAGE,m2⦂MESSAGE·m∈hg∧m2∉hgOf(m)⇒m2∉hcOf(m)" org.eventb.core.source="/G__ History/G1_AsyncHistory.bum|org.eventb.core.machineFile#G1_AsyncHistory|org.eventb.core.invariant#inv33"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTE__MessagfK" org.eventb.core.parentSet="/G__ History/G3_CausalHistory.bpo|org.eventb.core.poFile#G3_CausalHistory|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="hgOf'" org.eventb.core.type="ℙ(MESSAGE×ℙ(MESSAGE))"/>
+        <org.eventb.core.poIdentifier name="destOf'" org.eventb.core.type="ℙ(MESSAGE×PEER)"/>
+        <org.eventb.core.poIdentifier name="hg'" org.eventb.core.type="ℙ(MESSAGE)"/>
+        <org.eventb.core.poIdentifier name="hc'" org.eventb.core.type="ℙ(PEER×ℙ(MESSAGE))"/>
+        <org.eventb.core.poIdentifier name="hcOf'" org.eventb.core.type="ℙ(MESSAGE×ℙ(MESSAGE))"/>
+        <org.eventb.core.poIdentifier name="net'" org.eventb.core.type="ℙ(MESSAGE)"/>
+        <org.eventb.core.poIdentifier name="origOf'" org.eventb.core.type="ℙ(MESSAGE×PEER)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPE__MessagfK" org.eventb.core.parentSet="/G__ History/G3_CausalHistory.bpo|org.eventb.core.poFile#G3_CausalHistory|org.eventb.core.poPredicateSet#EVTIDENTE__MessagfK" org.eventb.core.poStamp="0"/>
+    <org.eventb.core.poPredicateSet name="EVTIDENTE__MessagfL" org.eventb.core.parentSet="/G__ History/G3_CausalHistory.bpo|org.eventb.core.poFile#G3_CausalHistory|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="hgOf'" org.eventb.core.type="ℙ(MESSAGE×ℙ(MESSAGE))"/>
+        <org.eventb.core.poIdentifier name="destOf'" org.eventb.core.type="ℙ(MESSAGE×PEER)"/>
+        <org.eventb.core.poIdentifier name="hg'" org.eventb.core.type="ℙ(MESSAGE)"/>
+        <org.eventb.core.poIdentifier name="hc'" org.eventb.core.type="ℙ(PEER×ℙ(MESSAGE))"/>
+        <org.eventb.core.poIdentifier name="d" org.eventb.core.type="PEER"/>
+        <org.eventb.core.poIdentifier name="hcOf'" org.eventb.core.type="ℙ(MESSAGE×ℙ(MESSAGE))"/>
+        <org.eventb.core.poIdentifier name="net'" org.eventb.core.type="ℙ(MESSAGE)"/>
+        <org.eventb.core.poIdentifier name="p" org.eventb.core.type="PEER"/>
+        <org.eventb.core.poIdentifier name="origOf'" org.eventb.core.type="ℙ(MESSAGE×PEER)"/>
+        <org.eventb.core.poIdentifier name="m" org.eventb.core.type="MESSAGE"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPE__MessagfL" org.eventb.core.parentSet="/G__ History/G3_CausalHistory.bpo|org.eventb.core.poFile#G3_CausalHistory|org.eventb.core.poPredicateSet#EVTIDENTE__MessagfL" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="m∈MESSAGE" org.eventb.core.source="/G__ History/G1_AsyncHistory.bum|org.eventb.core.machineFile#G1_AsyncHistory|org.eventb.core.event#=|org.eventb.core.guard#*"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="p∈PEER" org.eventb.core.source="/G__ History/G1_AsyncHistory.bum|org.eventb.core.machineFile#G1_AsyncHistory|org.eventb.core.event#=|org.eventb.core.guard#+"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="d∈PEER" org.eventb.core.source="/G__ History/G1_AsyncHistory.bum|org.eventb.core.machineFile#G1_AsyncHistory|org.eventb.core.event#=|org.eventb.core.guard#,"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="m∉hg" org.eventb.core.source="/G__ History/G1_AsyncHistory.bum|org.eventb.core.machineFile#G1_AsyncHistory|org.eventb.core.event#=|org.eventb.core.guard#-"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="receive/ordering/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/G__ History/G3_CausalHistory.bpo|org.eventb.core.poFile#G3_CausalHistory|org.eventb.core.poPredicateSet#EVTHYPE__MessagfM+"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀m2⦂MESSAGE·m2∈net⇒m2∈dom(destOf)∧destOf∈MESSAGE ⇸ PEER∧(destOf(m2)=p⇒m∈dom(hcOf)∧hcOf∈MESSAGE ⇸ ℙ(MESSAGE))" org.eventb.core.source="/G__ History/G3_CausalHistory.bum|org.eventb.core.machineFile#G3_CausalHistory|org.eventb.core.event#inv1G|org.eventb.core.guard#grd5"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/G__ History/G3_CausalHistory.bum|org.eventb.core.machineFile#G3_CausalHistory|org.eventb.core.event#inv1G|org.eventb.core.guard#grd5"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/G__ History/G3_CausalHistory.bpo|org.eventb.core.poFile#G3_CausalHistory|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/G__ History/G3_CausalHistory.bpo|org.eventb.core.poFile#G3_CausalHistory|org.eventb.core.poPredicateSet#EVTHYPE__MessagfM+"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="receive/ordering/GRD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Guard strengthening (split)" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/G__ History/G3_CausalHistory.bpo|org.eventb.core.poFile#G3_CausalHistory|org.eventb.core.poPredicateSet#EVTALLHYPE__MessagfM"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="¬(∃m2⦂MESSAGE·m2∈net∧origOf(m)=origOf(m2)∧destOf(m2)=p∧m2∈hcOf(m))" org.eventb.core.source="/G__ History/G2_Fifo11History.bum|org.eventb.core.machineFile#G2_Fifo11History|org.eventb.core.event#inv1G|org.eventb.core.guard#grd5"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/G__ History/G2_Fifo11History.bum|org.eventb.core.machineFile#G2_Fifo11History|org.eventb.core.event#inv1G"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/G__ History/G2_Fifo11History.bum|org.eventb.core.machineFile#G2_Fifo11History|org.eventb.core.event#inv1G|org.eventb.core.guard#grd5"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/G__ History/G3_CausalHistory.bum|org.eventb.core.machineFile#G3_CausalHistory|org.eventb.core.event#inv1G"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/G__ History/G3_CausalHistory.bpo|org.eventb.core.poFile#G3_CausalHistory|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/G__ History/G3_CausalHistory.bpo|org.eventb.core.poFile#G3_CausalHistory|org.eventb.core.poSequent#receive\/ordering\/GRD|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTE__MessagfM" org.eventb.core.parentSet="/G__ History/G3_CausalHistory.bpo|org.eventb.core.poFile#G3_CausalHistory|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="hc'" org.eventb.core.type="ℙ(PEER×ℙ(MESSAGE))"/>
+        <org.eventb.core.poIdentifier name="net'" org.eventb.core.type="ℙ(MESSAGE)"/>
+        <org.eventb.core.poIdentifier name="p" org.eventb.core.type="PEER"/>
+        <org.eventb.core.poIdentifier name="m" org.eventb.core.type="MESSAGE"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPE__MessagfM+" org.eventb.core.parentSet="/G__ History/G3_CausalHistory.bpo|org.eventb.core.poFile#G3_CausalHistory|org.eventb.core.poPredicateSet#EVTIDENTE__MessagfM" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="m∈MESSAGE" org.eventb.core.source="/G__ History/G3_CausalHistory.bum|org.eventb.core.machineFile#G3_CausalHistory|org.eventb.core.event#inv1G|org.eventb.core.guard#grd1"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="p∈PEER" org.eventb.core.source="/G__ History/G3_CausalHistory.bum|org.eventb.core.machineFile#G3_CausalHistory|org.eventb.core.event#inv1G|org.eventb.core.guard#grd2"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="m∈net" org.eventb.core.source="/G__ History/G3_CausalHistory.bum|org.eventb.core.machineFile#G3_CausalHistory|org.eventb.core.event#inv1G|org.eventb.core.guard#grd3"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="destOf(m)=p" org.eventb.core.source="/G__ History/G3_CausalHistory.bum|org.eventb.core.machineFile#G3_CausalHistory|org.eventb.core.event#inv1G|org.eventb.core.guard#grd4"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPE__MessagfM" org.eventb.core.parentSet="/G__ History/G3_CausalHistory.bpo|org.eventb.core.poFile#G3_CausalHistory|org.eventb.core.poPredicateSet#EVTHYPE__MessagfM+" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="¬(∃m2⦂MESSAGE·m2∈net∧destOf(m2)=p∧m2∈hcOf(m))" org.eventb.core.source="/G__ History/G3_CausalHistory.bum|org.eventb.core.machineFile#G3_CausalHistory|org.eventb.core.event#inv1G|org.eventb.core.guard#grd5"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/G__ History/G3_CausalHistory.bpo|org.eventb.core.poFile#G3_CausalHistory|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0"/>
+</org.eventb.core.poFile>

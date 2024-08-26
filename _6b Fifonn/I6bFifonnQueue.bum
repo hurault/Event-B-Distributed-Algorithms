@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.refinesMachine name="'" org.eventb.core.target="G6bFifonnHistory"/>
+<org.eventb.core.seesContext name=":" org.eventb.core.target="I__Queues"/>
+<org.eventb.core.variable name=")" org.eventb.core.identifier="hg"/>
+<org.eventb.core.variable name="-" org.eventb.core.identifier="destOf"/>
+<org.eventb.core.event name="inv1E" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="'" org.eventb.core.assignment="hg ≔ ∅" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="," org.eventb.core.assignment="destOf ≔ ∅" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="act3" org.eventb.core.assignment="queue ≔ ∅" org.eventb.core.label="+act3"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="inv1F" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="send">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="send"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="p"/>
+<org.eventb.core.parameter name="act4" org.eventb.core.identifier="m"/>
+<org.eventb.core.parameter name=")" org.eventb.core.identifier="d"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd1" org.eventb.core.predicate="p ∈ PEER"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="m ∈ MESSAGE ∖ hg"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd3" org.eventb.core.predicate="d ∈ PEER"/>
+<org.eventb.core.action name="0" org.eventb.core.assignment="hg ≔ hg ∪ {m}" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="4" org.eventb.core.assignment="destOf ≔ destOf ∪ {m ↦ d}" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="act2" org.eventb.core.assignment="queue ≔ append(m ↦ queue)" org.eventb.core.label="+act3"/>
+<org.eventb.core.guard name="act3" org.eventb.core.label="ordering" org.eventb.core.predicate="⊤"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="inv1G" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="receive">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="receive"/>
+<org.eventb.core.guard name="grd2" org.eventb.core.label="grd1" org.eventb.core.predicate="p ∈ PEER"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.label="grd2" org.eventb.core.predicate="m ∈ ran(queue)"/>
+<org.eventb.core.guard name="grd4" org.eventb.core.label="grd3" org.eventb.core.predicate="destOf(m) = p"/>
+<org.eventb.core.guard name="grd5" org.eventb.core.label="ordering" org.eventb.core.predicate="queue ≠ ∅ ∧ m = head(queue)"/>
+<org.eventb.core.parameter name="element2" org.eventb.core.identifier="p"/>
+<org.eventb.core.action name="act1" org.eventb.core.assignment="queue ≔ tail(queue)" org.eventb.core.label="+act1"/>
+<org.eventb.core.parameter name="element3" org.eventb.core.identifier="m"/>
+</org.eventb.core.event>
+<org.eventb.core.invariant name="inv1" org.eventb.core.label="Tqueue" org.eventb.core.predicate="queue ∈ Queue"/>
+<org.eventb.core.variable name="inv1H" org.eventb.core.identifier="queue"/>
+<org.eventb.core.invariant name="inv1I" org.eventb.core.label="inv1" org.eventb.core.predicate="∀ i, j · i∈dom(queue) ∧ j∈dom(queue) ∧ queue(i) = queue(j) ⇒ i=j "/>
+<org.eventb.core.invariant name="inv1J" org.eventb.core.label="inv2" org.eventb.core.predicate="ran(queue) = net"/>
+<org.eventb.core.invariant name="inv1K" org.eventb.core.label="inv3" org.eventb.core.predicate="∀ m1, m2 · m1 ∈ net ∧ m2 ∈ net&#10;∧ m1 ∈ hgOf(m2)&#10;⇒ (∃ i, j · i ∈ ℕ ∧ j ∈ ℕ ∧ i &lt; j ∧ queue(i)=m1 ∧ queue(j) = m2)"/>
+</org.eventb.core.machineFile>

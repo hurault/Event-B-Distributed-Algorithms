@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.scMachineFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd">
+    <org.eventb.core.scSeesContext name="'" org.eventb.core.scTarget="/Data/C1.bcc" org.eventb.core.source="/Data/Sampler.bum|org.eventb.core.machineFile#Sampler|org.eventb.core.seesContext#*"/>
+    <org.eventb.core.scInternalContext name="C1">
+        <org.eventb.core.scCarrierSet name="DATA" org.eventb.core.source="/Data/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.carrierSet#'" org.eventb.core.type="ℙ(DATA)"/>
+    </org.eventb.core.scInternalContext>
+    <org.eventb.core.scInvariant name="C2" org.eventb.core.label="inv1" org.eventb.core.predicate="data∈DATA ⇸ ℤ" org.eventb.core.source="/Data/Sampler.bum|org.eventb.core.machineFile#Sampler|org.eventb.core.invariant#)" org.eventb.core.theorem="false"/>
+    <org.eventb.core.scInvariant name="C3" org.eventb.core.label="inv2" org.eventb.core.predicate="finite(data)" org.eventb.core.source="/Data/Sampler.bum|org.eventb.core.machineFile#Sampler|org.eventb.core.invariant#-" org.eventb.core.theorem="false"/>
+    <org.eventb.core.scVariable name="data" org.eventb.core.abstract="false" org.eventb.core.concrete="true" org.eventb.core.source="/Data/Sampler.bum|org.eventb.core.machineFile#Sampler|org.eventb.core.variable#(" org.eventb.core.type="ℙ(DATA×ℤ)"/>
+    <org.eventb.core.scEvent name="datb" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION" org.eventb.core.source="/Data/Sampler.bum|org.eventb.core.machineFile#Sampler|org.eventb.core.event#'">
+        <org.eventb.core.scAction name="'" org.eventb.core.assignment="data ≔ ∅ ⦂ ℙ(DATA×ℤ)" org.eventb.core.label="act1" org.eventb.core.source="/Data/Sampler.bum|org.eventb.core.machineFile#Sampler|org.eventb.core.event#'|org.eventb.core.action#'"/>
+    </org.eventb.core.scEvent>
+    <org.eventb.core.scEvent name="datc" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="addValue" org.eventb.core.source="/Data/Sampler.bum|org.eventb.core.machineFile#Sampler|org.eventb.core.event#+">
+        <org.eventb.core.scGuard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="d∈DATA ∖ dom(data)" org.eventb.core.source="/Data/Sampler.bum|org.eventb.core.machineFile#Sampler|org.eventb.core.event#+|org.eventb.core.guard#)" org.eventb.core.theorem="false"/>
+        <org.eventb.core.scGuard name="(" org.eventb.core.label="grd2" org.eventb.core.predicate="v∈ℤ" org.eventb.core.source="/Data/Sampler.bum|org.eventb.core.machineFile#Sampler|org.eventb.core.event#+|org.eventb.core.guard#*" org.eventb.core.theorem="false"/>
+        <org.eventb.core.scParameter name="d" org.eventb.core.source="/Data/Sampler.bum|org.eventb.core.machineFile#Sampler|org.eventb.core.event#+|org.eventb.core.parameter#'" org.eventb.core.type="DATA"/>
+        <org.eventb.core.scParameter name="v" org.eventb.core.source="/Data/Sampler.bum|org.eventb.core.machineFile#Sampler|org.eventb.core.event#+|org.eventb.core.parameter#(" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.scAction name="w" org.eventb.core.assignment="data ≔ data∪{d ↦ v}" org.eventb.core.label="act1" org.eventb.core.source="/Data/Sampler.bum|org.eventb.core.machineFile#Sampler|org.eventb.core.event#+|org.eventb.core.action#+"/>
+    </org.eventb.core.scEvent>
+    <org.eventb.core.scEvent name="datd" org.eventb.core.accurate="false" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="getStats" org.eventb.core.source="/Data/Sampler.bum|org.eventb.core.machineFile#Sampler|org.eventb.core.event#,"/>
+</org.eventb.core.scMachineFile>

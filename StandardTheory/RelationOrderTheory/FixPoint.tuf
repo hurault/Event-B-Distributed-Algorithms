@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.theory.core.theoryRoot org.eventb.core.comment="A theory of fixpoint &#10;&#10;@author Jean-Raymond Abrial&#10;@2014" org.eventb.core.configuration="org.eventb.theory.core.thy">
+<org.eventb.theory.core.typeParameter name="'" org.eventb.core.identifier="S"/>
+<org.eventb.theory.core.newOperatorDefinition name="(" org.eventb.core.label="fix" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(S)↔ℙ(S)" org.eventb.core.identifier="f"/>
+<org.eventb.theory.core.directOperatorDefinition name="(" org.eventb.theory.core.formula="inter({s∣f(s)⊆s})"/>
+<org.eventb.theory.core.operatorWDcondition name=")" org.eventb.core.predicate="f ∈ ℙ(S)→ℙ(S)"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.theorem name=")" org.eventb.core.label="thm1" org.eventb.core.predicate="∀f,s·f∈ℙ(S)→ℙ(S) ∧ f(s)⊆s ⇒ fix(f)⊆s"/>
+<org.eventb.theory.core.theorem name="*" org.eventb.core.label="thm2" org.eventb.core.predicate="∀f,v·f∈ℙ(S)→ℙ(S)∧(∀s·f(s)⊆s ⇒ v⊆s) ⇒ v⊆fix(f)"/>
+<org.eventb.theory.core.theorem name="," org.eventb.core.label="thm4" org.eventb.core.predicate="∀f·f∈ℙ(S)→ℙ(S) ∧ (∀a,b·a⊆b ⇒f(a)⊆f(b)) ⇒ f(fix(f)) ⊆ fix(f)"/>
+<org.eventb.theory.core.theorem name="+" org.eventb.core.label="thm3" org.eventb.core.predicate="∀f·f∈ℙ(S)→ℙ(S) ∧ (∀a,b·a⊆b ⇒f(a)⊆f(b)) ⇒ fix(f) ⊆ f(fix(f))"/>
+<org.eventb.theory.core.theorem name="-" org.eventb.core.label="thm5" org.eventb.core.predicate="∀f·f∈ℙ(S)→ℙ(S) ∧ (∀a,b·a⊆b ⇒f(a)⊆f(b)) ⇒ fix(f) = f(fix(f))"/>
+<org.eventb.theory.core.newOperatorDefinition name="." org.eventb.core.label="FIX" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(S)↔ℙ(S)" org.eventb.core.identifier="f"/>
+<org.eventb.theory.core.directOperatorDefinition name="(" org.eventb.theory.core.formula="union({s∣s⊆f(s)})"/>
+<org.eventb.theory.core.operatorWDcondition name=")" org.eventb.core.predicate="f ∈ ℙ(S)→ℙ(S)"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.importTheoryProject name="0" org.eventb.theory.core.importTheoryProject="/RelationOrderTheory">
+<org.eventb.theory.core.importTheory name="'" org.eventb.theory.core.importTheory="/RelationOrderTheory/complement.dtf|org.eventb.theory.core.deployedTheoryRoot#complement"/>
+</org.eventb.theory.core.importTheoryProject>
+<org.eventb.theory.core.theorem name="5" org.eventb.core.label="thm11" org.eventb.core.predicate="∀f,v·f∈ℙ(S)→ℙ(S)∧(∀s·s⊆f(s) ⇒ s⊆v) ⇒ FIX(f)⊆v"/>
+<org.eventb.theory.core.theorem name="/" org.eventb.core.label="thm6" org.eventb.core.predicate="∀f,s·f∈ℙ(S)→ℙ(S) ∧ s⊆f(s) ⇒ s⊆FIX(f)"/>
+<org.eventb.theory.core.theorem name="1" org.eventb.core.label="thm7" org.eventb.core.predicate="∀H·H∈ℙ(S)→ℙ(S) ⇒ fix(H)=cmp(FIX(cnj(H)))"/>
+<org.eventb.theory.core.theorem name="2" org.eventb.core.label="thm8" org.eventb.core.predicate="∀H·H∈ℙ(S)→ℙ(S) ⇒ FIX(H)=cmp(fix(cnj(H)))"/>
+<org.eventb.theory.core.theorem name="3" org.eventb.core.label="thm9" org.eventb.core.predicate="∀f·f∈ℙ(S)→ℙ(S) ∧ (∀a,b·a⊆b ⇒f(a)⊆f(b)) ⇒ fix(f) ⊆ FIX(f)"/>
+<org.eventb.theory.core.theorem name="4" org.eventb.core.label="thm10" org.eventb.core.predicate="∀f·f∈ℙ(S)→ℙ(S) ∧ (∀a,b·a⊆b ⇒f(a)⊆f(b)) ⇒ FIX(f) = f(FIX(f))"/>
+<org.eventb.theory.core.theorem name="6" org.eventb.core.label="thm12" org.eventb.core.predicate="∀H·H∈ℙ(S)→ℙ(S) ⇒ cmp(fix(H))=FIX(cnj(H))"/>
+<org.eventb.theory.core.theorem name="7" org.eventb.core.label="thm13" org.eventb.core.predicate="∀H·H∈ℙ(S)→ℙ(S) ⇒ cmp(FIX(H))=fix(cnj(H))"/>
+<org.eventb.theory.core.proofRulesBlock name="8" org.eventb.core.label="rulesBlock1">
+<org.eventb.theory.core.metaVariable name="'" org.eventb.core.identifier="f" org.eventb.theory.core.type="ℙ(S)↔ℙ(S)"/>
+<org.eventb.theory.core.metaVariable name="(" org.eventb.core.identifier="s" org.eventb.theory.core.type="ℙ(S)"/>
+<org.eventb.theory.core.inferenceRule name=")" org.eventb.core.label="fix1" org.eventb.theory.core.applicability="both" org.eventb.theory.core.desc="fix1">
+<org.eventb.theory.core.given name="'" org.eventb.core.predicate="f(s)⊆s" org.eventb.theory.core.hyp="false"/>
+<org.eventb.theory.core.infer name="(" org.eventb.core.predicate="fix(f)⊆s"/>
+<org.eventb.theory.core.given name=")" org.eventb.core.predicate="f∈ℙ(S)→ℙ(S)" org.eventb.theory.core.hyp="false"/>
+</org.eventb.theory.core.inferenceRule>
+<org.eventb.theory.core.inferenceRule name="*" org.eventb.core.label="fix2" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.desc="fix monotonic">
+<org.eventb.theory.core.given name="'" org.eventb.core.predicate="∀s·s⊆S ⇒ f(s) ⊆ g(s)" org.eventb.theory.core.hyp="false"/>
+<org.eventb.theory.core.infer name="(" org.eventb.core.predicate="fix(f) ⊆ fix(g)"/>
+</org.eventb.theory.core.inferenceRule>
+<org.eventb.theory.core.metaVariable name="+" org.eventb.core.identifier="g" org.eventb.theory.core.type="ℙ(S)↔ℙ(S)"/>
+</org.eventb.theory.core.proofRulesBlock>
+</org.eventb.theory.core.theoryRoot>

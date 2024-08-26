@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.theory.core.theoryRoot org.eventb.core.comment="A theory of ordering relations &#10;&#10;@author Jean-Raymond Abrial&#10;@2014" org.eventb.core.configuration="org.eventb.theory.core.thy">
+<org.eventb.theory.core.typeParameter name="'" org.eventb.core.identifier="S"/>
+<org.eventb.theory.core.newOperatorDefinition name="(" org.eventb.core.label="sym" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(S×S)" org.eventb.core.identifier="r"/>
+<org.eventb.theory.core.directOperatorDefinition name="(" org.eventb.theory.core.formula="r∈T↔T ∧ r=r∼"/>
+<org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="ℙ(S)" org.eventb.core.identifier="T"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name=")" org.eventb.core.label="asym" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(S×S)" org.eventb.core.identifier="r"/>
+<org.eventb.theory.core.directOperatorDefinition name="(" org.eventb.theory.core.formula="r∈T↔T ∧ r∩r∼=∅"/>
+<org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="ℙ(S)" org.eventb.core.identifier="T"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="*" org.eventb.core.label="antisym" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(S×S)" org.eventb.core.identifier="r"/>
+<org.eventb.theory.core.directOperatorDefinition name="(" org.eventb.theory.core.formula="r∈T↔T ∧ r∩r∼=(T◁id)"/>
+<org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="ℙ(S)" org.eventb.core.identifier="T"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="+" org.eventb.core.label="reflexive" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(S×S)" org.eventb.core.identifier="r"/>
+<org.eventb.theory.core.directOperatorDefinition name="(" org.eventb.theory.core.formula="r∈T↔T ∧ ((T)◁id)⊆r"/>
+<org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="ℙ(S)" org.eventb.core.identifier="T"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="," org.eventb.core.label="irreflexive" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(S×S)" org.eventb.core.identifier="r"/>
+<org.eventb.theory.core.directOperatorDefinition name="(" org.eventb.theory.core.formula="r∈T↔T ∧ r∩(T◁id)=∅"/>
+<org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="ℙ(S)" org.eventb.core.identifier="T"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="-" org.eventb.core.label="transitive" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(S×S)" org.eventb.core.identifier="r"/>
+<org.eventb.theory.core.directOperatorDefinition name="(" org.eventb.theory.core.formula="r∈T↔T ∧ r;r⊆r"/>
+<org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="ℙ(S)" org.eventb.core.identifier="T"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="." org.eventb.core.label="partial_order" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(S×S)" org.eventb.core.identifier="r"/>
+<org.eventb.theory.core.directOperatorDefinition name="(" org.eventb.theory.core.formula="reflexive(r,T) ∧ transitive(r,T) ∧ antisym(r,T)"/>
+<org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="ℙ(S)" org.eventb.core.identifier="T"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.newOperatorDefinition name="/" org.eventb.core.label="well_order" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(S×S)" org.eventb.core.identifier="r"/>
+<org.eventb.theory.core.directOperatorDefinition name="(" org.eventb.theory.core.formula="partial_order(r,T) ∧ (∀A·A⊆T ∧ A≠∅ ⇒ (∃x·x∈A ∧ A⊆r[{x}]))"/>
+<org.eventb.theory.core.operatorArgument name=")" org.eventb.core.expression="ℙ(S)" org.eventb.core.identifier="T"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.typeParameter name="0" org.eventb.core.identifier="U"/>
+<org.eventb.theory.core.theorem name="1" org.eventb.core.label="thm1" org.eventb.core.predicate="∀T,r,V,f·T⊆S ∧ r∈T↔T ∧ well_order(r,T) ∧ V⊆U ∧ f∈V↣T ⇒ well_order((f;r;f∼),V)"/>
+<org.eventb.theory.core.newOperatorDefinition name="2" org.eventb.core.label="total_order" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="false" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(S×S)" org.eventb.core.identifier="r"/>
+<org.eventb.theory.core.operatorArgument name="(" org.eventb.core.expression="ℙ(S)" org.eventb.core.identifier="T"/>
+<org.eventb.theory.core.directOperatorDefinition name=")" org.eventb.theory.core.formula="partial_order(r,T) ∧ (r∪r∼)=(T×T)"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.proofRulesBlock name="3" org.eventb.core.label="rulesBlock1">
+<org.eventb.theory.core.metaVariable name="'" org.eventb.core.identifier="a" org.eventb.theory.core.type="ℙ(S)"/>
+<org.eventb.theory.core.metaVariable name="(" org.eventb.core.identifier="b" org.eventb.theory.core.type="ℙ(S)"/>
+<org.eventb.theory.core.metaVariable name=")" org.eventb.core.identifier="c" org.eventb.theory.core.type="ℙ(S)"/>
+<org.eventb.theory.core.inferenceRule name="*" org.eventb.core.label="inf1" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.desc="subset transitive">
+<org.eventb.theory.core.given name="'" org.eventb.core.predicate="a ⊆ b" org.eventb.theory.core.hyp="true"/>
+<org.eventb.theory.core.given name="(" org.eventb.core.predicate="b ⊆ c" org.eventb.theory.core.hyp="true"/>
+<org.eventb.theory.core.infer name=")" org.eventb.core.predicate="a ⊆ c"/>
+</org.eventb.theory.core.inferenceRule>
+</org.eventb.theory.core.proofRulesBlock>
+<org.eventb.theory.core.proofRulesBlock name="4" org.eventb.core.label="rulesBlock2">
+<org.eventb.theory.core.metaVariable name="'" org.eventb.core.identifier="r1" org.eventb.theory.core.type="S↔U"/>
+<org.eventb.theory.core.metaVariable name="(" org.eventb.core.identifier="r2" org.eventb.theory.core.type="S↔U"/>
+<org.eventb.theory.core.metaVariable name=")" org.eventb.core.identifier="s1" org.eventb.theory.core.type="U↔V"/>
+<org.eventb.theory.core.inferenceRule name="*" org.eventb.core.label="inf21" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.desc="composition mono 1">
+<org.eventb.theory.core.given name="'" org.eventb.core.predicate="r1 ⊆ r2" org.eventb.theory.core.hyp="false"/>
+<org.eventb.theory.core.infer name="(" org.eventb.core.predicate="r1;s1 ⊆ r2;s1"/>
+</org.eventb.theory.core.inferenceRule>
+<org.eventb.theory.core.metaVariable name="+" org.eventb.core.identifier="s2" org.eventb.theory.core.type="U↔V"/>
+<org.eventb.theory.core.inferenceRule name="," org.eventb.core.label="inf22" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.desc="composition mono 2">
+<org.eventb.theory.core.infer name="'" org.eventb.core.predicate="r1;s1 ⊆ r1;s2"/>
+<org.eventb.theory.core.given name="(" org.eventb.core.predicate="s1 ⊆ s2" org.eventb.theory.core.hyp="false"/>
+</org.eventb.theory.core.inferenceRule>
+</org.eventb.theory.core.proofRulesBlock>
+<org.eventb.theory.core.typeParameter name="5" org.eventb.core.identifier="V"/>
+</org.eventb.theory.core.theoryRoot>

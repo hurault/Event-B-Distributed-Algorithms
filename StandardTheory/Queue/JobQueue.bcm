@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.scMachineFile org.eventb.core.accurate="false" org.eventb.core.configuration="org.eventb.core.fwd">
+    <org.eventb.core.scSeesContext name="'" org.eventb.core.scTarget="/Queue/C1.bcc" org.eventb.core.source="/Queue/JobQueue.bum|org.eventb.core.machineFile#JobQueue|org.eventb.core.seesContext#+"/>
+    <org.eventb.core.scInternalContext name="C1">
+        <org.eventb.core.scCarrierSet name="JOB" org.eventb.core.source="/Queue/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.carrierSet#'" org.eventb.core.type="ℙ(JOB)"/>
+    </org.eventb.core.scInternalContext>
+    <org.eventb.core.scInvariant name="C2" org.eventb.core.label="inv1" org.eventb.core.predicate="job⊆JOB" org.eventb.core.source="/Queue/JobQueue.bum|org.eventb.core.machineFile#JobQueue|org.eventb.core.invariant#." org.eventb.core.theorem="false"/>
+    <org.eventb.core.scVariable name="job" org.eventb.core.abstract="false" org.eventb.core.concrete="true" org.eventb.core.source="/Queue/JobQueue.bum|org.eventb.core.machineFile#JobQueue|org.eventb.core.variable#-" org.eventb.core.type="ℙ(JOB)"/>
+    <org.eventb.core.scEvent name="joc" org.eventb.core.accurate="false" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION" org.eventb.core.source="/Queue/JobQueue.bum|org.eventb.core.machineFile#JobQueue|org.eventb.core.event#'">
+        <org.eventb.core.scAction name="'" org.eventb.core.assignment="job ≔ ∅ ⦂ ℙ(JOB)" org.eventb.core.label="act2" org.eventb.core.source="/Queue/JobQueue.bum|org.eventb.core.machineFile#JobQueue|org.eventb.core.event#'|org.eventb.core.action#("/>
+    </org.eventb.core.scEvent>
+    <org.eventb.core.scEvent name="jod" org.eventb.core.accurate="false" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="QueueJob" org.eventb.core.source="/Queue/JobQueue.bum|org.eventb.core.machineFile#JobQueue|org.eventb.core.event#*">
+        <org.eventb.core.scGuard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="j∈job" org.eventb.core.source="/Queue/JobQueue.bum|org.eventb.core.machineFile#JobQueue|org.eventb.core.event#*|org.eventb.core.guard#(" org.eventb.core.theorem="false"/>
+        <org.eventb.core.scParameter name="j" org.eventb.core.source="/Queue/JobQueue.bum|org.eventb.core.machineFile#JobQueue|org.eventb.core.event#*|org.eventb.core.parameter#'" org.eventb.core.type="JOB"/>
+    </org.eventb.core.scEvent>
+    <org.eventb.core.scEvent name="joe" org.eventb.core.accurate="false" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="DeQueueJob" org.eventb.core.source="/Queue/JobQueue.bum|org.eventb.core.machineFile#JobQueue|org.eventb.core.event#,"/>
+    <org.eventb.core.scEvent name="jof" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="NewJob" org.eventb.core.source="/Queue/JobQueue.bum|org.eventb.core.machineFile#JobQueue|org.eventb.core.event#\/">
+        <org.eventb.core.scGuard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="j∉job" org.eventb.core.source="/Queue/JobQueue.bum|org.eventb.core.machineFile#JobQueue|org.eventb.core.event#\/|org.eventb.core.guard#(" org.eventb.core.theorem="false"/>
+        <org.eventb.core.scParameter name="j" org.eventb.core.source="/Queue/JobQueue.bum|org.eventb.core.machineFile#JobQueue|org.eventb.core.event#\/|org.eventb.core.parameter#'" org.eventb.core.type="JOB"/>
+        <org.eventb.core.scAction name="k" org.eventb.core.assignment="job ≔ job∪{j}" org.eventb.core.label="act1" org.eventb.core.source="/Queue/JobQueue.bum|org.eventb.core.machineFile#JobQueue|org.eventb.core.event#\/|org.eventb.core.action#)"/>
+    </org.eventb.core.scEvent>
+    <org.eventb.core.scEvent name="jog" org.eventb.core.accurate="false" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="DestroyJob" org.eventb.core.source="/Queue/JobQueue.bum|org.eventb.core.machineFile#JobQueue|org.eventb.core.event#0">
+        <org.eventb.core.scGuard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="j∈job" org.eventb.core.source="/Queue/JobQueue.bum|org.eventb.core.machineFile#JobQueue|org.eventb.core.event#0|org.eventb.core.guard#'" org.eventb.core.theorem="false"/>
+        <org.eventb.core.scParameter name="j" org.eventb.core.source="/Queue/JobQueue.bum|org.eventb.core.machineFile#JobQueue|org.eventb.core.event#0|org.eventb.core.parameter#)" org.eventb.core.type="JOB"/>
+        <org.eventb.core.scAction name="k" org.eventb.core.assignment="job ≔ job ∖ {j}" org.eventb.core.label="act1" org.eventb.core.source="/Queue/JobQueue.bum|org.eventb.core.machineFile#JobQueue|org.eventb.core.event#0|org.eventb.core.action#("/>
+    </org.eventb.core.scEvent>
+</org.eventb.core.scMachineFile>

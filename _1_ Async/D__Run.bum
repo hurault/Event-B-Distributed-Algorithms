@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.comment="This machine constructs run, the linear extension of prec." org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.refinesMachine name="'" org.eventb.core.target="C__DistributedExecution"/>
+<org.eventb.core.seesContext name="*" org.eventb.core.target="C__Peers"/>
+<org.eventb.core.variable name="(" org.eventb.core.identifier="past"/>
+<org.eventb.core.variable name="evt2" org.eventb.core.identifier="links"/>
+<org.eventb.core.variable name="evt8" org.eventb.core.identifier="peerOf"/>
+<org.eventb.core.variable name="evt6" org.eventb.core.identifier="prec"/>
+<org.eventb.core.event name="evt9" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="'" org.eventb.core.assignment="run ≔ ∅" org.eventb.core.label="act5"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt:" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="create">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="create"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="run ≔ run&#10;      ∪ {e ↦ e}&#10;      ∪ {ep · ep ∈ past ∣ ep ↦ e}" org.eventb.core.label="act4"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt;" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="link">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="link"/>
+<org.eventb.core.action name="act1" org.eventb.core.assignment="run ≔ run&#10;      ∪ {e ↦ e}&#10;      ∪ {ep · ep ∈ past ∣ ep ↦ e}" org.eventb.core.label="act5"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="evt=" org.eventb.core.comment="Linear extension of prec the causal order between events" org.eventb.core.identifier="run"/>
+<org.eventb.core.invariant name="evt&gt;" org.eventb.core.label="Trun" org.eventb.core.predicate="run ∈ past  past"/>
+<org.eventb.core.invariant name="inv1" org.eventb.core.comment="run is total" org.eventb.core.label="inv1" org.eventb.core.predicate="∀ e1, e2 · e1 ∈ past ∧ e2 ∈ past ⇒ e1 ↦ e2 ∈ run ∨ e2 ↦ e1 ∈ run"/>
+<org.eventb.core.invariant name="inv11" org.eventb.core.comment="run is reflexive" org.eventb.core.label="inv2" org.eventb.core.predicate="(past ◁ id) ⊆ run" org.eventb.core.theorem="true"/>
+<org.eventb.core.invariant name="inv12" org.eventb.core.comment="run is transitive" org.eventb.core.label="inv3" org.eventb.core.predicate="run ; run ⊆ run"/>
+<org.eventb.core.invariant name="inv5" org.eventb.core.comment="run is anti-symmetric" org.eventb.core.label="inv4" org.eventb.core.predicate="run ∩ run∼ ⊆ id"/>
+<org.eventb.core.invariant name="inv4" org.eventb.core.comment="run extends prec" org.eventb.core.label="inv5" org.eventb.core.predicate="prec ⊆ run"/>
+<org.eventb.core.invariant name="inv10" org.eventb.core.comment="run = prec on a given peer" org.eventb.core.label="inv6" org.eventb.core.predicate="∀ e1, e2 · e1 ∈ past ∧ e2 ∈ past ∧ peerOf(e1) = peerOf(e2)&#10;⇒ ((e1 ↦ e2 ∈ prec) ⇔ (e1 ↦ e2 ∈ run))"/>
+</org.eventb.core.machineFile>

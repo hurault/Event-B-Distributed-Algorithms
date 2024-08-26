@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="1">
+    <org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="DATA" org.eventb.core.type="ℙ(DATA)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/Data/Sampler2.bpo|org.eventb.core.poFile#Sampler2|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="1">
+        <org.eventb.core.poIdentifier name="data" org.eventb.core.type="ℙ(DATA×ℤ)"/>
+        <org.eventb.core.poPredicate name="datb" org.eventb.core.predicate="data∈DATA ⇸ ℤ" org.eventb.core.source="/Data/Sampler.bum|org.eventb.core.machineFile#Sampler|org.eventb.core.invariant#)"/>
+        <org.eventb.core.poPredicate name="datc" org.eventb.core.predicate="finite(data)" org.eventb.core.source="/Data/Sampler.bum|org.eventb.core.machineFile#Sampler|org.eventb.core.invariant#-"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTdatb" org.eventb.core.parentSet="/Data/Sampler2.bpo|org.eventb.core.poFile#Sampler2|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="1">
+        <org.eventb.core.poIdentifier name="data'" org.eventb.core.type="ℙ(DATA×ℤ)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPdatb" org.eventb.core.parentSet="/Data/Sampler2.bpo|org.eventb.core.poFile#Sampler2|org.eventb.core.poPredicateSet#EVTIDENTdatb" org.eventb.core.poStamp="1"/>
+    <org.eventb.core.poPredicateSet name="EVTIDENTdatc" org.eventb.core.parentSet="/Data/Sampler2.bpo|org.eventb.core.poFile#Sampler2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="1">
+        <org.eventb.core.poIdentifier name="data'" org.eventb.core.type="ℙ(DATA×ℤ)"/>
+        <org.eventb.core.poIdentifier name="v" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.poIdentifier name="d" org.eventb.core.type="DATA"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPdatc" org.eventb.core.parentSet="/Data/Sampler2.bpo|org.eventb.core.poFile#Sampler2|org.eventb.core.poPredicateSet#EVTIDENTdatc" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="d∈DATA ∖ dom(data)" org.eventb.core.source="/Data/Sampler.bum|org.eventb.core.machineFile#Sampler|org.eventb.core.event#+|org.eventb.core.guard#)"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="v∈ℤ" org.eventb.core.source="/Data/Sampler.bum|org.eventb.core.machineFile#Sampler|org.eventb.core.event#+|org.eventb.core.guard#*"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPdatd" org.eventb.core.parentSet="/Data/Sampler2.bpo|org.eventb.core.poFile#Sampler2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="1"/>
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Data/Sampler2.bpo|org.eventb.core.poFile#Sampler2|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="1"/>
+</org.eventb.core.poFile>

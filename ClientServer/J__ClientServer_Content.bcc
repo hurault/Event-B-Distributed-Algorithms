@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.scContextFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase">
+    <org.eventb.core.scExtendsContext name="'" org.eventb.core.scTarget="/ClientServer/I__Content.bcc|org.eventb.core.scContextFile#I__Content" org.eventb.core.source="/ClientServer/J__ClientServer_Content.buc|org.eventb.core.contextFile#J__ClientServer_Content|org.eventb.core.extendsContext#'"/>
+    <org.eventb.core.scInternalContext name="I__Content">
+        <org.eventb.core.scCarrierSet name="MessageType" org.eventb.core.source="/ClientServer/I__Content.buc|org.eventb.core.contextFile#I__Content|org.eventb.core.carrierSet#'" org.eventb.core.type="ℙ(MessageType)"/>
+        <org.eventb.core.scCarrierSet name="Data" org.eventb.core.source="/ClientServer/I__Content.buc|org.eventb.core.contextFile#I__Content|org.eventb.core.carrierSet#." org.eventb.core.type="ℙ(Data)"/>
+    </org.eventb.core.scInternalContext>
+    <org.eventb.core.scAxiom name="I__Contenu" org.eventb.core.label="messageType" org.eventb.core.predicate="partition(MessageType,{Request},{Response})" org.eventb.core.source="/ClientServer/J__ClientServer_Content.buc|org.eventb.core.contextFile#J__ClientServer_Content|org.eventb.core.axiom#*" org.eventb.core.theorem="false"/>
+    <org.eventb.core.scAxiom name="I__Contenv" org.eventb.core.label="TDataToInt" org.eventb.core.predicate="dataToInt∈Data ⤖ ℕ" org.eventb.core.source="/ClientServer/J__ClientServer_Content.buc|org.eventb.core.contextFile#J__ClientServer_Content|org.eventb.core.axiom#," org.eventb.core.theorem="false"/>
+    <org.eventb.core.scConstant name="dataToInt" org.eventb.core.source="/ClientServer/J__ClientServer_Content.buc|org.eventb.core.contextFile#J__ClientServer_Content|org.eventb.core.constant#+" org.eventb.core.type="ℙ(Data×ℤ)"/>
+    <org.eventb.core.scConstant name="Request" org.eventb.core.source="/ClientServer/J__ClientServer_Content.buc|org.eventb.core.contextFile#J__ClientServer_Content|org.eventb.core.constant#(" org.eventb.core.type="MessageType"/>
+    <org.eventb.core.scConstant name="Response" org.eventb.core.source="/ClientServer/J__ClientServer_Content.buc|org.eventb.core.contextFile#J__ClientServer_Content|org.eventb.core.constant#)" org.eventb.core.type="MessageType"/>
+</org.eventb.core.scContextFile>

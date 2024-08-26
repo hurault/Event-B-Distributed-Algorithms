@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="S" org.eventb.core.type="ℙ(S)"/>
+<org.eventb.core.poIdentifier name="T" org.eventb.core.type="ℙ(T)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="thm1/S-THM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Therorem Soundness" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/RelationOrderTheory/Well_Fondation.bpo|org.eventb.core.poFile#Well_Fondation|org.eventb.core.poPredicateSet#ABSHYP"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀r⦂ℙ(S×S)·r∈S ↔ S∧wf(r)⇒(∀p⦂ℙ(S)·p≠(∅ ⦂ ℙ(S))⇒(∃x⦂S·x∈p∧(∀z⦂S·z∈p⇒x ↦ z∉r)))" org.eventb.core.source="/RelationOrderTheory/Well_Fondation.tuf|org.eventb.theory.core.theoryRoot#Well_Fondation|org.eventb.theory.core.theorem#)"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/RelationOrderTheory/Well_Fondation.tcf|org.eventb.theory.core.scTheoryRoot#Well_Fondation|org.eventb.theory.core.scTheorem#generatedBlocl"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/RelationOrderTheory/Well_Fondation.tuf|org.eventb.theory.core.theoryRoot#Well_Fondation|org.eventb.theory.core.theorem#)"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/RelationOrderTheory/Well_Fondation.bpo|org.eventb.core.poFile#Well_Fondation|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/RelationOrderTheory/Well_Fondation.bpo|org.eventb.core.poFile#Well_Fondation|org.eventb.core.poSequent#thm1\/S-THM|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="thm2/S-THM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Therorem Soundness" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/RelationOrderTheory/Well_Fondation.bpo|org.eventb.core.poFile#Well_Fondation|org.eventb.core.poPredicateSet#ABSHYP"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀r⦂ℙ(S×S)·r∈S ↔ S∧(∀p⦂ℙ(S)·p≠(∅ ⦂ ℙ(S))⇒(∃x⦂S·x∈p∧(∀z⦂S·z∈p⇒x ↦ z∉r)))⇒wf(r)" org.eventb.core.source="/RelationOrderTheory/Well_Fondation.tuf|org.eventb.theory.core.theoryRoot#Well_Fondation|org.eventb.theory.core.theorem#*"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/RelationOrderTheory/Well_Fondation.tcf|org.eventb.theory.core.scTheoryRoot#Well_Fondation|org.eventb.theory.core.scTheorem#generatedBlocm"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/RelationOrderTheory/Well_Fondation.tuf|org.eventb.theory.core.theoryRoot#Well_Fondation|org.eventb.theory.core.theorem#*"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/RelationOrderTheory/Well_Fondation.bpo|org.eventb.core.poFile#Well_Fondation|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/RelationOrderTheory/Well_Fondation.bpo|org.eventb.core.poFile#Well_Fondation|org.eventb.core.poSequent#thm2\/S-THM|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="thm3/S-THM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Therorem Soundness" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/RelationOrderTheory/Well_Fondation.bpo|org.eventb.core.poFile#Well_Fondation|org.eventb.core.poPredicateSet#ABSHYP"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀r⦂ℙ(S×S)·r∈S ↔ S∧wf(r)⇒(∀q⦂ℙ(S)·q⊆S∧(∀x⦂S·r[{x}]⊆q⇒x∈q)⇒S⊆q)" org.eventb.core.source="/RelationOrderTheory/Well_Fondation.tuf|org.eventb.theory.core.theoryRoot#Well_Fondation|org.eventb.theory.core.theorem#+"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/RelationOrderTheory/Well_Fondation.tcf|org.eventb.theory.core.scTheoryRoot#Well_Fondation|org.eventb.theory.core.scTheorem#generatedBlocn"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/RelationOrderTheory/Well_Fondation.tuf|org.eventb.theory.core.theoryRoot#Well_Fondation|org.eventb.theory.core.theorem#+"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/RelationOrderTheory/Well_Fondation.bpo|org.eventb.core.poFile#Well_Fondation|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/RelationOrderTheory/Well_Fondation.bpo|org.eventb.core.poFile#Well_Fondation|org.eventb.core.poSequent#thm3\/S-THM|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="thm4/S-THM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Therorem Soundness" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/RelationOrderTheory/Well_Fondation.bpo|org.eventb.core.poFile#Well_Fondation|org.eventb.core.poPredicateSet#ABSHYP"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀p⦂ℙ(S×S),q⦂ℙ(S×S)·p∈S ↔ S∧q∈S ↔ S∧p⊆q∧wf(q)⇒wf(p)" org.eventb.core.source="/RelationOrderTheory/Well_Fondation.tuf|org.eventb.theory.core.theoryRoot#Well_Fondation|org.eventb.theory.core.theorem#,"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/RelationOrderTheory/Well_Fondation.tcf|org.eventb.theory.core.scTheoryRoot#Well_Fondation|org.eventb.theory.core.scTheorem#generatedBloco"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/RelationOrderTheory/Well_Fondation.tuf|org.eventb.theory.core.theoryRoot#Well_Fondation|org.eventb.theory.core.theorem#,"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/RelationOrderTheory/Well_Fondation.bpo|org.eventb.core.poFile#Well_Fondation|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/RelationOrderTheory/Well_Fondation.bpo|org.eventb.core.poFile#Well_Fondation|org.eventb.core.poSequent#thm4\/S-THM|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="thm5/S-THM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Therorem Soundness" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/RelationOrderTheory/Well_Fondation.bpo|org.eventb.core.poFile#Well_Fondation|org.eventb.core.poPredicateSet#ABSHYP"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀p⦂ℙ(S×S),q⦂ℙ(T×T),v⦂ℙ(S×T)·p∈S ↔ S∧q∈T ↔ T∧wf(q)∧v∈S ↔ T∧dom(p)⊆dom(v)∧v∼;p⊆q;v∼⇒wf(p)" org.eventb.core.source="/RelationOrderTheory/Well_Fondation.tuf|org.eventb.theory.core.theoryRoot#Well_Fondation|org.eventb.theory.core.theorem#-"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/RelationOrderTheory/Well_Fondation.tcf|org.eventb.theory.core.scTheoryRoot#Well_Fondation|org.eventb.theory.core.scTheorem#generatedBlocp"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/RelationOrderTheory/Well_Fondation.tuf|org.eventb.theory.core.theoryRoot#Well_Fondation|org.eventb.theory.core.theorem#-"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/RelationOrderTheory/Well_Fondation.bpo|org.eventb.core.poFile#Well_Fondation|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/RelationOrderTheory/Well_Fondation.bpo|org.eventb.core.poFile#Well_Fondation|org.eventb.core.poSequent#thm5\/S-THM|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="thm6/S-THM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Therorem Soundness" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/RelationOrderTheory/Well_Fondation.bpo|org.eventb.core.poFile#Well_Fondation|org.eventb.core.poPredicateSet#ABSHYP"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="wf({x⦂ℤ,y⦂ℤ·x∈ℕ∧y∈ℕ∧y&lt;x ∣ x ↦ y})" org.eventb.core.source="/RelationOrderTheory/Well_Fondation.tuf|org.eventb.theory.core.theoryRoot#Well_Fondation|org.eventb.theory.core.theorem#\/"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/RelationOrderTheory/Well_Fondation.tcf|org.eventb.theory.core.scTheoryRoot#Well_Fondation|org.eventb.theory.core.scTheorem#generatedBlocq"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/RelationOrderTheory/Well_Fondation.tuf|org.eventb.theory.core.theoryRoot#Well_Fondation|org.eventb.theory.core.theorem#\/"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/RelationOrderTheory/Well_Fondation.bpo|org.eventb.core.poFile#Well_Fondation|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/RelationOrderTheory/Well_Fondation.bpo|org.eventb.core.poFile#Well_Fondation|org.eventb.core.poSequent#thm6\/S-THM|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="thm7/S-THM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Therorem Soundness" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/RelationOrderTheory/Well_Fondation.bpo|org.eventb.core.poFile#Well_Fondation|org.eventb.core.poPredicateSet#ABSHYP"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀p⦂ℙ(S×S),v⦂ℙ(S×ℤ)·p∈S ↔ S∧v∈S → ℕ∧(∀x⦂S,y⦂S·x ↦ y∈p⇒v(y)&lt;v(x))⇒wf(p)" org.eventb.core.source="/RelationOrderTheory/Well_Fondation.tuf|org.eventb.theory.core.theoryRoot#Well_Fondation|org.eventb.theory.core.theorem#0"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/RelationOrderTheory/Well_Fondation.tcf|org.eventb.theory.core.scTheoryRoot#Well_Fondation|org.eventb.theory.core.scTheorem#generatedBlocr"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/RelationOrderTheory/Well_Fondation.tuf|org.eventb.theory.core.theoryRoot#Well_Fondation|org.eventb.theory.core.theorem#0"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/RelationOrderTheory/Well_Fondation.bpo|org.eventb.core.poFile#Well_Fondation|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/RelationOrderTheory/Well_Fondation.bpo|org.eventb.core.poFile#Well_Fondation|org.eventb.core.poSequent#thm7\/S-THM|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="thm7/WD-THM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-Definedness of Theorem" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/RelationOrderTheory/Well_Fondation.bpo|org.eventb.core.poFile#Well_Fondation|org.eventb.core.poPredicateSet#ABSHYP"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀p⦂ℙ(S×S),v⦂ℙ(S×ℤ)·p∈S ↔ S∧v∈S → ℕ⇒(∀x⦂S,y⦂S·x ↦ y∈p⇒y∈dom(v)∧v∈S ⇸ ℤ∧x∈dom(v))" org.eventb.core.source="/RelationOrderTheory/Well_Fondation.tuf|org.eventb.theory.core.theoryRoot#Well_Fondation|org.eventb.theory.core.theorem#0"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/RelationOrderTheory/Well_Fondation.tcf|org.eventb.theory.core.scTheoryRoot#Well_Fondation|org.eventb.theory.core.scTheorem#generatedBlocr"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/RelationOrderTheory/Well_Fondation.tuf|org.eventb.theory.core.theoryRoot#Well_Fondation|org.eventb.theory.core.theorem#0"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/RelationOrderTheory/Well_Fondation.bpo|org.eventb.core.poFile#Well_Fondation|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/RelationOrderTheory/Well_Fondation.bpo|org.eventb.core.poFile#Well_Fondation|org.eventb.core.poSequent#thm7\/WD-THM|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+</org.eventb.core.poFile>

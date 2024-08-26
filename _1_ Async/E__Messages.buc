@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd" version="3">
+<org.eventb.core.extendsContext name="'" org.eventb.core.target="C__Peers"/>
+<org.eventb.core.carrierSet name="(" org.eventb.core.identifier="MESSAGE"/>
+<org.eventb.core.axiom name=")" org.eventb.core.label="COM" org.eventb.core.predicate="partition(COM, {Send}, {Receive})"/>
+<org.eventb.core.carrierSet name="*" org.eventb.core.identifier="COM"/>
+<org.eventb.core.constant name="+" org.eventb.core.identifier="Send"/>
+<org.eventb.core.constant name="," org.eventb.core.identifier="Receive"/>
+<org.eventb.core.axiom name="-" org.eventb.core.label="Teventmapper" org.eventb.core.predicate="eventmapper ∈ (COM × MESSAGE) ⤖ EVENT"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="." org.eventb.core.identifier="eventmapper"/>
+</org.eventb.core.contextFile>

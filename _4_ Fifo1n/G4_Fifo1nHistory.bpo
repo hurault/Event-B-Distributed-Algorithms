@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+    <org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="EVENT" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.poIdentifier name="PEER" org.eventb.core.type="ℙ(PEER)"/>
+        <org.eventb.core.poIdentifier name="MESSAGE" org.eventb.core.type="ℙ(MESSAGE)"/>
+        <org.eventb.core.poIdentifier name="COM" org.eventb.core.type="ℙ(COM)"/>
+        <org.eventb.core.poIdentifier name="Receive" org.eventb.core.type="COM"/>
+        <org.eventb.core.poIdentifier name="Send" org.eventb.core.type="COM"/>
+        <org.eventb.core.poIdentifier name="eventmapper" org.eventb.core.type="ℙ(COM×MESSAGE×EVENT)"/>
+        <org.eventb.core.poPredicate name="eventmappes" org.eventb.core.predicate="partition(COM,{Send},{Receive})" org.eventb.core.source="/_4_ Fifo1n/E__Messages.buc|org.eventb.core.contextFile#E__Messages|org.eventb.core.axiom#)"/>
+        <org.eventb.core.poPredicate name="eventmappet" org.eventb.core.predicate="eventmapper∈COM × MESSAGE ⤖ EVENT" org.eventb.core.source="/_4_ Fifo1n/E__Messages.buc|org.eventb.core.contextFile#E__Messages|org.eventb.core.axiom#-"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="origOf" org.eventb.core.type="ℙ(MESSAGE×PEER)"/>
+        <org.eventb.core.poIdentifier name="destOf" org.eventb.core.type="ℙ(MESSAGE×PEER)"/>
+        <org.eventb.core.poIdentifier name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.poIdentifier name="net" org.eventb.core.type="ℙ(MESSAGE)"/>
+        <org.eventb.core.poIdentifier name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.poIdentifier name="run" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.poIdentifier name="comOf" org.eventb.core.type="ℙ(EVENT×COM)"/>
+        <org.eventb.core.poIdentifier name="hgOf" org.eventb.core.type="ℙ(MESSAGE×ℙ(MESSAGE))"/>
+        <org.eventb.core.poIdentifier name="mesOf" org.eventb.core.type="ℙ(EVENT×MESSAGE)"/>
+        <org.eventb.core.poIdentifier name="hcOf" org.eventb.core.type="ℙ(MESSAGE×ℙ(MESSAGE))"/>
+        <org.eventb.core.poIdentifier name="past" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.poIdentifier name="hc" org.eventb.core.type="ℙ(PEER×ℙ(MESSAGE))"/>
+        <org.eventb.core.poIdentifier name="hg" org.eventb.core.type="ℙ(MESSAGE)"/>
+        <org.eventb.core.poIdentifier name="peerOf" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.poPredicate name="peerOg" org.eventb.core.predicate="past∈ℙ(EVENT)" org.eventb.core.source="/_4_ Fifo1n/A__Events.bum|org.eventb.core.machineFile#A__Events|org.eventb.core.invariant#)"/>
+        <org.eventb.core.poPredicate name="peerOh" org.eventb.core.predicate="links∈past ↔ past" org.eventb.core.source="/_4_ Fifo1n/B__Communication.bum|org.eventb.core.machineFile#B__Communication|org.eventb.core.invariant#evt3"/>
+        <org.eventb.core.poPredicate name="peerOi" org.eventb.core.predicate="dom(links)∩ran(links)=(∅ ⦂ ℙ(EVENT))" org.eventb.core.source="/_4_ Fifo1n/B__Communication.bum|org.eventb.core.machineFile#B__Communication|org.eventb.core.invariant#inv1"/>
+        <org.eventb.core.poPredicate name="peerOj" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT,c⦂EVENT·e1 ↦ c∈links∧e2 ↦ c∈links⇒e1=e2" org.eventb.core.source="/_4_ Fifo1n/B__Communication.bum|org.eventb.core.machineFile#B__Communication|org.eventb.core.invariant#inv2"/>
+        <org.eventb.core.poPredicate name="peerOk" org.eventb.core.predicate="∀e⦂EVENT,c1⦂EVENT,c2⦂EVENT·e ↦ c1∈links∧e ↦ c2∈links⇒c1=c2" org.eventb.core.source="/_4_ Fifo1n/B__Communication.bum|org.eventb.core.machineFile#B__Communication|org.eventb.core.invariant#inv3"/>
+        <org.eventb.core.poPredicate name="peerOl" org.eventb.core.predicate="prec∈past  past" org.eventb.core.source="/_4_ Fifo1n/C__DistributedExecution.bum|org.eventb.core.machineFile#C__DistributedExecution|org.eventb.core.invariant#evt7"/>
+        <org.eventb.core.poPredicate name="peerOm" org.eventb.core.predicate="peerOf∈past → PEER" org.eventb.core.source="/_4_ Fifo1n/C__DistributedExecution.bum|org.eventb.core.machineFile#C__DistributedExecution|org.eventb.core.invariant#inv1"/>
+        <org.eventb.core.poPredicate name="peerOn" org.eventb.core.predicate="past ◁ (id ⦂ ℙ(EVENT×EVENT))⊆prec" org.eventb.core.source="/_4_ Fifo1n/C__DistributedExecution.bum|org.eventb.core.machineFile#C__DistributedExecution|org.eventb.core.invariant#inv2"/>
+        <org.eventb.core.poPredicate name="peerOo" org.eventb.core.predicate="prec;prec⊆prec" org.eventb.core.source="/_4_ Fifo1n/C__DistributedExecution.bum|org.eventb.core.machineFile#C__DistributedExecution|org.eventb.core.invariant#inv3"/>
+        <org.eventb.core.poPredicate name="peerOp" org.eventb.core.predicate="prec∩prec∼⊆(id ⦂ ℙ(EVENT×EVENT))" org.eventb.core.source="/_4_ Fifo1n/C__DistributedExecution.bum|org.eventb.core.machineFile#C__DistributedExecution|org.eventb.core.invariant#inv4"/>
+        <org.eventb.core.poPredicate name="peerOq" org.eventb.core.predicate="links⊆prec" org.eventb.core.source="/_4_ Fifo1n/C__DistributedExecution.bum|org.eventb.core.machineFile#C__DistributedExecution|org.eventb.core.invariant#inv5"/>
+        <org.eventb.core.poPredicate name="peerOr" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1∈past∧e2∈past∧peerOf(e1)=peerOf(e2)⇒e1 ↦ e2∈prec∨e2 ↦ e1∈prec" org.eventb.core.source="/_4_ Fifo1n/C__DistributedExecution.bum|org.eventb.core.machineFile#C__DistributedExecution|org.eventb.core.invariant#inv6"/>
+        <org.eventb.core.poPredicate name="peerOs" org.eventb.core.predicate="run∈past  past" org.eventb.core.source="/_4_ Fifo1n/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#evt&gt;"/>
+        <org.eventb.core.poPredicate name="peerOt" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1∈past∧e2∈past⇒e1 ↦ e2∈run∨e2 ↦ e1∈run" org.eventb.core.source="/_4_ Fifo1n/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv1"/>
+        <org.eventb.core.poPredicate name="peerOu" org.eventb.core.predicate="past ◁ (id ⦂ ℙ(EVENT×EVENT))⊆run" org.eventb.core.source="/_4_ Fifo1n/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv2"/>
+        <org.eventb.core.poPredicate name="peerOv" org.eventb.core.predicate="run;run⊆run" org.eventb.core.source="/_4_ Fifo1n/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv3"/>
+        <org.eventb.core.poPredicate name="peerOw" org.eventb.core.predicate="run∩run∼⊆(id ⦂ ℙ(EVENT×EVENT))" org.eventb.core.source="/_4_ Fifo1n/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv4"/>
+        <org.eventb.core.poPredicate name="peerOx" org.eventb.core.predicate="prec⊆run" org.eventb.core.source="/_4_ Fifo1n/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv5"/>
+        <org.eventb.core.poPredicate name="peerOy" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1∈past∧e2∈past∧peerOf(e1)=peerOf(e2)⇒(e1 ↦ e2∈prec⇔e1 ↦ e2∈run)" org.eventb.core.source="/_4_ Fifo1n/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv6"/>
+        <org.eventb.core.poPredicate name="peerOz" org.eventb.core.predicate="comOf∈past → COM" org.eventb.core.source="/_4_ Fifo1n/E__RunWithMessages.bum|org.eventb.core.machineFile#E__RunWithMessages|org.eventb.core.invariant#evtD"/>
+        <org.eventb.core.poPredicate name="peerO{" org.eventb.core.predicate="mesOf∈past → MESSAGE" org.eventb.core.source="/_4_ Fifo1n/E__RunWithMessages.bum|org.eventb.core.machineFile#E__RunWithMessages|org.eventb.core.invariant#inv1"/>
+        <org.eventb.core.poPredicate name="peerO|" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1∈past∧e2∈past∧comOf(e1)=comOf(e2)∧mesOf(e1)=mesOf(e2)⇒e1=e2" org.eventb.core.source="/_4_ Fifo1n/E__RunWithMessages.bum|org.eventb.core.machineFile#E__RunWithMessages|org.eventb.core.invariant#inv2"/>
+        <org.eventb.core.poPredicate name="peerO}" org.eventb.core.predicate="∀e⦂EVENT·e∈past∧comOf(e)=Receive⇒(∃es⦂EVENT·es∈past∧comOf(es)=Send∧mesOf(e)=mesOf(es)∧es ↦ e∈prec)" org.eventb.core.source="/_4_ Fifo1n/E__RunWithMessages.bum|org.eventb.core.machineFile#E__RunWithMessages|org.eventb.core.invariant#inv3"/>
+        <org.eventb.core.poPredicate name="peerO~" org.eventb.core.predicate="∀es⦂EVENT,er⦂EVENT·es ↦ er∈links⇒comOf(es)=Send∧comOf(er)=Receive∧mesOf(es)=mesOf(er)" org.eventb.core.source="/_4_ Fifo1n/E__RunWithMessages.bum|org.eventb.core.machineFile#E__RunWithMessages|org.eventb.core.invariant#inv4"/>
+        <org.eventb.core.poPredicate name="peerP'" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1 ↦ e2∈prec∧peerOf(e1)≠peerOf(e2)⇒(∃es⦂EVENT,er⦂EVENT·e1 ↦ es∈prec∧es ↦ er∈prec∧er ↦ e2∈prec∧peerOf(e1)=peerOf(es)∧comOf(es)=Send∧comOf(er)=Receive∧mesOf(es)=mesOf(er))" org.eventb.core.source="/_4_ Fifo1n/E__RunWithMessages.bum|org.eventb.core.machineFile#E__RunWithMessages|org.eventb.core.invariant#inv5"/>
+        <org.eventb.core.poPredicate name="peerP(" org.eventb.core.predicate="∀es1⦂EVENT,er1⦂EVENT,es2⦂EVENT,er2⦂EVENT·es1∈past∧er1∈past∧es2∈past∧er2∈past∧comOf(es1)=Send∧comOf(es2)=Send∧comOf(er1)=Receive∧comOf(er2)=Receive∧mesOf(es1)=mesOf(er1)∧mesOf(es2)=mesOf(er2)∧peerOf(es1)=peerOf(es2)∧peerOf(er1)=peerOf(er2)∧es1 ↦ es2∈prec⇒er1 ↦ er2∈run" org.eventb.core.source="/_4_ Fifo1n/E2_Fifo11Event.bum|org.eventb.core.machineFile#E2_Fifo11Event|org.eventb.core.invariant#evtG"/>
+        <org.eventb.core.poPredicate name="peerP)" org.eventb.core.predicate="∀es1⦂EVENT,er1⦂EVENT,es2⦂EVENT,er2⦂EVENT·es1∈past∧er1∈past∧es2∈past∧er2∈past∧comOf(es1)=Send∧comOf(es2)=Send∧comOf(er1)=Receive∧comOf(er2)=Receive∧mesOf(es1)=mesOf(er1)∧mesOf(es2)=mesOf(er2)∧peerOf(er1)=peerOf(er2)∧es1 ↦ es2∈prec⇒er1 ↦ er2∈run" org.eventb.core.source="/_4_ Fifo1n/E3_CausalEvent.bum|org.eventb.core.machineFile#E3_CausalEvent|org.eventb.core.invariant#evtF"/>
+        <org.eventb.core.poPredicate name="peerP*" org.eventb.core.predicate="∀es1⦂EVENT,er1⦂EVENT,es2⦂EVENT,er2⦂EVENT·es1∈past∧er1∈past∧es2∈past∧er2∈past∧comOf(es1)=Send∧comOf(es2)=Send∧comOf(er1)=Receive∧comOf(er2)=Receive∧mesOf(es1)=mesOf(er1)∧mesOf(es2)=mesOf(er2)∧peerOf(es1)=peerOf(es2)∧es1 ↦ es2∈prec⇒er1 ↦ er2∈run" org.eventb.core.source="/_4_ Fifo1n/E4_Fifo1nEvent.bum|org.eventb.core.machineFile#E4_Fifo1nEvent|org.eventb.core.invariant#evtG"/>
+        <org.eventb.core.poPredicate name="peerP+" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1∈past∧e2∈past∧peerOf(e1)=peerOf(e2)⇒(e1 ↦ e2∈prec⇔e1 ↦ e2∈run)" org.eventb.core.source="/_4_ Fifo1n/E4_Fifo1nEvent.bum|org.eventb.core.machineFile#E4_Fifo1nEvent|org.eventb.core.invariant#evtI"/>
+        <org.eventb.core.poPredicate name="peerP," org.eventb.core.predicate="hg∈ℙ(MESSAGE)" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.invariant#inv1"/>
+        <org.eventb.core.poPredicate name="peerP-" org.eventb.core.predicate="hc∈PEER → ℙ(hg)" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.invariant#inv2"/>
+        <org.eventb.core.poPredicate name="peerP." org.eventb.core.predicate="net∈ℙ(hg)" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.invariant#inv3"/>
+        <org.eventb.core.poPredicate name="peerP/" org.eventb.core.predicate="origOf∈hg → PEER" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.invariant#inv4"/>
+        <org.eventb.core.poPredicate name="peerP0" org.eventb.core.predicate="destOf∈hg → PEER" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.invariant#inv5"/>
+        <org.eventb.core.poPredicate name="peerP1" org.eventb.core.predicate="hgOf∈hg → ℙ(hg)" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.invariant#inv6"/>
+        <org.eventb.core.poPredicate name="peerP2" org.eventb.core.predicate="hcOf∈hg → ℙ(hg)" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.invariant#inv7"/>
+        <org.eventb.core.poPredicate name="peerP3" org.eventb.core.predicate="hg=ran(mesOf)" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.invariant#inv9"/>
+        <org.eventb.core.poPredicate name="peerP4" org.eventb.core.predicate="∀m⦂MESSAGE·m∈hg∧¬(∃e2⦂EVENT·e2∈past∧comOf(e2)=Receive∧mesOf(e2)=m)⇒m∈net" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.invariant#inv1:"/>
+        <org.eventb.core.poPredicate name="peerP5" org.eventb.core.predicate="∀e⦂EVENT·e∈past∧comOf(e)=Send∧¬(∃e2⦂EVENT·e2∈past∧comOf(e2)=Receive∧mesOf(e2)=mesOf(e))⇒mesOf(e)∈net" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.invariant#inv1;"/>
+        <org.eventb.core.poPredicate name="peerP6" org.eventb.core.predicate="∀e⦂EVENT·e∈past∧comOf(e)=Send⇒origOf(mesOf(e))=peerOf(e)" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.invariant#inv19"/>
+        <org.eventb.core.poPredicate name="peerP7" org.eventb.core.predicate="∀e⦂EVENT·e∈past∧comOf(e)=Receive⇒mesOf(e)∉net" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.invariant#inv1&gt;"/>
+        <org.eventb.core.poPredicate name="peerP8" org.eventb.core.predicate="∀e⦂EVENT·e∈past∧comOf(e)=Receive⇒destOf(mesOf(e))=peerOf(e)" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.invariant#inv12"/>
+        <org.eventb.core.poPredicate name="peerP9" org.eventb.core.predicate="∀es1⦂EVENT,es2⦂EVENT·es1 ↦ es2∈run∧es1≠es2∧comOf(es2)=Send⇒mesOf(es1)∈hgOf(mesOf(es2))" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.invariant#inv13"/>
+        <org.eventb.core.poPredicate name="peerP:" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT,m1⦂MESSAGE,m2⦂MESSAGE·m1∈hg∧m2∈hg∧m1≠m2∧e1 ↦ e2∈run∧comOf(e1)=Send∧comOf(e2)=Send∧mesOf(e1)=m1∧mesOf(e2)=m2⇒m1∈hgOf(m2)" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.invariant#inv1?"/>
+        <org.eventb.core.poPredicate name="peerP;" org.eventb.core.predicate="∀m⦂MESSAGE·m∈hg⇒origOf(m)∈{e⦂EVENT·e∈past∧comOf(e)=Send∧mesOf(e)=m ∣ peerOf(e)}" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.invariant#inv1@"/>
+        <org.eventb.core.poPredicate name="peerP=" org.eventb.core.predicate="∀es1⦂EVENT,es2⦂EVENT·es1 ↦ es2∈prec∧es1≠es2∧comOf(es2)=Send⇒mesOf(es1)∈hcOf(mesOf(es2))" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.invariant#inv1A"/>
+        <org.eventb.core.poPredicate name="peerP&gt;" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT,m1⦂MESSAGE,m2⦂MESSAGE·m1∈hg∧m2∈hg∧m1≠m2∧e1 ↦ e2∈prec∧comOf(e2)=Send∧mesOf(e1)=m1∧mesOf(e2)=m2⇒m1∈hcOf(m2)" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.invariant#inv1C"/>
+        <org.eventb.core.poPredicate name="peerP?" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1 ↦ e2∈prec⇒mesOf(e1)∈hc(peerOf(e2))" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.invariant#inv1B"/>
+        <org.eventb.core.poPredicate name="peerP@" org.eventb.core.predicate="net⊆hg" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.invariant#inv14"/>
+        <org.eventb.core.poPredicate name="peerPA" org.eventb.core.predicate="∀m⦂MESSAGE·m∈hg⇒m∉hgOf(m)" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.invariant#inv15"/>
+        <org.eventb.core.poPredicate name="peerPB" org.eventb.core.predicate="∀m⦂MESSAGE·m∈hg⇒m∉hcOf(m)" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.invariant#inv16"/>
+        <org.eventb.core.poPredicate name="peerPC" org.eventb.core.predicate="∀m⦂MESSAGE,m2⦂MESSAGE·m∈hg∧m2∉hgOf(m)⇒m2∉hcOf(m)" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.invariant#inv17"/>
+        <org.eventb.core.poPredicate name="peerPD" org.eventb.core.predicate="∀m1⦂MESSAGE,m2⦂MESSAGE·m1∈hg∧m2∈hg∧m1≠m2∧origOf(m1)=origOf(m2)∧m1∈hcOf(m2)⇒¬(m1∈net∧m2∉net)" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.invariant#inv18"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="INITIALISATION/eventmapper/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#EVTALLHYPE__Messagf@"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="eventmapper[{Send} × (∅ ⦂ ℙ(MESSAGE))]∪eventmapper[{Receive} × ((∅ ⦂ ℙ(MESSAGE)) ∖ (∅ ⦂ ℙ(MESSAGE)))]=(∅ ⦂ ℙ(EVENT))" org.eventb.core.source="/_4_ Fifo1n/G4_Fifo1nHistory.bum|org.eventb.core.machineFile#G4_Fifo1nHistory|org.eventb.core.invariant#inv1"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtC"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/_4_ Fifo1n/G4_Fifo1nHistory.bum|org.eventb.core.machineFile#G4_Fifo1nHistory|org.eventb.core.event#var8"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/_4_ Fifo1n/G4_Fifo1nHistory.bum|org.eventb.core.machineFile#G4_Fifo1nHistory|org.eventb.core.invariant#inv1"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poSequent#INITIALISATION\/eventmapper\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/+act1/SIM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#EVTALLHYPE__Messagf@"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(MESSAGE))=(∅ ⦂ ℙ(MESSAGE))" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtC|org.eventb.core.action#act1"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtC"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtC|org.eventb.core.action#act1"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/_4_ Fifo1n/G4_Fifo1nHistory.bum|org.eventb.core.machineFile#G4_Fifo1nHistory|org.eventb.core.event#var8"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poSequent#INITIALISATION\/+act1\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/+act2/SIM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#EVTALLHYPE__Messagf@"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(MESSAGE))=(∅ ⦂ ℙ(MESSAGE))" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtC|org.eventb.core.action#act2"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtC"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtC|org.eventb.core.action#act2"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/_4_ Fifo1n/G4_Fifo1nHistory.bum|org.eventb.core.machineFile#G4_Fifo1nHistory|org.eventb.core.event#var8"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poSequent#INITIALISATION\/+act2\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/+act3/SIM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#EVTALLHYPE__Messagf@"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="{p⦂PEER·p∈PEER ∣ p ↦ (∅ ⦂ ℙ(MESSAGE))}={p⦂PEER·p∈PEER ∣ p ↦ (∅ ⦂ ℙ(MESSAGE))}" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtC|org.eventb.core.action#act3"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtC"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtC|org.eventb.core.action#act3"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/_4_ Fifo1n/G4_Fifo1nHistory.bum|org.eventb.core.machineFile#G4_Fifo1nHistory|org.eventb.core.event#var8"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poSequent#INITIALISATION\/+act3\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/+act4/SIM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#EVTALLHYPE__Messagf@"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(MESSAGE×PEER))=(∅ ⦂ ℙ(MESSAGE×PEER))" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtC|org.eventb.core.action#act4"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtC"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtC|org.eventb.core.action#act4"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/_4_ Fifo1n/G4_Fifo1nHistory.bum|org.eventb.core.machineFile#G4_Fifo1nHistory|org.eventb.core.event#var8"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poSequent#INITIALISATION\/+act4\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/+act5/SIM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#EVTALLHYPE__Messagf@"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(MESSAGE×PEER))=(∅ ⦂ ℙ(MESSAGE×PEER))" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtC|org.eventb.core.action#act5"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtC"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtC|org.eventb.core.action#act5"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/_4_ Fifo1n/G4_Fifo1nHistory.bum|org.eventb.core.machineFile#G4_Fifo1nHistory|org.eventb.core.event#var8"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poSequent#INITIALISATION\/+act5\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/+act6/SIM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#EVTALLHYPE__Messagf@"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(MESSAGE×ℙ(MESSAGE)))=(∅ ⦂ ℙ(MESSAGE×ℙ(MESSAGE)))" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtC|org.eventb.core.action#act6"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtC"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtC|org.eventb.core.action#act6"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/_4_ Fifo1n/G4_Fifo1nHistory.bum|org.eventb.core.machineFile#G4_Fifo1nHistory|org.eventb.core.event#var8"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poSequent#INITIALISATION\/+act6\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTE__Messagf@" org.eventb.core.parentSet="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="hgOf'" org.eventb.core.type="ℙ(MESSAGE×ℙ(MESSAGE))"/>
+        <org.eventb.core.poIdentifier name="comOf'" org.eventb.core.type="ℙ(EVENT×COM)"/>
+        <org.eventb.core.poIdentifier name="destOf'" org.eventb.core.type="ℙ(MESSAGE×PEER)"/>
+        <org.eventb.core.poIdentifier name="hg'" org.eventb.core.type="ℙ(MESSAGE)"/>
+        <org.eventb.core.poIdentifier name="hc'" org.eventb.core.type="ℙ(PEER×ℙ(MESSAGE))"/>
+        <org.eventb.core.poIdentifier name="peerOf'" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.poIdentifier name="prec'" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.poIdentifier name="hcOf'" org.eventb.core.type="ℙ(MESSAGE×ℙ(MESSAGE))"/>
+        <org.eventb.core.poIdentifier name="net'" org.eventb.core.type="ℙ(MESSAGE)"/>
+        <org.eventb.core.poIdentifier name="origOf'" org.eventb.core.type="ℙ(MESSAGE×PEER)"/>
+        <org.eventb.core.poIdentifier name="mesOf'" org.eventb.core.type="ℙ(EVENT×MESSAGE)"/>
+        <org.eventb.core.poIdentifier name="run'" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.poIdentifier name="past'" org.eventb.core.type="ℙ(EVENT)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPE__Messagf@" org.eventb.core.parentSet="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#EVTIDENTE__Messagf@" org.eventb.core.poStamp="0"/>
+    <org.eventb.core.poSequent name="send/e/WWD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of witness" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#EVTALLHYPE__MessagfA"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="Send ↦ m∈dom(eventmapper)∧eventmapper∈COM × MESSAGE ⇸ EVENT" org.eventb.core.source="/_4_ Fifo1n/G4_Fifo1nHistory.bum|org.eventb.core.machineFile#G4_Fifo1nHistory|org.eventb.core.event#var9|org.eventb.core.witness#internal3"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/_4_ Fifo1n/G4_Fifo1nHistory.bum|org.eventb.core.machineFile#G4_Fifo1nHistory|org.eventb.core.event#var9|org.eventb.core.witness#internal3"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poSequent#send\/e\/WWD|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="send/eventmapper/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#EVTALLHYPE__MessagfA"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="eventmapper[{Send} × (hg∪{m})]∪eventmapper[{Receive} × ((hg∪{m}) ∖ (net∪{m}))]=past∪{eventmapper(Send ↦ m)}" org.eventb.core.source="/_4_ Fifo1n/G4_Fifo1nHistory.bum|org.eventb.core.machineFile#G4_Fifo1nHistory|org.eventb.core.invariant#inv1"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtD"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/_4_ Fifo1n/G4_Fifo1nHistory.bum|org.eventb.core.machineFile#G4_Fifo1nHistory|org.eventb.core.event#var9"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/_4_ Fifo1n/G4_Fifo1nHistory.bum|org.eventb.core.machineFile#G4_Fifo1nHistory|org.eventb.core.invariant#inv1"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poSequent#send\/eventmapper\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="send/grd1/GRD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Guard strengthening (split)" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#EVTALLHYPE__MessagfA"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="eventmapper(Send ↦ m)∈EVENT ∖ past" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtD|org.eventb.core.guard#'"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtD"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtD|org.eventb.core.guard#'"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/_4_ Fifo1n/G4_Fifo1nHistory.bum|org.eventb.core.machineFile#G4_Fifo1nHistory|org.eventb.core.event#var9"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poSequent#send\/grd1\/GRD|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="send/+act1/SIM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#EVTALLHYPE__MessagfA"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="net∪{m}=net∪{m}" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtD|org.eventb.core.action#act1"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtD"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtD|org.eventb.core.action#act1"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/_4_ Fifo1n/G4_Fifo1nHistory.bum|org.eventb.core.machineFile#G4_Fifo1nHistory|org.eventb.core.event#var9"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poSequent#send\/+act1\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="send/+act2/SIM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#EVTALLHYPE__MessagfA"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="hg∪{m}=hg∪{m}" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtD|org.eventb.core.action#act2"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtD"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtD|org.eventb.core.action#act2"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/_4_ Fifo1n/G4_Fifo1nHistory.bum|org.eventb.core.machineFile#G4_Fifo1nHistory|org.eventb.core.event#var9"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poSequent#send\/+act2\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="send/+act3/SIM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#EVTALLHYPE__MessagfA"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="hc{p ↦ hc(p)∪{m}}=hc{p ↦ hc(p)∪{m}}" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtD|org.eventb.core.action#act3"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtD"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtD|org.eventb.core.action#act3"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/_4_ Fifo1n/G4_Fifo1nHistory.bum|org.eventb.core.machineFile#G4_Fifo1nHistory|org.eventb.core.event#var9"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poSequent#send\/+act3\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="send/+act4/SIM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#EVTALLHYPE__MessagfA"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="origOf∪{m ↦ p}=origOf∪{m ↦ p}" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtD|org.eventb.core.action#act4"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtD"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtD|org.eventb.core.action#act4"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/_4_ Fifo1n/G4_Fifo1nHistory.bum|org.eventb.core.machineFile#G4_Fifo1nHistory|org.eventb.core.event#var9"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poSequent#send\/+act4\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="send/+act5/SIM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#EVTALLHYPE__MessagfA"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="destOf∪{m ↦ d}=destOf∪{m ↦ d}" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtD|org.eventb.core.action#act5"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtD"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtD|org.eventb.core.action#act5"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/_4_ Fifo1n/G4_Fifo1nHistory.bum|org.eventb.core.machineFile#G4_Fifo1nHistory|org.eventb.core.event#var9"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poSequent#send\/+act5\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="send/+act6/SIM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#EVTALLHYPE__MessagfA"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="hgOf∪{m ↦ hg}=hgOf∪{m ↦ hg}" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtD|org.eventb.core.action#act6"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtD"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtD|org.eventb.core.action#act6"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/_4_ Fifo1n/G4_Fifo1nHistory.bum|org.eventb.core.machineFile#G4_Fifo1nHistory|org.eventb.core.event#var9"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poSequent#send\/+act6\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTE__MessagfA" org.eventb.core.parentSet="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="hgOf'" org.eventb.core.type="ℙ(MESSAGE×ℙ(MESSAGE))"/>
+        <org.eventb.core.poIdentifier name="comOf'" org.eventb.core.type="ℙ(EVENT×COM)"/>
+        <org.eventb.core.poIdentifier name="destOf'" org.eventb.core.type="ℙ(MESSAGE×PEER)"/>
+        <org.eventb.core.poIdentifier name="hg'" org.eventb.core.type="ℙ(MESSAGE)"/>
+        <org.eventb.core.poIdentifier name="hc'" org.eventb.core.type="ℙ(PEER×ℙ(MESSAGE))"/>
+        <org.eventb.core.poIdentifier name="peerOf'" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.poIdentifier name="prec'" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.poIdentifier name="d" org.eventb.core.type="PEER"/>
+        <org.eventb.core.poIdentifier name="hcOf'" org.eventb.core.type="ℙ(MESSAGE×ℙ(MESSAGE))"/>
+        <org.eventb.core.poIdentifier name="net'" org.eventb.core.type="ℙ(MESSAGE)"/>
+        <org.eventb.core.poIdentifier name="p" org.eventb.core.type="PEER"/>
+        <org.eventb.core.poIdentifier name="origOf'" org.eventb.core.type="ℙ(MESSAGE×PEER)"/>
+        <org.eventb.core.poIdentifier name="mesOf'" org.eventb.core.type="ℙ(EVENT×MESSAGE)"/>
+        <org.eventb.core.poIdentifier name="run'" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.poIdentifier name="e" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.poIdentifier name="past'" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.poIdentifier name="m" org.eventb.core.type="MESSAGE"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPE__MessagfA" org.eventb.core.parentSet="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#EVTIDENTE__MessagfA" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="p∈PEER" org.eventb.core.source="/_4_ Fifo1n/G4_Fifo1nHistory.bum|org.eventb.core.machineFile#G4_Fifo1nHistory|org.eventb.core.event#var9|org.eventb.core.guard#)"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="m∈MESSAGE ∖ hg" org.eventb.core.source="/_4_ Fifo1n/G4_Fifo1nHistory.bum|org.eventb.core.machineFile#G4_Fifo1nHistory|org.eventb.core.event#var9|org.eventb.core.guard#+"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="d∈PEER" org.eventb.core.source="/_4_ Fifo1n/G4_Fifo1nHistory.bum|org.eventb.core.machineFile#G4_Fifo1nHistory|org.eventb.core.event#var9|org.eventb.core.guard#grd1"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="⊤" org.eventb.core.source="/_4_ Fifo1n/G4_Fifo1nHistory.bum|org.eventb.core.machineFile#G4_Fifo1nHistory|org.eventb.core.event#var9|org.eventb.core.guard#grd3"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="receive/grd3/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#EVTHYPE__MessagfB)"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="m∈dom(destOf)∧destOf∈MESSAGE ⇸ PEER" org.eventb.core.source="/_4_ Fifo1n/G4_Fifo1nHistory.bum|org.eventb.core.machineFile#G4_Fifo1nHistory|org.eventb.core.event#var:|org.eventb.core.guard#grd2"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/_4_ Fifo1n/G4_Fifo1nHistory.bum|org.eventb.core.machineFile#G4_Fifo1nHistory|org.eventb.core.event#var:|org.eventb.core.guard#grd2"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#EVTHYPE__MessagfB)"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="receive/ordering/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#EVTHYPE__MessagfB*"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀m2⦂MESSAGE·m2∈net⇒m∈dom(origOf)∧origOf∈MESSAGE ⇸ PEER∧m2∈dom(origOf)∧(origOf(m)=origOf(m2)⇒m∈dom(hcOf)∧hcOf∈MESSAGE ⇸ ℙ(MESSAGE))" org.eventb.core.source="/_4_ Fifo1n/G4_Fifo1nHistory.bum|org.eventb.core.machineFile#G4_Fifo1nHistory|org.eventb.core.event#var:|org.eventb.core.guard#grd3"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/_4_ Fifo1n/G4_Fifo1nHistory.bum|org.eventb.core.machineFile#G4_Fifo1nHistory|org.eventb.core.event#var:|org.eventb.core.guard#grd3"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#EVTHYPE__MessagfB*"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="receive/e/WWD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of witness" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#EVTALLHYPE__MessagfB"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="Receive ↦ m∈dom(eventmapper)∧eventmapper∈COM × MESSAGE ⇸ EVENT" org.eventb.core.source="/_4_ Fifo1n/G4_Fifo1nHistory.bum|org.eventb.core.machineFile#G4_Fifo1nHistory|org.eventb.core.event#var:|org.eventb.core.witness#internal5"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/_4_ Fifo1n/G4_Fifo1nHistory.bum|org.eventb.core.machineFile#G4_Fifo1nHistory|org.eventb.core.event#var:|org.eventb.core.witness#internal5"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poSequent#receive\/e\/WWD|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="receive/eventmapper/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#EVTALLHYPE__MessagfB"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="eventmapper[{Send} × hg]∪eventmapper[{Receive} × (hg ∖ (net ∖ {m}))]=past∪{eventmapper(Receive ↦ m)}" org.eventb.core.source="/_4_ Fifo1n/G4_Fifo1nHistory.bum|org.eventb.core.machineFile#G4_Fifo1nHistory|org.eventb.core.invariant#inv1"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtE"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/_4_ Fifo1n/G4_Fifo1nHistory.bum|org.eventb.core.machineFile#G4_Fifo1nHistory|org.eventb.core.event#var:"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/_4_ Fifo1n/G4_Fifo1nHistory.bum|org.eventb.core.machineFile#G4_Fifo1nHistory|org.eventb.core.invariant#inv1"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poSequent#receive\/eventmapper\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="receive/grd1/GRD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Guard strengthening (split)" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#EVTALLHYPE__MessagfB"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="eventmapper(Receive ↦ m)∈EVENT ∖ past" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtE|org.eventb.core.guard#'"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtE"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtE|org.eventb.core.guard#'"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/_4_ Fifo1n/G4_Fifo1nHistory.bum|org.eventb.core.machineFile#G4_Fifo1nHistory|org.eventb.core.event#var:"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poSequent#receive\/grd1\/GRD|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="receive/+act1/SIM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#EVTALLHYPE__MessagfB"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="net ∖ {m}=net ∖ {m}" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtE|org.eventb.core.action#act2"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtE"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtE|org.eventb.core.action#act2"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/_4_ Fifo1n/G4_Fifo1nHistory.bum|org.eventb.core.machineFile#G4_Fifo1nHistory|org.eventb.core.event#var:"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poSequent#receive\/+act1\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="receive/+act2/SIM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#EVTALLHYPE__MessagfB"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="hc{p ↦ hc(p)∪{m}∪hcOf(m)}=hc{p ↦ hc(p)∪{m}∪hcOf(m)}" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtE|org.eventb.core.action#act3"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtE"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_4_ Fifo1n/F4_Fifo1nHistory.bum|org.eventb.core.machineFile#F4_Fifo1nHistory|org.eventb.core.event#evtE|org.eventb.core.action#act3"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/_4_ Fifo1n/G4_Fifo1nHistory.bum|org.eventb.core.machineFile#G4_Fifo1nHistory|org.eventb.core.event#var:"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poSequent#receive\/+act2\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTE__MessagfB" org.eventb.core.parentSet="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="comOf'" org.eventb.core.type="ℙ(EVENT×COM)"/>
+        <org.eventb.core.poIdentifier name="hc'" org.eventb.core.type="ℙ(PEER×ℙ(MESSAGE))"/>
+        <org.eventb.core.poIdentifier name="peerOf'" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.poIdentifier name="prec'" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.poIdentifier name="net'" org.eventb.core.type="ℙ(MESSAGE)"/>
+        <org.eventb.core.poIdentifier name="p" org.eventb.core.type="PEER"/>
+        <org.eventb.core.poIdentifier name="mesOf'" org.eventb.core.type="ℙ(EVENT×MESSAGE)"/>
+        <org.eventb.core.poIdentifier name="run'" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.poIdentifier name="e" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.poIdentifier name="past'" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.poIdentifier name="m" org.eventb.core.type="MESSAGE"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPE__MessagfB)" org.eventb.core.parentSet="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#EVTIDENTE__MessagfB" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="p∈PEER" org.eventb.core.source="/_4_ Fifo1n/G4_Fifo1nHistory.bum|org.eventb.core.machineFile#G4_Fifo1nHistory|org.eventb.core.event#var:|org.eventb.core.guard#internal1"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="m∈net" org.eventb.core.source="/_4_ Fifo1n/G4_Fifo1nHistory.bum|org.eventb.core.machineFile#G4_Fifo1nHistory|org.eventb.core.event#var:|org.eventb.core.guard#internal4"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPE__MessagfB*" org.eventb.core.parentSet="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#EVTHYPE__MessagfB)" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="destOf(m)=p" org.eventb.core.source="/_4_ Fifo1n/G4_Fifo1nHistory.bum|org.eventb.core.machineFile#G4_Fifo1nHistory|org.eventb.core.event#var:|org.eventb.core.guard#grd2"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPE__MessagfB" org.eventb.core.parentSet="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#EVTHYPE__MessagfB*" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="¬(∃m2⦂MESSAGE·m2∈net∧origOf(m)=origOf(m2)∧m2∈hcOf(m))" org.eventb.core.source="/_4_ Fifo1n/G4_Fifo1nHistory.bum|org.eventb.core.machineFile#G4_Fifo1nHistory|org.eventb.core.event#var:|org.eventb.core.guard#grd3"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/_4_ Fifo1n/G4_Fifo1nHistory.bpo|org.eventb.core.poFile#G4_Fifo1nHistory|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="eventmapper[{Send} × hg]∪eventmapper[{Receive} × (hg ∖ net)]=past" org.eventb.core.source="/_4_ Fifo1n/G4_Fifo1nHistory.bum|org.eventb.core.machineFile#G4_Fifo1nHistory|org.eventb.core.invariant#inv1"/>
+    </org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

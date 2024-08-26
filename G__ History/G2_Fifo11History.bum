@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.refinesMachine name="'" org.eventb.core.target="G1_AsyncHistory"/>
+<org.eventb.core.seesContext name=":" org.eventb.core.target="E__Messages"/>
+<org.eventb.core.variable name="(" org.eventb.core.identifier="net"/>
+<org.eventb.core.variable name=")" org.eventb.core.identifier="hg"/>
+<org.eventb.core.variable name="inv1B" org.eventb.core.identifier="hc"/>
+<org.eventb.core.variable name="," org.eventb.core.identifier="origOf"/>
+<org.eventb.core.variable name="-" org.eventb.core.identifier="destOf"/>
+<org.eventb.core.variable name="." org.eventb.core.identifier="hgOf"/>
+<org.eventb.core.variable name="inv1D" org.eventb.core.identifier="hcOf"/>
+<org.eventb.core.event name="inv1E" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION"/>
+<org.eventb.core.event name="inv1F" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="send">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="send"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="inv1G" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="receive">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="receive"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.label="Tm" org.eventb.core.predicate="m ∈ MESSAGE"/>
+<org.eventb.core.guard name="grd2" org.eventb.core.label="Tp" org.eventb.core.predicate="p ∈ PEER"/>
+<org.eventb.core.guard name="grd3" org.eventb.core.label="intransit" org.eventb.core.predicate="m ∈ net"/>
+<org.eventb.core.guard name="grd4" org.eventb.core.label="destination" org.eventb.core.predicate="destOf(m) = p"/>
+<org.eventb.core.guard name="grd5" org.eventb.core.label="ordering" org.eventb.core.predicate="¬ (∃ m2 · m2 ∈ net&#10;     ∧ origOf(m) = origOf(m2)&#10;     ∧ destOf(m2) = p&#10;     ∧ m2 ∈ hcOf(m))"/>
+<org.eventb.core.parameter name="element1" org.eventb.core.identifier="m"/>
+<org.eventb.core.parameter name="element2" org.eventb.core.identifier="p"/>
+<org.eventb.core.action name="act1" org.eventb.core.assignment="net ≔ net ∖ {m}" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="element6" org.eventb.core.assignment="hc(p) ≔ hc(p) ∪ {m} ∪ hcOf(m)" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+</org.eventb.core.machineFile>

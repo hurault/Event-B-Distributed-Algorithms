@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd" version="3">
+<org.eventb.core.extendsContext name="'" org.eventb.core.target="C__Peers"/>
+<org.eventb.core.carrierSet name="(" org.eventb.core.identifier="MESSAGE"/>
+<org.eventb.core.axiom name=")" org.eventb.core.label="COM" org.eventb.core.predicate="partition(COM,{Send},{Receive})"/>
+<org.eventb.core.carrierSet name="*" org.eventb.core.identifier="COM"/>
+<org.eventb.core.constant name="+" org.eventb.core.identifier="Send"/>
+<org.eventb.core.constant name="," org.eventb.core.identifier="Receive"/>
+<org.eventb.core.axiom name="-" org.eventb.core.label="Teventmapper" org.eventb.core.predicate="eventmapper ∈ (COM × MESSAGE) ⤖ EVENT"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="." org.eventb.core.identifier="eventmapper"/>
+<org.eventb.core.axiom name="/" org.eventb.core.label="axm1" org.eventb.core.predicate="∀ c1, c2, m1, m2 · c1 ∈ COM ∧ c2 ∈ COM ∧ m1 ∈ MESSAGE ∧ m2 ∈ MESSAGE ⇒&#10;(c1 ≠ c2 ∨ m1 ≠ m2 ⇔ eventmapper(c1↦m1) ≠ eventmapper(c2↦m2))" org.eventb.core.theorem="true"/>
+</org.eventb.core.contextFile>

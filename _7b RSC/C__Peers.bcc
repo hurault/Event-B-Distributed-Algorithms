@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.scContextFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd">
+    <org.eventb.core.scExtendsContext name="'" org.eventb.core.scTarget="/_7b RSC/A__Event.bcc|org.eventb.core.scContextFile#A__Event" org.eventb.core.source="/_7b RSC/C__Peers.buc|org.eventb.core.contextFile#C__Peers|org.eventb.core.extendsContext#'"/>
+    <org.eventb.core.scInternalContext name="A__Event">
+        <org.eventb.core.scCarrierSet name="EVENT" org.eventb.core.source="/_7b RSC/A__Event.buc|org.eventb.core.contextFile#A__Event|org.eventb.core.carrierSet#2" org.eventb.core.type="ℙ(EVENT)"/>
+    </org.eventb.core.scInternalContext>
+    <org.eventb.core.scCarrierSet name="PEER" org.eventb.core.source="/_7b RSC/C__Peers.buc|org.eventb.core.contextFile#C__Peers|org.eventb.core.carrierSet#(" org.eventb.core.type="ℙ(PEER)"/>
+</org.eventb.core.scContextFile>

@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.prFile version="1">
+<org.eventb.core.prProof name="inv1/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="DATA">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p3">
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p3" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p4">
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p4" org.eventb.core.prHyps=""/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="data" org.eventb.core.type="ℙ(DATA×ℤ)"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="⊤"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="⊤∧⊤"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="finite(data)"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="data∈DATA ⇸ ℤ"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="data∈DATA ⇸ ℤ∧finite(data)"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="inv2/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="DATA">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p3">
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p3" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p4">
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p4" org.eventb.core.prHyps=""/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="data" org.eventb.core.type="ℙ(DATA×ℤ)"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="⊤"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="⊤∧⊤"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="finite(data)"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="data∈DATA ⇸ ℤ"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="data∈DATA ⇸ ℤ∧finite(data)"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL1"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="INITIALISATION/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.psManual="true">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Empty SUM on goal" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p1" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p3">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p2"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p3" org.eventb.core.prHyps=""/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".poContext" org.eventb.core.prSValue="/Data/Sampler2.bpo|org.eventb.core.poFile#Sampler2"/>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+<org.eventb.core.prString name=".theory" org.eventb.core.prSValue="SUMandPRODUCT"/>
+<org.eventb.core.prString name=".rewRule" org.eventb.core.prSValue="rew1"/>
+<org.eventb.core.prString name=".ruleDesc" org.eventb.core.prSValue="Empty SUM"/>
+<org.eventb.core.prString name=".project" org.eventb.core.prSValue="BasicTheory"/>
+</org.eventb.core.prRule>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="⊤"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="0=0"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="0=SUM(∅ ⦂ ℙ(DATA×ℤ))"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="finite(∅ ⦂ ℙ(DATA×ℤ))"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.theory.rbp.manualRewriteReasoner" org.eventb.core.prRSig="org.eventb.theory.rbp.manualRewriteReasoner"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="INITIALISATION/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.psManual="true">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Empty PRODUCT on goal" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p1" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p3">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p2"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p3" org.eventb.core.prHyps=""/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".poContext" org.eventb.core.prSValue="/Data/Sampler2.bpo|org.eventb.core.poFile#Sampler2"/>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+<org.eventb.core.prString name=".theory" org.eventb.core.prSValue="SUMandPRODUCT"/>
+<org.eventb.core.prString name=".rewRule" org.eventb.core.prSValue="rew11"/>
+<org.eventb.core.prString name=".ruleDesc" org.eventb.core.prSValue="Empty PRODUCT"/>
+<org.eventb.core.prString name=".project" org.eventb.core.prSValue="BasicTheory"/>
+</org.eventb.core.prRule>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="⊤"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="1=PRODUCT(∅ ⦂ ℙ(DATA×ℤ))"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="1=1"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="finite(∅ ⦂ ℙ(DATA×ℤ))"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.theory.rbp.manualRewriteReasoner" org.eventb.core.prRSig="org.eventb.theory.rbp.manualRewriteReasoner"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="addValue/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7" org.eventb.core.prSets="DATA" org.eventb.core.psManual="true">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Union SUM on goal" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p9" org.eventb.core.prHyps="p8">
+<org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p8"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p8" org.eventb.core.prInfHyps="p10"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p8"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p11"/>
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with sd=SUM(data)" org.eventb.core.prGoal="p9" org.eventb.core.prHyps="p1">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p12">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Singleton SUM on goal" org.eventb.core.prGoal="p12" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p13">
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p13" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p14">
+<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p14" org.eventb.core.prHyps=""/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".poContext" org.eventb.core.prSValue="/Data/Sampler2.bpo|org.eventb.core.poFile#Sampler2"/>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1.1"/>
+<org.eventb.core.prString name=".theory" org.eventb.core.prSValue="SUMandPRODUCT"/>
+<org.eventb.core.prString name=".rewRule" org.eventb.core.prSValue="rew3"/>
+<org.eventb.core.prString name=".ruleDesc" org.eventb.core.prSValue="Singleton SUM"/>
+<org.eventb.core.prString name=".project" org.eventb.core.prSValue="BasicTheory"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p15">
+<org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p15"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p15" org.eventb.core.prInfHyps="p16"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p15"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p11"/>
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with sd=SUM(data)" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p17">
+<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p17" org.eventb.core.prHyps="p7,p2,p1,p6,p5,p3,p4,p16">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".poContext" org.eventb.core.prSValue="/Data/Sampler2.bpo|org.eventb.core.poFile#Sampler2"/>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+<org.eventb.core.prString name=".theory" org.eventb.core.prSValue="SUMandPRODUCT"/>
+<org.eventb.core.prString name=".rewRule" org.eventb.core.prSValue="rew2"/>
+<org.eventb.core.prString name=".ruleDesc" org.eventb.core.prSValue="Union SUM"/>
+<org.eventb.core.prString name=".project" org.eventb.core.prSValue="BasicTheory"/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="d" org.eventb.core.type="DATA"/>
+<org.eventb.core.prIdent name="data" org.eventb.core.type="ℙ(DATA×ℤ)"/>
+<org.eventb.core.prIdent name="pd" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prIdent name="sd" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prIdent name="v" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="⊤"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="sd+v=SUM(data∪{d ↦ v})"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="v∈ℤ"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="dom(data)∩{d}=(∅ ⦂ ℙ(DATA))"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="SUM(data)+v=SUM(data)+SUM({d ↦ v})"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="finite(data)"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="data∪{d ↦ v}∈DATA ⇸ ℤ"/>
+<org.eventb.core.prPred name="p17" org.eventb.core.predicate="SUM(data)+v=SUM(data∪{d ↦ v})"/>
+<org.eventb.core.prPred name="p16" org.eventb.core.predicate="¬dom(data)∩{d}=(∅ ⦂ ℙ(DATA))"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="finite(data∪{d ↦ v})"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="pd=PRODUCT(data)"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="data∈DATA ⇸ ℤ"/>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="¬dom(data)∩dom({d ↦ v})=(∅ ⦂ ℙ(DATA))"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="sd=SUM(data)"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="SUM(data)+v=SUM(data)+v"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="dom(data)∩dom({d ↦ v})=(∅ ⦂ ℙ(DATA))"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="sd+v=SUM(data)+SUM({d ↦ v})"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="d∈DATA ∖ dom(data)"/>
+<org.eventb.core.prReas name="r5" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.theory.rbp.manualRewriteReasoner" org.eventb.core.prRSig="org.eventb.theory.rbp.manualRewriteReasoner"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="addValue/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7" org.eventb.core.prSets="DATA" org.eventb.core.psManual="true">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Union PRODUCT on goal" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p9" org.eventb.core.prHyps="p8">
+<org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p8"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p8" org.eventb.core.prInfHyps="p10"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p8"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p11"/>
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with pd=PRODUCT(data)" org.eventb.core.prGoal="p9" org.eventb.core.prHyps="p7">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p12">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Singleton PRODUCT on goal" org.eventb.core.prGoal="p12" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p13">
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p13" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p14">
+<org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p14" org.eventb.core.prHyps=""/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".poContext" org.eventb.core.prSValue="/Data/Sampler2.bpo|org.eventb.core.poFile#Sampler2"/>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1.1"/>
+<org.eventb.core.prString name=".theory" org.eventb.core.prSValue="SUMandPRODUCT"/>
+<org.eventb.core.prString name=".rewRule" org.eventb.core.prSValue="rew13"/>
+<org.eventb.core.prString name=".ruleDesc" org.eventb.core.prSValue="Singleton PRODUCT"/>
+<org.eventb.core.prString name=".project" org.eventb.core.prSValue="BasicTheory"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p15">
+<org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p15"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p15" org.eventb.core.prInfHyps="p16"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p15"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p11"/>
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with pd=PRODUCT(data)" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p7">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p17">
+<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p17" org.eventb.core.prHyps="p6,p2,p1,p7,p5,p3,p4,p16">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+<org.eventb.core.prString name=".poContext" org.eventb.core.prSValue="/Data/Sampler2.bpo|org.eventb.core.poFile#Sampler2"/>
+<org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+<org.eventb.core.prString name=".theory" org.eventb.core.prSValue="SUMandPRODUCT"/>
+<org.eventb.core.prString name=".rewRule" org.eventb.core.prSValue="rew12"/>
+<org.eventb.core.prString name=".ruleDesc" org.eventb.core.prSValue="Union PRODUCT"/>
+<org.eventb.core.prString name=".project" org.eventb.core.prSValue="BasicTheory"/>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="d" org.eventb.core.type="DATA"/>
+<org.eventb.core.prIdent name="data" org.eventb.core.type="ℙ(DATA×ℤ)"/>
+<org.eventb.core.prIdent name="pd" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prIdent name="sd" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prIdent name="v" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="⊤"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="PRODUCT(data)∗v=PRODUCT(data)∗v"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="v∈ℤ"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="dom(data)∩{d}=(∅ ⦂ ℙ(DATA))"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="finite(data)"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="pd∗v=PRODUCT(data∪{d ↦ v})"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="data∪{d ↦ v}∈DATA ⇸ ℤ"/>
+<org.eventb.core.prPred name="p16" org.eventb.core.predicate="¬dom(data)∩{d}=(∅ ⦂ ℙ(DATA))"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="finite(data∪{d ↦ v})"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="data∈DATA ⇸ ℤ"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="pd=PRODUCT(data)"/>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="¬dom(data)∩dom({d ↦ v})=(∅ ⦂ ℙ(DATA))"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="sd=SUM(data)"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="dom(data)∩dom({d ↦ v})=(∅ ⦂ ℙ(DATA))"/>
+<org.eventb.core.prPred name="p17" org.eventb.core.predicate="PRODUCT(data)∗v=PRODUCT(data∪{d ↦ v})"/>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="PRODUCT(data)∗v=PRODUCT(data)∗PRODUCT({d ↦ v})"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="pd∗v=PRODUCT(data)∗PRODUCT({d ↦ v})"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="d∈DATA ∖ dom(data)"/>
+<org.eventb.core.prReas name="r5" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.theory.rbp.manualRewriteReasoner" org.eventb.core.prRSig="org.eventb.theory.rbp.manualRewriteReasoner"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="addValue/grd1/GRD"/>
+<org.eventb.core.prProof name="getStats/grd1/GRD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with s=sd" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p2">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p1" org.eventb.core.prHyps="p1"/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="data" org.eventb.core.type="ℙ(DATA×ℤ)"/>
+<org.eventb.core.prIdent name="s" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prIdent name="sd" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="sd=SUM(data)"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="s=sd"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="s=SUM(data)"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.hyp"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="getStats/grd2/GRD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with p=pd" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p2">
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p2" org.eventb.core.prHyps="p2"/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="data" org.eventb.core.type="ℙ(DATA×ℤ)"/>
+<org.eventb.core.prIdent name="p" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prIdent name="pd" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="pd=PRODUCT(data)"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="p=pd"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="p=PRODUCT(data)"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.hyp"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="INITIALISATION/act1/SIM"/>
+</org.eventb.core.prFile>

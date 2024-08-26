@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.theory.core.theoryRoot org.eventb.core.comment="A theory of complements &#10;&#10;@author Jean-Raymond Abrial&#10;@2014" org.eventb.core.configuration="org.eventb.theory.core.thy">
+<org.eventb.theory.core.typeParameter name="'" org.eventb.core.identifier="S"/>
+<org.eventb.theory.core.newOperatorDefinition name="(" org.eventb.core.label="cmp" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(S)" org.eventb.core.identifier="a"/>
+<org.eventb.theory.core.directOperatorDefinition name="(" org.eventb.theory.core.formula="S∖a"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.theorem name=")" org.eventb.core.label="thm1" org.eventb.core.predicate="∀s·s⊆S ⇒ cmp(cmp(s))=s"/>
+<org.eventb.theory.core.newOperatorDefinition name="*" org.eventb.core.label="cnj" org.eventb.theory.core.associative="false" org.eventb.theory.core.commutative="false" org.eventb.theory.core.formulaType="true" org.eventb.theory.core.notationType="PREFIX">
+<org.eventb.theory.core.operatorArgument name="'" org.eventb.core.expression="ℙ(S)→ℙ(S)" org.eventb.core.identifier="H"/>
+<org.eventb.theory.core.directOperatorDefinition name="(" org.eventb.theory.core.formula="λk·k∈ℙ(S)∣cmp(H(cmp(k)))"/>
+</org.eventb.theory.core.newOperatorDefinition>
+<org.eventb.theory.core.theorem name="+" org.eventb.core.label="thm2" org.eventb.core.predicate="∀H,k·H∈ℙ(S)→ℙ(S) ∧ k⊆S ⇒ cnj(H)(k)=cmp(H(cmp(k)))"/>
+<org.eventb.theory.core.theorem name="," org.eventb.core.label="thm3" org.eventb.core.predicate="∀H·H∈ℙ(S)→ℙ(S) ⇒ cnj(cnj(H))=H"/>
+<org.eventb.theory.core.proofRulesBlock name="-" org.eventb.core.label="cmpcmp">
+<org.eventb.theory.core.metaVariable name="'" org.eventb.core.identifier="s" org.eventb.theory.core.type="ℙ(S)"/>
+<org.eventb.theory.core.rewriteRule name="(" org.eventb.core.label="rew1" org.eventb.theory.core.applicability="automatic" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="cmpcmp" org.eventb.theory.core.formula="cmp(cmp(s))">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="s"/>
+</org.eventb.theory.core.rewriteRule>
+</org.eventb.theory.core.proofRulesBlock>
+<org.eventb.theory.core.proofRulesBlock name="." org.eventb.core.label="cnjcnj">
+<org.eventb.theory.core.metaVariable name="'" org.eventb.core.identifier="H" org.eventb.theory.core.type="ℙ(ℙ(S)×ℙ(S))"/>
+<org.eventb.theory.core.rewriteRule name="(" org.eventb.core.label="rew2" org.eventb.theory.core.applicability="automatic" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="cnjcnj" org.eventb.theory.core.formula="cnj(cnj(H))">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="H∈ℙ(S)→ℙ(S)" org.eventb.theory.core.formula="H"/>
+</org.eventb.theory.core.rewriteRule>
+</org.eventb.theory.core.proofRulesBlock>
+<org.eventb.theory.core.theorem name="/" org.eventb.core.label="thm4" org.eventb.core.predicate="∀f·f∈ℙ(S)→ℙ(S) ⇒ cmp(inter({s∣cnj(f)(s)⊆s})) = union({s∣s⊆f(s)})"/>
+</org.eventb.theory.core.theoryRoot>

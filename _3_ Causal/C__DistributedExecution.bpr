@@ -1,0 +1,1948 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.prFile version="1">
+    <org.eventb.core.prProof name="INITIALISATION/Tprec/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="EVENT">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p1" org.eventb.core.prHyps=""/>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="⊤"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="(∅ ⦂ ℙ(EVENT×EVENT))∈(∅ ⦂ ℙ(EVENT))  (∅ ⦂ ℙ(EVENT))"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="send/Tprec/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="EVENT,PEER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p2,p3,p4,p5,p6,p7,p8,p9,p10"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Z3" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1">
+                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+                    <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="Z3"/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="p" org.eventb.core.type="PEER"/>
+        <org.eventb.core.prIdent name="past" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.prIdent name="v" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="prec∈past  past"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="∀vp⦂EVENT·vp∈past⇒(∀vp2⦂EVENT·vp2∈past⇒vp2∈dom(peerOf)∧peerOf∈EVENT ⇸ PEER)"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="peerOf∈past → PEER"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="prec∪{v ↦ v}∪{vp⦂EVENT·vp∈past∧(∃vp2⦂EVENT·vp2∈past∧peerOf(vp2)=p∧vp ↦ vp2∈prec) ∣ vp ↦ v}∈past∪{v}  past∪{v}"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="∀v⦂EVENT·v∈past⇒v ↦ v∈prec"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="trans⊆prec">
+            <org.eventb.core.prIdent name="trans" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="∀v1⦂EVENT,v2⦂EVENT·v1∈past∧v2∈past∧peerOf(v1)=peerOf(v2)⇒v1 ↦ v2∈prec∨v2 ↦ v1∈prec"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="trans∈past ↔ past">
+            <org.eventb.core.prIdent name="trans" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="dom(trans)∩ran(trans)=(∅ ⦂ ℙ(EVENT))">
+            <org.eventb.core.prIdent name="trans" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="past∈ℙ(EVENT)"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="∀v1⦂EVENT,v2⦂EVENT,v3⦂EVENT·v1∈past∧v2∈past∧v3∈past∧v1 ↦ v2∈prec∧v2 ↦ v3∈prec⇒v1 ↦ v3∈prec"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="receive/Tprec/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12" org.eventb.core.prSets="EVENT,PEER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p11,p10,p4,p7,p12,p8,p9,p3"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="CVC4" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p2,p1,p5,p6,p11,p10,p4,p7,p12,p8,p9,p3">
+                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+                    <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="CVC4"/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="p" org.eventb.core.type="PEER"/>
+        <org.eventb.core.prIdent name="past" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.prIdent name="sv" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prIdent name="trans" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.prIdent name="v" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="v∈EVENT ∖ past"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="∀vp⦂EVENT·vp∈past⇒(∀vp2⦂EVENT·vp2∈past⇒vp2∈dom(peerOf)∧peerOf∈EVENT ⇸ PEER)"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="peerOf∈past → PEER"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="p∈PEER"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="∀v⦂EVENT·v∈past⇒v ↦ v∈prec"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="trans⊆prec"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="∀v1⦂EVENT,v2⦂EVENT·v1∈past∧v2∈past∧peerOf(v1)=peerOf(v2)⇒v1 ↦ v2∈prec∨v2 ↦ v1∈prec"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="∀v1⦂EVENT,v2⦂EVENT,v3⦂EVENT·v1∈past∧v2∈past∧v3∈past∧v1 ↦ v2∈prec∧v2 ↦ v3∈prec⇒v1 ↦ v3∈prec"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="prec∈past  past"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="sv∈past"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="prec∪{v ↦ v}∪{vp⦂EVENT·vp∈past∧(∃vp2⦂EVENT·vp2∈past∧peerOf(vp2)=p∧vp ↦ vp2∈prec) ∣ vp ↦ v}∪{vp⦂EVENT·vp∈past∧vp ↦ sv∈prec ∣ vp ↦ v}∈past∪{v}  past∪{v}"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="trans∈past ↔ past"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="past∈ℙ(EVENT)"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="INITIALISATION/TpeerOf/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="EVENT,PEER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p1" org.eventb.core.prHyps=""/>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="(∅ ⦂ ℙ(EVENT×PEER))∈(∅ ⦂ ℙ(EVENT)) → PEER"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="⊤"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="send/TpeerOf/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="EVENT,PEER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p3,p4,p5,p6,p7,p8,p9,p10"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Z3" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2">
+                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+                    <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="Z3"/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="p" org.eventb.core.type="PEER"/>
+        <org.eventb.core.prIdent name="past" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.prIdent name="v" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="v∈EVENT ∖ past"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="prec∈past  past">
+            <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="peerOf∪{v ↦ p}∈past∪{v} → PEER"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="peerOf∈past → PEER"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="∀v⦂EVENT·v∈past⇒v ↦ v∈prec">
+            <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="trans⊆prec">
+            <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+            <org.eventb.core.prIdent name="trans" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="∀v1⦂EVENT,v2⦂EVENT·v1∈past∧v2∈past∧peerOf(v1)=peerOf(v2)⇒v1 ↦ v2∈prec∨v2 ↦ v1∈prec">
+            <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="trans∈past ↔ past">
+            <org.eventb.core.prIdent name="trans" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="dom(trans)∩ran(trans)=(∅ ⦂ ℙ(EVENT))">
+            <org.eventb.core.prIdent name="trans" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="past∈ℙ(EVENT)"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="∀v1⦂EVENT,v2⦂EVENT,v3⦂EVENT·v1∈past∧v2∈past∧v3∈past∧v1 ↦ v2∈prec∧v2 ↦ v3∈prec⇒v1 ↦ v3∈prec">
+            <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="receive/TpeerOf/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11" org.eventb.core.prSets="EVENT,PEER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p10,p9,p2,p6,p11,p7,p8"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="CVC4" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p3,p1,p4,p5,p10,p9,p2,p6,p11,p7,p8">
+                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+                    <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="CVC4"/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="p" org.eventb.core.type="PEER"/>
+        <org.eventb.core.prIdent name="past" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.prIdent name="sv" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prIdent name="trans" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.prIdent name="v" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="v∈EVENT ∖ past"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="prec∈past  past"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="peerOf∪{v ↦ p}∈past∪{v} → PEER"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="peerOf∈past → PEER"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="sv∈past"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="p∈PEER"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="∀v⦂EVENT·v∈past⇒v ↦ v∈prec"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="trans⊆prec"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="∀v1⦂EVENT,v2⦂EVENT·v1∈past∧v2∈past∧peerOf(v1)=peerOf(v2)⇒v1 ↦ v2∈prec∨v2 ↦ v1∈prec"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="trans∈past ↔ past"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="past∈ℙ(EVENT)"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="∀v1⦂EVENT,v2⦂EVENT,v3⦂EVENT·v1∈past∧v2∈past∧v3∈past∧v1 ↦ v2∈prec∧v2 ↦ v3∈prec⇒v1 ↦ v3∈prec"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="send/act3/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="EVENT,PEER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p2,p3,p4,p5,p1,p6,p7,p8,p9"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Z3" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1">
+                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+                    <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="Z3"/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="past" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="prec∈past  past">
+            <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀vp⦂EVENT·vp∈past⇒(∀vp2⦂EVENT·vp2∈past⇒vp2∈dom(peerOf)∧peerOf∈EVENT ⇸ PEER)"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="peerOf∈past → PEER"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="∀v⦂EVENT·v∈past⇒v ↦ v∈prec">
+            <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="trans⊆prec">
+            <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+            <org.eventb.core.prIdent name="trans" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="∀v1⦂EVENT,v2⦂EVENT·v1∈past∧v2∈past∧peerOf(v1)=peerOf(v2)⇒v1 ↦ v2∈prec∨v2 ↦ v1∈prec">
+            <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="trans∈past ↔ past">
+            <org.eventb.core.prIdent name="trans" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="dom(trans)∩ran(trans)=(∅ ⦂ ℙ(EVENT))">
+            <org.eventb.core.prIdent name="trans" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="past∈ℙ(EVENT)"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="∀v1⦂EVENT,v2⦂EVENT,v3⦂EVENT·v1∈past∧v2∈past∧v3∈past∧v1 ↦ v2∈prec∧v2 ↦ v3∈prec⇒v1 ↦ v3∈prec">
+            <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="receive/act4/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="EVENT,PEER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p2,p3,p4,p5,p1,p6,p7,p8,p9"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Z3" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1">
+                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+                    <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="Z3"/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="past" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="prec∈past  past">
+            <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀vp⦂EVENT·vp∈past⇒(∀vp2⦂EVENT·vp2∈past⇒vp2∈dom(peerOf)∧peerOf∈EVENT ⇸ PEER)"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="peerOf∈past → PEER"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="∀v⦂EVENT·v∈past⇒v ↦ v∈prec">
+            <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="trans⊆prec">
+            <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+            <org.eventb.core.prIdent name="trans" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="∀v1⦂EVENT,v2⦂EVENT·v1∈past∧v2∈past∧peerOf(v1)=peerOf(v2)⇒v1 ↦ v2∈prec∨v2 ↦ v1∈prec">
+            <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="trans∈past ↔ past">
+            <org.eventb.core.prIdent name="trans" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="dom(trans)∩ran(trans)=(∅ ⦂ ℙ(EVENT))">
+            <org.eventb.core.prIdent name="trans" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="past∈ℙ(EVENT)"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="∀v1⦂EVENT,v2⦂EVENT,v3⦂EVENT·v1∈past∧v2∈past∧v3∈past∧v1 ↦ v2∈prec∧v2 ↦ v3∈prec⇒v1 ↦ v3∈prec">
+            <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="inv4/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="EVENT,PEER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p2,p3"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Z3" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1">
+                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+                    <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="Z3"/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="past" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="peerOf∈past → PEER"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="trans∈past ↔ past">
+            <org.eventb.core.prIdent name="trans" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="past∈ℙ(EVENT)"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀v1⦂EVENT,v2⦂EVENT·v1∈past∧v2∈past⇒v1∈dom(peerOf)∧peerOf∈EVENT ⇸ PEER∧v2∈dom(peerOf)"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="send/reflexivity/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="PEER,VNT">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p2,p3,p4,p5,p6,p7,p8"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Z3" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1">
+                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+                    <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="Z3"/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="p" org.eventb.core.type="PEER"/>
+        <org.eventb.core.prIdent name="past" org.eventb.core.type="ℙ(VNT)"/>
+        <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(VNT×PEER)"/>
+        <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(VNT×VNT)"/>
+        <org.eventb.core.prIdent name="v" org.eventb.core.type="VNT"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀v0⦂VNT·v0∈past∪{v}⇒v0 ↦ v0∈prec∪{v ↦ v}∪{vp⦂VNT·vp∈past∧(∃vp2⦂VNT·vp2∈past∧peerOf(vp2)=p∧vp ↦ vp2∈prec) ∣ vp ↦ v}"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="prec∈past  past"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="past∈ℙ(VNT)"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="peerOf∈past → PEER"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="∀v⦂VNT·v∈past⇒v ↦ v∈prec"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="∀v1⦂VNT,v2⦂VNT·v1∈past∧v2∈past∧peerOf(v1)=peerOf(v2)⇒v1 ↦ v2∈prec∨v2 ↦ v1∈prec"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="trans∈past ↔ past">
+            <org.eventb.core.prIdent name="trans" org.eventb.core.type="ℙ(VNT×VNT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="dom(trans)∩ran(trans)=(∅ ⦂ ℙ(VNT))">
+            <org.eventb.core.prIdent name="trans" org.eventb.core.type="ℙ(VNT×VNT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="∀v1⦂VNT,v2⦂VNT,v3⦂VNT·v1∈past∧v2∈past∧v3∈past∧v1 ↦ v2∈prec∧v2 ↦ v3∈prec⇒v1 ↦ v3∈prec"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="send/transitivity/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3" org.eventb.core.prSets="PEER,VNT">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p4,p5,p6,p1,p7,p8,p9"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Z3" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3">
+                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+                    <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="Z3"/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="p" org.eventb.core.type="PEER"/>
+        <org.eventb.core.prIdent name="past" org.eventb.core.type="ℙ(VNT)"/>
+        <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(VNT×PEER)"/>
+        <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(VNT×VNT)"/>
+        <org.eventb.core.prIdent name="v" org.eventb.core.type="VNT"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="prec∈past  past"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="v∈VNT ∖ past"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="past∈ℙ(VNT)"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="peerOf∈past → PEER"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="∀v⦂VNT·v∈past⇒v ↦ v∈prec"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="∀v1⦂VNT,v2⦂VNT·v1∈past∧v2∈past∧peerOf(v1)=peerOf(v2)⇒v1 ↦ v2∈prec∨v2 ↦ v1∈prec"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="trans∈past ↔ past">
+            <org.eventb.core.prIdent name="trans" org.eventb.core.type="ℙ(VNT×VNT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀v1⦂VNT,v2⦂VNT,v3⦂VNT·v1∈past∪{v}∧v2∈past∪{v}∧v3∈past∪{v}∧v1 ↦ v2∈prec∪{v ↦ v}∪{vp⦂VNT·vp∈past∧(∃vp2⦂VNT·vp2∈past∧peerOf(vp2)=p∧vp ↦ vp2∈prec) ∣ vp ↦ v}∧v2 ↦ v3∈prec∪{v ↦ v}∪{vp⦂VNT·vp∈past∧(∃vp2⦂VNT·vp2∈past∧peerOf(vp2)=p∧vp ↦ vp2∈prec) ∣ vp ↦ v}⇒v1 ↦ v3∈prec∪{v ↦ v}∪{vp⦂VNT·vp∈past∧(∃vp2⦂VNT·vp2∈past∧peerOf(vp2)=p∧vp ↦ vp2∈prec) ∣ vp ↦ v}"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="dom(trans)∩ran(trans)=(∅ ⦂ ℙ(VNT))">
+            <org.eventb.core.prIdent name="trans" org.eventb.core.type="ℙ(VNT×VNT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="∀v1⦂VNT,v2⦂VNT,v3⦂VNT·v1∈past∧v2∈past∧v3∈past∧v1 ↦ v2∈prec∧v2 ↦ v3∈prec⇒v1 ↦ v3∈prec"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="send/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4" org.eventb.core.prSets="EVENT,PEER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p5,p6,p7,p8,p2,p4,p9,p10"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Z3" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4">
+                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+                    <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="Z3"/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="p" org.eventb.core.type="PEER"/>
+        <org.eventb.core.prIdent name="past" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.prIdent name="v" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="v∈EVENT ∖ past"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="prec∈past  past"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀v1⦂EVENT,v2⦂EVENT·v1∈past∪{v}∧v2∈past∪{v}∧(peerOf∪{v ↦ p})(v1)=(peerOf∪{v ↦ p})(v2)⇒v1 ↦ v2∈prec∪{v ↦ v}∪{vp⦂EVENT·vp∈past∧(∃vp2⦂EVENT·vp2∈past∧peerOf(vp2)=p∧vp ↦ vp2∈prec) ∣ vp ↦ v}∨v2 ↦ v1∈prec∪{v ↦ v}∪{vp⦂EVENT·vp∈past∧(∃vp2⦂EVENT·vp2∈past∧peerOf(vp2)=p∧vp ↦ vp2∈prec) ∣ vp ↦ v}"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="peerOf∈past → PEER"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="∀v1⦂EVENT,v2⦂EVENT·v1∈past∧v2∈past∧peerOf(v1)=peerOf(v2)⇒v1 ↦ v2∈prec∨v2 ↦ v1∈prec"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="∀v⦂EVENT·v∈past⇒v ↦ v∈prec"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="trans⊆prec">
+            <org.eventb.core.prIdent name="trans" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="trans∈past ↔ past">
+            <org.eventb.core.prIdent name="trans" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="dom(trans)∩ran(trans)=(∅ ⦂ ℙ(EVENT))">
+            <org.eventb.core.prIdent name="trans" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="past∈ℙ(EVENT)"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="∀v1⦂EVENT,v2⦂EVENT,v3⦂EVENT·v1∈past∧v2∈past∧v3∈past∧v1 ↦ v2∈prec∧v2 ↦ v3∈prec⇒v1 ↦ v3∈prec"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="INITIALISATION/reflexivity/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="VNT">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="PP (trivial)" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+            <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+            <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="Z3"/>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀v⦂VNT·v∈(∅ ⦂ ℙ(VNT))⇒v ↦ v∈(∅ ⦂ ℙ(VNT×VNT))"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="INITIALISATION/transitivity/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="VNT">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="PP (trivial)" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+            <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+            <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="Z3"/>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀v1⦂VNT,v2⦂VNT,v3⦂VNT·v1∈(∅ ⦂ ℙ(VNT))∧v2∈(∅ ⦂ ℙ(VNT))∧v3∈(∅ ⦂ ℙ(VNT))∧v1 ↦ v2∈(∅ ⦂ ℙ(VNT×VNT))∧v2 ↦ v3∈(∅ ⦂ ℙ(VNT×VNT))⇒v1 ↦ v3∈(∅ ⦂ ℙ(VNT×VNT))"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="INITIALISATION/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="EVENT">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p1" org.eventb.core.prHyps=""/>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="⊤"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="(∅ ⦂ ℙ(EVENT×EVENT))⊆(∅ ⦂ ℙ(EVENT×EVENT))"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="receive/reflexivity/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="PEER,VNT">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p2,p3,p4,p5,p6,p7,p8"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Z3" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1">
+                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+                    <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="Z3"/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="p" org.eventb.core.type="PEER"/>
+        <org.eventb.core.prIdent name="past" org.eventb.core.type="ℙ(VNT)"/>
+        <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(VNT×PEER)"/>
+        <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(VNT×VNT)"/>
+        <org.eventb.core.prIdent name="sv" org.eventb.core.type="VNT"/>
+        <org.eventb.core.prIdent name="v" org.eventb.core.type="VNT"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="prec∈past  past"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀v0⦂VNT·v0∈past∪{v}⇒v0 ↦ v0∈prec∪{v ↦ v}∪{vp⦂VNT·vp∈past∧(∃vp2⦂VNT·vp2∈past∧peerOf(vp2)=p∧vp ↦ vp2∈prec) ∣ vp ↦ v}∪{vp⦂VNT·vp∈past∧vp ↦ sv∈prec ∣ vp ↦ v}"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="past∈ℙ(VNT)"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="peerOf∈past → PEER"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="∀v⦂VNT·v∈past⇒v ↦ v∈prec"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="∀v1⦂VNT,v2⦂VNT·v1∈past∧v2∈past∧peerOf(v1)=peerOf(v2)⇒v1 ↦ v2∈prec∨v2 ↦ v1∈prec"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="trans∈past ↔ past">
+            <org.eventb.core.prIdent name="trans" org.eventb.core.type="ℙ(VNT×VNT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="dom(trans)∩ran(trans)=(∅ ⦂ ℙ(VNT))">
+            <org.eventb.core.prIdent name="trans" org.eventb.core.type="ℙ(VNT×VNT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="∀v1⦂VNT,v2⦂VNT,v3⦂VNT·v1∈past∧v2∈past∧v3∈past∧v1 ↦ v2∈prec∧v2 ↦ v3∈prec⇒v1 ↦ v3∈prec"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="receive/transitivity/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4" org.eventb.core.prSets="PEER,VNT">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p5,p6,p7,p1,p8,p9,p10"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Z3" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4">
+                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+                    <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="Z3"/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="p" org.eventb.core.type="PEER"/>
+        <org.eventb.core.prIdent name="past" org.eventb.core.type="ℙ(VNT)"/>
+        <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(VNT×PEER)"/>
+        <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(VNT×VNT)"/>
+        <org.eventb.core.prIdent name="sv" org.eventb.core.type="VNT"/>
+        <org.eventb.core.prIdent name="v" org.eventb.core.type="VNT"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="prec∈past  past"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="v∈VNT ∖ past"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="past∈ℙ(VNT)"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="peerOf∈past → PEER"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="sv∈past"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="∀v⦂VNT·v∈past⇒v ↦ v∈prec"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="∀v1⦂VNT,v2⦂VNT·v1∈past∧v2∈past∧peerOf(v1)=peerOf(v2)⇒v1 ↦ v2∈prec∨v2 ↦ v1∈prec"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀v1⦂VNT,v2⦂VNT,v3⦂VNT·v1∈past∪{v}∧v2∈past∪{v}∧v3∈past∪{v}∧v1 ↦ v2∈prec∪{v ↦ v}∪{vp⦂VNT·vp∈past∧(∃vp2⦂VNT·vp2∈past∧peerOf(vp2)=p∧vp ↦ vp2∈prec) ∣ vp ↦ v}∪{vp⦂VNT·vp∈past∧vp ↦ sv∈prec ∣ vp ↦ v}∧v2 ↦ v3∈prec∪{v ↦ v}∪{vp⦂VNT·vp∈past∧(∃vp2⦂VNT·vp2∈past∧peerOf(vp2)=p∧vp ↦ vp2∈prec) ∣ vp ↦ v}∪{vp⦂VNT·vp∈past∧vp ↦ sv∈prec ∣ vp ↦ v}⇒v1 ↦ v3∈prec∪{v ↦ v}∪{vp⦂VNT·vp∈past∧(∃vp2⦂VNT·vp2∈past∧peerOf(vp2)=p∧vp ↦ vp2∈prec) ∣ vp ↦ v}∪{vp⦂VNT·vp∈past∧vp ↦ sv∈prec ∣ vp ↦ v}"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="trans∈past ↔ past">
+            <org.eventb.core.prIdent name="trans" org.eventb.core.type="ℙ(VNT×VNT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="dom(trans)∩ran(trans)=(∅ ⦂ ℙ(VNT))">
+            <org.eventb.core.prIdent name="trans" org.eventb.core.type="ℙ(VNT×VNT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="∀v1⦂VNT,v2⦂VNT,v3⦂VNT·v1∈past∧v2∈past∧v3∈past∧v1 ↦ v2∈prec∧v2 ↦ v3∈prec⇒v1 ↦ v3∈prec"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="receive/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4" org.eventb.core.prSets="EVENT,PEER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p5,p6,p7,p8,p9,p10,p2,p4,p11,p12"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Z3" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4">
+                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+                    <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="Z3"/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="p" org.eventb.core.type="PEER"/>
+        <org.eventb.core.prIdent name="past" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.prIdent name="sv" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prIdent name="v" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="v∈EVENT ∖ past"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="peerOf∈past → PEER"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="∀v1⦂EVENT,v2⦂EVENT·v1∈past∧v2∈past∧peerOf(v1)=peerOf(v2)⇒v1 ↦ v2∈prec∨v2 ↦ v1∈prec"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="∀v⦂EVENT·v∈past⇒v ↦ v∈prec"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="trans⊆prec">
+            <org.eventb.core.prIdent name="trans" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="∀e⦂EVENT,e1⦂EVENT,e2⦂EVENT·e ↦ e1∈trans∧e ↦ e2∈trans⇒e1=e2">
+            <org.eventb.core.prIdent name="trans" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="∀v1⦂EVENT,v2⦂EVENT,v3⦂EVENT·v1∈past∧v2∈past∧v3∈past∧v1 ↦ v2∈prec∧v2 ↦ v3∈prec⇒v1 ↦ v3∈prec"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="prec∈past  past"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀v1⦂EVENT,v2⦂EVENT·v1∈past∪{v}∧v2∈past∪{v}∧(peerOf∪{v ↦ p})(v1)=(peerOf∪{v ↦ p})(v2)⇒v1 ↦ v2∈prec∪{v ↦ v}∪{vp⦂EVENT·vp∈past∧(∃vp2⦂EVENT·vp2∈past∧peerOf(vp2)=p∧vp ↦ vp2∈prec) ∣ vp ↦ v}∪{vp⦂EVENT·vp∈past∧vp ↦ sv∈prec ∣ vp ↦ v}∨v2 ↦ v1∈prec∪{v ↦ v}∪{vp⦂EVENT·vp∈past∧(∃vp2⦂EVENT·vp2∈past∧peerOf(vp2)=p∧vp ↦ vp2∈prec) ∣ vp ↦ v}∪{vp⦂EVENT·vp∈past∧vp ↦ sv∈prec ∣ vp ↦ v}"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="∀e⦂EVENT,e1⦂EVENT,e2⦂EVENT·e1 ↦ e∈trans∧e2 ↦ e∈trans⇒e1=e2">
+            <org.eventb.core.prIdent name="trans" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="trans∈past ↔ past">
+            <org.eventb.core.prIdent name="trans" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="dom(trans)∩ran(trans)=(∅ ⦂ ℙ(EVENT))">
+            <org.eventb.core.prIdent name="trans" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="past∈ℙ(EVENT)"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="INITIALISATION/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="EVENT">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p1" org.eventb.core.prHyps=""/>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="⊤"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="(∅ ⦂ ℙ(EVENT×EVENT))∩(∅ ⦂ ℙ(EVENT×EVENT))∼⊆(id ⦂ ℙ(EVENT×EVENT))"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="send/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="EVENT,PEER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p2,p3,p4,p5,p6,p7,p8,p9,p10"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Z3" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1">
+                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+                    <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="Z3"/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="p" org.eventb.core.type="PEER"/>
+        <org.eventb.core.prIdent name="past" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.prIdent name="trans" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.prIdent name="v" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="prec∈past  past"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="∀vp⦂EVENT·vp∈past⇒(∀vp2⦂EVENT·vp2∈past⇒vp2∈dom(peerOf)∧peerOf∈EVENT ⇸ PEER)"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="trans⊆prec∪{v ↦ v}∪{vp⦂EVENT·vp∈past∧(∃vp2⦂EVENT·vp2∈past∧peerOf(vp2)=p∧vp ↦ vp2∈prec) ∣ vp ↦ v}"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="peerOf∈past → PEER"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="trans⊆prec"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="∀v⦂EVENT·v∈past⇒v ↦ v∈prec"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="∀v1⦂EVENT,v2⦂EVENT·v1∈past∧v2∈past∧peerOf(v1)=peerOf(v2)⇒v1 ↦ v2∈prec∨v2 ↦ v1∈prec"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="trans∈past ↔ past"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="dom(trans)∩ran(trans)=(∅ ⦂ ℙ(EVENT))"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="past∈ℙ(EVENT)"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="∀v1⦂EVENT,v2⦂EVENT,v3⦂EVENT·v1∈past∧v2∈past∧v3∈past∧v1 ↦ v2∈prec∧v2 ↦ v3∈prec⇒v1 ↦ v3∈prec"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="receive/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5" org.eventb.core.prSets="EVENT,PEER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p6,p7,p8,p9,p10,p2,p11,p5,p12,p13,p14"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="veriT" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5">
+                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+                    <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="veriT"/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="p" org.eventb.core.type="PEER"/>
+        <org.eventb.core.prIdent name="past" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.prIdent name="sv" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prIdent name="trans" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.prIdent name="trans'" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.prIdent name="v" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="∀vp⦂EVENT·vp∈past⇒(∀vp2⦂EVENT·vp2∈past⇒vp2∈dom(peerOf)∧peerOf∈EVENT ⇸ PEER)"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="peerOf∈past → PEER"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="trans⊆prec"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="∀v⦂EVENT·v∈past⇒v ↦ v∈prec"/>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="∀v1⦂EVENT,v2⦂EVENT·v1∈past∧v2∈past∧peerOf(v1)=peerOf(v2)⇒v1 ↦ v2∈prec∨v2 ↦ v1∈prec"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="∀e⦂EVENT,e1⦂EVENT,e2⦂EVENT·e ↦ e1∈trans∧e ↦ e2∈trans⇒e1=e2"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="∀v1⦂EVENT,v2⦂EVENT,v3⦂EVENT·v1∈past∧v2∈past∧v3∈past∧v1 ↦ v2∈prec∧v2 ↦ v3∈prec⇒v1 ↦ v3∈prec"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="trans'⊆prec∪{v ↦ v}∪{vp⦂EVENT·vp∈past∧(∃vp2⦂EVENT·vp2∈past∧peerOf(vp2)=p∧vp ↦ vp2∈prec) ∣ vp ↦ v}∪{vp⦂EVENT·vp∈past∧vp ↦ sv∈prec ∣ vp ↦ v}"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="trans'=trans∪{sv ↦ v}"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="prec∈past  past"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="∀e⦂EVENT,e1⦂EVENT,e2⦂EVENT·e1 ↦ e∈trans∧e2 ↦ e∈trans⇒e1=e2"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="sv∈past"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="trans∈past ↔ past"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="dom(trans)∩ran(trans)=(∅ ⦂ ℙ(EVENT))"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="past∈ℙ(EVENT)"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="INITIALISATION/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="EVENT">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p1" org.eventb.core.prHyps=""/>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="⊤"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="(∅ ⦂ ℙ(EVENT)) ◁ (id ⦂ ℙ(EVENT×EVENT))⊆(∅ ⦂ ℙ(EVENT×EVENT))"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="INITIALISATION/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="EVENT">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p1" org.eventb.core.prHyps=""/>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="(∅ ⦂ ℙ(EVENT×EVENT));(∅ ⦂ ℙ(EVENT×EVENT))⊆(∅ ⦂ ℙ(EVENT×EVENT))"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="⊤"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="send/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="EVENT,PEER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p2,p3,p4,p5,p6,p7,p8,p9"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Z3" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1">
+                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+                    <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="Z3"/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="p" org.eventb.core.type="PEER"/>
+        <org.eventb.core.prIdent name="past" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.prIdent name="v" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀v0⦂EVENT·v0∈past∪{v}⇒v0 ↦ v0∈prec∪{v ↦ v}∪{vp⦂EVENT·vp∈past∧(∃vp2⦂EVENT·vp2∈past∧peerOf(vp2)=p∧vp ↦ vp2∈prec) ∣ vp ↦ v}"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="prec∈past  past"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="peerOf∈past → PEER"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="∀v⦂EVENT·v∈past⇒v ↦ v∈prec"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="trans⊆prec">
+            <org.eventb.core.prIdent name="trans" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="∀v1⦂EVENT,v2⦂EVENT·v1∈past∧v2∈past∧peerOf(v1)=peerOf(v2)⇒v1 ↦ v2∈prec∨v2 ↦ v1∈prec"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="trans∈past ↔ past">
+            <org.eventb.core.prIdent name="trans" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="dom(trans)∩ran(trans)=(∅ ⦂ ℙ(EVENT))">
+            <org.eventb.core.prIdent name="trans" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="past∈ℙ(EVENT)"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="∀v1⦂EVENT,v2⦂EVENT,v3⦂EVENT·v1∈past∧v2∈past∧v3∈past∧v1 ↦ v2∈prec∧v2 ↦ v3∈prec⇒v1 ↦ v3∈prec"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="send/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3" org.eventb.core.prSets="EVENT,PEER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p4,p5,p6,p2,p7,p8,p9,p10"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Z3" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3">
+                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+                    <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="Z3"/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="p" org.eventb.core.type="PEER"/>
+        <org.eventb.core.prIdent name="past" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.prIdent name="v" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="v∈EVENT ∖ past"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="prec∈past  past"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="peerOf∈past → PEER"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="∀v⦂EVENT·v∈past⇒v ↦ v∈prec"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="trans⊆prec">
+            <org.eventb.core.prIdent name="trans" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="∀v1⦂EVENT,v2⦂EVENT·v1∈past∧v2∈past∧peerOf(v1)=peerOf(v2)⇒v1 ↦ v2∈prec∨v2 ↦ v1∈prec"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="trans∈past ↔ past">
+            <org.eventb.core.prIdent name="trans" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀v1⦂EVENT,v2⦂EVENT,v3⦂EVENT·v1∈past∪{v}∧v2∈past∪{v}∧v3∈past∪{v}∧v1 ↦ v2∈prec∪{v ↦ v}∪{vp⦂EVENT·vp∈past∧(∃vp2⦂EVENT·vp2∈past∧peerOf(vp2)=p∧vp ↦ vp2∈prec) ∣ vp ↦ v}∧v2 ↦ v3∈prec∪{v ↦ v}∪{vp⦂EVENT·vp∈past∧(∃vp2⦂EVENT·vp2∈past∧peerOf(vp2)=p∧vp ↦ vp2∈prec) ∣ vp ↦ v}⇒v1 ↦ v3∈prec∪{v ↦ v}∪{vp⦂EVENT·vp∈past∧(∃vp2⦂EVENT·vp2∈past∧peerOf(vp2)=p∧vp ↦ vp2∈prec) ∣ vp ↦ v}"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="dom(trans)∩ran(trans)=(∅ ⦂ ℙ(EVENT))">
+            <org.eventb.core.prIdent name="trans" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="past∈ℙ(EVENT)"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="∀v1⦂EVENT,v2⦂EVENT,v3⦂EVENT·v1∈past∧v2∈past∧v3∈past∧v1 ↦ v2∈prec∧v2 ↦ v3∈prec⇒v1 ↦ v3∈prec"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="receive/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="EVENT,PEER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p2,p3,p4,p5,p6,p7,p8,p9"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Z3" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1">
+                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+                    <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="Z3"/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="p" org.eventb.core.type="PEER"/>
+        <org.eventb.core.prIdent name="past" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.prIdent name="sv" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prIdent name="v" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="prec∈past  past"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀v0⦂EVENT·v0∈past∪{v}⇒v0 ↦ v0∈prec∪{v ↦ v}∪{vp⦂EVENT·vp∈past∧(∃vp2⦂EVENT·vp2∈past∧peerOf(vp2)=p∧vp ↦ vp2∈prec) ∣ vp ↦ v}∪{vp⦂EVENT·vp∈past∧vp ↦ sv∈prec ∣ vp ↦ v}"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="peerOf∈past → PEER"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="∀v⦂EVENT·v∈past⇒v ↦ v∈prec"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="trans⊆prec">
+            <org.eventb.core.prIdent name="trans" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="∀v1⦂EVENT,v2⦂EVENT·v1∈past∧v2∈past∧peerOf(v1)=peerOf(v2)⇒v1 ↦ v2∈prec∨v2 ↦ v1∈prec"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="trans∈past ↔ past">
+            <org.eventb.core.prIdent name="trans" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="dom(trans)∩ran(trans)=(∅ ⦂ ℙ(EVENT))">
+            <org.eventb.core.prIdent name="trans" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="past∈ℙ(EVENT)"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="∀v1⦂EVENT,v2⦂EVENT,v3⦂EVENT·v1∈past∧v2∈past∧v3∈past∧v1 ↦ v2∈prec∧v2 ↦ v3∈prec⇒v1 ↦ v3∈prec"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="receive/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4" org.eventb.core.prSets="EVENT,PEER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p5,p6,p7,p8,p9,p2,p10,p11,p12,p13"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Z3" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4">
+                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+                    <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="Z3"/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="p" org.eventb.core.type="PEER"/>
+        <org.eventb.core.prIdent name="past" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.prIdent name="sv" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prIdent name="v" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="v∈EVENT ∖ past"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="peerOf∈past → PEER"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="∀v⦂EVENT·v∈past⇒v ↦ v∈prec"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="trans⊆prec">
+            <org.eventb.core.prIdent name="trans" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="∀v1⦂EVENT,v2⦂EVENT·v1∈past∧v2∈past∧peerOf(v1)=peerOf(v2)⇒v1 ↦ v2∈prec∨v2 ↦ v1∈prec"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀v1⦂EVENT,v2⦂EVENT,v3⦂EVENT·v1∈past∪{v}∧v2∈past∪{v}∧v3∈past∪{v}∧v1 ↦ v2∈prec∪{v ↦ v}∪{vp⦂EVENT·vp∈past∧(∃vp2⦂EVENT·vp2∈past∧peerOf(vp2)=p∧vp ↦ vp2∈prec) ∣ vp ↦ v}∪{vp⦂EVENT·vp∈past∧vp ↦ sv∈prec ∣ vp ↦ v}∧v2 ↦ v3∈prec∪{v ↦ v}∪{vp⦂EVENT·vp∈past∧(∃vp2⦂EVENT·vp2∈past∧peerOf(vp2)=p∧vp ↦ vp2∈prec) ∣ vp ↦ v}∪{vp⦂EVENT·vp∈past∧vp ↦ sv∈prec ∣ vp ↦ v}⇒v1 ↦ v3∈prec∪{v ↦ v}∪{vp⦂EVENT·vp∈past∧(∃vp2⦂EVENT·vp2∈past∧peerOf(vp2)=p∧vp ↦ vp2∈prec) ∣ vp ↦ v}∪{vp⦂EVENT·vp∈past∧vp ↦ sv∈prec ∣ vp ↦ v}"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="∀e⦂EVENT,e1⦂EVENT,e2⦂EVENT·e ↦ e1∈trans∧e ↦ e2∈trans⇒e1=e2">
+            <org.eventb.core.prIdent name="trans" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="∀v1⦂EVENT,v2⦂EVENT,v3⦂EVENT·v1∈past∧v2∈past∧v3∈past∧v1 ↦ v2∈prec∧v2 ↦ v3∈prec⇒v1 ↦ v3∈prec"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="prec∈past  past"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="∀e⦂EVENT,e1⦂EVENT,e2⦂EVENT·e1 ↦ e∈trans∧e2 ↦ e∈trans⇒e1=e2">
+            <org.eventb.core.prIdent name="trans" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="sv∈past"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="trans∈past ↔ past">
+            <org.eventb.core.prIdent name="trans" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="dom(trans)∩ran(trans)=(∅ ⦂ ℙ(EVENT))">
+            <org.eventb.core.prIdent name="trans" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="past∈ℙ(EVENT)"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="create/Tprec/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="EVENT,PEER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Z3" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1">
+                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+                    <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="Z3"/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="e" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prIdent name="p" org.eventb.core.type="PEER"/>
+        <org.eventb.core.prIdent name="past" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1 ↦ e2∈prec∧e2 ↦ e1∈prec⇒e1=e2"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="∀ep⦂EVENT·ep∈past⇒(∀ep2⦂EVENT·ep2∈past⇒ep2∈dom(peerOf)∧peerOf∈EVENT ⇸ PEER)"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="past ◁ (id ⦂ ℙ(EVENT×EVENT))⊆prec"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="prec∪{e ↦ e}∪{ep⦂EVENT·ep∈past∧(∃ep2⦂EVENT·ep2∈past∧peerOf(ep2)=p∧ep ↦ ep2∈prec) ∣ ep ↦ e}∈past∪{e}  past∪{e}"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="links∈past ↔ past">
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="peerOf∈past → PEER"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="∀e⦂EVENT·e∈past⇒e ↦ e∈prec"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1∈past∧e2∈past∧peerOf(e1)=peerOf(e2)⇒e1 ↦ e2∈prec∨e2 ↦ e1∈prec"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="prec;prec⊆prec"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="links⊆prec">
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="prec∈past  past"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="prec∩prec∼⊆(id ⦂ ℙ(EVENT×EVENT)) ▷ past"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT,e3⦂EVENT·e1 ↦ e2∈prec∧e2 ↦ e3∈prec⇒e1 ↦ e3∈prec"/>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="past∈ℙ(EVENT)"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="create/TpeerOf/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12" org.eventb.core.prSets="EVENT,PEER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p13"/>
+                <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p14"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p8,p12,p6,p7,p4,p10,p5,p1,p9,p2,p11,p3">
+                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="e" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.prIdent name="p" org.eventb.core.type="PEER"/>
+        <org.eventb.core.prIdent name="past" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="e∈EVENT ∖ past"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="past ◁ (id ⦂ ℙ(EVENT×EVENT))⊆prec"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT,c⦂EVENT·e1 ↦ c∈links∧e2 ↦ c∈links⇒e1=e2"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="∀e⦂EVENT,c1⦂EVENT,c2⦂EVENT·e ↦ c1∈links∧e ↦ c2∈links⇒c1=c2"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="links∈past ↔ past"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="peerOf∈past → PEER"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1∈past∧e2∈past∧peerOf(e1)=peerOf(e2)⇒e1 ↦ e2∈prec∨e2 ↦ e1∈prec"/>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="p∈PEER"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="dom(links)∩ran(links)=(∅ ⦂ ℙ(EVENT))"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="prec;prec⊆prec"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="links⊆prec"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="prec∈past  past"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="peerOf∪{e ↦ p}∈past∪{e} → PEER"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="prec∩prec∼⊆(id ⦂ ℙ(EVENT×EVENT))"/>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="past∈ℙ(EVENT)"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="create/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="EVENT,PEER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p3"/>
+                <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p4"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="PP" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p2,p1">
+                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R500"/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="e" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prIdent name="p" org.eventb.core.type="PEER"/>
+        <org.eventb.core.prIdent name="past" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="e∈EVENT ∖ past"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="(past∪{e}) ◁ (id ⦂ ℙ(EVENT×EVENT))⊆prec∪{e ↦ e}∪{ep⦂EVENT·ep∈past∧(∃ep2⦂EVENT·ep2∈past∧peerOf(ep2)=p∧ep ↦ ep2∈prec) ∣ ep ↦ e}"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="past ◁ (id ⦂ ℙ(EVENT×EVENT))⊆prec"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="p∈PEER"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="past∈ℙ(EVENT)"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalPP:1"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="create/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3" org.eventb.core.prSets="EVENT,PEER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p4,p3,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Z3" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3">
+                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1500"/>
+                    <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="Z3"/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="e" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prIdent name="p" org.eventb.core.type="PEER"/>
+        <org.eventb.core.prIdent name="past" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="e∈EVENT ∖ past"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="∀ep⦂EVENT·ep∈past⇒(∀ep2⦂EVENT·ep2∈past⇒ep2∈dom(peerOf)∧peerOf∈EVENT ⇸ PEER)"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="past ◁ (id ⦂ ℙ(EVENT×EVENT))⊆prec"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT,c⦂EVENT·e1 ↦ c∈links∧e2 ↦ c∈links⇒e1=e2">
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="∀e⦂EVENT,c1⦂EVENT,c2⦂EVENT·e ↦ c1∈links∧e ↦ c2∈links⇒c1=c2">
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="links∈past ↔ past">
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="peerOf∈past → PEER"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1∈past∧e2∈past∧peerOf(e1)=peerOf(e2)⇒e1 ↦ e2∈prec∨e2 ↦ e1∈prec"/>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="dom(links)∩ran(links)=(∅ ⦂ ℙ(EVENT))">
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="(prec∪{e ↦ e}∪{ep⦂EVENT·ep∈past∧(∃ep2⦂EVENT·ep2∈past∧peerOf(ep2)=p∧ep ↦ ep2∈prec) ∣ ep ↦ e});(prec∪{e ↦ e}∪{ep⦂EVENT·ep∈past∧(∃ep2⦂EVENT·ep2∈past∧peerOf(ep2)=p∧ep ↦ ep2∈prec) ∣ ep ↦ e})⊆prec∪{e ↦ e}∪{ep⦂EVENT·ep∈past∧(∃ep2⦂EVENT·ep2∈past∧peerOf(ep2)=p∧ep ↦ ep2∈prec) ∣ ep ↦ e}"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="prec;prec⊆prec"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="links⊆prec">
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="prec∈past  past"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="prec∩prec∼⊆(id ⦂ ℙ(EVENT×EVENT))"/>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="past∈ℙ(EVENT)"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="create/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3" org.eventb.core.prSets="EVENT,PEER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p4,p5,p2,p6,p7,p8,p9,p10,p11,p12,p13,p14"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Z3" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p3,p1,p2">
+                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1500"/>
+                    <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="Z3"/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="e" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prIdent name="p" org.eventb.core.type="PEER"/>
+        <org.eventb.core.prIdent name="past" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="e∈EVENT ∖ past"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="∀ep⦂EVENT·ep∈past⇒(∀ep2⦂EVENT·ep2∈past⇒ep2∈dom(peerOf)∧peerOf∈EVENT ⇸ PEER)"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="past ◁ (id ⦂ ℙ(EVENT×EVENT))⊆prec"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT,c⦂EVENT·e1 ↦ c∈links∧e2 ↦ c∈links⇒e1=e2">
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="∀e⦂EVENT,c1⦂EVENT,c2⦂EVENT·e ↦ c1∈links∧e ↦ c2∈links⇒c1=c2">
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="links∈past ↔ past">
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="peerOf∈past → PEER"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1∈past∧e2∈past∧peerOf(e1)=peerOf(e2)⇒e1 ↦ e2∈prec∨e2 ↦ e1∈prec"/>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="dom(links)∩ran(links)=(∅ ⦂ ℙ(EVENT))">
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="prec;prec⊆prec"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="links⊆prec">
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="prec∈past  past"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="prec∩prec∼⊆(id ⦂ ℙ(EVENT×EVENT))"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="(prec∪{e ↦ e}∪{ep⦂EVENT·ep∈past∧(∃ep2⦂EVENT·ep2∈past∧peerOf(ep2)=p∧ep ↦ ep2∈prec) ∣ ep ↦ e})∩(prec∪{e ↦ e}∪{ep⦂EVENT·ep∈past∧(∃ep2⦂EVENT·ep2∈past∧peerOf(ep2)=p∧ep ↦ ep2∈prec) ∣ ep ↦ e})∼⊆(id ⦂ ℙ(EVENT×EVENT))"/>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="past∈ℙ(EVENT)"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="create/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="EVENT,PEER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p3"/>
+                <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p4"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="PP" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2">
+                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R500"/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="e" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.prIdent name="p" org.eventb.core.type="PEER"/>
+        <org.eventb.core.prIdent name="past" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="links⊆prec∪{e ↦ e}∪{ep⦂EVENT·ep∈past∧(∃ep2⦂EVENT·ep2∈past∧peerOf(ep2)=p∧ep ↦ ep2∈prec) ∣ ep ↦ e}"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="links⊆prec"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="e∈EVENT ∖ past"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="p∈PEER"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="past∈ℙ(EVENT)"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalPP:1"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="create/act3/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="ep2,ep" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="EVENT,PEER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p2"/>
+                <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p3"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∀ goal (frees ep)" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p4">
+                        <org.eventb.core.prIdent name="ep" org.eventb.core.type="EVENT"/>
+                        <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p4" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p6" org.eventb.core.prHyps="p5">
+                                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∀ goal (frees ep2)" org.eventb.core.prGoal="p6" org.eventb.core.prHyps="">
+                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p7">
+                                        <org.eventb.core.prIdent name="ep2" org.eventb.core.type="EVENT"/>
+                                        <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p7" org.eventb.core.prHyps="">
+                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p9" org.eventb.core.prHyps="p8">
+                                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p9" org.eventb.core.prHyps="">
+                                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p10">
+                                                        <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p10" org.eventb.core.prHyps="p1">
+                                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p8">
+                                                                <org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p8" org.eventb.core.prHyps="p8"/>
+                                                            </org.eventb.core.prAnte>
+                                                            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+                                                            <org.eventb.core.prExprRef name=".subst" org.eventb.core.prRef="e0"/>
+                                                        </org.eventb.core.prRule>
+                                                    </org.eventb.core.prAnte>
+                                                    <org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p11">
+                                                        <org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p11" org.eventb.core.prHyps="p1"/>
+                                                    </org.eventb.core.prAnte>
+                                                </org.eventb.core.prRule>
+                                            </org.eventb.core.prAnte>
+                                        </org.eventb.core.prRule>
+                                    </org.eventb.core.prAnte>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="past" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="peerOf∈EVENT ⇸ PEER"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="ep2∈dom(peerOf)">
+            <org.eventb.core.prIdent name="ep2" org.eventb.core.type="EVENT"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="ep∈past">
+            <org.eventb.core.prIdent name="ep" org.eventb.core.type="EVENT"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀ep⦂EVENT·ep∈past⇒(∀ep2⦂EVENT·ep2∈past⇒ep2∈dom(peerOf)∧peerOf∈EVENT ⇸ PEER)"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="ep2∈dom(peerOf)∧peerOf∈EVENT ⇸ PEER">
+            <org.eventb.core.prIdent name="ep2" org.eventb.core.type="EVENT"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="ep∈past⇒(∀ep2⦂EVENT·ep2∈past⇒ep2∈dom(peerOf)∧peerOf∈EVENT ⇸ PEER)">
+            <org.eventb.core.prIdent name="ep" org.eventb.core.type="EVENT"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="peerOf∈past → PEER"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="∀ep2⦂EVENT·ep2∈past⇒ep2∈dom(peerOf)∧peerOf∈EVENT ⇸ PEER"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="p∈PEER">
+            <org.eventb.core.prIdent name="p" org.eventb.core.type="PEER"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="ep2∈past⇒ep2∈dom(peerOf)∧peerOf∈EVENT ⇸ PEER">
+            <org.eventb.core.prIdent name="ep2" org.eventb.core.type="EVENT"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="past∈ℙ(EVENT)"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="ep2∈past">
+            <org.eventb.core.prIdent name="ep2" org.eventb.core.type="EVENT"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prExpr name="e0" org.eventb.core.expression="past"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.totalDom:2"/>
+        <org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.isFunGoal"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
+        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.hyp"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="link/Tprec/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18" org.eventb.core.prSets="EVENT,PEER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p12,p13,p2,p3,p4,p5,p6,p15,p7,p10,p17,p11"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="CVC4" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18">
+                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1500"/>
+                    <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="CVC4"/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="cause" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prIdent name="e" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.prIdent name="p" org.eventb.core.type="PEER"/>
+        <org.eventb.core.prIdent name="past" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="e∈EVENT ∖ past"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="∀ep⦂EVENT·ep∈past⇒(∀ep2⦂EVENT·ep2∈past⇒ep2∈dom(peerOf)∧peerOf∈EVENT ⇸ PEER)"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="past ◁ (id ⦂ ℙ(EVENT×EVENT))⊆prec"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT,c⦂EVENT·e1 ↦ c∈links∧e2 ↦ c∈links⇒e1=e2"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="∀e⦂EVENT,c1⦂EVENT,c2⦂EVENT·e ↦ c1∈links∧e ↦ c2∈links⇒c1=c2"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="links∈past ↔ past"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="peerOf∈past → PEER"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="cause∉ran(links)"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="p∈PEER"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1∈past∧e2∈past∧peerOf(e1)=peerOf(e2)⇒e1 ↦ e2∈prec∨e2 ↦ e1∈prec"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="dom(links)∩ran(links)=(∅ ⦂ ℙ(EVENT))"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="prec;prec⊆prec"/>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="links⊆prec"/>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="prec∈past  past"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="prec∪{e ↦ e}∪{ep⦂EVENT·ep∈past∧(∃ep2⦂EVENT·ep2∈past∧peerOf(ep2)=p∧ep ↦ ep2∈prec) ∣ ep ↦ e}∪{ep⦂EVENT·ep∈past∧ep ↦ cause∈prec ∣ ep ↦ e}∈past∪{e}  past∪{e}"/>
+        <org.eventb.core.prPred name="p15" org.eventb.core.predicate="prec∩prec∼⊆(id ⦂ ℙ(EVENT×EVENT))"/>
+        <org.eventb.core.prPred name="p16" org.eventb.core.predicate="cause∉dom(links)"/>
+        <org.eventb.core.prPred name="p17" org.eventb.core.predicate="past∈ℙ(EVENT)"/>
+        <org.eventb.core.prPred name="p18" org.eventb.core.predicate="cause∈past"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="link/TpeerOf/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15" org.eventb.core.prSets="EVENT,PEER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p14" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p16"/>
+                <org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p7" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p17"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p18"/>
+                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p19"/>
+                        <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p5,p9,p3,p4,p12,p6,p2,p10,p13,p11,p8,p1,p15,p16,p17">
+                            <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="cause" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prIdent name="e" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.prIdent name="p" org.eventb.core.type="PEER"/>
+        <org.eventb.core.prIdent name="past" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="e∈EVENT ∖ past"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="past ◁ (id ⦂ ℙ(EVENT×EVENT))⊆prec"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT,c⦂EVENT·e1 ↦ c∈links∧e2 ↦ c∈links⇒e1=e2"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="∀e⦂EVENT,c1⦂EVENT,c2⦂EVENT·e ↦ c1∈links∧e ↦ c2∈links⇒c1=c2"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="links∈past ↔ past"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="peerOf∈past → PEER"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="cause∉ran(links)"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1∈past∧e2∈past∧peerOf(e1)=peerOf(e2)⇒e1 ↦ e2∈prec∨e2 ↦ e1∈prec"/>
+        <org.eventb.core.prPred name="p19" org.eventb.core.predicate="p∈PEER"/>
+        <org.eventb.core.prPred name="p16" org.eventb.core.predicate="¬cause∈dom(links)"/>
+        <org.eventb.core.prPred name="p17" org.eventb.core.predicate="¬cause∈ran(links)"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="dom(links)∩ran(links)=(∅ ⦂ ℙ(EVENT))"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="prec;prec⊆prec"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="links⊆prec"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="prec∈past  past"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="peerOf∪{e ↦ p}∈past∪{e} → PEER"/>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="prec∩prec∼⊆(id ⦂ ℙ(EVENT×EVENT))"/>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="cause∉dom(links)"/>
+        <org.eventb.core.prPred name="p18" org.eventb.core.predicate="past∈ℙ(EVENT)"/>
+        <org.eventb.core.prPred name="p15" org.eventb.core.predicate="cause∈past"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="link/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5" org.eventb.core.prSets="EVENT,PEER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p4" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p6"/>
+                <org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p3" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p7"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p8"/>
+                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p9"/>
+                        <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="PP" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p2,p1,p5,p6,p7">
+                            <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R500"/>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="cause" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prIdent name="e" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.prIdent name="p" org.eventb.core.type="PEER"/>
+        <org.eventb.core.prIdent name="past" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="e∈EVENT ∖ past"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="past ◁ (id ⦂ ℙ(EVENT×EVENT))⊆prec"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="(past∪{e}) ◁ (id ⦂ ℙ(EVENT×EVENT))⊆prec∪{e ↦ e}∪{ep⦂EVENT·ep∈past∧(∃ep2⦂EVENT·ep2∈past∧peerOf(ep2)=p∧ep ↦ ep2∈prec) ∣ ep ↦ e}∪{ep⦂EVENT·ep∈past∧ep ↦ cause∈prec ∣ ep ↦ e}"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="cause∉ran(links)"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="cause∉dom(links)"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="p∈PEER"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="¬cause∈dom(links)"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="¬cause∈ran(links)"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="past∈ℙ(EVENT)"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="cause∈past"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalPP:1"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="link/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3" org.eventb.core.prSets="EVENT,PEER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p4,p3,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Z3" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3">
+                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1500"/>
+                    <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="Z3"/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="cause" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prIdent name="e" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prIdent name="p" org.eventb.core.type="PEER"/>
+        <org.eventb.core.prIdent name="past" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="e∈EVENT ∖ past"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="∀ep⦂EVENT·ep∈past⇒(∀ep2⦂EVENT·ep2∈past⇒ep2∈dom(peerOf)∧peerOf∈EVENT ⇸ PEER)"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="past ◁ (id ⦂ ℙ(EVENT×EVENT))⊆prec"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT,c⦂EVENT·e1 ↦ c∈links∧e2 ↦ c∈links⇒e1=e2">
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="∀e⦂EVENT,c1⦂EVENT,c2⦂EVENT·e ↦ c1∈links∧e ↦ c2∈links⇒c1=c2">
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="links∈past ↔ past">
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="peerOf∈past → PEER"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1∈past∧e2∈past∧peerOf(e1)=peerOf(e2)⇒e1 ↦ e2∈prec∨e2 ↦ e1∈prec"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="(prec∪{e ↦ e}∪{ep⦂EVENT·ep∈past∧(∃ep2⦂EVENT·ep2∈past∧peerOf(ep2)=p∧ep ↦ ep2∈prec) ∣ ep ↦ e}∪{ep⦂EVENT·ep∈past∧ep ↦ cause∈prec ∣ ep ↦ e});(prec∪{e ↦ e}∪{ep⦂EVENT·ep∈past∧(∃ep2⦂EVENT·ep2∈past∧peerOf(ep2)=p∧ep ↦ ep2∈prec) ∣ ep ↦ e}∪{ep⦂EVENT·ep∈past∧ep ↦ cause∈prec ∣ ep ↦ e})⊆prec∪{e ↦ e}∪{ep⦂EVENT·ep∈past∧(∃ep2⦂EVENT·ep2∈past∧peerOf(ep2)=p∧ep ↦ ep2∈prec) ∣ ep ↦ e}∪{ep⦂EVENT·ep∈past∧ep ↦ cause∈prec ∣ ep ↦ e}"/>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="dom(links)∩ran(links)=(∅ ⦂ ℙ(EVENT))">
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="prec;prec⊆prec"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="links⊆prec">
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="prec∈past  past"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="prec∩prec∼⊆(id ⦂ ℙ(EVENT×EVENT))"/>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="past∈ℙ(EVENT)"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="link/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3" org.eventb.core.prSets="EVENT,PEER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p4,p5,p2,p6,p7,p8,p9,p10,p11,p12,p13,p14"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Z3" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p3,p1,p2">
+                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1500"/>
+                    <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="Z3"/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="cause" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prIdent name="e" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prIdent name="p" org.eventb.core.type="PEER"/>
+        <org.eventb.core.prIdent name="past" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="e∈EVENT ∖ past"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="∀ep⦂EVENT·ep∈past⇒(∀ep2⦂EVENT·ep2∈past⇒ep2∈dom(peerOf)∧peerOf∈EVENT ⇸ PEER)"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="past ◁ (id ⦂ ℙ(EVENT×EVENT))⊆prec"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT,c⦂EVENT·e1 ↦ c∈links∧e2 ↦ c∈links⇒e1=e2">
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="∀e⦂EVENT,c1⦂EVENT,c2⦂EVENT·e ↦ c1∈links∧e ↦ c2∈links⇒c1=c2">
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="links∈past ↔ past">
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="peerOf∈past → PEER"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1∈past∧e2∈past∧peerOf(e1)=peerOf(e2)⇒e1 ↦ e2∈prec∨e2 ↦ e1∈prec"/>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="dom(links)∩ran(links)=(∅ ⦂ ℙ(EVENT))">
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="prec;prec⊆prec"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="links⊆prec">
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="prec∈past  past"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="(prec∪{e ↦ e}∪{ep⦂EVENT·ep∈past∧(∃ep2⦂EVENT·ep2∈past∧peerOf(ep2)=p∧ep ↦ ep2∈prec) ∣ ep ↦ e}∪{ep⦂EVENT·ep∈past∧ep ↦ cause∈prec ∣ ep ↦ e})∩(prec∪{e ↦ e}∪{ep⦂EVENT·ep∈past∧(∃ep2⦂EVENT·ep2∈past∧peerOf(ep2)=p∧ep ↦ ep2∈prec) ∣ ep ↦ e}∪{ep⦂EVENT·ep∈past∧ep ↦ cause∈prec ∣ ep ↦ e})∼⊆(id ⦂ ℙ(EVENT×EVENT))"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="prec∩prec∼⊆(id ⦂ ℙ(EVENT×EVENT))"/>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="past∈ℙ(EVENT)"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="link/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4" org.eventb.core.prSets="EVENT,PEER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p5,p6,p7,p3,p8,p9,p10,p11,p12,p13,p14,p15"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="veriT" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4">
+                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1500"/>
+                    <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="veriT"/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="cause" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prIdent name="e" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.prIdent name="links'" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.prIdent name="p" org.eventb.core.type="PEER"/>
+        <org.eventb.core.prIdent name="past" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="∀ep⦂EVENT·ep∈past⇒(∀ep2⦂EVENT·ep2∈past⇒ep2∈dom(peerOf)∧peerOf∈EVENT ⇸ PEER)"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="past ◁ (id ⦂ ℙ(EVENT×EVENT))⊆prec"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT,c⦂EVENT·e1 ↦ c∈links∧e2 ↦ c∈links⇒e1=e2"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="∀e⦂EVENT,c1⦂EVENT,c2⦂EVENT·e ↦ c1∈links∧e ↦ c2∈links⇒c1=c2"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="links∈past ↔ past"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="links'⊆prec∪{e ↦ e}∪{ep⦂EVENT·ep∈past∧(∃ep2⦂EVENT·ep2∈past∧peerOf(ep2)=p∧ep ↦ ep2∈prec) ∣ ep ↦ e}∪{ep⦂EVENT·ep∈past∧ep ↦ cause∈prec ∣ ep ↦ e}"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="peerOf∈past → PEER"/>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1∈past∧e2∈past∧peerOf(e1)=peerOf(e2)⇒e1 ↦ e2∈prec∨e2 ↦ e1∈prec"/>
+        <org.eventb.core.prPred name="p15" org.eventb.core.predicate="dom(links)∩ran(links)=(∅ ⦂ ℙ(EVENT))"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="links⊆prec"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="prec;prec⊆prec"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="prec∈past  past"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="links'=links∪{cause ↦ e}"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="prec∩prec∼⊆(id ⦂ ℙ(EVENT×EVENT))"/>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="past∈ℙ(EVENT)"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="cause∈past"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="link/act4/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="ep2,ep" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="EVENT,PEER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p2" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p3"/>
+                <org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p4" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p5"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p6"/>
+                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p7"/>
+                        <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∀ goal (frees ep)" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p8">
+                                <org.eventb.core.prIdent name="ep" org.eventb.core.type="EVENT"/>
+                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p8" org.eventb.core.prHyps="">
+                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p10" org.eventb.core.prHyps="p9">
+                                        <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∀ goal (frees ep2)" org.eventb.core.prGoal="p10" org.eventb.core.prHyps="">
+                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p11">
+                                                <org.eventb.core.prIdent name="ep2" org.eventb.core.type="EVENT"/>
+                                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p11" org.eventb.core.prHyps="">
+                                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p13" org.eventb.core.prHyps="p12">
+                                                        <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p13" org.eventb.core.prHyps="">
+                                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p14">
+                                                                <org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p14" org.eventb.core.prHyps="p1">
+                                                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p12">
+                                                                        <org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p12" org.eventb.core.prHyps="p12"/>
+                                                                    </org.eventb.core.prAnte>
+                                                                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+                                                                    <org.eventb.core.prExprRef name=".subst" org.eventb.core.prRef="e0"/>
+                                                                </org.eventb.core.prRule>
+                                                            </org.eventb.core.prAnte>
+                                                            <org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p15">
+                                                                <org.eventb.core.prRule name="r7" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p15" org.eventb.core.prHyps="p1"/>
+                                                            </org.eventb.core.prAnte>
+                                                        </org.eventb.core.prRule>
+                                                    </org.eventb.core.prAnte>
+                                                </org.eventb.core.prRule>
+                                            </org.eventb.core.prAnte>
+                                        </org.eventb.core.prRule>
+                                    </org.eventb.core.prAnte>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="past" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀ep⦂EVENT·ep∈past⇒(∀ep2⦂EVENT·ep2∈past⇒ep2∈dom(peerOf)∧peerOf∈EVENT ⇸ PEER)"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="peerOf∈past → PEER"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="cause∉ran(links)">
+            <org.eventb.core.prIdent name="cause" org.eventb.core.type="EVENT"/>
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="p∈PEER">
+            <org.eventb.core.prIdent name="p" org.eventb.core.type="PEER"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬cause∈dom(links)">
+            <org.eventb.core.prIdent name="cause" org.eventb.core.type="EVENT"/>
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="¬cause∈ran(links)">
+            <org.eventb.core.prIdent name="cause" org.eventb.core.type="EVENT"/>
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p15" org.eventb.core.predicate="peerOf∈EVENT ⇸ PEER"/>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="ep2∈dom(peerOf)">
+            <org.eventb.core.prIdent name="ep2" org.eventb.core.type="EVENT"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="ep∈past">
+            <org.eventb.core.prIdent name="ep" org.eventb.core.type="EVENT"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="ep2∈dom(peerOf)∧peerOf∈EVENT ⇸ PEER">
+            <org.eventb.core.prIdent name="ep2" org.eventb.core.type="EVENT"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="ep∈past⇒(∀ep2⦂EVENT·ep2∈past⇒ep2∈dom(peerOf)∧peerOf∈EVENT ⇸ PEER)">
+            <org.eventb.core.prIdent name="ep" org.eventb.core.type="EVENT"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="∀ep2⦂EVENT·ep2∈past⇒ep2∈dom(peerOf)∧peerOf∈EVENT ⇸ PEER"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="cause∉dom(links)">
+            <org.eventb.core.prIdent name="cause" org.eventb.core.type="EVENT"/>
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="ep2∈past⇒ep2∈dom(peerOf)∧peerOf∈EVENT ⇸ PEER">
+            <org.eventb.core.prIdent name="ep2" org.eventb.core.type="EVENT"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="past∈ℙ(EVENT)"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="ep2∈past">
+            <org.eventb.core.prIdent name="ep2" org.eventb.core.type="EVENT"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prExpr name="e0" org.eventb.core.expression="past"/>
+        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.totalDom:2"/>
+        <org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.core.seqprover.isFunGoal"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+        <org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.hyp"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="inv5/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="e1,e2" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="EVENT,PEER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p2"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∀ goal (frees e1,e2)" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p3">
+                        <org.eventb.core.prIdent name="e1" org.eventb.core.type="EVENT"/>
+                        <org.eventb.core.prIdent name="e2" org.eventb.core.type="EVENT"/>
+                        <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p3" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p6" org.eventb.core.prHyps="p4,p5">
+                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p6" org.eventb.core.prHyps="">
+                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p7">
+                                        <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p7" org.eventb.core.prHyps="p1">
+                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p4">
+                                                <org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p4" org.eventb.core.prHyps="p4"/>
+                                            </org.eventb.core.prAnte>
+                                            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+                                            <org.eventb.core.prExprRef name=".subst" org.eventb.core.prRef="e0"/>
+                                        </org.eventb.core.prRule>
+                                    </org.eventb.core.prAnte>
+                                    <org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p8">
+                                        <org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p8" org.eventb.core.prHyps="p1"/>
+                                    </org.eventb.core.prAnte>
+                                    <org.eventb.core.prAnte name=")" org.eventb.core.prGoal="p9">
+                                        <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p9" org.eventb.core.prHyps="p1">
+                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p5">
+                                                <org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p5" org.eventb.core.prHyps="p5"/>
+                                            </org.eventb.core.prAnte>
+                                            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+                                            <org.eventb.core.prExprRef name=".subst" org.eventb.core.prRef="e0"/>
+                                        </org.eventb.core.prRule>
+                                    </org.eventb.core.prAnte>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="past" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="peerOf∈EVENT ⇸ PEER"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="e1∈dom(peerOf)∧peerOf∈EVENT ⇸ PEER∧e2∈dom(peerOf)">
+            <org.eventb.core.prIdent name="e1" org.eventb.core.type="EVENT"/>
+            <org.eventb.core.prIdent name="e2" org.eventb.core.type="EVENT"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="e1∈past∧e2∈past⇒e1∈dom(peerOf)∧peerOf∈EVENT ⇸ PEER∧e2∈dom(peerOf)">
+            <org.eventb.core.prIdent name="e1" org.eventb.core.type="EVENT"/>
+            <org.eventb.core.prIdent name="e2" org.eventb.core.type="EVENT"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="e1∈past">
+            <org.eventb.core.prIdent name="e1" org.eventb.core.type="EVENT"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="peerOf∈past → PEER"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="e1∈dom(peerOf)">
+            <org.eventb.core.prIdent name="e1" org.eventb.core.type="EVENT"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="e2∈dom(peerOf)">
+            <org.eventb.core.prIdent name="e2" org.eventb.core.type="EVENT"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="past∈ℙ(EVENT)"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1∈past∧e2∈past⇒e1∈dom(peerOf)∧peerOf∈EVENT ⇸ PEER∧e2∈dom(peerOf)"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="e2∈past">
+            <org.eventb.core.prIdent name="e2" org.eventb.core.type="EVENT"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prExpr name="e0" org.eventb.core.expression="past"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.totalDom:2"/>
+        <org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.isFunGoal"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
+        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.hyp"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="INITIALISATION/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="EVENT,PEER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p1" org.eventb.core.prHyps=""/>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="⊤"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1∈(∅ ⦂ ℙ(EVENT))∧e2∈(∅ ⦂ ℙ(EVENT))∧(∅ ⦂ ℙ(EVENT×PEER))(e1)=(∅ ⦂ ℙ(EVENT×PEER))(e2)⇒e1 ↦ e2∈(∅ ⦂ ℙ(EVENT×EVENT))∨e2 ↦ e1∈(∅ ⦂ ℙ(EVENT×EVENT))"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="create/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4" org.eventb.core.prSets="EVENT,PEER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p5,p6,p7,p2,p8,p9,p10,p11,p3,p12,p13"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Z3" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p3,p1,p4,p2">
+                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1500"/>
+                    <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="Z3"/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="e" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prIdent name="p" org.eventb.core.type="PEER"/>
+        <org.eventb.core.prIdent name="past" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="e∈EVENT ∖ past"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="past ◁ (id ⦂ ℙ(EVENT×EVENT))⊆prec"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT,c⦂EVENT·e1 ↦ c∈links∧e2 ↦ c∈links⇒e1=e2">
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="∀e⦂EVENT,c1⦂EVENT,c2⦂EVENT·e ↦ c1∈links∧e ↦ c2∈links⇒c1=c2">
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="links∈past ↔ past">
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="peerOf∈past → PEER"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1∈past∪{e}∧e2∈past∪{e}∧(peerOf∪{e ↦ p})(e1)=(peerOf∪{e ↦ p})(e2)⇒e1 ↦ e2∈prec∪{e ↦ e}∪{ep⦂EVENT·ep∈past∧(∃ep2⦂EVENT·ep2∈past∧peerOf(ep2)=p∧ep ↦ ep2∈prec) ∣ ep ↦ e}∨e2 ↦ e1∈prec∪{e ↦ e}∪{ep⦂EVENT·ep∈past∧(∃ep2⦂EVENT·ep2∈past∧peerOf(ep2)=p∧ep ↦ ep2∈prec) ∣ ep ↦ e}"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1∈past∧e2∈past∧peerOf(e1)=peerOf(e2)⇒e1 ↦ e2∈prec∨e2 ↦ e1∈prec"/>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="dom(links)∩ran(links)=(∅ ⦂ ℙ(EVENT))">
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="prec;prec⊆prec"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="links⊆prec">
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="prec∈past  past"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="prec∩prec∼⊆(id ⦂ ℙ(EVENT×EVENT))"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="past∈ℙ(EVENT)"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="link/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4" org.eventb.core.prSets="EVENT,PEER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p5,p6,p7,p2,p8,p9,p10,p11,p3,p12,p13"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Z3" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p3,p1,p4,p2">
+                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1500"/>
+                    <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="Z3"/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="cause" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prIdent name="e" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prIdent name="p" org.eventb.core.type="PEER"/>
+        <org.eventb.core.prIdent name="past" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="e∈EVENT ∖ past"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="past ◁ (id ⦂ ℙ(EVENT×EVENT))⊆prec"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT,c⦂EVENT·e1 ↦ c∈links∧e2 ↦ c∈links⇒e1=e2">
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="∀e⦂EVENT,c1⦂EVENT,c2⦂EVENT·e ↦ c1∈links∧e ↦ c2∈links⇒c1=c2">
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1∈past∪{e}∧e2∈past∪{e}∧(peerOf∪{e ↦ p})(e1)=(peerOf∪{e ↦ p})(e2)⇒e1 ↦ e2∈prec∪{e ↦ e}∪{ep⦂EVENT·ep∈past∧(∃ep2⦂EVENT·ep2∈past∧peerOf(ep2)=p∧ep ↦ ep2∈prec) ∣ ep ↦ e}∪{ep⦂EVENT·ep∈past∧ep ↦ cause∈prec ∣ ep ↦ e}∨e2 ↦ e1∈prec∪{e ↦ e}∪{ep⦂EVENT·ep∈past∧(∃ep2⦂EVENT·ep2∈past∧peerOf(ep2)=p∧ep ↦ ep2∈prec) ∣ ep ↦ e}∪{ep⦂EVENT·ep∈past∧ep ↦ cause∈prec ∣ ep ↦ e}"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="links∈past ↔ past">
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="peerOf∈past → PEER"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1∈past∧e2∈past∧peerOf(e1)=peerOf(e2)⇒e1 ↦ e2∈prec∨e2 ↦ e1∈prec"/>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="dom(links)∩ran(links)=(∅ ⦂ ℙ(EVENT))">
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="prec;prec⊆prec"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="links⊆prec">
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="prec∈past  past"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="prec∩prec∼⊆(id ⦂ ℙ(EVENT×EVENT))"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="past∈ℙ(EVENT)"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="INITIALISATION/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="EVENT">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="PP (trivial)" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+            <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+            <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="Z3"/>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="(∅ ⦂ ℙ(EVENT)) ◁ (id ⦂ ℙ(EVENT×EVENT))⊆(∅ ⦂ ℙ(EVENT×EVENT))"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="create/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="EVENT,PEER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p2,p3,p4,p5,p1,p6,p7,p8,p9,p10,p11,p12"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Z3" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1">
+                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+                    <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="Z3"/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="e" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prIdent name="p" org.eventb.core.type="PEER"/>
+        <org.eventb.core.prIdent name="past" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1 ↦ e2∈prec∧e2 ↦ e1∈prec⇒e1=e2"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="∀ep⦂EVENT·ep∈past⇒(∀ep2⦂EVENT·ep2∈past⇒ep2∈dom(peerOf)∧peerOf∈EVENT ⇸ PEER)"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="links∈past ↔ past">
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="peerOf∈past → PEER"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="∀e⦂EVENT·e∈past⇒e ↦ e∈prec"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1∈past∧e2∈past∧peerOf(e1)=peerOf(e2)⇒e1 ↦ e2∈prec∨e2 ↦ e1∈prec"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="prec;prec⊆prec"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="links⊆prec">
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="prec∈past  past"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="(past∪{e}) ◁ (id ⦂ ℙ(EVENT×EVENT))⊆prec∪{e ↦ e}∪{ep⦂EVENT·ep∈past∧(∃ep2⦂EVENT·ep2∈past∧peerOf(ep2)=p∧ep ↦ ep2∈prec) ∣ ep ↦ e}"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="prec∩prec∼⊆(id ⦂ ℙ(EVENT×EVENT)) ▷ past"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT,e3⦂EVENT·e1 ↦ e2∈prec∧e2 ↦ e3∈prec⇒e1 ↦ e3∈prec"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="past∈ℙ(EVENT)"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="link/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1" org.eventb.core.prSets="EVENT,PEER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p2,p3,p4,p5,p1,p6,p7,p8,p9,p10,p11,p12"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Z3" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1">
+                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+                    <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="Z3"/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="cause" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prIdent name="e" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prIdent name="p" org.eventb.core.type="PEER"/>
+        <org.eventb.core.prIdent name="past" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1 ↦ e2∈prec∧e2 ↦ e1∈prec⇒e1=e2"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="∀ep⦂EVENT·ep∈past⇒(∀ep2⦂EVENT·ep2∈past⇒ep2∈dom(peerOf)∧peerOf∈EVENT ⇸ PEER)"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="links∈past ↔ past">
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="peerOf∈past → PEER"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="(past∪{e}) ◁ (id ⦂ ℙ(EVENT×EVENT))⊆prec∪{e ↦ e}∪{ep⦂EVENT·ep∈past∧(∃ep2⦂EVENT·ep2∈past∧peerOf(ep2)=p∧ep ↦ ep2∈prec) ∣ ep ↦ e}∪{ep⦂EVENT·ep∈past∧ep ↦ cause∈prec ∣ ep ↦ e}"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="∀e⦂EVENT·e∈past⇒e ↦ e∈prec"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1∈past∧e2∈past∧peerOf(e1)=peerOf(e2)⇒e1 ↦ e2∈prec∨e2 ↦ e1∈prec"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="prec;prec⊆prec"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="links⊆prec">
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="prec∈past  past"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="prec∩prec∼⊆(id ⦂ ℙ(EVENT×EVENT)) ▷ past"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT,e3⦂EVENT·e1 ↦ e2∈prec∧e2 ↦ e3∈prec⇒e1 ↦ e3∈prec"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="past∈ℙ(EVENT)"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="INITIALISATION/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="EVENT">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="PP (trivial)" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+            <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+            <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="Z3"/>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="(∅ ⦂ ℙ(EVENT×EVENT));(∅ ⦂ ℙ(EVENT×EVENT))⊆(∅ ⦂ ℙ(EVENT×EVENT))"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="INITIALISATION/inv8/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="EVENT">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="PP (trivial)" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+            <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+            <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="Z3"/>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="(∅ ⦂ ℙ(EVENT×EVENT))∩(∅ ⦂ ℙ(EVENT×EVENT))∼⊆(id ⦂ ℙ(EVENT×EVENT)) ▷ (∅ ⦂ ℙ(EVENT))"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="create/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4" org.eventb.core.prSets="EVENT,PEER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p5,p6,p3,p7,p8,p4,p9,p10,p11,p12,p13,p14"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Z3" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4">
+                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+                    <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="Z3"/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="e" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prIdent name="p" org.eventb.core.type="PEER"/>
+        <org.eventb.core.prIdent name="past" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="e∈EVENT ∖ past"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1 ↦ e2∈prec∧e2 ↦ e1∈prec⇒e1=e2"/>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="∀ep⦂EVENT·ep∈past⇒(∀ep2⦂EVENT·ep2∈past⇒ep2∈dom(peerOf)∧peerOf∈EVENT ⇸ PEER)"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="past ◁ (id ⦂ ℙ(EVENT×EVENT))⊆prec"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="links∈past ↔ past">
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="peerOf∈past → PEER"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="∀e⦂EVENT·e∈past⇒e ↦ e∈prec"/>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1∈past∧e2∈past∧peerOf(e1)=peerOf(e2)⇒e1 ↦ e2∈prec∨e2 ↦ e1∈prec"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="(prec∪{e ↦ e}∪{ep⦂EVENT·ep∈past∧(∃ep2⦂EVENT·ep2∈past∧peerOf(ep2)=p∧ep ↦ ep2∈prec) ∣ ep ↦ e});(prec∪{e ↦ e}∪{ep⦂EVENT·ep∈past∧(∃ep2⦂EVENT·ep2∈past∧peerOf(ep2)=p∧ep ↦ ep2∈prec) ∣ ep ↦ e})⊆prec∪{e ↦ e}∪{ep⦂EVENT·ep∈past∧(∃ep2⦂EVENT·ep2∈past∧peerOf(ep2)=p∧ep ↦ ep2∈prec) ∣ ep ↦ e}"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="prec;prec⊆prec"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="links⊆prec">
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="prec∈past  past"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="prec∩prec∼⊆(id ⦂ ℙ(EVENT×EVENT)) ▷ past"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT,e3⦂EVENT·e1 ↦ e2∈prec∧e2 ↦ e3∈prec⇒e1 ↦ e3∈prec"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="past∈ℙ(EVENT)"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="create/inv8/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3" org.eventb.core.prSets="EVENT,PEER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p4,p5,p3,p6,p7,p8,p2,p9,p10,p11,p12,p13"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Z3" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3">
+                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+                    <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="Z3"/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="e" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prIdent name="p" org.eventb.core.type="PEER"/>
+        <org.eventb.core.prIdent name="past" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="(prec∪{e ↦ e}∪{ep⦂EVENT·ep∈past∧(∃ep2⦂EVENT·ep2∈past∧peerOf(ep2)=p∧ep ↦ ep2∈prec) ∣ ep ↦ e})∩(prec∪{e ↦ e}∪{ep⦂EVENT·ep∈past∧(∃ep2⦂EVENT·ep2∈past∧peerOf(ep2)=p∧ep ↦ ep2∈prec) ∣ ep ↦ e})∼⊆(id ⦂ ℙ(EVENT×EVENT)) ▷ (past∪{e})"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="e∈EVENT ∖ past"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1 ↦ e2∈prec∧e2 ↦ e1∈prec⇒e1=e2"/>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="∀ep⦂EVENT·ep∈past⇒(∀ep2⦂EVENT·ep2∈past⇒ep2∈dom(peerOf)∧peerOf∈EVENT ⇸ PEER)"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="past ◁ (id ⦂ ℙ(EVENT×EVENT))⊆prec"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="links∈past ↔ past">
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="peerOf∈past → PEER"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="∀e⦂EVENT·e∈past⇒e ↦ e∈prec"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1∈past∧e2∈past∧peerOf(e1)=peerOf(e2)⇒e1 ↦ e2∈prec∨e2 ↦ e1∈prec"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="prec;prec⊆prec"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="links⊆prec">
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="prec∈past  past"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT,e3⦂EVENT·e1 ↦ e2∈prec∧e2 ↦ e3∈prec⇒e1 ↦ e3∈prec"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="past∈ℙ(EVENT)"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="link/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4" org.eventb.core.prSets="EVENT,PEER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p5,p6,p3,p7,p8,p4,p9,p10,p11,p12,p13,p14"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Z3" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4">
+                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+                    <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="Z3"/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="cause" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prIdent name="e" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prIdent name="p" org.eventb.core.type="PEER"/>
+        <org.eventb.core.prIdent name="past" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="e∈EVENT ∖ past"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1 ↦ e2∈prec∧e2 ↦ e1∈prec⇒e1=e2"/>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="∀ep⦂EVENT·ep∈past⇒(∀ep2⦂EVENT·ep2∈past⇒ep2∈dom(peerOf)∧peerOf∈EVENT ⇸ PEER)"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="past ◁ (id ⦂ ℙ(EVENT×EVENT))⊆prec"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="links∈past ↔ past">
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="peerOf∈past → PEER"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="∀e⦂EVENT·e∈past⇒e ↦ e∈prec"/>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1∈past∧e2∈past∧peerOf(e1)=peerOf(e2)⇒e1 ↦ e2∈prec∨e2 ↦ e1∈prec"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="(prec∪{e ↦ e}∪{ep⦂EVENT·ep∈past∧(∃ep2⦂EVENT·ep2∈past∧peerOf(ep2)=p∧ep ↦ ep2∈prec) ∣ ep ↦ e}∪{ep⦂EVENT·ep∈past∧ep ↦ cause∈prec ∣ ep ↦ e});(prec∪{e ↦ e}∪{ep⦂EVENT·ep∈past∧(∃ep2⦂EVENT·ep2∈past∧peerOf(ep2)=p∧ep ↦ ep2∈prec) ∣ ep ↦ e}∪{ep⦂EVENT·ep∈past∧ep ↦ cause∈prec ∣ ep ↦ e})⊆prec∪{e ↦ e}∪{ep⦂EVENT·ep∈past∧(∃ep2⦂EVENT·ep2∈past∧peerOf(ep2)=p∧ep ↦ ep2∈prec) ∣ ep ↦ e}∪{ep⦂EVENT·ep∈past∧ep ↦ cause∈prec ∣ ep ↦ e}"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="prec;prec⊆prec"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="links⊆prec">
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="prec∈past  past"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="prec∩prec∼⊆(id ⦂ ℙ(EVENT×EVENT)) ▷ past"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT,e3⦂EVENT·e1 ↦ e2∈prec∧e2 ↦ e3∈prec⇒e1 ↦ e3∈prec"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="past∈ℙ(EVENT)"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="link/inv8/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3" org.eventb.core.prSets="EVENT,PEER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p4,p5,p3,p6,p7,p8,p2,p9,p10,p11,p12,p13"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Z3" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3">
+                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+                    <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="Z3"/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="cause" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prIdent name="e" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prIdent name="p" org.eventb.core.type="PEER"/>
+        <org.eventb.core.prIdent name="past" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="e∈EVENT ∖ past"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1 ↦ e2∈prec∧e2 ↦ e1∈prec⇒e1=e2"/>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="∀ep⦂EVENT·ep∈past⇒(∀ep2⦂EVENT·ep2∈past⇒ep2∈dom(peerOf)∧peerOf∈EVENT ⇸ PEER)"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="past ◁ (id ⦂ ℙ(EVENT×EVENT))⊆prec"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="links∈past ↔ past">
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="peerOf∈past → PEER"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="(prec∪{e ↦ e}∪{ep⦂EVENT·ep∈past∧(∃ep2⦂EVENT·ep2∈past∧peerOf(ep2)=p∧ep ↦ ep2∈prec) ∣ ep ↦ e}∪{ep⦂EVENT·ep∈past∧ep ↦ cause∈prec ∣ ep ↦ e})∩(prec∪{e ↦ e}∪{ep⦂EVENT·ep∈past∧(∃ep2⦂EVENT·ep2∈past∧peerOf(ep2)=p∧ep ↦ ep2∈prec) ∣ ep ↦ e}∪{ep⦂EVENT·ep∈past∧ep ↦ cause∈prec ∣ ep ↦ e})∼⊆(id ⦂ ℙ(EVENT×EVENT)) ▷ (past∪{e})"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="∀e⦂EVENT·e∈past⇒e ↦ e∈prec"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1∈past∧e2∈past∧peerOf(e1)=peerOf(e2)⇒e1 ↦ e2∈prec∨e2 ↦ e1∈prec"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="prec;prec⊆prec"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="links⊆prec">
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="prec∈past  past"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT,e3⦂EVENT·e1 ↦ e2∈prec∧e2 ↦ e3∈prec⇒e1 ↦ e3∈prec"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="past∈ℙ(EVENT)"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="Lemma3−4/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="EVENT,PEER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p3,p4"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Z3" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2">
+                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+                    <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="Z3"/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="past" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="prec∈past  past"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·(e1 ↦ e2∈prec⇒e1∈dom(peerOf)∧peerOf∈EVENT ⇸ PEER∧e2∈dom(peerOf))∧(e1 ↦ e2∈prec∧peerOf(e1)≠peerOf(e2)⇒(∀es⦂EVENT,er⦂EVENT·e1 ↦ es∈prec∧es ↦ er∈prec∧er ↦ e2∈prec⇒es∈dom(peerOf)))"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="links∈past ↔ past">
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="peerOf∈past → PEER"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="past∈ℙ(EVENT)"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="INITIALISATION/Lemma3−4/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="EVENT,PEER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="PP (trivial)" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+            <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+            <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="Z3"/>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1 ↦ e2∈(∅ ⦂ ℙ(EVENT×EVENT))∧(∅ ⦂ ℙ(EVENT×PEER))(e1)≠(∅ ⦂ ℙ(EVENT×PEER))(e2)⇒(∃es⦂EVENT,er⦂EVENT·e1 ↦ es∈(∅ ⦂ ℙ(EVENT×EVENT))∧es ↦ er∈(∅ ⦂ ℙ(EVENT×EVENT))∧er ↦ e2∈(∅ ⦂ ℙ(EVENT×EVENT))∧(∅ ⦂ ℙ(EVENT×PEER))(e1)=(∅ ⦂ ℙ(EVENT×PEER))(es))"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="create/Lemma3−4/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3" org.eventb.core.prSets="EVENT,PEER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p4,p5,p1,p2,p3,p6,p7,p8,p9,p10,p11,p12"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Z3" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3">
+                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+                    <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="Z3"/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="e" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prIdent name="p" org.eventb.core.type="PEER"/>
+        <org.eventb.core.prIdent name="past" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1 ↦ e2∈prec∧e2 ↦ e1∈prec⇒e1=e2"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="past ◁ (id ⦂ ℙ(EVENT×EVENT))⊆prec"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="links∈past ↔ past">
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="peerOf∈past → PEER"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1 ↦ e2∈prec∪{e ↦ e}∪{ep⦂EVENT·ep∈past∧(∃ep2⦂EVENT·ep2∈past∧peerOf(ep2)=p∧ep ↦ ep2∈prec) ∣ ep ↦ e}∧(peerOf∪{e ↦ p})(e1)≠(peerOf∪{e ↦ p})(e2)⇒(∃es⦂EVENT,er⦂EVENT·e1 ↦ es∈prec∪{e ↦ e}∪{ep⦂EVENT·ep∈past∧(∃ep2⦂EVENT·ep2∈past∧peerOf(ep2)=p∧ep ↦ ep2∈prec) ∣ ep ↦ e}∧es ↦ er∈prec∪{e ↦ e}∪{ep⦂EVENT·ep∈past∧(∃ep2⦂EVENT·ep2∈past∧peerOf(ep2)=p∧ep ↦ ep2∈prec) ∣ ep ↦ e}∧er ↦ e2∈prec∪{e ↦ e}∪{ep⦂EVENT·ep∈past∧(∃ep2⦂EVENT·ep2∈past∧peerOf(ep2)=p∧ep ↦ ep2∈prec) ∣ ep ↦ e}∧(peerOf∪{e ↦ p})(e1)=(peerOf∪{e ↦ p})(es))"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="∀e⦂EVENT·e∈past⇒e ↦ e∈prec"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1∈past∧e2∈past∧peerOf(e1)=peerOf(e2)⇒e1 ↦ e2∈prec∨e2 ↦ e1∈prec"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="prec;prec⊆prec"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="links⊆prec">
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="prec∈past  past"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="prec∩prec∼⊆(id ⦂ ℙ(EVENT×EVENT)) ▷ past"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT,e3⦂EVENT·e1 ↦ e2∈prec∧e2 ↦ e3∈prec⇒e1 ↦ e3∈prec"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="past∈ℙ(EVENT)"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="link/Lemma3−4/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4" org.eventb.core.prSets="EVENT,PEER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p5,p6,p1,p2,p3,p7,p8,p9,p10,p11,p12,p13"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Z3" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4">
+                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+                    <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="Z3"/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="cause" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prIdent name="e" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.prIdent name="p" org.eventb.core.type="PEER"/>
+        <org.eventb.core.prIdent name="past" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1 ↦ e2∈prec∧e2 ↦ e1∈prec⇒e1=e2"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="past ◁ (id ⦂ ℙ(EVENT×EVENT))⊆prec"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1 ↦ e2∈prec∪{e ↦ e}∪{ep⦂EVENT·ep∈past∧(∃ep2⦂EVENT·ep2∈past∧peerOf(ep2)=p∧ep ↦ ep2∈prec) ∣ ep ↦ e}∪{ep⦂EVENT·ep∈past∧ep ↦ cause∈prec ∣ ep ↦ e}∧(peerOf∪{e ↦ p})(e1)≠(peerOf∪{e ↦ p})(e2)⇒(∃es⦂EVENT,er⦂EVENT·e1 ↦ es∈prec∪{e ↦ e}∪{ep⦂EVENT·ep∈past∧(∃ep2⦂EVENT·ep2∈past∧peerOf(ep2)=p∧ep ↦ ep2∈prec) ∣ ep ↦ e}∪{ep⦂EVENT·ep∈past∧ep ↦ cause∈prec ∣ ep ↦ e}∧es ↦ er∈prec∪{e ↦ e}∪{ep⦂EVENT·ep∈past∧(∃ep2⦂EVENT·ep2∈past∧peerOf(ep2)=p∧ep ↦ ep2∈prec) ∣ ep ↦ e}∪{ep⦂EVENT·ep∈past∧ep ↦ cause∈prec ∣ ep ↦ e}∧er ↦ e2∈prec∪{e ↦ e}∪{ep⦂EVENT·ep∈past∧(∃ep2⦂EVENT·ep2∈past∧peerOf(ep2)=p∧ep ↦ ep2∈prec) ∣ ep ↦ e}∪{ep⦂EVENT·ep∈past∧ep ↦ cause∈prec ∣ ep ↦ e}∧(peerOf∪{e ↦ p})(e1)=(peerOf∪{e ↦ p})(es))"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="links∈past ↔ past">
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="peerOf∈past → PEER"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="∀e⦂EVENT·e∈past⇒e ↦ e∈prec"/>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1∈past∧e2∈past∧peerOf(e1)=peerOf(e2)⇒e1 ↦ e2∈prec∨e2 ↦ e1∈prec"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="prec;prec⊆prec"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="links⊆prec">
+            <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="prec∈past  past"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="prec∩prec∼⊆(id ⦂ ℙ(EVENT×EVENT)) ▷ past"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT,e3⦂EVENT·e1 ↦ e2∈prec∧e2 ↦ e3∈prec⇒e1 ↦ e3∈prec"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="past∈ℙ(EVENT)"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="cause∈past"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+    </org.eventb.core.prProof>
+</org.eventb.core.prFile>

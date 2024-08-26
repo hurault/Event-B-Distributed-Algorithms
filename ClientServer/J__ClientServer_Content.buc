@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase" version="3">
+    <org.eventb.core.extendsContext name="'" org.eventb.core.target="I__Content"/>
+    <org.eventb.core.constant name="(" org.eventb.core.identifier="Request"/>
+    <org.eventb.core.constant name=")" org.eventb.core.identifier="Response"/>
+    <org.eventb.core.axiom name="*" org.eventb.core.label="messageType" org.eventb.core.predicate="partition(MessageType,{Request},{Response})"/>
+    <org.eventb.core.constant name="+" org.eventb.core.identifier="dataToInt"/>
+    <org.eventb.core.axiom name="," org.eventb.core.label="TDataToInt" org.eventb.core.predicate="dataToInt ∈ Data ⤖ℕ "/>
+</org.eventb.core.contextFile>

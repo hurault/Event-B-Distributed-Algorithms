@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.comment="The link between two events is explicitely done with a message, which is sent and received." org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.refinesMachine name="'" org.eventb.core.target="D__Run"/>
+<org.eventb.core.seesContext name="*" org.eventb.core.target="E__Messages"/>
+<org.eventb.core.variable name="(" org.eventb.core.identifier="past"/>
+<org.eventb.core.variable name="evt8" org.eventb.core.identifier="peerOf"/>
+<org.eventb.core.variable name="evt6" org.eventb.core.identifier="prec"/>
+<org.eventb.core.variable name="evt=" org.eventb.core.identifier="run"/>
+<org.eventb.core.event name="evt&gt;" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="internal1" org.eventb.core.assignment="past ≔ ∅" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="internal3" org.eventb.core.assignment="prec ≔ ∅" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="internal4" org.eventb.core.assignment="peerOf ≔ ∅" org.eventb.core.label="act4"/>
+<org.eventb.core.action name="internal5" org.eventb.core.assignment="run ≔ ∅" org.eventb.core.label="act5"/>
+<org.eventb.core.action name="'" org.eventb.core.assignment="mesOf ≔ ∅" org.eventb.core.label="act6"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="comOf ≔ ∅" org.eventb.core.label="act7"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt?" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="send">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="create"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="mesOf ≔ mesOf ∪ {e ↦ m}" org.eventb.core.label="act5"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="comOf ≔ comOf ∪ {e ↦ Send}" org.eventb.core.label="act6"/>
+<org.eventb.core.parameter name="*" org.eventb.core.comment="Sent message" org.eventb.core.identifier="m"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="m ∈ MESSAGE ∖ ran(mesOf)"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt@" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="receive">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="link"/>
+<org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="e ∈ EVENT ∖ past"/>
+<org.eventb.core.parameter name="internal1" org.eventb.core.comment="New event" org.eventb.core.identifier="e"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="past ≔ past ∪ {e}" org.eventb.core.label="act1"/>
+<org.eventb.core.parameter name="internal3" org.eventb.core.comment="Receiver" org.eventb.core.identifier="p"/>
+<org.eventb.core.guard name="internal1" org.eventb.core.label="grd2" org.eventb.core.predicate="p ∈ PEER"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="peerOf ≔ peerOf ∪ {e ↦ p}" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="internal1" org.eventb.core.assignment="prec ≔ prec&#10;       ∪ {e ↦ e}&#10;       ∪ {ep · ep ∈ past ∧ (∃ ep2 · ep2 ∈ past ∧ peerOf(ep2) = p ∧ ep ↦ ep2 ∈ prec) ∣ ep ↦ e}&#10;       ∪ {ep · ep ∈ past ∧ (∃ es · es ∈ past ∧ comOf(es) = Send ∧ mesOf(es) = m ∧ ep ↦ es ∈ prec) ∣ ep ↦ e} " org.eventb.core.label="act4"/>
+<org.eventb.core.action name="act1" org.eventb.core.assignment="run ≔ run&#10;      ∪ {e ↦ e}&#10;      ∪ {ep · ep ∈ past ∣ ep ↦ e}" org.eventb.core.label="act5"/>
+<org.eventb.core.parameter name="(" org.eventb.core.comment="Received message" org.eventb.core.identifier="m"/>
+<org.eventb.core.guard name="internal4" org.eventb.core.label="grd3" org.eventb.core.predicate="m ∈ MESSAGE"/>
+<org.eventb.core.guard name="internal5" org.eventb.core.label="grd4" org.eventb.core.predicate="∀ ep · ep ∈ past ∧ comOf(ep) = Receive ⇒ mesOf(ep) ≠ m"/>
+<org.eventb.core.guard name="internal6" org.eventb.core.label="grd5" org.eventb.core.predicate="∃ es · es ∈ past ∧ comOf(es) = Send ∧ mesOf(es) = m"/>
+<org.eventb.core.witness name="internal7" org.eventb.core.label="cause" org.eventb.core.predicate="cause ∈ past ∧ comOf(cause) = Send ∧ mesOf(cause) = m"/>
+<org.eventb.core.action name="internal8" org.eventb.core.assignment="mesOf ≔ mesOf ∪ {e ↦ m}" org.eventb.core.label="act6"/>
+<org.eventb.core.action name="internal9" org.eventb.core.assignment="comOf ≔ comOf ∪ {e ↦ Receive}" org.eventb.core.label="act7"/>
+<org.eventb.core.witness name="internal:" org.eventb.core.label="links'" org.eventb.core.predicate="links' = links ∪ {es · es ∈ past ∧ comOf(es) = Send ∧ mesOf(es) = m ∣ es ↦ e}"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="evtA" org.eventb.core.comment="Message mesOf(e) of a communication event e" org.eventb.core.identifier="mesOf"/>
+<org.eventb.core.variable name="evtB" org.eventb.core.comment="Communication label comOf(e) (Send or Receive) of a communication event e" org.eventb.core.identifier="comOf"/>
+<org.eventb.core.invariant name="evtD" org.eventb.core.label="TcomOf" org.eventb.core.predicate="comOf ∈ past → COM"/>
+<org.eventb.core.invariant name="inv1" org.eventb.core.label="TmesOf" org.eventb.core.predicate="mesOf ∈ past → MESSAGE"/>
+<org.eventb.core.invariant name="inv2" org.eventb.core.comment="no message is sent or received more than once" org.eventb.core.label="inv1" org.eventb.core.predicate="∀ e1, e2 · e1 ∈ past ∧ e2 ∈ past&#10;∧ comOf(e1) = comOf(e2)&#10;∧ mesOf(e1) = mesOf(e2)&#10;⇒ e1 = e2"/>
+<org.eventb.core.invariant name="inv3" org.eventb.core.comment="a receive event is preceded by a send event" org.eventb.core.label="inv2" org.eventb.core.predicate="∀ e · e ∈ past ∧ comOf(e) = Receive&#10;⇒ (∃ es · es ∈ past ∧ comOf(es) = Send ∧ mesOf(e) = mesOf(es) ∧ es ↦ e ∈ prec)"/>
+<org.eventb.core.invariant name="inv4" org.eventb.core.label="Glinks" org.eventb.core.predicate="∀ es, er · es ↦ er ∈ links ⇒ comOf(es) = Send ∧ comOf(er) = Receive ∧ mesOf(es) = mesOf(er)"/>
+<org.eventb.core.invariant name="inv5" org.eventb.core.label="inv3" org.eventb.core.predicate="∀ e1, e2 · e1 ↦ e2 ∈ prec ∧ peerOf(e1) ≠ peerOf(e2)&#10;⇒ (∃ es, er · e1 ↦ es ∈ prec ∧ es ↦ er ∈ prec ∧ er ↦ e2 ∈ prec ∧ peerOf(e1) = peerOf(es) ∧ comOf(es) = Send ∧ comOf(er) = Receive ∧ mesOf(es) = mesOf(er))"/>
+</org.eventb.core.machineFile>

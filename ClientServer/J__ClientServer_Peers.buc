@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase" version="3">
+    <org.eventb.core.extendsContext name="(" org.eventb.core.target="C__Peers"/>
+    <org.eventb.core.constant name="-" org.eventb.core.identifier="Client"/>
+    <org.eventb.core.constant name="." org.eventb.core.identifier="Server"/>
+    <org.eventb.core.axiom name="/" org.eventb.core.label="peers" org.eventb.core.predicate="partition(PEER,{Client},{Server})"/>
+</org.eventb.core.contextFile>

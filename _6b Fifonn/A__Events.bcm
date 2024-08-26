@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.scMachineFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd">
+    <org.eventb.core.scSeesContext name="'" org.eventb.core.scTarget="/_6b Fifonn/A__Event.bcc" org.eventb.core.source="/_6b Fifonn/A__Events.bum|org.eventb.core.machineFile#A__Events|org.eventb.core.seesContext#*"/>
+    <org.eventb.core.scInternalContext name="A__Event">
+        <org.eventb.core.scCarrierSet name="EVENT" org.eventb.core.source="/_6b Fifonn/A__Event.buc|org.eventb.core.contextFile#A__Event|org.eventb.core.carrierSet#2" org.eventb.core.type="ℙ(EVENT)"/>
+    </org.eventb.core.scInternalContext>
+    <org.eventb.core.scInvariant name="A__Evenu" org.eventb.core.label="Tpast" org.eventb.core.predicate="past∈ℙ(EVENT)" org.eventb.core.source="/_6b Fifonn/A__Events.bum|org.eventb.core.machineFile#A__Events|org.eventb.core.invariant#)" org.eventb.core.theorem="false"/>
+    <org.eventb.core.scVariable name="past" org.eventb.core.abstract="false" org.eventb.core.concrete="true" org.eventb.core.source="/_6b Fifonn/A__Events.bum|org.eventb.core.machineFile#A__Events|org.eventb.core.variable#(" org.eventb.core.type="ℙ(EVENT)"/>
+    <org.eventb.core.scEvent name="A__Evenv" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION" org.eventb.core.source="/_6b Fifonn/A__Events.bum|org.eventb.core.machineFile#A__Events|org.eventb.core.event#'">
+        <org.eventb.core.scAction name="'" org.eventb.core.assignment="past ≔ ∅ ⦂ ℙ(EVENT)" org.eventb.core.label="act1" org.eventb.core.source="/_6b Fifonn/A__Events.bum|org.eventb.core.machineFile#A__Events|org.eventb.core.event#'|org.eventb.core.action#'"/>
+    </org.eventb.core.scEvent>
+    <org.eventb.core.scEvent name="A__Evenw" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="happen" org.eventb.core.source="/_6b Fifonn/A__Events.bum|org.eventb.core.machineFile#A__Events|org.eventb.core.event#+">
+        <org.eventb.core.scGuard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="e∈EVENT ∖ past" org.eventb.core.source="/_6b Fifonn/A__Events.bum|org.eventb.core.machineFile#A__Events|org.eventb.core.event#+|org.eventb.core.guard#'" org.eventb.core.theorem="false"/>
+        <org.eventb.core.scParameter name="e" org.eventb.core.source="/_6b Fifonn/A__Events.bum|org.eventb.core.machineFile#A__Events|org.eventb.core.event#+|org.eventb.core.parameter#(" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.scAction name="f" org.eventb.core.assignment="past ≔ past∪{e}" org.eventb.core.label="act1" org.eventb.core.source="/_6b Fifonn/A__Events.bum|org.eventb.core.machineFile#A__Events|org.eventb.core.event#+|org.eventb.core.action#)"/>
+    </org.eventb.core.scEvent>
+</org.eventb.core.scMachineFile>

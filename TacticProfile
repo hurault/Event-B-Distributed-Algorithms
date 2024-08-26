@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<tactic_pref>
+    <pref_unit pref_key="Rewrite Op Theory">
+        <combined combinator_id="org.eventb.core.seqprover.loopOnAllPending" tactic_id="org.eventb.core.seqprover.loopOnAllPending.combined">
+            <pref_ref pref_key="Post Tactic Profile 1"/>
+            <simple tactic_id="org.eventb.theory.rbp.rbp0"/>
+            <simple tactic_id="org.eventb.theory.rbp.rbp1"/>
+        </combined>
+    </pref_unit>
+    <pref_unit pref_key="Default Auto Tactic with SMT with Theory PR">
+        <combined combinator_id="org.eventb.core.seqprover.loopOnAllPending" tactic_id="org.eventb.core.seqprover.loopOnAllPending.combined">
+            <simple tactic_id="org.eventb.core.seqprover.trueGoalTac"/>
+            <simple tactic_id="org.eventb.core.seqprover.falseHypTac"/>
+            <simple tactic_id="org.eventb.core.seqprover.goalInHypTac"/>
+            <simple tactic_id="org.eventb.core.seqprover.funGoalTac"/>
+            <simple tactic_id="org.eventb.core.seqprover.finiteHypBoundedGoalTac"/>
+            <simple tactic_id="org.eventb.core.seqprover.partitionRewriteTac"/>
+            <simple tactic_id="org.eventb.core.seqprover.genMPTac"/>
+            <simple tactic_id="org.eventb.core.seqprover.autoRewriteTac"/>
+            <simple tactic_id="org.eventb.core.seqprover.NNFTac"/>
+            <simple tactic_id="org.eventb.core.seqprover.typeRewriteTac"/>
+            <simple tactic_id="org.eventb.core.seqprover.findContrHypsTac"/>
+            <simple tactic_id="org.eventb.core.seqprover.finiteInclusionTac"/>
+            <simple tactic_id="org.eventb.core.seqprover.shrinkImpHypTac"/>
+            <simple tactic_id="org.eventb.core.seqprover.funOvrGoalTac"/>
+            <simple tactic_id="org.eventb.core.seqprover.clarifyGoalTac"/>
+            <simple tactic_id="org.eventb.core.seqprover.onePointGoalTac"/>
+            <simple tactic_id="org.eventb.core.seqprover.funOvrHypTac"/>
+            <simple tactic_id="org.eventb.core.seqprover.funImgSimpTac"/>
+            <simple tactic_id="org.eventb.core.seqprover.onePointHypTac"/>
+            <simple tactic_id="org.eventb.core.seqprover.eqHypTac"/>
+            <simple tactic_id="org.eventb.core.seqprover.InDomGoalTac"/>
+            <simple tactic_id="org.eventb.core.seqprover.FunImgInGoalTac"/>
+            <pref_ref pref_key="Rewrite Op Theory"/>
+            <simple tactic_id="com.clearsy.atelierb.provers.core.ml"/>
+            <simple tactic_id="com.clearsy.atelierb.provers.core.p0"/>
+            <combined combinator_id="org.eventb.core.seqprover.attemptAfterLasso" tactic_id="org.eventb.core.seqprover.attemptAfterLasso.combined">
+                <simple tactic_id="org.eventb.smt.core.autoTactic"/>
+            </combined>
+            <simple tactic_id="org.eventb.core.seqprover.dtDestrWDTac"/>
+        </combined>
+    </pref_unit>
+    <pref_unit pref_key="Post Tactic Profile 1">
+        <combined combinator_id="org.eventb.core.seqprover.loopOnAllPending" tactic_id="org.eventb.core.seqprover.loopOnAllPending.combined">
+            <simple tactic_id="org.eventb.core.seqprover.trueGoalTac"/>
+            <simple tactic_id="org.eventb.core.seqprover.falseHypTac"/>
+            <simple tactic_id="org.eventb.core.seqprover.goalInHypTac"/>
+            <simple tactic_id="org.eventb.core.seqprover.goalDisjInHypTac"/>
+            <simple tactic_id="org.eventb.core.seqprover.funGoalTac"/>
+            <simple tactic_id="org.eventb.core.seqprover.InDomGoalTac"/>
+            <simple tactic_id="org.eventb.core.seqprover.FunImgInGoalTac"/>
+            <simple tactic_id="org.eventb.core.seqprover.finiteHypBoundedGoalTac"/>
+            <simple tactic_id="org.eventb.core.seqprover.autoRewriteTac"/>
+            <simple tactic_id="org.eventb.core.seqprover.NNFTac"/>
+            <simple tactic_id="org.eventb.core.seqprover.typeRewriteTac"/>
+            <simple tactic_id="org.eventb.core.seqprover.existsHypTac"/>
+            <simple tactic_id="org.eventb.core.seqprover.findContrHypsTac"/>
+            <simple tactic_id="org.eventb.core.seqprover.eqHypTac"/>
+            <simple tactic_id="org.eventb.core.seqprover.shrinkImpHypTac"/>
+            <simple tactic_id="org.eventb.core.seqprover.shrinkEnumHypTac"/>
+            <simple tactic_id="org.eventb.core.seqprover.funOvrGoalTac"/>
+            <simple tactic_id="org.eventb.core.seqprover.clarifyGoalTac"/>
+        </combined>
+    </pref_unit>
+</tactic_pref>

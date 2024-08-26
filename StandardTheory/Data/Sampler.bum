@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.comment="Simple data sampler that records data points and &#10;can output the sum of product of all data values recorded.  &#10;Uses SUMandPRODUCT theory&#10;&#10;@author Michael Butler&#10;@June 2014" org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="'" org.eventb.core.assignment="data ≔ ∅" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="(" org.eventb.core.identifier="data"/>
+<org.eventb.core.invariant name=")" org.eventb.core.label="inv1" org.eventb.core.predicate="data ∈ DATA ⇸ ℤ"/>
+<org.eventb.core.seesContext name="*" org.eventb.core.target="C1"/>
+<org.eventb.core.event name="+" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="addValue">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="d"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="v"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="d ∈ DATA ∖ dom(data)"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="v ∈ ℤ"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="data ≔ data ∪ {d↦v}" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="," org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="getStats">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="s"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="p"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="s = SUM(data)"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="p = PRODUCT(data)"/>
+</org.eventb.core.event>
+<org.eventb.core.invariant name="-" org.eventb.core.label="inv2" org.eventb.core.predicate="finite(data)"/>
+</org.eventb.core.machineFile>

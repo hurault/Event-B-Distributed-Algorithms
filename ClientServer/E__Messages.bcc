@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.scContextFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd">
+    <org.eventb.core.scExtendsContext name="'" org.eventb.core.scTarget="/ClientServer/C__Peers.bcc|org.eventb.core.scContextFile#C__Peers" org.eventb.core.source="/ClientServer/E__Messages.buc|org.eventb.core.contextFile#E__Messages|org.eventb.core.extendsContext#'"/>
+    <org.eventb.core.scInternalContext name="A__Event">
+        <org.eventb.core.scCarrierSet name="EVENT" org.eventb.core.source="/ClientServer/A__Event.buc|org.eventb.core.contextFile#A__Event|org.eventb.core.carrierSet#2" org.eventb.core.type="ℙ(EVENT)"/>
+    </org.eventb.core.scInternalContext>
+    <org.eventb.core.scInternalContext name="C__Peers">
+        <org.eventb.core.scExtendsContext name="'" org.eventb.core.scTarget="/ClientServer/A__Event.bcc|org.eventb.core.scContextFile#A__Event" org.eventb.core.source="/ClientServer/C__Peers.buc|org.eventb.core.contextFile#C__Peers|org.eventb.core.extendsContext#("/>
+        <org.eventb.core.scCarrierSet name="PEER" org.eventb.core.source="/ClientServer/C__Peers.buc|org.eventb.core.contextFile#C__Peers|org.eventb.core.carrierSet#'" org.eventb.core.type="ℙ(PEER)"/>
+    </org.eventb.core.scInternalContext>
+    <org.eventb.core.scAxiom name="C__Peert" org.eventb.core.label="COM" org.eventb.core.predicate="partition(COM,{Send},{Receive})" org.eventb.core.source="/ClientServer/E__Messages.buc|org.eventb.core.contextFile#E__Messages|org.eventb.core.axiom#)" org.eventb.core.theorem="false"/>
+    <org.eventb.core.scAxiom name="C__Peeru" org.eventb.core.label="Teventmapper" org.eventb.core.predicate="eventmapper∈COM × MESSAGE ⤖ EVENT" org.eventb.core.source="/ClientServer/E__Messages.buc|org.eventb.core.contextFile#E__Messages|org.eventb.core.axiom#-" org.eventb.core.theorem="false"/>
+    <org.eventb.core.scAxiom name="C__Peerv" org.eventb.core.label="axm1" org.eventb.core.predicate="∀c1⦂COM,c2⦂COM,m1⦂MESSAGE,m2⦂MESSAGE·c1∈COM∧c2∈COM∧m1∈MESSAGE∧m2∈MESSAGE⇒(c1≠c2∨m1≠m2⇔eventmapper(c1 ↦ m1)≠eventmapper(c2 ↦ m2))" org.eventb.core.source="/ClientServer/E__Messages.buc|org.eventb.core.contextFile#E__Messages|org.eventb.core.axiom#\/" org.eventb.core.theorem="true"/>
+    <org.eventb.core.scCarrierSet name="MESSAGE" org.eventb.core.source="/ClientServer/E__Messages.buc|org.eventb.core.contextFile#E__Messages|org.eventb.core.carrierSet#(" org.eventb.core.type="ℙ(MESSAGE)"/>
+    <org.eventb.core.scConstant name="Receive" org.eventb.core.source="/ClientServer/E__Messages.buc|org.eventb.core.contextFile#E__Messages|org.eventb.core.constant#," org.eventb.core.type="COM"/>
+    <org.eventb.core.scConstant name="Send" org.eventb.core.source="/ClientServer/E__Messages.buc|org.eventb.core.contextFile#E__Messages|org.eventb.core.constant#+" org.eventb.core.type="COM"/>
+    <org.eventb.core.scConstant name="eventmapper" org.eventb.core.source="/ClientServer/E__Messages.buc|org.eventb.core.contextFile#E__Messages|org.eventb.core.constant#." org.eventb.core.type="ℙ(COM×MESSAGE×EVENT)"/>
+    <org.eventb.core.scCarrierSet name="COM" org.eventb.core.source="/ClientServer/E__Messages.buc|org.eventb.core.contextFile#E__Messages|org.eventb.core.carrierSet#*" org.eventb.core.type="ℙ(COM)"/>
+</org.eventb.core.scContextFile>

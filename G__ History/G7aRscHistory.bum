@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.refinesMachine name="'" org.eventb.core.target="G6aFifonnHistory"/>
+<org.eventb.core.seesContext name=":" org.eventb.core.target="E__Messages"/>
+<org.eventb.core.variable name="(" org.eventb.core.identifier="net"/>
+<org.eventb.core.variable name=")" org.eventb.core.identifier="hg"/>
+<org.eventb.core.variable name="inv1B" org.eventb.core.identifier="hc"/>
+<org.eventb.core.variable name="," org.eventb.core.identifier="origOf"/>
+<org.eventb.core.variable name="-" org.eventb.core.identifier="destOf"/>
+<org.eventb.core.variable name="." org.eventb.core.identifier="hgOf"/>
+<org.eventb.core.variable name="inv1D" org.eventb.core.identifier="hcOf"/>
+<org.eventb.core.event name="inv1E" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION"/>
+<org.eventb.core.event name="inv1F" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="send">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="send"/>
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="m"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="p"/>
+<org.eventb.core.parameter name=")" org.eventb.core.identifier="d"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="Tm" org.eventb.core.predicate="m ∈ MESSAGE"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="Tp" org.eventb.core.predicate="p ∈ PEER"/>
+<org.eventb.core.guard name="," org.eventb.core.label="Td" org.eventb.core.predicate="d ∈ PEER"/>
+<org.eventb.core.guard name="-" org.eventb.core.label="unused" org.eventb.core.predicate="m ∉ hg"/>
+<org.eventb.core.action name="/" org.eventb.core.assignment="net ≔ net ∪ {m}" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="0" org.eventb.core.assignment="hg ≔ hg ∪ {m}" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="grd7" org.eventb.core.assignment="hc(p) ≔ hc(p) ∪ {m}" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="3" org.eventb.core.assignment="origOf ≔ origOf ∪ {m ↦ p}" org.eventb.core.label="act4"/>
+<org.eventb.core.action name="4" org.eventb.core.assignment="destOf ≔ destOf ∪ {m ↦ d}" org.eventb.core.label="act5"/>
+<org.eventb.core.action name="5" org.eventb.core.assignment="hgOf ≔ hgOf ∪ {m ↦ hg}" org.eventb.core.label="act6"/>
+<org.eventb.core.guard name="grd5" org.eventb.core.label="ordering" org.eventb.core.predicate="net = ∅"/>
+<org.eventb.core.action name="grd8" org.eventb.core.assignment="hcOf ≔ hcOf ∪ {m ↦ hc(p)}" org.eventb.core.label="act7"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="inv1G" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="receive">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="receive"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.label="Tm" org.eventb.core.predicate="m ∈ MESSAGE"/>
+<org.eventb.core.guard name="grd2" org.eventb.core.label="Tp" org.eventb.core.predicate="p ∈ PEER"/>
+<org.eventb.core.guard name="grd3" org.eventb.core.label="intransit" org.eventb.core.predicate="m ∈ net"/>
+<org.eventb.core.guard name="grd4" org.eventb.core.label="destination" org.eventb.core.predicate="destOf(m) = p"/>
+<org.eventb.core.parameter name="element1" org.eventb.core.identifier="m"/>
+<org.eventb.core.parameter name="element2" org.eventb.core.identifier="p"/>
+<org.eventb.core.action name="act1" org.eventb.core.assignment="net ≔ net ∖ {m}" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="element6" org.eventb.core.assignment="hc(p) ≔ hc(p) ∪ {m} ∪ hcOf(m)" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+<org.eventb.core.invariant name="inv1" org.eventb.core.label="ordering" org.eventb.core.predicate="net = ∅ ∨ (∃ m · net = {m})"/>
+</org.eventb.core.machineFile>

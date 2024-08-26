@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="EVENT" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.poIdentifier name="PEER" org.eventb.core.type="ℙ(PEER)"/>
+        <org.eventb.core.poIdentifier name="MESSAGE" org.eventb.core.type="ℙ(MESSAGE)"/>
+        <org.eventb.core.poIdentifier name="COM" org.eventb.core.type="ℙ(COM)"/>
+        <org.eventb.core.poIdentifier name="Receive" org.eventb.core.type="COM"/>
+        <org.eventb.core.poIdentifier name="Send" org.eventb.core.type="COM"/>
+        <org.eventb.core.poIdentifier name="eventmapper" org.eventb.core.type="ℙ(COM×MESSAGE×EVENT)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/E__ Event/E__Messages.bpo|org.eventb.core.poFile#E__Messages|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="partition(COM,{Send},{Receive})" org.eventb.core.source="/E__ Event/E__Messages.buc|org.eventb.core.contextFile#E__Messages|org.eventb.core.axiom#)"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="eventmapper∈COM × MESSAGE ⤖ EVENT" org.eventb.core.source="/E__ Event/E__Messages.buc|org.eventb.core.contextFile#E__Messages|org.eventb.core.axiom#-"/>
+    </org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

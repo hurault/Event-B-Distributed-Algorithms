@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.scMachineFile org.eventb.core.accurate="false" org.eventb.core.configuration="org.eventb.core.fwd">
+    <org.eventb.core.scSeesContext name="'" org.eventb.core.scTarget="/SimpleNetwork/c0.bcc" org.eventb.core.source="/SimpleNetwork/ConnectedNetwork.bum|org.eventb.core.machineFile#ConnectedNetwork|org.eventb.core.seesContext#+"/>
+    <org.eventb.core.scInternalContext name="c0">
+        <org.eventb.core.scCarrierSet name="NODE" org.eventb.core.source="/SimpleNetwork/c0.buc|org.eventb.core.contextFile#c0|org.eventb.core.carrierSet#'" org.eventb.core.type="ℙ(NODE)"/>
+    </org.eventb.core.scInternalContext>
+    <org.eventb.core.scInvariant name="c1" org.eventb.core.label="inv1" org.eventb.core.predicate="net⊆NODE × NODE" org.eventb.core.source="/SimpleNetwork/ConnectedNetwork.bum|org.eventb.core.machineFile#ConnectedNetwork|org.eventb.core.invariant#)" org.eventb.core.theorem="false"/>
+    <org.eventb.core.scVariable name="net" org.eventb.core.abstract="false" org.eventb.core.concrete="true" org.eventb.core.source="/SimpleNetwork/ConnectedNetwork.bum|org.eventb.core.machineFile#ConnectedNetwork|org.eventb.core.variable#(" org.eventb.core.type="ℙ(NODE×NODE)"/>
+    <org.eventb.core.scEvent name="neu" org.eventb.core.accurate="false" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION" org.eventb.core.source="/SimpleNetwork/ConnectedNetwork.bum|org.eventb.core.machineFile#ConnectedNetwork|org.eventb.core.event#'">
+        <org.eventb.core.scAction name="'" org.eventb.core.assignment="net ≔ ∅ ⦂ ℙ(NODE×NODE)" org.eventb.core.label="act1" org.eventb.core.source="/SimpleNetwork/ConnectedNetwork.bum|org.eventb.core.machineFile#ConnectedNetwork|org.eventb.core.event#'|org.eventb.core.action#'"/>
+    </org.eventb.core.scEvent>
+    <org.eventb.core.scEvent name="nev" org.eventb.core.accurate="false" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="AddLink" org.eventb.core.source="/SimpleNetwork/ConnectedNetwork.bum|org.eventb.core.machineFile#ConnectedNetwork|org.eventb.core.event#*">
+        <org.eventb.core.scGuard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="n1 ↦ n2∉net" org.eventb.core.source="/SimpleNetwork/ConnectedNetwork.bum|org.eventb.core.machineFile#ConnectedNetwork|org.eventb.core.event#*|org.eventb.core.guard#)" org.eventb.core.theorem="false"/>
+        <org.eventb.core.scParameter name="n1" org.eventb.core.source="/SimpleNetwork/ConnectedNetwork.bum|org.eventb.core.machineFile#ConnectedNetwork|org.eventb.core.event#*|org.eventb.core.parameter#'" org.eventb.core.type="NODE"/>
+        <org.eventb.core.scParameter name="n2" org.eventb.core.source="/SimpleNetwork/ConnectedNetwork.bum|org.eventb.core.machineFile#ConnectedNetwork|org.eventb.core.event#*|org.eventb.core.parameter#(" org.eventb.core.type="NODE"/>
+        <org.eventb.core.scAction name="n3" org.eventb.core.assignment="net ≔ net∪{n1 ↦ n2}" org.eventb.core.label="act1" org.eventb.core.source="/SimpleNetwork/ConnectedNetwork.bum|org.eventb.core.machineFile#ConnectedNetwork|org.eventb.core.event#*|org.eventb.core.action#,"/>
+    </org.eventb.core.scEvent>
+</org.eventb.core.scMachineFile>

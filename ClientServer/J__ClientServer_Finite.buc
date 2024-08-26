@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase" version="3">
+    <org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="cst1" org.eventb.core.identifier="maxReq"/>
+    <org.eventb.core.axiom name="axm1" org.eventb.core.label="TmaxReq" org.eventb.core.predicate="maxReq ∈ ℕ "/>
+    <org.eventb.core.axiom name="axm2" org.eventb.core.label="valmaxReq" org.eventb.core.predicate="maxReq=4"/>
+</org.eventb.core.contextFile>

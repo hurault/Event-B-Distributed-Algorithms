@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+    <org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="EVENT" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.poIdentifier name="PEER" org.eventb.core.type="ℙ(PEER)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.poIdentifier name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.poIdentifier name="run" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.poIdentifier name="past" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.poIdentifier name="peerOf" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.poPredicate name="peerOg" org.eventb.core.predicate="past∈ℙ(EVENT)" org.eventb.core.source="/_6a Fifonn/A__Events.bum|org.eventb.core.machineFile#A__Events|org.eventb.core.invariant#)"/>
+        <org.eventb.core.poPredicate name="peerOh" org.eventb.core.predicate="links∈past ↔ past" org.eventb.core.source="/_6a Fifonn/B__Communication.bum|org.eventb.core.machineFile#B__Communication|org.eventb.core.invariant#evt3"/>
+        <org.eventb.core.poPredicate name="peerOi" org.eventb.core.predicate="dom(links)∩ran(links)=(∅ ⦂ ℙ(EVENT))" org.eventb.core.source="/_6a Fifonn/B__Communication.bum|org.eventb.core.machineFile#B__Communication|org.eventb.core.invariant#inv1"/>
+        <org.eventb.core.poPredicate name="peerOj" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT,c⦂EVENT·e1 ↦ c∈links∧e2 ↦ c∈links⇒e1=e2" org.eventb.core.source="/_6a Fifonn/B__Communication.bum|org.eventb.core.machineFile#B__Communication|org.eventb.core.invariant#inv2"/>
+        <org.eventb.core.poPredicate name="peerOk" org.eventb.core.predicate="∀e⦂EVENT,c1⦂EVENT,c2⦂EVENT·e ↦ c1∈links∧e ↦ c2∈links⇒c1=c2" org.eventb.core.source="/_6a Fifonn/B__Communication.bum|org.eventb.core.machineFile#B__Communication|org.eventb.core.invariant#inv3"/>
+        <org.eventb.core.poPredicate name="peerOl" org.eventb.core.predicate="prec∈past  past" org.eventb.core.source="/_6a Fifonn/C__DistributedExecution.bum|org.eventb.core.machineFile#C__DistributedExecution|org.eventb.core.invariant#evt7"/>
+        <org.eventb.core.poPredicate name="peerOm" org.eventb.core.predicate="peerOf∈past → PEER" org.eventb.core.source="/_6a Fifonn/C__DistributedExecution.bum|org.eventb.core.machineFile#C__DistributedExecution|org.eventb.core.invariant#evt9"/>
+        <org.eventb.core.poPredicate name="peerOn" org.eventb.core.predicate="past ◁ (id ⦂ ℙ(EVENT×EVENT))⊆prec" org.eventb.core.source="/_6a Fifonn/C__DistributedExecution.bum|org.eventb.core.machineFile#C__DistributedExecution|org.eventb.core.invariant#inv1"/>
+        <org.eventb.core.poPredicate name="peerOo" org.eventb.core.predicate="prec;prec⊆prec" org.eventb.core.source="/_6a Fifonn/C__DistributedExecution.bum|org.eventb.core.machineFile#C__DistributedExecution|org.eventb.core.invariant#inv2"/>
+        <org.eventb.core.poPredicate name="peerOp" org.eventb.core.predicate="prec∩prec∼⊆(id ⦂ ℙ(EVENT×EVENT))" org.eventb.core.source="/_6a Fifonn/C__DistributedExecution.bum|org.eventb.core.machineFile#C__DistributedExecution|org.eventb.core.invariant#inv3"/>
+        <org.eventb.core.poPredicate name="peerOq" org.eventb.core.predicate="links⊆prec" org.eventb.core.source="/_6a Fifonn/C__DistributedExecution.bum|org.eventb.core.machineFile#C__DistributedExecution|org.eventb.core.invariant#inv4"/>
+        <org.eventb.core.poPredicate name="peerOr" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1∈past∧e2∈past∧peerOf(e1)=peerOf(e2)⇒e1 ↦ e2∈prec∨e2 ↦ e1∈prec" org.eventb.core.source="/_6a Fifonn/C__DistributedExecution.bum|org.eventb.core.machineFile#C__DistributedExecution|org.eventb.core.invariant#inv5"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="inv2/THM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Theorem" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#HYPC__Peer\|"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="past ◁ (id ⦂ ℙ(EVENT×EVENT))⊆run" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv2"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv2"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#HYPC__Peer\|"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="inv6/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Invariant" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#HYPC__Pees("/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1∈past∧e2∈past⇒e1∈dom(peerOf)∧peerOf∈EVENT ⇸ PEER∧e2∈dom(peerOf)" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv6"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv6"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#HYPC__Pees("/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/Trun/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#EVTALLHYPC__Pees*"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(EVENT×EVENT))∈(∅ ⦂ ℙ(EVENT))  (∅ ⦂ ℙ(EVENT))" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#evt&gt;"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_6a Fifonn/C__DistributedExecution.bum|org.eventb.core.machineFile#C__DistributedExecution|org.eventb.core.event#evt3"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.event#evt9"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#evt&gt;"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poSequent#INITIALISATION\/Trun\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#HYPC__Peer\||org.eventb.core.poPredicate#PRD0"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#EVTALLHYPC__Pees*"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1∈(∅ ⦂ ℙ(EVENT))∧e2∈(∅ ⦂ ℙ(EVENT))⇒e1 ↦ e2∈(∅ ⦂ ℙ(EVENT×EVENT))∨e2 ↦ e1∈(∅ ⦂ ℙ(EVENT×EVENT))" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv1"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_6a Fifonn/C__DistributedExecution.bum|org.eventb.core.machineFile#C__DistributedExecution|org.eventb.core.event#evt3"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.event#evt9"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv1"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poSequent#INITIALISATION\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#HYPC__Peer\||org.eventb.core.poPredicate#PRD1"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#EVTALLHYPC__Pees*"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(EVENT×EVENT));(∅ ⦂ ℙ(EVENT×EVENT))⊆(∅ ⦂ ℙ(EVENT×EVENT))" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv3"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_6a Fifonn/C__DistributedExecution.bum|org.eventb.core.machineFile#C__DistributedExecution|org.eventb.core.event#evt3"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.event#evt9"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv3"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poSequent#INITIALISATION\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#HYPC__Pees(|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#EVTALLHYPC__Pees*"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(EVENT×EVENT))∩(∅ ⦂ ℙ(EVENT×EVENT))∼⊆(id ⦂ ℙ(EVENT×EVENT))" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv4"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_6a Fifonn/C__DistributedExecution.bum|org.eventb.core.machineFile#C__DistributedExecution|org.eventb.core.event#evt3"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.event#evt9"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv4"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poSequent#INITIALISATION\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#HYPC__Pees(|org.eventb.core.poPredicate#PRD4"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv5/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#EVTALLHYPC__Pees*"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(EVENT×EVENT))⊆(∅ ⦂ ℙ(EVENT×EVENT))" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv5"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_6a Fifonn/C__DistributedExecution.bum|org.eventb.core.machineFile#C__DistributedExecution|org.eventb.core.event#evt3"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.event#evt9"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv5"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poSequent#INITIALISATION\/inv5\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#HYPC__Pees(|org.eventb.core.poPredicate#PRD5"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv6/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#EVTALLHYPC__Pees*"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1∈(∅ ⦂ ℙ(EVENT))∧e2∈(∅ ⦂ ℙ(EVENT))∧(∅ ⦂ ℙ(EVENT×PEER))(e1)=(∅ ⦂ ℙ(EVENT×PEER))(e2)⇒(e1 ↦ e2∈(∅ ⦂ ℙ(EVENT×EVENT))⇔e1 ↦ e2∈(∅ ⦂ ℙ(EVENT×EVENT)))" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv6"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_6a Fifonn/C__DistributedExecution.bum|org.eventb.core.machineFile#C__DistributedExecution|org.eventb.core.event#evt3"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.event#evt9"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv6"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poSequent#INITIALISATION\/inv6\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD6"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTC__Pees*" org.eventb.core.parentSet="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="peerOf'" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.poIdentifier name="links'" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.poIdentifier name="prec'" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.poIdentifier name="run'" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.poIdentifier name="past'" org.eventb.core.type="ℙ(EVENT)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPC__Pees*" org.eventb.core.parentSet="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#EVTIDENTC__Pees*" org.eventb.core.poStamp="0"/>
+    <org.eventb.core.poSequent name="create/Trun/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#EVTALLHYPC__Pees+"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="run∪{e ↦ e}∪{ep⦂EVENT·ep∈past ∣ ep ↦ e}∈past∪{e}  past∪{e}" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#evt&gt;"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_6a Fifonn/C__DistributedExecution.bum|org.eventb.core.machineFile#C__DistributedExecution|org.eventb.core.event#evt4"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.event#evt:"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#evt&gt;"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poSequent#create\/Trun\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#HYPC__Peer\||org.eventb.core.poPredicate#PRD0"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="create/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#EVTALLHYPC__Pees+"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1∈past∪{e}∧e2∈past∪{e}⇒e1 ↦ e2∈run∪{e ↦ e}∪{ep⦂EVENT·ep∈past ∣ ep ↦ e}∨e2 ↦ e1∈run∪{e ↦ e}∪{ep⦂EVENT·ep∈past ∣ ep ↦ e}" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv1"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_6a Fifonn/C__DistributedExecution.bum|org.eventb.core.machineFile#C__DistributedExecution|org.eventb.core.event#evt4"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.event#evt:"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv1"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poSequent#create\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#HYPC__Peer\||org.eventb.core.poPredicate#PRD1"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="create/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#EVTALLHYPC__Pees+"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(run∪{e ↦ e}∪{ep⦂EVENT·ep∈past ∣ ep ↦ e});(run∪{e ↦ e}∪{ep⦂EVENT·ep∈past ∣ ep ↦ e})⊆run∪{e ↦ e}∪{ep⦂EVENT·ep∈past ∣ ep ↦ e}" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv3"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_6a Fifonn/C__DistributedExecution.bum|org.eventb.core.machineFile#C__DistributedExecution|org.eventb.core.event#evt4"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.event#evt:"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv3"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poSequent#create\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#HYPC__Pees(|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="create/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#EVTALLHYPC__Pees+"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(run∪{e ↦ e}∪{ep⦂EVENT·ep∈past ∣ ep ↦ e})∩(run∪{e ↦ e}∪{ep⦂EVENT·ep∈past ∣ ep ↦ e})∼⊆(id ⦂ ℙ(EVENT×EVENT))" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv4"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_6a Fifonn/C__DistributedExecution.bum|org.eventb.core.machineFile#C__DistributedExecution|org.eventb.core.event#evt4"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.event#evt:"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv4"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poSequent#create\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#HYPC__Pees(|org.eventb.core.poPredicate#PRD4"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="create/inv5/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#EVTALLHYPC__Pees+"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="prec∪{e ↦ e}∪{ep⦂EVENT·ep∈past∧(∃ep2⦂EVENT·ep2∈past∧peerOf(ep2)=p∧ep ↦ ep2∈prec) ∣ ep ↦ e}⊆run∪{e ↦ e}∪{ep⦂EVENT·ep∈past ∣ ep ↦ e}" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv5"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_6a Fifonn/C__DistributedExecution.bum|org.eventb.core.machineFile#C__DistributedExecution|org.eventb.core.event#evt4"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.event#evt:"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv5"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poSequent#create\/inv5\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#HYPC__Pees(|org.eventb.core.poPredicate#PRD5"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="create/inv6/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#EVTALLHYPC__Pees+"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1∈past∪{e}∧e2∈past∪{e}∧(peerOf∪{e ↦ p})(e1)=(peerOf∪{e ↦ p})(e2)⇒(e1 ↦ e2∈prec∪{e ↦ e}∪{ep⦂EVENT·ep∈past∧(∃ep2⦂EVENT·ep2∈past∧peerOf(ep2)=p∧ep ↦ ep2∈prec) ∣ ep ↦ e}⇔e1 ↦ e2∈run∪{e ↦ e}∪{ep⦂EVENT·ep∈past ∣ ep ↦ e})" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv6"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_6a Fifonn/C__DistributedExecution.bum|org.eventb.core.machineFile#C__DistributedExecution|org.eventb.core.event#evt4"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.event#evt:"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv6"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poSequent#create\/inv6\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD6"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTC__Pees+" org.eventb.core.parentSet="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="peerOf'" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.poIdentifier name="prec'" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.poIdentifier name="p" org.eventb.core.type="PEER"/>
+        <org.eventb.core.poIdentifier name="run'" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.poIdentifier name="e" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.poIdentifier name="past'" org.eventb.core.type="ℙ(EVENT)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPC__Pees+" org.eventb.core.parentSet="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#EVTIDENTC__Pees+" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="e∈EVENT ∖ past" org.eventb.core.source="/_6a Fifonn/A__Events.bum|org.eventb.core.machineFile#A__Events|org.eventb.core.event#+|org.eventb.core.guard#'"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="p∈PEER" org.eventb.core.source="/_6a Fifonn/C__DistributedExecution.bum|org.eventb.core.machineFile#C__DistributedExecution|org.eventb.core.event#evt4|org.eventb.core.guard#)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="link/Trun/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#EVTALLHYPC__Pees,"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="run∪{e ↦ e}∪{ep⦂EVENT·ep∈past ∣ ep ↦ e}∈past∪{e}  past∪{e}" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#evt&gt;"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_6a Fifonn/C__DistributedExecution.bum|org.eventb.core.machineFile#C__DistributedExecution|org.eventb.core.event#evt5"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.event#evt;"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#evt&gt;"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poSequent#link\/Trun\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#HYPC__Peer\||org.eventb.core.poPredicate#PRD0"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="link/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#EVTALLHYPC__Pees,"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1∈past∪{e}∧e2∈past∪{e}⇒e1 ↦ e2∈run∪{e ↦ e}∪{ep⦂EVENT·ep∈past ∣ ep ↦ e}∨e2 ↦ e1∈run∪{e ↦ e}∪{ep⦂EVENT·ep∈past ∣ ep ↦ e}" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv1"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_6a Fifonn/C__DistributedExecution.bum|org.eventb.core.machineFile#C__DistributedExecution|org.eventb.core.event#evt5"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.event#evt;"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv1"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poSequent#link\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#HYPC__Peer\||org.eventb.core.poPredicate#PRD1"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="link/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#EVTALLHYPC__Pees,"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(run∪{e ↦ e}∪{ep⦂EVENT·ep∈past ∣ ep ↦ e});(run∪{e ↦ e}∪{ep⦂EVENT·ep∈past ∣ ep ↦ e})⊆run∪{e ↦ e}∪{ep⦂EVENT·ep∈past ∣ ep ↦ e}" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv3"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_6a Fifonn/C__DistributedExecution.bum|org.eventb.core.machineFile#C__DistributedExecution|org.eventb.core.event#evt5"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.event#evt;"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv3"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poSequent#link\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#HYPC__Pees(|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="link/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#EVTALLHYPC__Pees,"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(run∪{e ↦ e}∪{ep⦂EVENT·ep∈past ∣ ep ↦ e})∩(run∪{e ↦ e}∪{ep⦂EVENT·ep∈past ∣ ep ↦ e})∼⊆(id ⦂ ℙ(EVENT×EVENT))" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv4"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_6a Fifonn/C__DistributedExecution.bum|org.eventb.core.machineFile#C__DistributedExecution|org.eventb.core.event#evt5"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.event#evt;"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv4"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poSequent#link\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#HYPC__Pees(|org.eventb.core.poPredicate#PRD4"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="link/inv5/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#EVTALLHYPC__Pees,"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="prec∪{e ↦ e}∪{ep⦂EVENT·ep∈past∧(∃ep2⦂EVENT·ep2∈past∧peerOf(ep2)=p∧ep ↦ ep2∈prec) ∣ ep ↦ e}∪{ep⦂EVENT·ep∈past∧ep ↦ cause∈prec ∣ ep ↦ e}⊆run∪{e ↦ e}∪{ep⦂EVENT·ep∈past ∣ ep ↦ e}" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv5"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_6a Fifonn/C__DistributedExecution.bum|org.eventb.core.machineFile#C__DistributedExecution|org.eventb.core.event#evt5"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.event#evt;"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv5"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poSequent#link\/inv5\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#HYPC__Pees(|org.eventb.core.poPredicate#PRD5"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="link/inv6/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#EVTALLHYPC__Pees,"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1∈past∪{e}∧e2∈past∪{e}∧(peerOf∪{e ↦ p})(e1)=(peerOf∪{e ↦ p})(e2)⇒(e1 ↦ e2∈prec∪{e ↦ e}∪{ep⦂EVENT·ep∈past∧(∃ep2⦂EVENT·ep2∈past∧peerOf(ep2)=p∧ep ↦ ep2∈prec) ∣ ep ↦ e}∪{ep⦂EVENT·ep∈past∧ep ↦ cause∈prec ∣ ep ↦ e}⇔e1 ↦ e2∈run∪{e ↦ e}∪{ep⦂EVENT·ep∈past ∣ ep ↦ e})" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv6"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/_6a Fifonn/C__DistributedExecution.bum|org.eventb.core.machineFile#C__DistributedExecution|org.eventb.core.event#evt5"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.event#evt;"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv6"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poSequent#link\/inv6\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD6"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTC__Pees," org.eventb.core.parentSet="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="cause" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.poIdentifier name="peerOf'" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.poIdentifier name="links'" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.poIdentifier name="prec'" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.poIdentifier name="p" org.eventb.core.type="PEER"/>
+        <org.eventb.core.poIdentifier name="run'" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.poIdentifier name="e" org.eventb.core.type="EVENT"/>
+        <org.eventb.core.poIdentifier name="past'" org.eventb.core.type="ℙ(EVENT)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPC__Pees," org.eventb.core.parentSet="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#EVTIDENTC__Pees," org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="e∈EVENT ∖ past" org.eventb.core.source="/_6a Fifonn/A__Events.bum|org.eventb.core.machineFile#A__Events|org.eventb.core.event#+|org.eventb.core.guard#'"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="cause∈past" org.eventb.core.source="/_6a Fifonn/B__Communication.bum|org.eventb.core.machineFile#B__Communication|org.eventb.core.event#evt1|org.eventb.core.guard#grd1"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="cause∉dom(links)" org.eventb.core.source="/_6a Fifonn/B__Communication.bum|org.eventb.core.machineFile#B__Communication|org.eventb.core.event#evt1|org.eventb.core.guard#grd2"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="cause∉ran(links)" org.eventb.core.source="/_6a Fifonn/B__Communication.bum|org.eventb.core.machineFile#B__Communication|org.eventb.core.event#evt1|org.eventb.core.guard#grd3"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="p∈PEER" org.eventb.core.source="/_6a Fifonn/C__DistributedExecution.bum|org.eventb.core.machineFile#C__DistributedExecution|org.eventb.core.event#evt5|org.eventb.core.guard#)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="HYPC__Peer|" org.eventb.core.parentSet="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="run∈past  past" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#evt&gt;"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1∈past∧e2∈past⇒e1 ↦ e2∈run∨e2 ↦ e1∈run" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv1"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="HYPC__Pees(" org.eventb.core.parentSet="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#HYPC__Peer\|" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="past ◁ (id ⦂ ℙ(EVENT×EVENT))⊆run" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv2"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="run;run⊆run" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv3"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="run∩run∼⊆(id ⦂ ℙ(EVENT×EVENT))" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv4"/>
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="prec⊆run" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv5"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/_6a Fifonn/D__Run.bpo|org.eventb.core.poFile#D__Run|org.eventb.core.poPredicateSet#HYPC__Pees(" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1∈past∧e2∈past∧peerOf(e1)=peerOf(e2)⇒(e1 ↦ e2∈prec⇔e1 ↦ e2∈run)" org.eventb.core.source="/_6a Fifonn/D__Run.bum|org.eventb.core.machineFile#D__Run|org.eventb.core.invariant#inv6"/>
+    </org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+    <org.eventb.core.refinesMachine name="'" org.eventb.core.target="I2_Fifo11Counter_Message_Content"/>
+    <org.eventb.core.seesContext name="vas2" org.eventb.core.target="E__Messages"/>
+    <org.eventb.core.seesContext name="var9" org.eventb.core.target="J__ClientServer_Content"/>
+    <org.eventb.core.seesContext name="varF" org.eventb.core.target="J__ClientServer_Peers"/>
+    <org.eventb.core.variable name="(" org.eventb.core.identifier="net"/>
+    <org.eventb.core.variable name=")" org.eventb.core.identifier="hg"/>
+    <org.eventb.core.variable name="," org.eventb.core.identifier="origOf"/>
+    <org.eventb.core.variable name="-" org.eventb.core.identifier="destOf"/>
+    <org.eventb.core.variable name="var1" org.eventb.core.identifier="rankOf"/>
+    <org.eventb.core.variable name="var2" org.eventb.core.identifier="lastSent"/>
+    <org.eventb.core.variable name="var3" org.eventb.core.identifier="lastReceived"/>
+    <org.eventb.core.variable name="var7" org.eventb.core.comment="type of a message" org.eventb.core.identifier="typeOf"/>
+    <org.eventb.core.variable name="var:" org.eventb.core.comment="data associted to a message" org.eventb.core.identifier="dataOf"/>
+    <org.eventb.core.variable name="var?" org.eventb.core.comment="number of the next request for the client" org.eventb.core.identifier="num"/>
+    <org.eventb.core.variable name="var@" org.eventb.core.comment="sequences of send requests" org.eventb.core.identifier="req"/>
+    <org.eventb.core.variable name="varW" org.eventb.core.comment="sequences of requests waiting to be treated" org.eventb.core.identifier="wait"/>
+    <org.eventb.core.variable name="varZ" org.eventb.core.comment="sequences of requests waiting to be treated" org.eventb.core.identifier="treated"/>
+    <org.eventb.core.event name="var[" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
+        <org.eventb.core.action name="'" org.eventb.core.assignment="num ≔1" org.eventb.core.label="initNum"/>
+        <org.eventb.core.action name="(" org.eventb.core.assignment="req ≔ emptySeq" org.eventb.core.label="initReq"/>
+        <org.eventb.core.action name=")" org.eventb.core.assignment="wait ≔ emptySeq" org.eventb.core.label="initWait"/>
+        <org.eventb.core.action name="*" org.eventb.core.assignment="treated ≔ emptySeq" org.eventb.core.label="initTreated"/>
+        <org.eventb.core.action name="+" org.eventb.core.assignment="busy ≔ 0" org.eventb.core.label="initBusy"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="var^" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="SendReq">
+        <org.eventb.core.refinesEvent name="internal9" org.eventb.core.target="send"/>
+        <org.eventb.core.parameter name="act4" org.eventb.core.identifier="m"/>
+        <org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="m ∈ MESSAGE ∖ hg"/>
+        <org.eventb.core.action name="/" org.eventb.core.assignment="net ≔ net ∪ {m}" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="0" org.eventb.core.assignment="hg ≔ hg ∪ {m}" org.eventb.core.label="act2"/>
+        <org.eventb.core.action name="3" org.eventb.core.assignment="origOf ≔ origOf ∪ {m ↦ Client}" org.eventb.core.label="act4"/>
+        <org.eventb.core.action name="4" org.eventb.core.assignment="destOf ≔ destOf ∪ {m ↦ Server}" org.eventb.core.label="act5"/>
+        <org.eventb.core.action name="act1" org.eventb.core.assignment="rankOf ≔ rankOf ∪ {m ↦ 1 + lastSent(Client ↦ Server)}" org.eventb.core.label="+act7"/>
+        <org.eventb.core.action name="act2" org.eventb.core.assignment="lastSent(Client ↦ Server) ≔ 1 + lastSent(Client ↦ Server)" org.eventb.core.label="+act8"/>
+        <org.eventb.core.guard name="act3" org.eventb.core.label="ordering" org.eventb.core.predicate="⊤"/>
+        <org.eventb.core.parameter name="internal1" org.eventb.core.identifier="type"/>
+        <org.eventb.core.parameter name="internal2" org.eventb.core.identifier="data"/>
+        <org.eventb.core.guard name="internal1" org.eventb.core.label="grd4" org.eventb.core.predicate="type ∈ MessageType"/>
+        <org.eventb.core.guard name="internal2" org.eventb.core.label="grd5" org.eventb.core.predicate="data ∈ Data"/>
+        <org.eventb.core.action name="," org.eventb.core.assignment="typeOf ≔ typeOf  ∪ {m ↦ type}" org.eventb.core.label="act6"/>
+        <org.eventb.core.action name="-" org.eventb.core.assignment="dataOf ≔ dataOf  ∪ {m ↦ data}" org.eventb.core.label="act7"/>
+        <org.eventb.core.guard name="internal?" org.eventb.core.label="instanceType" org.eventb.core.predicate="type=Request"/>
+        <org.eventb.core.guard name="internal@" org.eventb.core.label="instanceData" org.eventb.core.predicate="data = dataToInt∼ (num)"/>
+        <org.eventb.core.action name="internalA" org.eventb.core.assignment="num ≔ num+1" org.eventb.core.label="incrNum"/>
+        <org.eventb.core.action name="internalB" org.eventb.core.assignment="req ≔ seqAppend (req,num)" org.eventb.core.label="addReq"/>
+        <org.eventb.core.action name="internalC" org.eventb.core.assignment="wait ≔ seqAppend (wait,num)" org.eventb.core.label="addWait"/>
+        <org.eventb.core.guard name="internalD" org.eventb.core.label="maxReq" org.eventb.core.predicate="num ≤ maxReq"/>
+        <org.eventb.core.witness name="internalE" org.eventb.core.label="p" org.eventb.core.predicate="p=Client"/>
+        <org.eventb.core.witness name="internalF" org.eventb.core.label="d" org.eventb.core.predicate="d=Server"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="varg" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="ReceiveReq">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="receive"/>
+        <org.eventb.core.guard name="grd1" org.eventb.core.label="grd2" org.eventb.core.predicate="m ∈ net"/>
+        <org.eventb.core.guard name="grd4" org.eventb.core.label="grd3" org.eventb.core.predicate="destOf(m) = Server"/>
+        <org.eventb.core.guard name="grd5" org.eventb.core.label="ordering" org.eventb.core.predicate="rankOf(m) = lastReceived(origOf(m) ↦ Server) + 1"/>
+        <org.eventb.core.action name="act1" org.eventb.core.assignment="net ≔ net ∖ {m}" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="act2" org.eventb.core.assignment="rankOf ≔ {m} ⩤ rankOf" org.eventb.core.label="+act2"/>
+        <org.eventb.core.action name="act3" org.eventb.core.assignment="lastReceived(origOf(m) ↦ Server) ≔ rankOf(m)" org.eventb.core.label="+act3"/>
+        <org.eventb.core.parameter name="element3" org.eventb.core.identifier="m"/>
+        <org.eventb.core.guard name=")" org.eventb.core.label="instanceExp" org.eventb.core.predicate="origOf(m)=Client" org.eventb.core.theorem="true"/>
+        <org.eventb.core.guard name="*" org.eventb.core.label="notBusy" org.eventb.core.predicate="busy=0"/>
+        <org.eventb.core.action name="+" org.eventb.core.assignment="busy ≔ dataToInt(dataOf(m))" org.eventb.core.label="goBusy"/>
+        <org.eventb.core.witness name="element4" org.eventb.core.label="p" org.eventb.core.predicate="p=Server"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="varh" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="SendRep">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="send"/>
+        <org.eventb.core.parameter name="act4" org.eventb.core.identifier="m"/>
+        <org.eventb.core.guard name="internal1" org.eventb.core.label="grd2" org.eventb.core.predicate="m ∈ MESSAGE ∖ hg"/>
+        <org.eventb.core.action name="/" org.eventb.core.assignment="net ≔ net ∪ {m}" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="0" org.eventb.core.assignment="hg ≔ hg ∪ {m}" org.eventb.core.label="act2"/>
+        <org.eventb.core.action name="3" org.eventb.core.assignment="origOf ≔ origOf ∪ {m ↦ Server}" org.eventb.core.label="act4"/>
+        <org.eventb.core.action name="4" org.eventb.core.assignment="destOf ≔ destOf ∪ {m ↦ Client}" org.eventb.core.label="act5"/>
+        <org.eventb.core.action name="act1" org.eventb.core.assignment="rankOf ≔ rankOf ∪ {m ↦ 1 + lastSent(Server ↦ Client)}" org.eventb.core.label="+act7"/>
+        <org.eventb.core.action name="act2" org.eventb.core.assignment="lastSent(Server ↦ Client) ≔ 1 + lastSent(Server ↦ Client)" org.eventb.core.label="+act8"/>
+        <org.eventb.core.guard name="act3" org.eventb.core.label="ordering" org.eventb.core.predicate="⊤"/>
+        <org.eventb.core.parameter name="internal1" org.eventb.core.identifier="type"/>
+        <org.eventb.core.parameter name="internal2" org.eventb.core.identifier="data"/>
+        <org.eventb.core.guard name="internal3" org.eventb.core.label="grd4" org.eventb.core.predicate="type ∈ MessageType"/>
+        <org.eventb.core.guard name="internal4" org.eventb.core.label="grd5" org.eventb.core.predicate="data ∈ Data"/>
+        <org.eventb.core.action name="," org.eventb.core.assignment="typeOf ≔ typeOf  ∪ {m ↦ type}" org.eventb.core.label="act6"/>
+        <org.eventb.core.action name="-" org.eventb.core.assignment="dataOf ≔ dataOf  ∪ {m ↦ data}" org.eventb.core.label="act7"/>
+        <org.eventb.core.action name=")" org.eventb.core.assignment="busy ≔0" org.eventb.core.label="goNotBusy"/>
+        <org.eventb.core.guard name="," org.eventb.core.label="instanceType" org.eventb.core.predicate="type=Response"/>
+        <org.eventb.core.guard name="-" org.eventb.core.label="instanceData" org.eventb.core.predicate="data = dataToInt∼(busy)"/>
+        <org.eventb.core.guard name="." org.eventb.core.label="isBusy" org.eventb.core.predicate="busy ≠ 0"/>
+        <org.eventb.core.witness name="internal5" org.eventb.core.label="p" org.eventb.core.predicate="p=Server"/>
+        <org.eventb.core.witness name="internal6" org.eventb.core.label="d" org.eventb.core.predicate="d=Client"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="var_" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="ReceiveRep">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="receive"/>
+        <org.eventb.core.guard name="grd1" org.eventb.core.label="grd2" org.eventb.core.predicate="m ∈ net"/>
+        <org.eventb.core.guard name="grd4" org.eventb.core.label="grd3" org.eventb.core.predicate="destOf(m) = Client"/>
+        <org.eventb.core.guard name="grd5" org.eventb.core.label="ordering" org.eventb.core.predicate="rankOf(m) = lastReceived(origOf(m) ↦ Client) + 1"/>
+        <org.eventb.core.action name="act1" org.eventb.core.assignment="net ≔ net ∖ {m}" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="act2" org.eventb.core.assignment="rankOf ≔ {m} ⩤ rankOf" org.eventb.core.label="+act2"/>
+        <org.eventb.core.action name="act3" org.eventb.core.assignment="lastReceived(origOf(m) ↦ Client) ≔ rankOf(m)" org.eventb.core.label="+act3"/>
+        <org.eventb.core.parameter name="element3" org.eventb.core.identifier="m"/>
+        <org.eventb.core.guard name=")" org.eventb.core.label="instanceExp" org.eventb.core.predicate="origOf(m)=Server" org.eventb.core.theorem="true"/>
+        <org.eventb.core.guard name="*" org.eventb.core.label="instanceM" org.eventb.core.predicate="dataToInt(dataOf(m)) = seqHead(wait)" org.eventb.core.theorem="true"/>
+        <org.eventb.core.action name="," org.eventb.core.assignment="wait ≔ seqTail(wait)" org.eventb.core.label="removeWait"/>
+        <org.eventb.core.action name="+" org.eventb.core.assignment="treated ≔ seqAppend (treated,dataToInt(dataOf(m)))" org.eventb.core.label="addTreated"/>
+        <org.eventb.core.witness name="element4" org.eventb.core.label="p" org.eventb.core.predicate="p=Client"/>
+    </org.eventb.core.event>
+    <org.eventb.core.invariant name="var`" org.eventb.core.label="Tnum" org.eventb.core.predicate="num ∈ ℕ  "/>
+    <org.eventb.core.invariant name="vara" org.eventb.core.label="Treq" org.eventb.core.predicate="req ∈ seq(ℕ )"/>
+    <org.eventb.core.invariant name="varb" org.eventb.core.label="Twait" org.eventb.core.predicate="wait ∈ seq(ℕ )"/>
+    <org.eventb.core.invariant name="varc" org.eventb.core.label="Ttreated" org.eventb.core.predicate="treated ∈ seq(ℕ )"/>
+    <org.eventb.core.invariant name="vard" org.eventb.core.label="finiteReq" org.eventb.core.predicate="finite(req)"/>
+    <org.eventb.core.invariant name="vare" org.eventb.core.label="finiteWait" org.eventb.core.predicate="finite(wait)"/>
+    <org.eventb.core.invariant name="varf" org.eventb.core.label="finiteTreated" org.eventb.core.predicate="finite(treated)"/>
+    <org.eventb.core.variable name="vari" org.eventb.core.comment="A request is received, it mus be treated (send response) before receiving an other request" org.eventb.core.identifier="busy"/>
+    <org.eventb.core.invariant name="varv" org.eventb.core.label="domReq" org.eventb.core.predicate="dom(req)=1‥card(req)"/>
+    <org.eventb.core.invariant name="vart" org.eventb.core.label="domWait" org.eventb.core.predicate=" dom(wait) = 1‥card(wait)"/>
+    <org.eventb.core.invariant name="varu" org.eventb.core.label="domTreated" org.eventb.core.predicate=" dom(treated) = 1‥card(treated)"/>
+    <org.eventb.core.invariant name="varj" org.eventb.core.label="Tbusy" org.eventb.core.predicate="busy∈ℕ "/>
+    <org.eventb.core.invariant name="vark" org.eventb.core.label="valNum" org.eventb.core.predicate="num≥1"/>
+    <org.eventb.core.invariant name="vas-" org.eventb.core.label="codomWait" org.eventb.core.predicate="∀ i · i ∈ 1‥seqSize(wait) ⇒ wait(i) &gt; 0"/>
+    <org.eventb.core.invariant name="vas*" org.eventb.core.label="domData" org.eventb.core.predicate="∀ m · m ∈ net ⇒dataToInt(dataOf(m)) &gt; 0 "/>
+    <org.eventb.core.invariant name="vary" org.eventb.core.label="valReq" org.eventb.core.predicate="∀ i · i ∈ 1‥seqSize(req) ⇒ req(i)=i "/>
+    <org.eventb.core.invariant name="varw" org.eventb.core.label="numCardReq" org.eventb.core.predicate="num = card(req)+1"/>
+    <org.eventb.core.invariant name="varl" org.eventb.core.label="domReqBis" org.eventb.core.predicate="dom(req)=1‥(num−1)"/>
+    <org.eventb.core.invariant name="varp" org.eventb.core.label="lastWait" org.eventb.core.predicate="wait ≠ emptySeq ⇒ wait(card(wait))=num−1"/>
+    <org.eventb.core.invariant name="varr" org.eventb.core.label="succWait" org.eventb.core.predicate="∀ i · i ∈ 1‥seqSize(wait)−1 ⇒ wait(i)+1 = wait(i+1) "/>
+    <org.eventb.core.invariant name="varq" org.eventb.core.label="treated" org.eventb.core.predicate="wait ≠ emptySeq ⇒card(treated)+1=seqHead(wait) "/>
+    <org.eventb.core.invariant name="varx" org.eventb.core.label="senderReceiver" org.eventb.core.predicate="∀ m · m ∈ net ⇒ (origOf(m)=Server ∧ destOf(m)=Client) ∨ (origOf(m) = Client ∧ destOf(m) = Server)"/>
+    <org.eventb.core.invariant name="vas'" org.eventb.core.label="numLastSendClientServer" org.eventb.core.predicate="num = lastSent (Client ↦ Server)+1"/>
+    <org.eventb.core.invariant name="var~" org.eventb.core.label="rankDataClientToServer" org.eventb.core.predicate="∀ m · m ∈ net ∧ origOf(m)=Client ∧ destOf(m)=Server ⇒ rankOf(m) = dataToInt(dataOf(m)) "/>
+    <org.eventb.core.invariant name="vas(" org.eventb.core.label="busyLastReceived" org.eventb.core.predicate="busy ≠ 0 ⇒ busy = lastReceived (Client ↦ Server)"/>
+    <org.eventb.core.invariant name="vas)" org.eventb.core.label="LRLS" org.eventb.core.predicate="(busy ≠ 0 ⇒ lastReceived (Client ↦ Server)  = lastSent (Server  ↦ Client)+1)∧(busy = 0 ⇒ lastReceived (Client ↦ Server) = lastSent (Server  ↦ Client)) "/>
+    <org.eventb.core.invariant name="vas+" org.eventb.core.label="rankDataServerToClient" org.eventb.core.predicate="∀ m · m ∈ net ∧ origOf(m)=Server ∧ destOf(m)=Client ⇒ rankOf(m) = dataToInt(dataOf(m)) "/>
+    <org.eventb.core.invariant name="vas," org.eventb.core.label="rankData" org.eventb.core.predicate="∀ m · m ∈ net ⇒ rankOf(m) = dataToInt(dataOf(m))"/>
+    <org.eventb.core.invariant name="vas." org.eventb.core.label="busyDataSC" org.eventb.core.predicate="∀ m · m ∈ net ∧ origOf(m)=Server ∧ destOf(m)=Client ∧busy ≠ 0 ⇒ dataToInt(dataOf(m)) &lt; busy "/>
+    <org.eventb.core.invariant name="vas/" org.eventb.core.label="busyDataCS" org.eventb.core.predicate="∀ m · m ∈ net ∧ origOf(m)=Client ∧ destOf(m)=Server ∧busy ≠ 0 ⇒ dataToInt(dataOf(m)) &gt; busy "/>
+    <org.eventb.core.invariant name="vas1" org.eventb.core.label="DataNum" org.eventb.core.predicate="∀ m · m ∈ net ⇒ dataToInt(dataOf(m)) &lt; num"/>
+    <org.eventb.core.invariant name="vas0" org.eventb.core.label="DataSCDataCS" org.eventb.core.predicate="∀ m1,m2 · m1 ∈ net ∧ origOf(m1)=Client ∧ destOf(m1)=Server ∧m2 ∈ net ∧ origOf(m2)=Server ∧ destOf(m2)=Client ⇒ dataToInt(dataOf(m2)) &lt;  dataToInt(dataOf(m1)) "/>
+    <org.eventb.core.invariant name="var{" org.eventb.core.label="waitNet" org.eventb.core.predicate="∀ i · i∈ 1‥ seqSize(wait) ⇒ ((wait(i)=busy) ∨ (∃ m· m ∈ net ∧ wait(i)=dataToInt(dataOf(m))))"/>
+    <org.eventb.core.invariant name="var|" org.eventb.core.label="netWait" org.eventb.core.predicate="∀ m · m ∈ net ⇒ (∃ i· i ∈ 1‥seqSize(wait) ∧ wait(i)=dataToInt(dataOf(m)))"/>
+    <org.eventb.core.invariant name="var}" org.eventb.core.label="busyWait" org.eventb.core.predicate="busy ≠ 0 ⇒(∃ i· i ∈ 1‥seqSize(wait) ∧ wait(i)=busy) "/>
+    <org.eventb.core.invariant name="varm" org.eventb.core.label="prop1" org.eventb.core.predicate="seqSize(req) = seqSize(wait) + seqSize(treated)"/>
+    <org.eventb.core.invariant name="varn" org.eventb.core.label="prop2" org.eventb.core.predicate="∀ i · i ∈ 1‥seqSize(treated) ⇒ req(i)=treated(i)"/>
+    <org.eventb.core.invariant name="varo" org.eventb.core.label="prop3" org.eventb.core.predicate="∀ i · i ∈ 1‥seqSize(wait)⇒ req(i+seqSize(treated)) = wait(i)"/>
+    <org.eventb.core.seesContext name="vas3" org.eventb.core.target="J__ClientServer_Finite"/>
+</org.eventb.core.machineFile>

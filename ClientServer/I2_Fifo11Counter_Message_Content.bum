@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+    <org.eventb.core.refinesMachine name="'" org.eventb.core.target="H2_Fifo11Counter"/>
+    <org.eventb.core.seesContext name=":" org.eventb.core.target="E__Messages"/>
+    <org.eventb.core.variable name="(" org.eventb.core.identifier="net"/>
+    <org.eventb.core.variable name=")" org.eventb.core.identifier="hg"/>
+    <org.eventb.core.variable name="," org.eventb.core.identifier="origOf"/>
+    <org.eventb.core.variable name="-" org.eventb.core.identifier="destOf"/>
+    <org.eventb.core.variable name="var1" org.eventb.core.identifier="rankOf"/>
+    <org.eventb.core.variable name="var2" org.eventb.core.identifier="lastSent"/>
+    <org.eventb.core.variable name="var3" org.eventb.core.identifier="lastReceived"/>
+    <org.eventb.core.event name="var4" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
+        <org.eventb.core.action name="'" org.eventb.core.assignment="typeOf ≔∅" org.eventb.core.label="act5"/>
+        <org.eventb.core.action name="(" org.eventb.core.assignment="dataOf≔ ∅" org.eventb.core.label="act6"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="var5" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="send">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="send"/>
+        <org.eventb.core.parameter name="(" org.eventb.core.identifier="type"/>
+        <org.eventb.core.parameter name=")" org.eventb.core.identifier="data"/>
+        <org.eventb.core.guard name="*" org.eventb.core.label="grd4" org.eventb.core.predicate="type ∈ MessageType"/>
+        <org.eventb.core.guard name="+" org.eventb.core.label="grd5" org.eventb.core.predicate="data ∈ Data"/>
+        <org.eventb.core.action name="," org.eventb.core.assignment="typeOf ≔ typeOf  ∪ {m ↦ type}" org.eventb.core.label="act6"/>
+        <org.eventb.core.action name="-" org.eventb.core.assignment="dataOf ≔ dataOf  ∪ {m ↦ data}" org.eventb.core.label="act7"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="var6" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="receive">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="receive"/>
+    </org.eventb.core.event>
+    <org.eventb.core.variable name="var7" org.eventb.core.comment="type of a message" org.eventb.core.identifier="typeOf"/>
+    <org.eventb.core.invariant name="var8" org.eventb.core.label="TtypeOf" org.eventb.core.predicate="typeOf ∈ hg → MessageType  "/>
+    <org.eventb.core.seesContext name="var9" org.eventb.core.target="I__Content"/>
+    <org.eventb.core.variable name="var:" org.eventb.core.comment="data associted to a message" org.eventb.core.identifier="dataOf"/>
+    <org.eventb.core.invariant name="var;" org.eventb.core.label="TdataOf" org.eventb.core.predicate="dataOf ∈ hg → Data  "/>
+</org.eventb.core.machineFile>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.refinesMachine name="'" org.eventb.core.target="G6aFifonnHistory"/>
+<org.eventb.core.seesContext name=":" org.eventb.core.target="E__Messages"/>
+<org.eventb.core.variable name="(" org.eventb.core.identifier="net"/>
+<org.eventb.core.variable name=")" org.eventb.core.identifier="hg"/>
+<org.eventb.core.variable name="-" org.eventb.core.identifier="destOf"/>
+<org.eventb.core.variable name="var1" org.eventb.core.identifier="rankOf"/>
+<org.eventb.core.variable name="var2" org.eventb.core.identifier="lastSent"/>
+<org.eventb.core.variable name="var3" org.eventb.core.identifier="lastReceived"/>
+<org.eventb.core.event name="inv1E" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="(" org.eventb.core.assignment="net ≔ ∅" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="'" org.eventb.core.assignment="hg ≔ ∅" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="," org.eventb.core.assignment="destOf ≔ ∅" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="act1" org.eventb.core.assignment="rankOf ≔ ∅" org.eventb.core.label="+act4"/>
+<org.eventb.core.action name="act2" org.eventb.core.assignment="lastSent ≔ 0" org.eventb.core.label="+act5"/>
+<org.eventb.core.action name="act3" org.eventb.core.assignment="lastReceived ≔ 0" org.eventb.core.label="+act6"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="inv1F" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="send">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="send"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="p"/>
+<org.eventb.core.parameter name="act4" org.eventb.core.identifier="m"/>
+<org.eventb.core.parameter name=")" org.eventb.core.identifier="d"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd1" org.eventb.core.predicate="p ∈ PEER"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="m ∈ MESSAGE ∖ hg"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd3" org.eventb.core.predicate="d ∈ PEER"/>
+<org.eventb.core.action name="/" org.eventb.core.assignment="net ≔ net ∪ {m}" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="0" org.eventb.core.assignment="hg ≔ hg ∪ {m}" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="4" org.eventb.core.assignment="destOf ≔ destOf ∪ {m ↦ d}" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="act1" org.eventb.core.assignment="rankOf ≔ rankOf ∪ {m ↦ 1 + lastSent}" org.eventb.core.label="+act4"/>
+<org.eventb.core.action name="act2" org.eventb.core.assignment="lastSent ≔ 1 + lastSent" org.eventb.core.label="+act5"/>
+<org.eventb.core.guard name="act3" org.eventb.core.label="ordering" org.eventb.core.predicate="⊤"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="inv1G" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="receive">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="receive"/>
+<org.eventb.core.guard name="grd2" org.eventb.core.label="grd1" org.eventb.core.predicate="p ∈ PEER"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.label="grd2" org.eventb.core.predicate="m ∈ net"/>
+<org.eventb.core.guard name="grd4" org.eventb.core.label="grd3" org.eventb.core.predicate="destOf(m) = p"/>
+<org.eventb.core.guard name="grd5" org.eventb.core.label="ordering" org.eventb.core.predicate="rankOf(m) = lastReceived + 1"/>
+<org.eventb.core.parameter name="element2" org.eventb.core.identifier="p"/>
+<org.eventb.core.action name="act1" org.eventb.core.assignment="net ≔ net ∖ {m}" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="act2" org.eventb.core.assignment="rankOf ≔ (net ∖ {m}) ◁ rankOf" org.eventb.core.label="+act2"/>
+<org.eventb.core.action name="act3" org.eventb.core.assignment="lastReceived ≔ lastReceived + 1" org.eventb.core.label="+act3"/>
+<org.eventb.core.parameter name="element3" org.eventb.core.identifier="m"/>
+</org.eventb.core.event>
+<org.eventb.core.invariant name="inv1" org.eventb.core.label="TrankOf" org.eventb.core.predicate="rankOf ∈ net → ℕ"/>
+<org.eventb.core.invariant name="inv2" org.eventb.core.label="TlastSent" org.eventb.core.predicate="lastSent ∈ ℕ"/>
+<org.eventb.core.invariant name="inv3" org.eventb.core.label="TlastReceived" org.eventb.core.predicate="lastReceived ∈ ℕ"/>
+<org.eventb.core.invariant name="inv4" org.eventb.core.label="GrankOf" org.eventb.core.predicate="∀ m1, m2 · m1 ∈ net ∧ m2 ∈ net ∧ m1 ∈ hgOf(m2) ⇒ rankOf(m1) &lt; rankOf(m2)"/>
+<org.eventb.core.invariant name="inv6" org.eventb.core.label="inv1" org.eventb.core.predicate="∀ m · m ∈ net ⇒ lastReceived &lt; rankOf(m)"/>
+<org.eventb.core.invariant name="inv7" org.eventb.core.label="inv2" org.eventb.core.predicate="∀ m · m ∈ net ⇒ rankOf(m) ≤ lastSent"/>
+<org.eventb.core.invariant name="inv8" org.eventb.core.label="inv3" org.eventb.core.predicate="lastReceived ≤ lastSent"/>
+</org.eventb.core.machineFile>

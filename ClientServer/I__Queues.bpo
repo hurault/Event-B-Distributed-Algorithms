@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="EVENT" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.poIdentifier name="PEER" org.eventb.core.type="ℙ(PEER)"/>
+        <org.eventb.core.poIdentifier name="MESSAGE" org.eventb.core.type="ℙ(MESSAGE)"/>
+        <org.eventb.core.poIdentifier name="COM" org.eventb.core.type="ℙ(COM)"/>
+        <org.eventb.core.poIdentifier name="Receive" org.eventb.core.type="COM"/>
+        <org.eventb.core.poIdentifier name="Send" org.eventb.core.type="COM"/>
+        <org.eventb.core.poIdentifier name="eventmapper" org.eventb.core.type="ℙ(COM×MESSAGE×EVENT)"/>
+        <org.eventb.core.poPredicate name="eventmappes" org.eventb.core.predicate="partition(COM,{Send},{Receive})" org.eventb.core.source="/ClientServer/E__Messages.buc|org.eventb.core.contextFile#E__Messages|org.eventb.core.axiom#)"/>
+        <org.eventb.core.poPredicate name="eventmappet" org.eventb.core.predicate="eventmapper∈COM × MESSAGE ⤖ EVENT" org.eventb.core.source="/ClientServer/E__Messages.buc|org.eventb.core.contextFile#E__Messages|org.eventb.core.axiom#-"/>
+        <org.eventb.core.poPredicate name="eventmappeu" org.eventb.core.predicate="∀c1⦂COM,c2⦂COM,m1⦂MESSAGE,m2⦂MESSAGE·c1∈COM∧c2∈COM∧m1∈MESSAGE∧m2∈MESSAGE⇒(c1≠c2∨m1≠m2⇔eventmapper(c1 ↦ m1)≠eventmapper(c2 ↦ m2))" org.eventb.core.source="/ClientServer/E__Messages.buc|org.eventb.core.contextFile#E__Messages|org.eventb.core.axiom#\/"/>
+        <org.eventb.core.poIdentifier name="size" org.eventb.core.type="ℙ(ℙ(ℤ×ℤ)×ℤ)"/>
+        <org.eventb.core.poIdentifier name="Queue" org.eventb.core.type="ℙ(ℙ(ℤ×ℤ))"/>
+        <org.eventb.core.poIdentifier name="tail" org.eventb.core.type="ℙ(ℙ(ℤ×ℤ)×ℙ(ℤ×ℤ))"/>
+        <org.eventb.core.poIdentifier name="append" org.eventb.core.type="ℙ(ℤ×ℙ(ℤ×ℤ)×ℙ(ℤ×ℤ))"/>
+        <org.eventb.core.poIdentifier name="head" org.eventb.core.type="ℙ(ℙ(ℤ×ℤ)×ℤ)"/>
+        <org.eventb.core.poIdentifier name="prefix" org.eventb.core.type="ℙ(ℙ(ℤ×ℤ)×ℙ(ℙ(ℤ×ℤ)))"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="thm1/THM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Theorem" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ClientServer/I__Queues.bpo|org.eventb.core.poFile#I__Queues|org.eventb.core.poPredicateSet#HYPE__Messageu"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀q⦂ℙ(ℤ×ℤ)·q∈Queue⇒finite(q)" org.eventb.core.source="/ClientServer/I__Queues.buc|org.eventb.core.contextFile#I__Queues|org.eventb.core.axiom#cst@"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ClientServer/I__Queues.buc|org.eventb.core.contextFile#I__Queues|org.eventb.core.axiom#cst@"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/ClientServer/I__Queues.bpo|org.eventb.core.poFile#I__Queues|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/ClientServer/I__Queues.bpo|org.eventb.core.poFile#I__Queues|org.eventb.core.poPredicateSet#HYPE__Messageu"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="axm4/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ClientServer/I__Queues.bpo|org.eventb.core.poFile#I__Queues|org.eventb.core.poPredicateSet#HYPE__Messagew"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀q⦂ℙ(ℤ×ℤ)·q∈Queue⇒(∀n⦂ℤ·n∈ℕ∧dom(q)=0 ‥ n⇒q∈dom(size)∧size∈ℙ(ℤ × ℤ) ⇸ ℤ)" org.eventb.core.source="/ClientServer/I__Queues.buc|org.eventb.core.contextFile#I__Queues|org.eventb.core.axiom#cst8"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ClientServer/I__Queues.buc|org.eventb.core.contextFile#I__Queues|org.eventb.core.axiom#cst8"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/ClientServer/I__Queues.bpo|org.eventb.core.poFile#I__Queues|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/ClientServer/I__Queues.bpo|org.eventb.core.poFile#I__Queues|org.eventb.core.poPredicateSet#HYPE__Messagew"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="axm6/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ClientServer/I__Queues.bpo|org.eventb.core.poFile#I__Queues|org.eventb.core.poPredicateSet#HYPE__Messagey"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀q⦂ℙ(ℤ×ℤ),m⦂ℤ·q∈Queue∧m∈ℕ⇒m ↦ q∈dom(append)∧append∈ℤ × ℙ(ℤ × ℤ) ⇸ ℙ(ℤ × ℤ)∧q∈dom(size)∧size∈ℙ(ℤ × ℤ) ⇸ ℤ" org.eventb.core.source="/ClientServer/I__Queues.buc|org.eventb.core.contextFile#I__Queues|org.eventb.core.axiom#cst:"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ClientServer/I__Queues.buc|org.eventb.core.contextFile#I__Queues|org.eventb.core.axiom#cst:"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/ClientServer/I__Queues.bpo|org.eventb.core.poFile#I__Queues|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/ClientServer/I__Queues.bpo|org.eventb.core.poFile#I__Queues|org.eventb.core.poPredicateSet#HYPE__Messagey"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="axm8/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ClientServer/I__Queues.bpo|org.eventb.core.poFile#I__Queues|org.eventb.core.poPredicateSet#HYPE__Message{"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀q⦂ℙ(ℤ×ℤ)·q∈Queue ∖ {∅ ⦂ ℙ(ℤ×ℤ)}⇒q∈dom(head)∧head∈ℙ(ℤ × ℤ) ⇸ ℤ∧0∈dom(q)∧q∈ℤ ⇸ ℤ" org.eventb.core.source="/ClientServer/I__Queues.buc|org.eventb.core.contextFile#I__Queues|org.eventb.core.axiom#cst="/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ClientServer/I__Queues.buc|org.eventb.core.contextFile#I__Queues|org.eventb.core.axiom#cst="/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/ClientServer/I__Queues.bpo|org.eventb.core.poFile#I__Queues|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/ClientServer/I__Queues.bpo|org.eventb.core.poFile#I__Queues|org.eventb.core.poPredicateSet#HYPE__Message{"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="axm10/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ClientServer/I__Queues.bpo|org.eventb.core.poFile#I__Queues|org.eventb.core.poPredicateSet#HYPE__Message}"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀q⦂ℙ(ℤ×ℤ)·q∈Queue ∖ {∅ ⦂ ℙ(ℤ×ℤ)}⇒q∈dom(tail)∧tail∈ℙ(ℤ × ℤ) ⇸ ℙ(ℤ × ℤ)∧(∀i⦂ℤ·q∈dom(size)∧size∈ℙ(ℤ × ℤ) ⇸ ℤ∧(i∈0 ‥ size(q) − 1⇒i+1∈dom(q)∧q∈ℤ ⇸ ℤ))" org.eventb.core.source="/ClientServer/I__Queues.buc|org.eventb.core.contextFile#I__Queues|org.eventb.core.axiom#cst?"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ClientServer/I__Queues.buc|org.eventb.core.contextFile#I__Queues|org.eventb.core.axiom#cst?"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/ClientServer/I__Queues.bpo|org.eventb.core.poFile#I__Queues|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/ClientServer/I__Queues.bpo|org.eventb.core.poFile#I__Queues|org.eventb.core.poPredicateSet#HYPE__Message}"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="axm12/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/ClientServer/I__Queues.bpo|org.eventb.core.poFile#I__Queues|org.eventb.core.poPredicateSet#HYPE__Messagf'"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀p⦂ℙ(ℤ×ℤ),q⦂ℙ(ℤ×ℤ)·(p∈Queue∧q∈Queue⇒q∈dom(prefix)∧prefix∈ℙ(ℤ × ℤ) ⇸ ℙ(ℙ(ℤ × ℤ)))∧(p∈Queue∧q∈Queue∧p∈prefix(q)⇒p∈dom(size)∧size∈ℙ(ℤ × ℤ) ⇸ ℤ∧q∈dom(size)∧(size(p)≤size(q)⇒(∀i⦂ℤ·i∈ℕ∧i&lt;size(p)⇒i∈dom(p)∧p∈ℤ ⇸ ℤ∧i∈dom(q)∧q∈ℤ ⇸ ℤ)))" org.eventb.core.source="/ClientServer/I__Queues.buc|org.eventb.core.contextFile#I__Queues|org.eventb.core.axiom#cstB"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/ClientServer/I__Queues.buc|org.eventb.core.contextFile#I__Queues|org.eventb.core.axiom#cstB"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/ClientServer/I__Queues.bpo|org.eventb.core.poFile#I__Queues|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/ClientServer/I__Queues.bpo|org.eventb.core.poFile#I__Queues|org.eventb.core.poPredicateSet#HYPE__Messagf'"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="HYPE__Messageu" org.eventb.core.parentSet="/ClientServer/I__Queues.bpo|org.eventb.core.poFile#I__Queues|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Queue∈ℙ(ℕ → ℕ)" org.eventb.core.source="/ClientServer/I__Queues.buc|org.eventb.core.contextFile#I__Queues|org.eventb.core.axiom#cst5"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="Queue={∅ ⦂ ℙ(ℤ×ℤ)}∪union({n⦂ℤ·n∈ℕ ∣ 0 ‥ n → ℕ})" org.eventb.core.source="/ClientServer/I__Queues.buc|org.eventb.core.contextFile#I__Queues|org.eventb.core.axiom#cst6"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="HYPE__Messagew" org.eventb.core.parentSet="/ClientServer/I__Queues.bpo|org.eventb.core.poFile#I__Queues|org.eventb.core.poPredicateSet#HYPE__Messageu" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="∀q⦂ℙ(ℤ×ℤ)·q∈Queue⇒finite(q)" org.eventb.core.source="/ClientServer/I__Queues.buc|org.eventb.core.contextFile#I__Queues|org.eventb.core.axiom#cst@"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="size∈Queue → ℕ" org.eventb.core.source="/ClientServer/I__Queues.buc|org.eventb.core.contextFile#I__Queues|org.eventb.core.axiom#cst7"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="HYPE__Messagey" org.eventb.core.parentSet="/ClientServer/I__Queues.bpo|org.eventb.core.poFile#I__Queues|org.eventb.core.poPredicateSet#HYPE__Messagew" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="∀q⦂ℙ(ℤ×ℤ)·q∈Queue⇒(∃n⦂ℤ·n∈ℕ∧dom(q)=0 ‥ n∧size(q)=n)" org.eventb.core.source="/ClientServer/I__Queues.buc|org.eventb.core.contextFile#I__Queues|org.eventb.core.axiom#cst8"/>
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="append∈ℕ × Queue → Queue" org.eventb.core.source="/ClientServer/I__Queues.buc|org.eventb.core.contextFile#I__Queues|org.eventb.core.axiom#cst9"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="HYPE__Message{" org.eventb.core.parentSet="/ClientServer/I__Queues.bpo|org.eventb.core.poFile#I__Queues|org.eventb.core.poPredicateSet#HYPE__Messagey" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="∀q⦂ℙ(ℤ×ℤ),m⦂ℤ·q∈Queue∧m∈ℕ⇒append(m ↦ q)=q∪{size(q)+1 ↦ m}" org.eventb.core.source="/ClientServer/I__Queues.buc|org.eventb.core.contextFile#I__Queues|org.eventb.core.axiom#cst:"/>
+        <org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="head∈Queue ∖ {∅ ⦂ ℙ(ℤ×ℤ)} → ℕ" org.eventb.core.source="/ClientServer/I__Queues.buc|org.eventb.core.contextFile#I__Queues|org.eventb.core.axiom#cst;"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="HYPE__Message}" org.eventb.core.parentSet="/ClientServer/I__Queues.bpo|org.eventb.core.poFile#I__Queues|org.eventb.core.poPredicateSet#HYPE__Message{" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="∀q⦂ℙ(ℤ×ℤ)·q∈Queue ∖ {∅ ⦂ ℙ(ℤ×ℤ)}⇒head(q)=q(0)" org.eventb.core.source="/ClientServer/I__Queues.buc|org.eventb.core.contextFile#I__Queues|org.eventb.core.axiom#cst="/>
+        <org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="tail∈Queue ∖ {∅ ⦂ ℙ(ℤ×ℤ)} → Queue" org.eventb.core.source="/ClientServer/I__Queues.buc|org.eventb.core.contextFile#I__Queues|org.eventb.core.axiom#cst&gt;"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="HYPE__Messagf'" org.eventb.core.parentSet="/ClientServer/I__Queues.bpo|org.eventb.core.poFile#I__Queues|org.eventb.core.poPredicateSet#HYPE__Message}" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD10" org.eventb.core.predicate="∀q⦂ℙ(ℤ×ℤ)·q∈Queue ∖ {∅ ⦂ ℙ(ℤ×ℤ)}⇒tail(q)={i⦂ℤ·i∈0 ‥ size(q) − 1 ∣ i ↦ q(i+1)}" org.eventb.core.source="/ClientServer/I__Queues.buc|org.eventb.core.contextFile#I__Queues|org.eventb.core.axiom#cst?"/>
+        <org.eventb.core.poPredicate name="PRD11" org.eventb.core.predicate="prefix∈Queue → ℙ(Queue)" org.eventb.core.source="/ClientServer/I__Queues.buc|org.eventb.core.contextFile#I__Queues|org.eventb.core.axiom#cstA"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/ClientServer/I__Queues.bpo|org.eventb.core.poFile#I__Queues|org.eventb.core.poPredicateSet#HYPE__Messagf'" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD12" org.eventb.core.predicate="∀p⦂ℙ(ℤ×ℤ),q⦂ℙ(ℤ×ℤ)·p∈Queue∧q∈Queue∧p∈prefix(q)⇒size(p)≤size(q)∧(∀i⦂ℤ·i∈ℕ∧i&lt;size(p)⇒p(i)=q(i))" org.eventb.core.source="/ClientServer/I__Queues.buc|org.eventb.core.contextFile#I__Queues|org.eventb.core.axiom#cstB"/>
+    </org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

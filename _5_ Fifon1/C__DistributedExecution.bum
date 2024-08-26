@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.comment="Events occur on peer and the causal order between events is built." org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.refinesMachine name="'" org.eventb.core.target="B__Communication"/>
+<org.eventb.core.seesContext name="*" org.eventb.core.target="C__Peers"/>
+<org.eventb.core.variable name="(" org.eventb.core.identifier="past"/>
+<org.eventb.core.variable name="evt2" org.eventb.core.identifier="links"/>
+<org.eventb.core.event name="evt3" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="'" org.eventb.core.assignment="prec ≔ ∅" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="peerOf ≔ ∅" org.eventb.core.label="act4"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt4" org.eventb.core.comment="A new event occurs on a peer" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="create">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="create"/>
+<org.eventb.core.parameter name="(" org.eventb.core.comment="Peer where the event occurs" org.eventb.core.identifier="p"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd2" org.eventb.core.predicate="p ∈ PEER"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="peerOf ≔ peerOf ∪ {e ↦ p}" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="prec ≔ prec&#10;       ∪ {e ↦ e}&#10;       ∪ {ep · ep ∈ past ∧ (∃ ep2 · ep2 ∈ past ∧ peerOf(ep2) = p ∧ ep ↦ ep2 ∈ prec) ∣ ep ↦ e}" org.eventb.core.label="act3"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt5" org.eventb.core.comment="A link is made between a new event on a peer, and its cause" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="link">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="link"/>
+<org.eventb.core.parameter name="(" org.eventb.core.comment="Receiver" org.eventb.core.identifier="p"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd5" org.eventb.core.predicate="p ∈ PEER"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="peerOf ≔ peerOf ∪ {e ↦ p}" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="prec ≔ prec&#10;       ∪ {e ↦ e}&#10;       ∪ {ep · ep ∈ past ∧ (∃ ep2 · ep2 ∈ past ∧ peerOf(ep2) = p ∧ ep ↦ ep2 ∈ prec) ∣ ep ↦ e}&#10;       ∪ {ep · ep ∈ past ∧ ep ↦ cause ∈ prec ∣ ep ↦ e}" org.eventb.core.label="act4"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="evt8" org.eventb.core.comment="Location peerOf(e) of an event e" org.eventb.core.identifier="peerOf"/>
+<org.eventb.core.variable name="evt6" org.eventb.core.comment="Causal order between events (e1 ↦ e2 ∈ prec) ⇔ (e1 \prec_causal e2)" org.eventb.core.identifier="prec"/>
+<org.eventb.core.invariant name="evt7" org.eventb.core.label="Tprec" org.eventb.core.predicate="prec ∈ past  past"/>
+<org.eventb.core.invariant name="inv10" org.eventb.core.label="TpeerOf" org.eventb.core.predicate="peerOf ∈ past → PEER"/>
+<org.eventb.core.invariant name="inv11" org.eventb.core.comment="prec is reflexive" org.eventb.core.label="inv1" org.eventb.core.predicate="(past ◁ id) ⊆ prec"/>
+<org.eventb.core.invariant name="inv12" org.eventb.core.comment="prec is transitive" org.eventb.core.label="inv2" org.eventb.core.predicate="prec ; prec ⊆ prec"/>
+<org.eventb.core.invariant name="inv13" org.eventb.core.comment="prec is anti-symmetric" org.eventb.core.label="inv3" org.eventb.core.predicate="prec ∩ prec∼  ⊆ id"/>
+<org.eventb.core.invariant name="inv14" org.eventb.core.comment="prec contains (the reflexive transitive closure of) links" org.eventb.core.label="inv4" org.eventb.core.predicate="links ⊆ prec"/>
+<org.eventb.core.invariant name="inv15" org.eventb.core.comment="Event occurring on the same peer are totally ordered" org.eventb.core.label="inv5" org.eventb.core.predicate="∀ e1, e2 · e1 ∈ past ∧ e2 ∈ past ∧ peerOf(e1) = peerOf(e2) ⇒ e1 ↦ e2 ∈ prec ∨ e2 ↦ e1 ∈ prec"/>
+</org.eventb.core.machineFile>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="maxReq" org.eventb.core.type="ℤ"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/ClientServer/J__ClientServer_Finite.bpo|org.eventb.core.poFile#J__ClientServer_Finite|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="maxReq∈ℕ" org.eventb.core.source="/ClientServer/J__ClientServer_Finite.buc|org.eventb.core.contextFile#J__ClientServer_Finite|org.eventb.core.axiom#axm1"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="maxReq=4" org.eventb.core.source="/ClientServer/J__ClientServer_Finite.buc|org.eventb.core.contextFile#J__ClientServer_Finite|org.eventb.core.axiom#axm2"/>
+    </org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

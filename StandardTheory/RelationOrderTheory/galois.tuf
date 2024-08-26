@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.theory.core.theoryRoot org.eventb.core.comment="A theory of galois connections&#10;&#10;@author Jean-Raymond Abrial&#10;@2014" org.eventb.core.configuration="org.eventb.theory.core.thy">
+<org.eventb.theory.core.typeParameter name=")" org.eventb.core.identifier="T"/>
+<org.eventb.theory.core.typeParameter name="*" org.eventb.core.identifier="U"/>
+<org.eventb.theory.core.theorem name="+" org.eventb.core.label="thm1" org.eventb.core.predicate="∀a,b,c·a∈V↔T ∧ b∈T↔U ∧ c∈V↔U ⇒ &#10; (a;b⊆c ⇔ a⊆cmp(cmp(c);b∼))"/>
+<org.eventb.theory.core.theorem name="-" org.eventb.core.label="thm2" org.eventb.core.predicate="∀a,b,c·a∈V↔T ∧ b∈T↔U ∧ c∈V↔U ⇒ &#10; (a;b⊆c ⇔ b⊆cmp(cmp(c∼);a)∼)"/>
+<org.eventb.theory.core.proofRulesBlock name="." org.eventb.core.label="rulesBlock1">
+<org.eventb.theory.core.metaVariable name="'" org.eventb.core.identifier="a" org.eventb.theory.core.type="V↔T"/>
+<org.eventb.theory.core.metaVariable name="(" org.eventb.core.identifier="b" org.eventb.theory.core.type="T↔U"/>
+<org.eventb.theory.core.metaVariable name=")" org.eventb.core.identifier="c" org.eventb.theory.core.type="V↔U"/>
+<org.eventb.theory.core.rewriteRule name="*" org.eventb.core.label="rew1" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Describe Me!" org.eventb.theory.core.formula="a;b⊆c">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs1" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="a⊆cmp(cmp(c);b∼)"/>
+</org.eventb.theory.core.rewriteRule>
+</org.eventb.theory.core.proofRulesBlock>
+<org.eventb.theory.core.proofRulesBlock name="/" org.eventb.core.label="rulesBlock2">
+<org.eventb.theory.core.metaVariable name="'" org.eventb.core.identifier="a" org.eventb.theory.core.type="V↔T"/>
+<org.eventb.theory.core.metaVariable name="(" org.eventb.core.identifier="b" org.eventb.theory.core.type="T↔U"/>
+<org.eventb.theory.core.metaVariable name=")" org.eventb.core.identifier="c" org.eventb.theory.core.type="V↔U"/>
+<org.eventb.theory.core.rewriteRule name="*" org.eventb.core.label="rew2" org.eventb.theory.core.applicability="interactive" org.eventb.theory.core.complete="false" org.eventb.theory.core.desc="Describe Me!" org.eventb.theory.core.formula="a;b⊆c">
+<org.eventb.theory.core.rewriteRuleRHS name="'" org.eventb.core.label="rhs2" org.eventb.core.predicate="⊤" org.eventb.theory.core.formula="b⊆cmp(cmp(c∼);a)∼"/>
+</org.eventb.theory.core.rewriteRule>
+</org.eventb.theory.core.proofRulesBlock>
+<org.eventb.theory.core.importTheoryProject name="0" org.eventb.theory.core.importTheoryProject="/RelationOrderTheory">
+<org.eventb.theory.core.importTheory name="'" org.eventb.theory.core.importTheory="/RelationOrderTheory/complement.dtf|org.eventb.theory.core.deployedTheoryRoot#complement"/>
+</org.eventb.theory.core.importTheoryProject>
+<org.eventb.theory.core.typeParameter name="1" org.eventb.core.identifier="V"/>
+</org.eventb.theory.core.theoryRoot>

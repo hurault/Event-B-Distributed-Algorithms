@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="1">
+    <org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="JOB" org.eventb.core.type="ℙ(JOB)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/Queue/JobQueue.bpo|org.eventb.core.poFile#JobQueue|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="1">
+        <org.eventb.core.poIdentifier name="job" org.eventb.core.type="ℙ(JOB)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTjoc" org.eventb.core.parentSet="/Queue/JobQueue.bpo|org.eventb.core.poFile#JobQueue|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="job'" org.eventb.core.type="ℙ(JOB)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPjoc" org.eventb.core.parentSet="/Queue/JobQueue.bpo|org.eventb.core.poFile#JobQueue|org.eventb.core.poPredicateSet#EVTIDENTjoc" org.eventb.core.poStamp="0"/>
+    <org.eventb.core.poPredicateSet name="EVTIDENTjod" org.eventb.core.parentSet="/Queue/JobQueue.bpo|org.eventb.core.poFile#JobQueue|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="j" org.eventb.core.type="JOB"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPjod" org.eventb.core.parentSet="/Queue/JobQueue.bpo|org.eventb.core.poFile#JobQueue|org.eventb.core.poPredicateSet#EVTIDENTjod" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="j∈job" org.eventb.core.source="/Queue/JobQueue.bum|org.eventb.core.machineFile#JobQueue|org.eventb.core.event#*|org.eventb.core.guard#("/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPjoe" org.eventb.core.parentSet="/Queue/JobQueue.bpo|org.eventb.core.poFile#JobQueue|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0"/>
+    <org.eventb.core.poPredicateSet name="EVTIDENTjof" org.eventb.core.parentSet="/Queue/JobQueue.bpo|org.eventb.core.poFile#JobQueue|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="j" org.eventb.core.type="JOB"/>
+        <org.eventb.core.poIdentifier name="job'" org.eventb.core.type="ℙ(JOB)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPjof" org.eventb.core.parentSet="/Queue/JobQueue.bpo|org.eventb.core.poFile#JobQueue|org.eventb.core.poPredicateSet#EVTIDENTjof" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="j∉job" org.eventb.core.source="/Queue/JobQueue.bum|org.eventb.core.machineFile#JobQueue|org.eventb.core.event#\/|org.eventb.core.guard#("/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTjog" org.eventb.core.parentSet="/Queue/JobQueue.bpo|org.eventb.core.poFile#JobQueue|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="j" org.eventb.core.type="JOB"/>
+        <org.eventb.core.poIdentifier name="job'" org.eventb.core.type="ℙ(JOB)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPjog" org.eventb.core.parentSet="/Queue/JobQueue.bpo|org.eventb.core.poFile#JobQueue|org.eventb.core.poPredicateSet#EVTIDENTjog" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="j∈job" org.eventb.core.source="/Queue/JobQueue.bum|org.eventb.core.machineFile#JobQueue|org.eventb.core.event#0|org.eventb.core.guard#'"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Queue/JobQueue.bpo|org.eventb.core.poFile#JobQueue|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="job⊆JOB" org.eventb.core.source="/Queue/JobQueue.bum|org.eventb.core.machineFile#JobQueue|org.eventb.core.invariant#."/>
+    </org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

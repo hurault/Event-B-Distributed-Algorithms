@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.scContextFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd">
+    <org.eventb.core.scCarrierSet name="EVENT" org.eventb.core.source="/ClientServer/A__Event.buc|org.eventb.core.contextFile#A__Event|org.eventb.core.carrierSet#2" org.eventb.core.type="ℙ(EVENT)"/>
+</org.eventb.core.scContextFile>

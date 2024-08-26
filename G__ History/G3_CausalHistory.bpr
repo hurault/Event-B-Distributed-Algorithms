@@ -1,0 +1,729 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.prFile version="1">
+    <org.eventb.core.prProof name="receive/ordering/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="m2" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19,p20,p21,p22,p23,p24,p25,p26,p27,p28,p29,p30,p31,p32,p33,p34,p35,p36,p37,p38,p39,p40,p41,p42,p43,p44,p45,p46,p47,p48,p49,p50,p51,p52,p53,p54,p55" org.eventb.core.prSets="COM,EVENT,MESSAGE,PEER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(COM,{Send},{Receive}))" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p39" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p56,p57"/>
+                <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p56,p57"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p34">
+                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p58">
+                        <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p58" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p71">
+                                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p40" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p59"/>
+                                <org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p2" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p60"/>
+                                <org.eventb.core.prHypAction name="REWRITE2" org.eventb.core.prHidden="p21" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p61"/>
+                                <org.eventb.core.prHypAction name="REWRITE3" org.eventb.core.prHidden="p29" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p62"/>
+                                <org.eventb.core.prHypAction name="REWRITE4" org.eventb.core.prHidden="p6" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p63"/>
+                                <org.eventb.core.prHypAction name="REWRITE5" org.eventb.core.prHidden="p33" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p64"/>
+                                <org.eventb.core.prHypAction name="REWRITE6" org.eventb.core.prHidden="p16" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p65"/>
+                                <org.eventb.core.prHypAction name="REWRITE7" org.eventb.core.prHidden="p26" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p66"/>
+                                <org.eventb.core.prHypAction name="REWRITE8" org.eventb.core.prHidden="p13" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p67"/>
+                                <org.eventb.core.prHypAction name="REWRITE9" org.eventb.core.prHidden="p38" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p68"/>
+                                <org.eventb.core.prHypAction name="REWRITE10" org.eventb.core.prHidden="p35" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p69,p70"/>
+                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ¬ in ¬(∃e2·e2∈past∧comOf(e2)=Receive∧mesOf(e2)=[[1]])" org.eventb.core.prHyps="">
+                                    <org.eventb.core.prAnte name="'">
+                                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p37" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p72"/>
+                                        <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p72"/>
+                                        <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ¬ in ¬(∃e2·e2∈past∧comOf(e2)=Receive∧mesOf(e2)=mesOf([[1]]))" org.eventb.core.prHyps="">
+                                            <org.eventb.core.prAnte name="'">
+                                                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p8" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p73"/>
+                                                <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p73"/>
+                                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ¬ in ¬(∃e2·e2∈past∧comOf(e2)=Receive∧mesOf(e2)=mesOf([[1]]))" org.eventb.core.prHyps="">
+                                                    <org.eventb.core.prAnte name="'">
+                                                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p14" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p74"/>
+                                                        <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p74"/>
+                                                        <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ¬ in ¬(∃e2·e2∈past∧comOf(e2)=Receive∧mesOf(e2)=mesOf([[1]]))" org.eventb.core.prHyps="">
+                                                            <org.eventb.core.prAnte name="'">
+                                                                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p70" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p75"/>
+                                                                <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p75"/>
+                                                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ¬ in ¬([[0]]∈past∧comOf([[0]])=Receive∧mesOf([[0]])=[[1]])" org.eventb.core.prHyps="">
+                                                                    <org.eventb.core.prAnte name="'">
+                                                                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p72" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p76"/>
+                                                                        <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p76"/>
+                                                                        <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ¬ in ¬([[0]]∈past∧comOf([[0]])=Receive∧mesOf([[0]])=mesOf([[1]]))" org.eventb.core.prHyps="">
+                                                                            <org.eventb.core.prAnte name="'">
+                                                                                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p73" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p77"/>
+                                                                                <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p77"/>
+                                                                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ¬ in ¬([[0]]∈past∧comOf([[0]])=Receive∧mesOf([[0]])=mesOf([[1]]))" org.eventb.core.prHyps="">
+                                                                                    <org.eventb.core.prAnte name="'">
+                                                                                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p74" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p78"/>
+                                                                                        <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p78"/>
+                                                                                        <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ¬ in ¬([[0]]∈past∧comOf([[0]])=Receive∧mesOf([[0]])=mesOf([[1]]))" org.eventb.core.prHyps="">
+                                                                                            <org.eventb.core.prAnte name="'">
+                                                                                                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p75" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p79"/>
+                                                                                                <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p79"/>
+                                                                                                <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                                                                                                    <org.eventb.core.prAnte name="'">
+                                                                                                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p80"/>
+                                                                                                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p81"/>
+                                                                                                        <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p82"/>
+                                                                                                        <org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p83"/>
+                                                                                                        <org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∀ goal (frees m2)" org.eventb.core.prGoal="p71" org.eventb.core.prHyps="">
+                                                                                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p84">
+                                                                                                                <org.eventb.core.prIdent name="m2" org.eventb.core.type="MESSAGE"/>
+                                                                                                                <org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p84" org.eventb.core.prHyps="">
+                                                                                                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p86" org.eventb.core.prHyps="p85">
+                                                                                                                        <org.eventb.core.prRule name="r7" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p86" org.eventb.core.prHyps="">
+                                                                                                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p87">
+                                                                                                                                <org.eventb.core.prRule name="r8" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="he with destOf(m)=p" org.eventb.core.prHyps="p24">
+                                                                                                                                    <org.eventb.core.prAnte name="'">
+                                                                                                                                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p24"/>
+                                                                                                                                        <org.eventb.core.prRule name="r9" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with net={e·e∈past∧comOf(e)=Send∧(∀e2·¬e2∈past∨¬comOf(e2)=Receive∨¬mesOf(e2)=mesOf(e)) ∣ mesOf(e)}" org.eventb.core.prHyps="p78">
+                                                                                                                                            <org.eventb.core.prAnte name="'">
+                                                                                                                                                <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p45" org.eventb.core.prInfHyps="p88"/>
+                                                                                                                                                <org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p76" org.eventb.core.prInfHyps="p89"/>
+                                                                                                                                                <org.eventb.core.prHypAction name="FORWARD_INF2" org.eventb.core.prHyps="p77" org.eventb.core.prInfHyps="p90"/>
+                                                                                                                                                <org.eventb.core.prHypAction name="FORWARD_INF3" org.eventb.core.prHyps="p85" org.eventb.core.prInfHyps="p91"/>
+                                                                                                                                                <org.eventb.core.prHypAction name="DESELECT4" org.eventb.core.prHyps="p77,p76,p85,p45"/>
+                                                                                                                                                <org.eventb.core.prHypAction name="DESELECT5" org.eventb.core.prHyps="p78"/>
+                                                                                                                                                <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+                                                                                                                                                    <org.eventb.core.prAnte name="'">
+                                                                                                                                                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p88" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p92"/>
+                                                                                                                                                        <org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p89" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p93"/>
+                                                                                                                                                        <org.eventb.core.prHypAction name="REWRITE2" org.eventb.core.prHidden="p90" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p94"/>
+                                                                                                                                                        <org.eventb.core.prHypAction name="REWRITE3" org.eventb.core.prHidden="p91" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p95"/>
+                                                                                                                                                        <org.eventb.core.prRule name="r10" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p87" org.eventb.core.prHyps="p1,p77,p3,p4,p57,p68,p93,p5,p63,p7,p9,p10,p11,p79,p12,p15,p62,p17,p18,p19,p20,p67,p22,p23,p25,p27,p28,p76,p30,p61,p31,p32,p59,p34,p36,p95,p85,p41,p92,p42,p43,p44,p45,p64,p46,p47,p48,p94,p49,p56,p50,p51,p60,p52,p78,p53,p66,p54,p65,p69,p55">
+                                                                                                                                                            <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+                                                                                                                                                        </org.eventb.core.prRule>
+                                                                                                                                                    </org.eventb.core.prAnte>
+                                                                                                                                                </org.eventb.core.prRule>
+                                                                                                                                            </org.eventb.core.prAnte>
+                                                                                                                                        </org.eventb.core.prRule>
+                                                                                                                                    </org.eventb.core.prAnte>
+                                                                                                                                </org.eventb.core.prRule>
+                                                                                                                            </org.eventb.core.prAnte>
+                                                                                                                            <org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p96">
+                                                                                                                                <org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p96" org.eventb.core.prHyps="">
+                                                                                                                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p98" org.eventb.core.prHyps="p97">
+                                                                                                                                        <org.eventb.core.prRule name="r7" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p98" org.eventb.core.prHyps="">
+                                                                                                                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p99">
+                                                                                                                                                <org.eventb.core.prRule name="r8" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="he with destOf(m)=p" org.eventb.core.prHyps="p24">
+                                                                                                                                                    <org.eventb.core.prAnte name="'">
+                                                                                                                                                        <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p97" org.eventb.core.prInfHyps="p100"/>
+                                                                                                                                                        <org.eventb.core.prHypAction name="DESELECT1" org.eventb.core.prHyps="p97"/>
+                                                                                                                                                        <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p24"/>
+                                                                                                                                                        <org.eventb.core.prRule name="r9" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with net={e·e∈past∧comOf(e)=Send∧(∀e2·¬e2∈past∨¬comOf(e2)=Receive∨¬mesOf(e2)=mesOf(e)) ∣ mesOf(e)}" org.eventb.core.prHyps="p78">
+                                                                                                                                                            <org.eventb.core.prAnte name="'">
+                                                                                                                                                                <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p45" org.eventb.core.prInfHyps="p88"/>
+                                                                                                                                                                <org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p76" org.eventb.core.prInfHyps="p89"/>
+                                                                                                                                                                <org.eventb.core.prHypAction name="FORWARD_INF2" org.eventb.core.prHyps="p77" org.eventb.core.prInfHyps="p90"/>
+                                                                                                                                                                <org.eventb.core.prHypAction name="FORWARD_INF3" org.eventb.core.prHyps="p85" org.eventb.core.prInfHyps="p91"/>
+                                                                                                                                                                <org.eventb.core.prHypAction name="DESELECT4" org.eventb.core.prHyps="p77,p76,p85,p45"/>
+                                                                                                                                                                <org.eventb.core.prHypAction name="DESELECT5" org.eventb.core.prHyps="p78"/>
+                                                                                                                                                                <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+                                                                                                                                                                    <org.eventb.core.prAnte name="'">
+                                                                                                                                                                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p88" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p92"/>
+                                                                                                                                                                        <org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p89" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p93"/>
+                                                                                                                                                                        <org.eventb.core.prHypAction name="REWRITE2" org.eventb.core.prHidden="p90" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p94"/>
+                                                                                                                                                                        <org.eventb.core.prHypAction name="REWRITE3" org.eventb.core.prHidden="p91" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p95"/>
+                                                                                                                                                                        <org.eventb.core.prRule name="r10" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p99" org.eventb.core.prHyps="p1,p77,p3,p4,p57,p68,p93,p5,p63,p7,p9,p10,p11,p79,p12,p15,p62,p17,p18,p19,p20,p67,p22,p23,p25,p27,p28,p76,p30,p61,p31,p32,p59,p34,p36,p95,p97,p85,p100,p41,p92,p42,p43,p44,p45,p64,p46,p47,p48,p94,p49,p56,p50,p51,p60,p52,p78,p53,p66,p54,p65,p69,p55">
+                                                                                                                                                                            <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+                                                                                                                                                                        </org.eventb.core.prRule>
+                                                                                                                                                                    </org.eventb.core.prAnte>
+                                                                                                                                                                </org.eventb.core.prRule>
+                                                                                                                                                            </org.eventb.core.prAnte>
+                                                                                                                                                        </org.eventb.core.prRule>
+                                                                                                                                                    </org.eventb.core.prAnte>
+                                                                                                                                                </org.eventb.core.prRule>
+                                                                                                                                            </org.eventb.core.prAnte>
+                                                                                                                                            <org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p101">
+                                                                                                                                                <org.eventb.core.prRule name="r11" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p101" org.eventb.core.prHyps="p18"/>
+                                                                                                                                            </org.eventb.core.prAnte>
+                                                                                                                                        </org.eventb.core.prRule>
+                                                                                                                                    </org.eventb.core.prAnte>
+                                                                                                                                </org.eventb.core.prRule>
+                                                                                                                            </org.eventb.core.prAnte>
+                                                                                                                        </org.eventb.core.prRule>
+                                                                                                                    </org.eventb.core.prAnte>
+                                                                                                                </org.eventb.core.prRule>
+                                                                                                            </org.eventb.core.prAnte>
+                                                                                                        </org.eventb.core.prRule>
+                                                                                                    </org.eventb.core.prAnte>
+                                                                                                </org.eventb.core.prRule>
+                                                                                            </org.eventb.core.prAnte>
+                                                                                            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1.0.2.1"/>
+                                                                                        </org.eventb.core.prRule>
+                                                                                    </org.eventb.core.prAnte>
+                                                                                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1.1.2.1"/>
+                                                                                </org.eventb.core.prRule>
+                                                                            </org.eventb.core.prAnte>
+                                                                            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1.0.2.1"/>
+                                                                        </org.eventb.core.prRule>
+                                                                    </org.eventb.core.prAnte>
+                                                                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1.0.1.1"/>
+                                                                </org.eventb.core.prRule>
+                                                            </org.eventb.core.prAnte>
+                                                            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1.0.2"/>
+                                                        </org.eventb.core.prRule>
+                                                    </org.eventb.core.prAnte>
+                                                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1.1.2"/>
+                                                </org.eventb.core.prRule>
+                                            </org.eventb.core.prAnte>
+                                            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1.0.2"/>
+                                        </org.eventb.core.prRule>
+                                    </org.eventb.core.prAnte>
+                                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1.0.1"/>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="Receive" org.eventb.core.type="COM"/>
+        <org.eventb.core.prIdent name="Send" org.eventb.core.type="COM"/>
+        <org.eventb.core.prIdent name="comOf" org.eventb.core.type="ℙ(EVENT×COM)"/>
+        <org.eventb.core.prIdent name="destOf" org.eventb.core.type="ℙ(MESSAGE×PEER)"/>
+        <org.eventb.core.prIdent name="eventmapper" org.eventb.core.type="ℙ(COM×MESSAGE×EVENT)"/>
+        <org.eventb.core.prIdent name="hc" org.eventb.core.type="ℙ(PEER×ℙ(MESSAGE))"/>
+        <org.eventb.core.prIdent name="hcOf" org.eventb.core.type="ℙ(MESSAGE×ℙ(MESSAGE))"/>
+        <org.eventb.core.prIdent name="hg" org.eventb.core.type="ℙ(MESSAGE)"/>
+        <org.eventb.core.prIdent name="hgOf" org.eventb.core.type="ℙ(MESSAGE×ℙ(MESSAGE))"/>
+        <org.eventb.core.prIdent name="links" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.prIdent name="m" org.eventb.core.type="MESSAGE"/>
+        <org.eventb.core.prIdent name="mesOf" org.eventb.core.type="ℙ(EVENT×MESSAGE)"/>
+        <org.eventb.core.prIdent name="net" org.eventb.core.type="ℙ(MESSAGE)"/>
+        <org.eventb.core.prIdent name="origOf" org.eventb.core.type="ℙ(MESSAGE×PEER)"/>
+        <org.eventb.core.prIdent name="p" org.eventb.core.type="PEER"/>
+        <org.eventb.core.prIdent name="past" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.prIdent name="run" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="m∈dom(destOf)"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="∀e⦂EVENT·e∈past∧comOf(e)=Receive⇒mesOf(e)∉net"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="∀e⦂EVENT·e∈past∧comOf(e)=Send⇒origOf(mesOf(e))=peerOf(e)"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT,c⦂EVENT·e1 ↦ c∈links∧e2 ↦ c∈links⇒e1=e2"/>
+        <org.eventb.core.prPred name="p57" org.eventb.core.predicate="¬Send=Receive"/>
+        <org.eventb.core.prPred name="p68" org.eventb.core.predicate="∀m⦂MESSAGE,m2⦂MESSAGE·m∈hg∧¬m2∈hgOf(m)⇒¬m2∈hcOf(m)"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1∈past∧e2∈past∧peerOf(e1)=peerOf(e2)⇒e1 ↦ e2∈prec∨e2 ↦ e1∈prec"/>
+        <org.eventb.core.prPred name="p90" org.eventb.core.predicate="∀e⦂EVENT·e∈past∧comOf(e)=Send∧(∀e2⦂EVENT·¬e2∈past∨¬comOf(e2)=Receive∨¬mesOf(e2)=mesOf(e))⇒mesOf(e)∈{e⦂EVENT·e∈past∧comOf(e)=Send∧(∀e2⦂EVENT·¬e2∈past∨¬comOf(e2)=Receive∨¬mesOf(e2)=mesOf(e)) ∣ mesOf(e)}"/>
+        <org.eventb.core.prPred name="p86" org.eventb.core.predicate="m2∈dom(destOf)∧(destOf(m2)=p⇒m∈dom(hcOf)∧hcOf∈MESSAGE ⇸ ℙ(MESSAGE))">
+            <org.eventb.core.prIdent name="m2" org.eventb.core.type="MESSAGE"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p74" org.eventb.core.predicate="net={e⦂EVENT·e∈past∧comOf(e)=Send∧(∀e2⦂EVENT·¬(e2∈past∧comOf(e2)=Receive∧mesOf(e2)=mesOf(e))) ∣ mesOf(e)}"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="origOf∈hg → PEER"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="eventmapper∈COM × MESSAGE ⤖ EVENT"/>
+        <org.eventb.core.prPred name="p96" org.eventb.core.predicate="destOf(m2)=p⇒m∈dom(hcOf)∧hcOf∈MESSAGE ⇸ ℙ(MESSAGE)">
+            <org.eventb.core.prIdent name="m2" org.eventb.core.type="MESSAGE"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p62" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT,m1⦂MESSAGE,m2⦂MESSAGE·m1∈hg∧m2∈hg∧¬m1=m2∧e1 ↦ e2∈run∧comOf(e1)=Send∧comOf(e2)=Send∧mesOf(e1)=m1∧mesOf(e2)=m2⇒m1∈hgOf(m2)"/>
+        <org.eventb.core.prPred name="p19" org.eventb.core.predicate="∀e⦂EVENT,c1⦂EVENT,c2⦂EVENT·e ↦ c1∈links∧e ↦ c2∈links⇒c1=c2"/>
+        <org.eventb.core.prPred name="p21" org.eventb.core.predicate="∀es1⦂EVENT,es2⦂EVENT·es1 ↦ es2∈run∧es1≠es2∧comOf(es2)=Send⇒mesOf(es1)∈hgOf(mesOf(es2))"/>
+        <org.eventb.core.prPred name="p67" org.eventb.core.predicate="∀m⦂MESSAGE·m∈hg⇒¬m∈hcOf(m)"/>
+        <org.eventb.core.prPred name="p24" org.eventb.core.predicate="destOf(m)=p"/>
+        <org.eventb.core.prPred name="p25" org.eventb.core.predicate="dom(links)∩ran(links)=(∅ ⦂ ℙ(EVENT))"/>
+        <org.eventb.core.prPred name="p98" org.eventb.core.predicate="m∈dom(hcOf)∧hcOf∈MESSAGE ⇸ ℙ(MESSAGE)"/>
+        <org.eventb.core.prPred name="p89" org.eventb.core.predicate="∀m⦂MESSAGE·m∈hg∧(∀e2⦂EVENT·¬e2∈past∨¬comOf(e2)=Receive∨¬mesOf(e2)=m)⇒m∈{e⦂EVENT·e∈past∧comOf(e)=Send∧(∀e2⦂EVENT·¬e2∈past∨¬comOf(e2)=Receive∨¬mesOf(e2)=mesOf(e)) ∣ mesOf(e)}"/>
+        <org.eventb.core.prPred name="p28" org.eventb.core.predicate="links⊆prec"/>
+        <org.eventb.core.prPred name="p30" org.eventb.core.predicate="∀es⦂EVENT,er⦂EVENT·es ↦ er∈links⇒comOf(es)=Send∧comOf(er)=Receive∧mesOf(es)=mesOf(er)"/>
+        <org.eventb.core.prPred name="p59" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1 ↦ e2∈prec∧¬peerOf(e1)=peerOf(e2)⇒(∃es⦂EVENT,er⦂EVENT·e1 ↦ es∈prec∧es ↦ er∈prec∧er ↦ e2∈prec∧peerOf(e1)=peerOf(es)∧comOf(es)=Send∧comOf(er)=Receive∧mesOf(es)=mesOf(er))"/>
+        <org.eventb.core.prPred name="p72" org.eventb.core.predicate="∀m⦂MESSAGE·m∈hg∧(∀e2⦂EVENT·¬(e2∈past∧comOf(e2)=Receive∧mesOf(e2)=m))⇒m∈net"/>
+        <org.eventb.core.prPred name="p33" org.eventb.core.predicate="∀es1⦂EVENT,es2⦂EVENT·es1 ↦ es2∈prec∧es1≠es2∧comOf(es2)=Send⇒mesOf(es1)∈hcOf(mesOf(es2))"/>
+        <org.eventb.core.prPred name="p80" org.eventb.core.predicate="past∈ℙ(EVENT)"/>
+        <org.eventb.core.prPred name="p34" org.eventb.core.predicate="destOf∈MESSAGE ⇸ PEER"/>
+        <org.eventb.core.prPred name="p36" org.eventb.core.predicate="run∈past  past"/>
+        <org.eventb.core.prPred name="p38" org.eventb.core.predicate="∀m⦂MESSAGE,m2⦂MESSAGE·m∈hg∧m2∉hgOf(m)⇒m2∉hcOf(m)"/>
+        <org.eventb.core.prPred name="p39" org.eventb.core.predicate="partition(COM,{Send},{Receive})"/>
+        <org.eventb.core.prPred name="p84" org.eventb.core.predicate="m2∈net⇒m2∈dom(destOf)∧(destOf(m2)=p⇒m∈dom(hcOf)∧hcOf∈MESSAGE ⇸ ℙ(MESSAGE))">
+            <org.eventb.core.prIdent name="m2" org.eventb.core.type="MESSAGE"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p100" org.eventb.core.predicate="destOf(m2)=destOf(m)">
+            <org.eventb.core.prIdent name="m2" org.eventb.core.type="MESSAGE"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p71" org.eventb.core.predicate="∀m2⦂MESSAGE·m2∈net⇒m2∈dom(destOf)∧(destOf(m2)=p⇒m∈dom(hcOf)∧hcOf∈MESSAGE ⇸ ℙ(MESSAGE))"/>
+        <org.eventb.core.prPred name="p92" org.eventb.core.predicate="∃e⦂EVENT·e∈past∧comOf(e)=Send∧(∀e2⦂EVENT·¬e2∈past∨¬comOf(e2)=Receive∨¬mesOf(e2)=mesOf(e))∧mesOf(e)=m"/>
+        <org.eventb.core.prPred name="p42" org.eventb.core.predicate="hgOf∈hg → ℙ(hg)"/>
+        <org.eventb.core.prPred name="p43" org.eventb.core.predicate="∀e⦂EVENT·e∈past∧comOf(e)=Receive⇒(∃es⦂EVENT·es∈past∧comOf(es)=Send∧mesOf(e)=mesOf(es)∧es ↦ e∈prec)"/>
+        <org.eventb.core.prPred name="p73" org.eventb.core.predicate="∀e⦂EVENT·e∈past∧comOf(e)=Send∧(∀e2⦂EVENT·¬(e2∈past∧comOf(e2)=Receive∧mesOf(e2)=mesOf(e)))⇒mesOf(e)∈net"/>
+        <org.eventb.core.prPred name="p91" org.eventb.core.predicate="m2∈{e⦂EVENT·e∈past∧comOf(e)=Send∧(∀e2⦂EVENT·¬e2∈past∨¬comOf(e2)=Receive∨¬mesOf(e2)=mesOf(e)) ∣ mesOf(e)}">
+            <org.eventb.core.prIdent name="m2" org.eventb.core.type="MESSAGE"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p82" org.eventb.core.predicate="m∈MESSAGE"/>
+        <org.eventb.core.prPred name="p45" org.eventb.core.predicate="m∈net"/>
+        <org.eventb.core.prPred name="p47" org.eventb.core.predicate="∀e⦂EVENT·e∈past∧comOf(e)=Receive⇒destOf(mesOf(e))=peerOf(e)"/>
+        <org.eventb.core.prPred name="p48" org.eventb.core.predicate="past ◁ (id ⦂ ℙ(EVENT×EVENT))⊆prec"/>
+        <org.eventb.core.prPred name="p49" org.eventb.core.predicate="links∈past ↔ past"/>
+        <org.eventb.core.prPred name="p53" org.eventb.core.predicate="hg=ran(mesOf)"/>
+        <org.eventb.core.prPred name="p54" org.eventb.core.predicate="hc∈PEER → ℙ(hg)"/>
+        <org.eventb.core.prPred name="p65" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT,m1⦂MESSAGE,m2⦂MESSAGE·m1∈hg∧m2∈hg∧¬m1=m2∧e1 ↦ e2∈prec∧comOf(e2)=Send∧mesOf(e1)=m1∧mesOf(e2)=m2⇒m1∈hcOf(m2)"/>
+        <org.eventb.core.prPred name="p55" org.eventb.core.predicate="net⊆hg"/>
+        <org.eventb.core.prPred name="p87" org.eventb.core.predicate="m2∈dom(destOf)">
+            <org.eventb.core.prIdent name="m2" org.eventb.core.type="MESSAGE"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p77" org.eventb.core.predicate="∀e⦂EVENT·e∈past∧comOf(e)=Send∧(∀e2⦂EVENT·¬e2∈past∨¬comOf(e2)=Receive∨¬mesOf(e2)=mesOf(e))⇒mesOf(e)∈net"/>
+        <org.eventb.core.prPred name="p101" org.eventb.core.predicate="hcOf∈MESSAGE ⇸ ℙ(MESSAGE)"/>
+        <org.eventb.core.prPred name="p93" org.eventb.core.predicate="∀m⦂MESSAGE·m∈hg∧(∀e2⦂EVENT·¬e2∈past∨¬comOf(e2)=Receive∨¬mesOf(e2)=m)⇒(∃e⦂EVENT·e∈past∧comOf(e)=Send∧(∀e2⦂EVENT·¬e2∈past∨¬comOf(e2)=Receive∨¬mesOf(e2)=mesOf(e))∧mesOf(e)=m)"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="∀m⦂MESSAGE·m∈hg⇒origOf(m)∈{e⦂EVENT·e∈past∧comOf(e)=Send∧mesOf(e)=m ∣ peerOf(e)}"/>
+        <org.eventb.core.prPred name="p63" org.eventb.core.predicate="∀m⦂MESSAGE·m∈hg⇒(∃e⦂EVENT·e∈past∧comOf(e)=Send∧mesOf(e)=m∧peerOf(e)=origOf(m))"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="run;run⊆run"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="∀e⦂EVENT·e∈past∧comOf(e)=Send∧¬(∃e2⦂EVENT·e2∈past∧comOf(e2)=Receive∧mesOf(e2)=mesOf(e))⇒mesOf(e)∈net"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="prec∩prec∼⊆(id ⦂ ℙ(EVENT×EVENT))"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="net∈ℙ(hg)"/>
+        <org.eventb.core.prPred name="p79" org.eventb.core.predicate="∀e⦂EVENT·e∈past∧comOf(e)=Send∧(∀e2⦂EVENT·¬e2∈past∨¬comOf(e2)=Receive∨¬mesOf(e2)=mesOf(e))⇒e∈dom(mesOf)∧mesOf∈EVENT ⇸ MESSAGE"/>
+        <org.eventb.core.prPred name="p70" org.eventb.core.predicate="∀e⦂EVENT·e∈past∧comOf(e)=Send∧¬(∃e2⦂EVENT·e2∈past∧comOf(e2)=Receive∧mesOf(e2)=mesOf(e))⇒e∈dom(mesOf)∧mesOf∈EVENT ⇸ MESSAGE"/>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="∀m⦂MESSAGE·m∈hg⇒m∉hcOf(m)"/>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="net={e⦂EVENT·e∈past∧comOf(e)=Send∧¬(∃e2⦂EVENT·e2∈past∧comOf(e2)=Receive∧mesOf(e2)=mesOf(e)) ∣ mesOf(e)}"/>
+        <org.eventb.core.prPred name="p15" org.eventb.core.predicate="prec⊆run"/>
+        <org.eventb.core.prPred name="p16" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT,m1⦂MESSAGE,m2⦂MESSAGE·m1∈hg∧m2∈hg∧m1≠m2∧e1 ↦ e2∈prec∧comOf(e2)=Send∧mesOf(e1)=m1∧mesOf(e2)=m2⇒m1∈hcOf(m2)"/>
+        <org.eventb.core.prPred name="p17" org.eventb.core.predicate="past ◁ (id ⦂ ℙ(EVENT×EVENT))⊆run"/>
+        <org.eventb.core.prPred name="p18" org.eventb.core.predicate="hcOf∈hg → ℙ(hg)"/>
+        <org.eventb.core.prPred name="p20" org.eventb.core.predicate="peerOf∈past → PEER"/>
+        <org.eventb.core.prPred name="p22" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1∈past∧e2∈past⇒e1 ↦ e2∈run∨e2 ↦ e1∈run"/>
+        <org.eventb.core.prPred name="p23" org.eventb.core.predicate="comOf∈past → COM"/>
+        <org.eventb.core.prPred name="p26" org.eventb.core.predicate="∀m⦂MESSAGE·m∈hg⇒m∉hgOf(m)"/>
+        <org.eventb.core.prPred name="p27" org.eventb.core.predicate="prec;prec⊆prec"/>
+        <org.eventb.core.prPred name="p29" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT,m1⦂MESSAGE,m2⦂MESSAGE·m1∈hg∧m2∈hg∧m1≠m2∧e1 ↦ e2∈run∧comOf(e1)=Send∧comOf(e2)=Send∧mesOf(e1)=m1∧mesOf(e2)=m2⇒m1∈hgOf(m2)"/>
+        <org.eventb.core.prPred name="p76" org.eventb.core.predicate="∀m⦂MESSAGE·m∈hg∧(∀e2⦂EVENT·¬e2∈past∨¬comOf(e2)=Receive∨¬mesOf(e2)=m)⇒m∈net"/>
+        <org.eventb.core.prPred name="p61" org.eventb.core.predicate="∀es1⦂EVENT,es2⦂EVENT·es1 ↦ es2∈run∧¬es1=es2∧comOf(es2)=Send⇒mesOf(es1)∈hgOf(mesOf(es2))"/>
+        <org.eventb.core.prPred name="p31" org.eventb.core.predicate="eventmapper[{Send} × hg]∪eventmapper[{Receive} × (hg ∖ net)]=past"/>
+        <org.eventb.core.prPred name="p32" org.eventb.core.predicate="mesOf∈past → MESSAGE"/>
+        <org.eventb.core.prPred name="p58" org.eventb.core.predicate="∀m2⦂MESSAGE·m2∈net⇒m2∈dom(destOf)∧⊤∧(destOf(m2)=p⇒m∈dom(hcOf)∧hcOf∈MESSAGE ⇸ ℙ(MESSAGE))"/>
+        <org.eventb.core.prPred name="p99" org.eventb.core.predicate="m∈dom(hcOf)"/>
+        <org.eventb.core.prPred name="p35" org.eventb.core.predicate="∀e⦂EVENT·(e∈past⇒e∈dom(comOf)∧comOf∈EVENT ⇸ COM∧(comOf(e)=Send⇒(∀e2⦂EVENT·e2∈past⇒e2∈dom(comOf)∧(comOf(e2)=Receive⇒e2∈dom(mesOf)∧mesOf∈EVENT ⇸ MESSAGE∧e∈dom(mesOf)))))∧(e∈past∧comOf(e)=Send∧¬(∃e2⦂EVENT·e2∈past∧comOf(e2)=Receive∧mesOf(e2)=mesOf(e))⇒e∈dom(mesOf)∧mesOf∈EVENT ⇸ MESSAGE)"/>
+        <org.eventb.core.prPred name="p75" org.eventb.core.predicate="∀e⦂EVENT·e∈past∧comOf(e)=Send∧(∀e2⦂EVENT·¬(e2∈past∧comOf(e2)=Receive∧mesOf(e2)=mesOf(e)))⇒e∈dom(mesOf)∧mesOf∈EVENT ⇸ MESSAGE"/>
+        <org.eventb.core.prPred name="p37" org.eventb.core.predicate="∀m⦂MESSAGE·m∈hg∧¬(∃e2⦂EVENT·e2∈past∧comOf(e2)=Receive∧mesOf(e2)=m)⇒m∈net"/>
+        <org.eventb.core.prPred name="p88" org.eventb.core.predicate="m∈{e⦂EVENT·e∈past∧comOf(e)=Send∧(∀e2⦂EVENT·¬e2∈past∨¬comOf(e2)=Receive∨¬mesOf(e2)=mesOf(e)) ∣ mesOf(e)}"/>
+        <org.eventb.core.prPred name="p95" org.eventb.core.predicate="∃e⦂EVENT·e∈past∧comOf(e)=Send∧(∀e2⦂EVENT·¬e2∈past∨¬comOf(e2)=Receive∨¬mesOf(e2)=mesOf(e))∧mesOf(e)=m2">
+            <org.eventb.core.prIdent name="m2" org.eventb.core.type="MESSAGE"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p97" org.eventb.core.predicate="destOf(m2)=p">
+            <org.eventb.core.prIdent name="m2" org.eventb.core.type="MESSAGE"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p85" org.eventb.core.predicate="m2∈net">
+            <org.eventb.core.prIdent name="m2" org.eventb.core.type="MESSAGE"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p40" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1 ↦ e2∈prec∧peerOf(e1)≠peerOf(e2)⇒(∃es⦂EVENT,er⦂EVENT·e1 ↦ es∈prec∧es ↦ er∈prec∧er ↦ e2∈prec∧peerOf(e1)=peerOf(es)∧comOf(es)=Send∧comOf(er)=Receive∧mesOf(es)=mesOf(er))"/>
+        <org.eventb.core.prPred name="p41" org.eventb.core.predicate="prec∈past  past"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀m2⦂MESSAGE·m2∈net⇒m2∈dom(destOf)∧destOf∈MESSAGE ⇸ PEER∧(destOf(m2)=p⇒m∈dom(hcOf)∧hcOf∈MESSAGE ⇸ ℙ(MESSAGE))"/>
+        <org.eventb.core.prPred name="p44" org.eventb.core.predicate="run∩run∼⊆(id ⦂ ℙ(EVENT×EVENT))"/>
+        <org.eventb.core.prPred name="p64" org.eventb.core.predicate="∀es1⦂EVENT,es2⦂EVENT·es1 ↦ es2∈prec∧¬es1=es2∧comOf(es2)=Send⇒mesOf(es1)∈hcOf(mesOf(es2))"/>
+        <org.eventb.core.prPred name="p46" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1∈past∧e2∈past∧comOf(e1)=comOf(e2)∧mesOf(e1)=mesOf(e2)⇒e1=e2"/>
+        <org.eventb.core.prPred name="p94" org.eventb.core.predicate="∀e⦂EVENT·e∈past∧comOf(e)=Send∧(∀e2⦂EVENT·¬e2∈past∨¬comOf(e2)=Receive∨¬mesOf(e2)=mesOf(e))⇒(∃e0⦂EVENT·e0∈past∧comOf(e0)=Send∧(∀e2⦂EVENT·¬e2∈past∨¬comOf(e2)=Receive∨¬mesOf(e2)=mesOf(e0))∧mesOf(e0)=mesOf(e))"/>
+        <org.eventb.core.prPred name="p56" org.eventb.core.predicate="COM={Send,Receive}"/>
+        <org.eventb.core.prPred name="p50" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1∈past∧e2∈past∧peerOf(e1)=peerOf(e2)⇒(e1 ↦ e2∈prec⇔e1 ↦ e2∈run)"/>
+        <org.eventb.core.prPred name="p83" org.eventb.core.predicate="p∈PEER"/>
+        <org.eventb.core.prPred name="p51" org.eventb.core.predicate="destOf∈hg → PEER"/>
+        <org.eventb.core.prPred name="p81" org.eventb.core.predicate="hg∈ℙ(MESSAGE)"/>
+        <org.eventb.core.prPred name="p60" org.eventb.core.predicate="∀e⦂EVENT·e∈past∧comOf(e)=Receive⇒¬mesOf(e)∈net"/>
+        <org.eventb.core.prPred name="p52" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1 ↦ e2∈prec⇒mesOf(e1)∈hc(peerOf(e2))"/>
+        <org.eventb.core.prPred name="p78" org.eventb.core.predicate="net={e⦂EVENT·e∈past∧comOf(e)=Send∧(∀e2⦂EVENT·¬e2∈past∨¬comOf(e2)=Receive∨¬mesOf(e2)=mesOf(e)) ∣ mesOf(e)}"/>
+        <org.eventb.core.prPred name="p66" org.eventb.core.predicate="∀m⦂MESSAGE·m∈hg⇒¬m∈hgOf(m)"/>
+        <org.eventb.core.prPred name="p69" org.eventb.core.predicate="∀e⦂EVENT·e∈past⇒e∈dom(comOf)∧comOf∈EVENT ⇸ COM∧(comOf(e)=Send⇒(∀e2⦂EVENT·e2∈past⇒e2∈dom(comOf)∧(comOf(e2)=Receive⇒e2∈dom(mesOf)∧mesOf∈EVENT ⇸ MESSAGE∧e∈dom(mesOf))))"/>
+        <org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r11" org.eventb.core.prRID="org.eventb.core.seqprover.isFunGoal"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.rn"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
+        <org.eventb.core.prReas name="r10" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+        <org.eventb.core.prReas name="r9" org.eventb.core.prRID="org.eventb.core.seqprover.eqL2:1"/>
+        <org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+        <org.eventb.core.prReas name="r8" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="receive/ordering/GRD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="m2" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8" org.eventb.core.prSets="COM,EVENT,MESSAGE,PEER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(COM,{Send},{Receive}))" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p6" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p9,p10"/>
+                <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p9,p10"/>
+                <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p11" org.eventb.core.prHyps="p13" org.eventb.core.prInfHyps="p12"/>
+                        <org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p14" org.eventb.core.prHyps="p13" org.eventb.core.prInfHyps="p15"/>
+                        <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'">
+                                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p16" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p17"/>
+                                <org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p18" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p19"/>
+                                <org.eventb.core.prHypAction name="REWRITE2" org.eventb.core.prHidden="p20" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p21"/>
+                                <org.eventb.core.prHypAction name="REWRITE3" org.eventb.core.prHidden="p22" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p23"/>
+                                <org.eventb.core.prHypAction name="REWRITE4" org.eventb.core.prHidden="p24" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p25"/>
+                                <org.eventb.core.prHypAction name="REWRITE5" org.eventb.core.prHidden="p26" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p27"/>
+                                <org.eventb.core.prHypAction name="REWRITE6" org.eventb.core.prHidden="p28" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p29"/>
+                                <org.eventb.core.prHypAction name="REWRITE7" org.eventb.core.prHidden="p30" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p31"/>
+                                <org.eventb.core.prHypAction name="REWRITE8" org.eventb.core.prHidden="p32" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p33"/>
+                                <org.eventb.core.prHypAction name="REWRITE9" org.eventb.core.prHidden="p34" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p35"/>
+                                <org.eventb.core.prHypAction name="REWRITE10" org.eventb.core.prHidden="p3" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p36,p37"/>
+                                <org.eventb.core.prHypAction name="REWRITE11" org.eventb.core.prHidden="p12" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p38"/>
+                                <org.eventb.core.prHypAction name="REWRITE12" org.eventb.core.prHidden="p15" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p39"/>
+                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ¬ in ¬(∃e2·e2∈past∧comOf(e2)=Receive∧mesOf(e2)=[[1]])" org.eventb.core.prHyps="">
+                                    <org.eventb.core.prAnte name="'">
+                                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p5" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p40"/>
+                                        <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p40"/>
+                                        <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ¬ in ¬(∃e2·e2∈past∧comOf(e2)=Receive∧mesOf(e2)=mesOf([[1]]))" org.eventb.core.prHyps="">
+                                            <org.eventb.core.prAnte name="'">
+                                                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p4" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p41"/>
+                                                <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p41"/>
+                                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ¬ in ¬(∃e2·e2∈past∧comOf(e2)=Receive∧mesOf(e2)=mesOf([[1]]))" org.eventb.core.prHyps="">
+                                                    <org.eventb.core.prAnte name="'">
+                                                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p1" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p42"/>
+                                                        <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p42"/>
+                                                        <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ¬ in ¬(∃m2·m2∈net∧destOf(m2)=p∧m2∈hcOf(m))" org.eventb.core.prHyps="">
+                                                            <org.eventb.core.prAnte name="'">
+                                                                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p2" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p43"/>
+                                                                <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p43"/>
+                                                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ¬ in ¬(∃e2·e2∈past∧comOf(e2)=Receive∧mesOf(e2)=mesOf([[1]]))" org.eventb.core.prHyps="">
+                                                                    <org.eventb.core.prAnte name="'">
+                                                                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p37" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p44"/>
+                                                                        <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p44"/>
+                                                                        <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ¬ in ¬([[0]]∈past∧comOf([[0]])=Receive∧mesOf([[0]])=[[1]])" org.eventb.core.prHyps="">
+                                                                            <org.eventb.core.prAnte name="'">
+                                                                                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p40" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p45"/>
+                                                                                <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p45"/>
+                                                                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ¬ in ¬([[0]]∈past∧comOf([[0]])=Receive∧mesOf([[0]])=mesOf([[1]]))" org.eventb.core.prHyps="">
+                                                                                    <org.eventb.core.prAnte name="'">
+                                                                                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p41" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p46"/>
+                                                                                        <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p46"/>
+                                                                                        <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ¬ in ¬([[0]]∈past∧comOf([[0]])=Receive∧mesOf([[0]])=mesOf([[1]]))" org.eventb.core.prHyps="">
+                                                                                            <org.eventb.core.prAnte name="'">
+                                                                                                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p42" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p47"/>
+                                                                                                <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p47"/>
+                                                                                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ¬ in ¬([[0]]∈net∧destOf([[0]])=p∧[[0]]∈hcOf(m))" org.eventb.core.prHyps="">
+                                                                                                    <org.eventb.core.prAnte name="'">
+                                                                                                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p43" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p48"/>
+                                                                                                        <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p48"/>
+                                                                                                        <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ¬ in ¬([[0]]∈past∧comOf([[0]])=Receive∧mesOf([[0]])=mesOf([[1]]))" org.eventb.core.prHyps="">
+                                                                                                            <org.eventb.core.prAnte name="'">
+                                                                                                                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p44" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p49"/>
+                                                                                                                <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p49"/>
+                                                                                                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ¬ in goal" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+                                                                                                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p50">
+                                                                                                                        <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ¬ in goal" org.eventb.core.prGoal="p50" org.eventb.core.prHyps="">
+                                                                                                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p51">
+                                                                                                                                <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                                                                                                                                    <org.eventb.core.prAnte name="'">
+                                                                                                                                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p52"/>
+                                                                                                                                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p53"/>
+                                                                                                                                        <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p54"/>
+                                                                                                                                        <org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p55"/>
+                                                                                                                                        <org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∀ goal (frees m2)" org.eventb.core.prGoal="p51" org.eventb.core.prHyps="">
+                                                                                                                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p56">
+                                                                                                                                                <org.eventb.core.prIdent name="m2" org.eventb.core.type="MESSAGE"/>
+                                                                                                                                                <org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="he with destOf(m)=p" org.eventb.core.prGoal="p56" org.eventb.core.prHyps="p7">
+                                                                                                                                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p58">
+                                                                                                                                                        <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p48" org.eventb.core.prInfHyps="p57"/>
+                                                                                                                                                        <org.eventb.core.prHypAction name="DESELECT1" org.eventb.core.prHyps="p48"/>
+                                                                                                                                                        <org.eventb.core.prHypAction name="DESELECT2" org.eventb.core.prHyps="p7"/>
+                                                                                                                                                        <org.eventb.core.prRule name="r7" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with net={e·e∈past∧comOf(e)=Send∧(∀e2·¬e2∈past∨¬comOf(e2)=Receive∨¬mesOf(e2)=mesOf(e)) ∣ mesOf(e)}" org.eventb.core.prGoal="p58" org.eventb.core.prHyps="p47">
+                                                                                                                                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p63">
+                                                                                                                                                                <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p8" org.eventb.core.prInfHyps="p59"/>
+                                                                                                                                                                <org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p45" org.eventb.core.prInfHyps="p60"/>
+                                                                                                                                                                <org.eventb.core.prHypAction name="FORWARD_INF2" org.eventb.core.prHyps="p46" org.eventb.core.prInfHyps="p61"/>
+                                                                                                                                                                <org.eventb.core.prHypAction name="FORWARD_INF3" org.eventb.core.prHyps="p57" org.eventb.core.prInfHyps="p62"/>
+                                                                                                                                                                <org.eventb.core.prHypAction name="DESELECT4" org.eventb.core.prHyps="p46,p57,p45,p8"/>
+                                                                                                                                                                <org.eventb.core.prHypAction name="DESELECT5" org.eventb.core.prHyps="p47"/>
+                                                                                                                                                                <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p63" org.eventb.core.prHyps="">
+                                                                                                                                                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p68">
+                                                                                                                                                                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p59" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p64"/>
+                                                                                                                                                                        <org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p60" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p65"/>
+                                                                                                                                                                        <org.eventb.core.prHypAction name="REWRITE2" org.eventb.core.prHidden="p61" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p66"/>
+                                                                                                                                                                        <org.eventb.core.prHypAction name="REWRITE3" org.eventb.core.prHidden="p62" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p67"/>
+                                                                                                                                                                        <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ¬ in ¬(∃e·e∈past∧comOf(e)=Send∧(∀e2·¬e2∈past∨¬comOf(e2)=Receive∨¬mesOf(e2)=mesOf(e))∧mesOf(e)=[[1]])" org.eventb.core.prHyps="">
+                                                                                                                                                                            <org.eventb.core.prAnte name="'">
+                                                                                                                                                                                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p67" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p69"/>
+                                                                                                                                                                                <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p69"/>
+                                                                                                                                                                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ¬ in ¬([[0]]∈past∧comOf([[0]])=Send∧(∀e2·¬e2∈past∨¬comOf(e2)=Receive∨¬mesOf(e2)=mesOf([[1]]))∧mesOf([[0]])=[[1]])" org.eventb.core.prHyps="">
+                                                                                                                                                                                    <org.eventb.core.prAnte name="'">
+                                                                                                                                                                                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p69" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p70"/>
+                                                                                                                                                                                        <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p70"/>
+                                                                                                                                                                                        <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ¬ in ¬(∀e2·¬e2∈past∨¬comOf(e2)=Receive∨¬mesOf(e2)=mesOf([[1]]))" org.eventb.core.prHyps="">
+                                                                                                                                                                                            <org.eventb.core.prAnte name="'">
+                                                                                                                                                                                                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p70" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p71"/>
+                                                                                                                                                                                                <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p71"/>
+                                                                                                                                                                                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ¬ in ¬(¬[[0]]∈past∨¬comOf([[0]])=Receive∨¬mesOf([[0]])=mesOf([[1]]))" org.eventb.core.prHyps="">
+                                                                                                                                                                                                    <org.eventb.core.prAnte name="'">
+                                                                                                                                                                                                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p71" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p72"/>
+                                                                                                                                                                                                        <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p72"/>
+                                                                                                                                                                                                        <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ¬ in ¬¬[[0]]∈past" org.eventb.core.prHyps="">
+                                                                                                                                                                                                            <org.eventb.core.prAnte name="'">
+                                                                                                                                                                                                                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p72" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p73"/>
+                                                                                                                                                                                                                <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p73"/>
+                                                                                                                                                                                                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ¬ in ¬¬comOf([[0]])=Receive" org.eventb.core.prHyps="">
+                                                                                                                                                                                                                    <org.eventb.core.prAnte name="'">
+                                                                                                                                                                                                                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p73" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p74"/>
+                                                                                                                                                                                                                        <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p74"/>
+                                                                                                                                                                                                                        <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ¬ in ¬¬mesOf([[0]])=mesOf([[1]])" org.eventb.core.prHyps="">
+                                                                                                                                                                                                                            <org.eventb.core.prAnte name="'">
+                                                                                                                                                                                                                                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p74" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p75"/>
+                                                                                                                                                                                                                                <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p75"/>
+                                                                                                                                                                                                                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ¬ in goal" org.eventb.core.prGoal="p68" org.eventb.core.prHyps="">
+                                                                                                                                                                                                                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p76">
+                                                                                                                                                                                                                                        <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ¬ in goal" org.eventb.core.prGoal="p76" org.eventb.core.prHyps="">
+                                                                                                                                                                                                                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p77">
+                                                                                                                                                                                                                                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ¬ in goal" org.eventb.core.prGoal="p77" org.eventb.core.prHyps="">
+                                                                                                                                                                                                                                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p78">
+                                                                                                                                                                                                                                                        <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ¬ in goal" org.eventb.core.prGoal="p78" org.eventb.core.prHyps="">
+                                                                                                                                                                                                                                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p79">
+                                                                                                                                                                                                                                                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ¬ in goal" org.eventb.core.prGoal="p79" org.eventb.core.prHyps="">
+                                                                                                                                                                                                                                                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p80">
+                                                                                                                                                                                                                                                                        <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ¬ in goal" org.eventb.core.prGoal="p80" org.eventb.core.prHyps="">
+                                                                                                                                                                                                                                                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p81">
+                                                                                                                                                                                                                                                                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="remove ¬ in goal" org.eventb.core.prGoal="p81" org.eventb.core.prHyps="">
+                                                                                                                                                                                                                                                                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p82">
+                                                                                                                                                                                                                                                                                        <org.eventb.core.prRule name="r8" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="PP" org.eventb.core.prGoal="p82" org.eventb.core.prHyps="p64,p10,p66,p9,p65,p49,p75">
+                                                                                                                                                                                                                                                                                            <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R500"/>
+                                                                                                                                                                                                                                                                                        </org.eventb.core.prRule>
+                                                                                                                                                                                                                                                                                    </org.eventb.core.prAnte>
+                                                                                                                                                                                                                                                                                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="0.1.2.1.2"/>
+                                                                                                                                                                                                                                                                                </org.eventb.core.prRule>
+                                                                                                                                                                                                                                                                            </org.eventb.core.prAnte>
+                                                                                                                                                                                                                                                                            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="0.1.2.1.1"/>
+                                                                                                                                                                                                                                                                        </org.eventb.core.prRule>
+                                                                                                                                                                                                                                                                    </org.eventb.core.prAnte>
+                                                                                                                                                                                                                                                                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="0.1.2.1.0"/>
+                                                                                                                                                                                                                                                                </org.eventb.core.prRule>
+                                                                                                                                                                                                                                                            </org.eventb.core.prAnte>
+                                                                                                                                                                                                                                                            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="0.1.2.1"/>
+                                                                                                                                                                                                                                                        </org.eventb.core.prRule>
+                                                                                                                                                                                                                                                    </org.eventb.core.prAnte>
+                                                                                                                                                                                                                                                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="0.1.2"/>
+                                                                                                                                                                                                                                                </org.eventb.core.prRule>
+                                                                                                                                                                                                                                            </org.eventb.core.prAnte>
+                                                                                                                                                                                                                                            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="0.1"/>
+                                                                                                                                                                                                                                        </org.eventb.core.prRule>
+                                                                                                                                                                                                                                    </org.eventb.core.prAnte>
+                                                                                                                                                                                                                                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="0"/>
+                                                                                                                                                                                                                                </org.eventb.core.prRule>
+                                                                                                                                                                                                                            </org.eventb.core.prAnte>
+                                                                                                                                                                                                                            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1.0.1.2.1.2"/>
+                                                                                                                                                                                                                        </org.eventb.core.prRule>
+                                                                                                                                                                                                                    </org.eventb.core.prAnte>
+                                                                                                                                                                                                                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1.0.1.2.1.1"/>
+                                                                                                                                                                                                                </org.eventb.core.prRule>
+                                                                                                                                                                                                            </org.eventb.core.prAnte>
+                                                                                                                                                                                                            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1.0.1.2.1.0"/>
+                                                                                                                                                                                                        </org.eventb.core.prRule>
+                                                                                                                                                                                                    </org.eventb.core.prAnte>
+                                                                                                                                                                                                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1.0.1.2.1"/>
+                                                                                                                                                                                                </org.eventb.core.prRule>
+                                                                                                                                                                                            </org.eventb.core.prAnte>
+                                                                                                                                                                                            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1.0.1.2"/>
+                                                                                                                                                                                        </org.eventb.core.prRule>
+                                                                                                                                                                                    </org.eventb.core.prAnte>
+                                                                                                                                                                                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1.0.1"/>
+                                                                                                                                                                                </org.eventb.core.prRule>
+                                                                                                                                                                            </org.eventb.core.prAnte>
+                                                                                                                                                                            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1.0"/>
+                                                                                                                                                                        </org.eventb.core.prRule>
+                                                                                                                                                                    </org.eventb.core.prAnte>
+                                                                                                                                                                </org.eventb.core.prRule>
+                                                                                                                                                            </org.eventb.core.prAnte>
+                                                                                                                                                        </org.eventb.core.prRule>
+                                                                                                                                                    </org.eventb.core.prAnte>
+                                                                                                                                                </org.eventb.core.prRule>
+                                                                                                                                            </org.eventb.core.prAnte>
+                                                                                                                                        </org.eventb.core.prRule>
+                                                                                                                                    </org.eventb.core.prAnte>
+                                                                                                                                </org.eventb.core.prRule>
+                                                                                                                            </org.eventb.core.prAnte>
+                                                                                                                            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+                                                                                                                        </org.eventb.core.prRule>
+                                                                                                                    </org.eventb.core.prAnte>
+                                                                                                                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+                                                                                                                </org.eventb.core.prRule>
+                                                                                                            </org.eventb.core.prAnte>
+                                                                                                            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1.0.2.1"/>
+                                                                                                        </org.eventb.core.prRule>
+                                                                                                    </org.eventb.core.prAnte>
+                                                                                                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+                                                                                                </org.eventb.core.prRule>
+                                                                                            </org.eventb.core.prAnte>
+                                                                                            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1.1.2.1"/>
+                                                                                        </org.eventb.core.prRule>
+                                                                                    </org.eventb.core.prAnte>
+                                                                                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1.0.2.1"/>
+                                                                                </org.eventb.core.prRule>
+                                                                            </org.eventb.core.prAnte>
+                                                                            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1.0.1.1"/>
+                                                                        </org.eventb.core.prRule>
+                                                                    </org.eventb.core.prAnte>
+                                                                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1.0.2"/>
+                                                                </org.eventb.core.prRule>
+                                                            </org.eventb.core.prAnte>
+                                                            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+                                                        </org.eventb.core.prRule>
+                                                    </org.eventb.core.prAnte>
+                                                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1.1.2"/>
+                                                </org.eventb.core.prRule>
+                                            </org.eventb.core.prAnte>
+                                            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1.0.2"/>
+                                        </org.eventb.core.prRule>
+                                    </org.eventb.core.prAnte>
+                                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1.0.1"/>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="Receive" org.eventb.core.type="COM"/>
+        <org.eventb.core.prIdent name="Send" org.eventb.core.type="COM"/>
+        <org.eventb.core.prIdent name="comOf" org.eventb.core.type="ℙ(EVENT×COM)"/>
+        <org.eventb.core.prIdent name="destOf" org.eventb.core.type="ℙ(MESSAGE×PEER)"/>
+        <org.eventb.core.prIdent name="hcOf" org.eventb.core.type="ℙ(MESSAGE×ℙ(MESSAGE))"/>
+        <org.eventb.core.prIdent name="hg" org.eventb.core.type="ℙ(MESSAGE)"/>
+        <org.eventb.core.prIdent name="m" org.eventb.core.type="MESSAGE"/>
+        <org.eventb.core.prIdent name="mesOf" org.eventb.core.type="ℙ(EVENT×MESSAGE)"/>
+        <org.eventb.core.prIdent name="net" org.eventb.core.type="ℙ(MESSAGE)"/>
+        <org.eventb.core.prIdent name="origOf" org.eventb.core.type="ℙ(MESSAGE×PEER)"/>
+        <org.eventb.core.prIdent name="p" org.eventb.core.type="PEER"/>
+        <org.eventb.core.prIdent name="past" org.eventb.core.type="ℙ(EVENT)"/>
+        <org.eventb.core.prPred name="p46" org.eventb.core.predicate="∀e⦂EVENT·e∈past∧comOf(e)=Send∧(∀e2⦂EVENT·¬e2∈past∨¬comOf(e2)=Receive∨¬mesOf(e2)=mesOf(e))⇒mesOf(e)∈net"/>
+        <org.eventb.core.prPred name="p18" org.eventb.core.predicate="∀e⦂EVENT·e∈past∧comOf(e)=Receive⇒mesOf(e)∉net"/>
+        <org.eventb.core.prPred name="p74" org.eventb.core.predicate="∀m2⦂MESSAGE·(∀e⦂EVENT·¬e∈past∨¬comOf(e)=Send∨(∃e2⦂EVENT·e2∈past∧comOf(e2)=Receive∧¬¬mesOf(e2)=mesOf(e))∨¬mesOf(e)=m2)∨¬destOf(m2)=destOf(m)∨¬m2∈hcOf(m)"/>
+        <org.eventb.core.prPred name="p70" org.eventb.core.predicate="∀m2⦂MESSAGE·(∀e⦂EVENT·¬e∈past∨¬comOf(e)=Send∨¬(∀e2⦂EVENT·¬e2∈past∨¬comOf(e2)=Receive∨¬mesOf(e2)=mesOf(e))∨¬mesOf(e)=m2)∨¬destOf(m2)=destOf(m)∨¬m2∈hcOf(m)"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="¬Send=Receive"/>
+        <org.eventb.core.prPred name="p72" org.eventb.core.predicate="∀m2⦂MESSAGE·(∀e⦂EVENT·¬e∈past∨¬comOf(e)=Send∨(∃e2⦂EVENT·¬¬e2∈past∧¬¬comOf(e2)=Receive∧¬¬mesOf(e2)=mesOf(e))∨¬mesOf(e)=m2)∨¬destOf(m2)=destOf(m)∨¬m2∈hcOf(m)"/>
+        <org.eventb.core.prPred name="p35" org.eventb.core.predicate="∀m⦂MESSAGE,m2⦂MESSAGE·m∈hg∧¬m2∈hgOf(m)⇒¬m2∈hcOf(m)">
+            <org.eventb.core.prIdent name="hgOf" org.eventb.core.type="ℙ(MESSAGE×ℙ(MESSAGE))"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p65" org.eventb.core.predicate="∀m⦂MESSAGE·m∈hg∧(∀e2⦂EVENT·¬e2∈past∨¬comOf(e2)=Receive∨¬mesOf(e2)=m)⇒(∃e⦂EVENT·e∈past∧comOf(e)=Send∧(∀e2⦂EVENT·¬e2∈past∨¬comOf(e2)=Receive∨¬mesOf(e2)=mesOf(e))∧mesOf(e)=m)"/>
+        <org.eventb.core.prPred name="p24" org.eventb.core.predicate="∀m⦂MESSAGE·m∈hg⇒origOf(m)∈{e⦂EVENT·e∈past∧comOf(e)=Send∧mesOf(e)=m ∣ peerOf(e)}">
+            <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p69" org.eventb.core.predicate="∀m2⦂MESSAGE·(∀e⦂EVENT·¬(e∈past∧comOf(e)=Send∧(∀e2⦂EVENT·¬e2∈past∨¬comOf(e2)=Receive∨¬mesOf(e2)=mesOf(e))∧mesOf(e)=m2))∨¬destOf(m2)=destOf(m)∨¬m2∈hcOf(m)"/>
+        <org.eventb.core.prPred name="p61" org.eventb.core.predicate="∀e⦂EVENT·e∈past∧comOf(e)=Send∧(∀e2⦂EVENT·¬e2∈past∨¬comOf(e2)=Receive∨¬mesOf(e2)=mesOf(e))⇒mesOf(e)∈{e⦂EVENT·e∈past∧comOf(e)=Send∧(∀e2⦂EVENT·¬e2∈past∨¬comOf(e2)=Receive∨¬mesOf(e2)=mesOf(e)) ∣ mesOf(e)}"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="¬(∃m2⦂MESSAGE·m2∈net∧origOf(m)=origOf(m2)∧destOf(m2)=p∧m2∈hcOf(m))"/>
+        <org.eventb.core.prPred name="p50" org.eventb.core.predicate="∀m2⦂MESSAGE·¬(m2∈net∧origOf(m)=origOf(m2)∧destOf(m2)=p∧m2∈hcOf(m))"/>
+        <org.eventb.core.prPred name="p25" org.eventb.core.predicate="∀m⦂MESSAGE·m∈hg⇒(∃e⦂EVENT·e∈past∧comOf(e)=Send∧mesOf(e)=m∧peerOf(e)=origOf(m))">
+            <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="∀e⦂EVENT·e∈past∧comOf(e)=Send∧¬(∃e2⦂EVENT·e2∈past∧comOf(e2)=Receive∧mesOf(e2)=mesOf(e))⇒mesOf(e)∈net"/>
+        <org.eventb.core.prPred name="p42" org.eventb.core.predicate="net={e⦂EVENT·e∈past∧comOf(e)=Send∧(∀e2⦂EVENT·¬(e2∈past∧comOf(e2)=Receive∧mesOf(e2)=mesOf(e))) ∣ mesOf(e)}"/>
+        <org.eventb.core.prPred name="p76" org.eventb.core.predicate="(∀e⦂EVENT·¬(e∈past∧comOf(e)=Send∧(∀e2⦂EVENT·¬e2∈past∨¬comOf(e2)=Receive∨¬mesOf(e2)=mesOf(e))∧mesOf(e)=m2))∨¬origOf(m)=origOf(m2)∨¬destOf(m2)=destOf(m)∨¬m2∈hcOf(m)">
+            <org.eventb.core.prIdent name="m2" org.eventb.core.type="MESSAGE"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p49" org.eventb.core.predicate="∀e⦂EVENT·e∈past∧comOf(e)=Send∧(∀e2⦂EVENT·¬e2∈past∨¬comOf(e2)=Receive∨¬mesOf(e2)=mesOf(e))⇒e∈dom(mesOf)∧mesOf∈EVENT ⇸ MESSAGE"/>
+        <org.eventb.core.prPred name="p37" org.eventb.core.predicate="∀e⦂EVENT·e∈past∧comOf(e)=Send∧¬(∃e2⦂EVENT·e2∈past∧comOf(e2)=Receive∧mesOf(e2)=mesOf(e))⇒e∈dom(mesOf)∧mesOf∈EVENT ⇸ MESSAGE"/>
+        <org.eventb.core.prPred name="p32" org.eventb.core.predicate="∀m⦂MESSAGE·m∈hg⇒m∉hcOf(m)"/>
+        <org.eventb.core.prPred name="p77" org.eventb.core.predicate="(∀e⦂EVENT·¬e∈past∨¬comOf(e)=Send∨¬(∀e2⦂EVENT·¬e2∈past∨¬comOf(e2)=Receive∨¬mesOf(e2)=mesOf(e))∨¬mesOf(e)=m2)∨¬origOf(m)=origOf(m2)∨¬destOf(m2)=destOf(m)∨¬m2∈hcOf(m)">
+            <org.eventb.core.prIdent name="m2" org.eventb.core.type="MESSAGE"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="net={e⦂EVENT·e∈past∧comOf(e)=Send∧¬(∃e2⦂EVENT·e2∈past∧comOf(e2)=Receive∧mesOf(e2)=mesOf(e)) ∣ mesOf(e)}"/>
+        <org.eventb.core.prPred name="p23" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT,m1⦂MESSAGE,m2⦂MESSAGE·m1∈hg∧m2∈hg∧¬m1=m2∧e1 ↦ e2∈run∧comOf(e1)=Send∧comOf(e2)=Send∧mesOf(e1)=m1∧mesOf(e2)=m2⇒m1∈hgOf(m2)">
+            <org.eventb.core.prIdent name="hgOf" org.eventb.core.type="ℙ(MESSAGE×ℙ(MESSAGE))"/>
+            <org.eventb.core.prIdent name="run" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p28" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT,m1⦂MESSAGE,m2⦂MESSAGE·m1∈hg∧m2∈hg∧m1≠m2∧e1 ↦ e2∈prec∧comOf(e2)=Send∧mesOf(e1)=m1∧mesOf(e2)=m2⇒m1∈hcOf(m2)">
+            <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p39" org.eventb.core.predicate="∀m2⦂MESSAGE·m2∈net⇒m∈dom(origOf)∧origOf∈MESSAGE ⇸ PEER∧m2∈dom(origOf)∧(origOf(m)=origOf(m2)⇒m2∈dom(destOf)∧(destOf(m2)=p⇒m∈dom(hcOf)∧hcOf∈MESSAGE ⇸ ℙ(MESSAGE)))"/>
+        <org.eventb.core.prPred name="p57" org.eventb.core.predicate="∀m2⦂MESSAGE·¬m2∈net∨¬destOf(m2)=destOf(m)∨¬m2∈hcOf(m)"/>
+        <org.eventb.core.prPred name="p58" org.eventb.core.predicate="¬m2∈net∨¬origOf(m)=origOf(m2)∨¬destOf(m2)=destOf(m)∨¬m2∈hcOf(m)">
+            <org.eventb.core.prIdent name="m2" org.eventb.core.type="MESSAGE"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p63" org.eventb.core.predicate="¬m2∈{e⦂EVENT·e∈past∧comOf(e)=Send∧(∀e2⦂EVENT·¬e2∈past∨¬comOf(e2)=Receive∨¬mesOf(e2)=mesOf(e)) ∣ mesOf(e)}∨¬origOf(m)=origOf(m2)∨¬destOf(m2)=destOf(m)∨¬m2∈hcOf(m)">
+            <org.eventb.core.prIdent name="m2" org.eventb.core.type="MESSAGE"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p20" org.eventb.core.predicate="∀es1⦂EVENT,es2⦂EVENT·es1 ↦ es2∈run∧es1≠es2∧comOf(es2)=Send⇒mesOf(es1)∈hgOf(mesOf(es2))">
+            <org.eventb.core.prIdent name="hgOf" org.eventb.core.type="ℙ(MESSAGE×ℙ(MESSAGE))"/>
+            <org.eventb.core.prIdent name="run" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p82" org.eventb.core.predicate="(∀e⦂EVENT·¬e∈past∨¬comOf(e)=Send∨(∃e2⦂EVENT·e2∈past∧comOf(e2)=Receive∧mesOf(e2)=mesOf(e))∨¬mesOf(e)=m2)∨¬origOf(m)=origOf(m2)∨¬destOf(m2)=destOf(m)∨¬m2∈hcOf(m)">
+            <org.eventb.core.prIdent name="m2" org.eventb.core.type="MESSAGE"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p33" org.eventb.core.predicate="∀m⦂MESSAGE·m∈hg⇒¬m∈hcOf(m)"/>
+        <org.eventb.core.prPred name="p79" org.eventb.core.predicate="(∀e⦂EVENT·¬e∈past∨¬comOf(e)=Send∨(∃e2⦂EVENT·¬¬e2∈past∧¬¬comOf(e2)=Receive∧¬¬mesOf(e2)=mesOf(e))∨¬mesOf(e)=m2)∨¬origOf(m)=origOf(m2)∨¬destOf(m2)=destOf(m)∨¬m2∈hcOf(m)">
+            <org.eventb.core.prIdent name="m2" org.eventb.core.type="MESSAGE"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="destOf(m)=p"/>
+        <org.eventb.core.prPred name="p30" org.eventb.core.predicate="∀m⦂MESSAGE·m∈hg⇒m∉hgOf(m)">
+            <org.eventb.core.prIdent name="hgOf" org.eventb.core.type="ℙ(MESSAGE×ℙ(MESSAGE))"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p60" org.eventb.core.predicate="∀m⦂MESSAGE·m∈hg∧(∀e2⦂EVENT·¬e2∈past∨¬comOf(e2)=Receive∨¬mesOf(e2)=m)⇒m∈{e⦂EVENT·e∈past∧comOf(e)=Send∧(∀e2⦂EVENT·¬e2∈past∨¬comOf(e2)=Receive∨¬mesOf(e2)=mesOf(e)) ∣ mesOf(e)}"/>
+        <org.eventb.core.prPred name="p22" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT,m1⦂MESSAGE,m2⦂MESSAGE·m1∈hg∧m2∈hg∧m1≠m2∧e1 ↦ e2∈run∧comOf(e1)=Send∧comOf(e2)=Send∧mesOf(e1)=m1∧mesOf(e2)=m2⇒m1∈hgOf(m2)">
+            <org.eventb.core.prIdent name="hgOf" org.eventb.core.type="ℙ(MESSAGE×ℙ(MESSAGE))"/>
+            <org.eventb.core.prIdent name="run" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p45" org.eventb.core.predicate="∀m⦂MESSAGE·m∈hg∧(∀e2⦂EVENT·¬e2∈past∨¬comOf(e2)=Receive∨¬mesOf(e2)=m)⇒m∈net"/>
+        <org.eventb.core.prPred name="p21" org.eventb.core.predicate="∀es1⦂EVENT,es2⦂EVENT·es1 ↦ es2∈run∧¬es1=es2∧comOf(es2)=Send⇒mesOf(es1)∈hgOf(mesOf(es2))">
+            <org.eventb.core.prIdent name="hgOf" org.eventb.core.type="ℙ(MESSAGE×ℙ(MESSAGE))"/>
+            <org.eventb.core.prIdent name="run" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p17" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1 ↦ e2∈prec∧¬peerOf(e1)=peerOf(e2)⇒(∃es⦂EVENT,er⦂EVENT·e1 ↦ es∈prec∧es ↦ er∈prec∧er ↦ e2∈prec∧peerOf(e1)=peerOf(es)∧comOf(es)=Send∧comOf(er)=Receive∧mesOf(es)=mesOf(er))">
+            <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+            <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="∀m2⦂MESSAGE·m2∈net⇒m2∈dom(destOf)∧⊤∧(destOf(m2)=p⇒m∈dom(hcOf)∧hcOf∈MESSAGE ⇸ ℙ(MESSAGE))"/>
+        <org.eventb.core.prPred name="p48" org.eventb.core.predicate="∀m2⦂MESSAGE·¬m2∈net∨¬destOf(m2)=p∨¬m2∈hcOf(m)"/>
+        <org.eventb.core.prPred name="p15" org.eventb.core.predicate="∀m2⦂MESSAGE·m2∈net⇒m∈dom(origOf)∧origOf∈MESSAGE ⇸ PEER∧m2∈dom(origOf)∧(origOf(m)=origOf(m2)⇒m2∈dom(destOf)∧⊤∧(destOf(m2)=p⇒m∈dom(hcOf)∧hcOf∈MESSAGE ⇸ ℙ(MESSAGE)))"/>
+        <org.eventb.core.prPred name="p40" org.eventb.core.predicate="∀m⦂MESSAGE·m∈hg∧(∀e2⦂EVENT·¬(e2∈past∧comOf(e2)=Receive∧mesOf(e2)=m))⇒m∈net"/>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="∀m2⦂MESSAGE·m2∈net⇒m∈dom(origOf)∧origOf∈MESSAGE ⇸ PEER∧m2∈dom(origOf)∧(origOf(m)=origOf(m2)⇒m2∈dom(destOf)∧destOf∈MESSAGE ⇸ PEER∧(destOf(m2)=p⇒m∈dom(hcOf)∧hcOf∈MESSAGE ⇸ ℙ(MESSAGE)))"/>
+        <org.eventb.core.prPred name="p26" org.eventb.core.predicate="∀es1⦂EVENT,es2⦂EVENT·es1 ↦ es2∈prec∧es1≠es2∧comOf(es2)=Send⇒mesOf(es1)∈hcOf(mesOf(es2))">
+            <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p52" org.eventb.core.predicate="past∈ℙ(EVENT)"/>
+        <org.eventb.core.prPred name="p75" org.eventb.core.predicate="∀m2⦂MESSAGE·(∀e⦂EVENT·¬e∈past∨¬comOf(e)=Send∨(∃e2⦂EVENT·e2∈past∧comOf(e2)=Receive∧mesOf(e2)=mesOf(e))∨¬mesOf(e)=m2)∨¬destOf(m2)=destOf(m)∨¬m2∈hcOf(m)"/>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="destOf∈MESSAGE ⇸ PEER"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="∀e⦂EVENT·(e∈past⇒e∈dom(comOf)∧comOf∈EVENT ⇸ COM∧(comOf(e)=Send⇒(∀e2⦂EVENT·e2∈past⇒e2∈dom(comOf)∧(comOf(e2)=Receive⇒e2∈dom(mesOf)∧mesOf∈EVENT ⇸ MESSAGE∧e∈dom(mesOf)))))∧(e∈past∧comOf(e)=Send∧¬(∃e2⦂EVENT·e2∈past∧comOf(e2)=Receive∧mesOf(e2)=mesOf(e))⇒e∈dom(mesOf)∧mesOf∈EVENT ⇸ MESSAGE)"/>
+        <org.eventb.core.prPred name="p68" org.eventb.core.predicate="¬(∃e⦂EVENT·e∈past∧comOf(e)=Send∧(∀e2⦂EVENT·¬e2∈past∨¬comOf(e2)=Receive∨¬mesOf(e2)=mesOf(e))∧mesOf(e)=m2)∨¬origOf(m)=origOf(m2)∨¬destOf(m2)=destOf(m)∨¬m2∈hcOf(m)">
+            <org.eventb.core.prIdent name="m2" org.eventb.core.type="MESSAGE"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p44" org.eventb.core.predicate="∀e⦂EVENT·e∈past∧comOf(e)=Send∧(∀e2⦂EVENT·¬(e2∈past∧comOf(e2)=Receive∧mesOf(e2)=mesOf(e)))⇒e∈dom(mesOf)∧mesOf∈EVENT ⇸ MESSAGE"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="∀m⦂MESSAGE·m∈hg∧¬(∃e2⦂EVENT·e2∈past∧comOf(e2)=Receive∧mesOf(e2)=m)⇒m∈net"/>
+        <org.eventb.core.prPred name="p59" org.eventb.core.predicate="m∈{e⦂EVENT·e∈past∧comOf(e)=Send∧(∀e2⦂EVENT·¬e2∈past∨¬comOf(e2)=Receive∨¬mesOf(e2)=mesOf(e)) ∣ mesOf(e)}"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="partition(COM,{Send},{Receive})"/>
+        <org.eventb.core.prPred name="p34" org.eventb.core.predicate="∀m⦂MESSAGE,m2⦂MESSAGE·m∈hg∧m2∉hgOf(m)⇒m2∉hcOf(m)">
+            <org.eventb.core.prIdent name="hgOf" org.eventb.core.type="ℙ(MESSAGE×ℙ(MESSAGE))"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p78" org.eventb.core.predicate="(∀e⦂EVENT·¬e∈past∨¬comOf(e)=Send∨(∃e2⦂EVENT·¬(¬e2∈past∨¬comOf(e2)=Receive∨¬mesOf(e2)=mesOf(e)))∨¬mesOf(e)=m2)∨¬origOf(m)=origOf(m2)∨¬destOf(m2)=destOf(m)∨¬m2∈hcOf(m)">
+            <org.eventb.core.prIdent name="m2" org.eventb.core.type="MESSAGE"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p71" org.eventb.core.predicate="∀m2⦂MESSAGE·(∀e⦂EVENT·¬e∈past∨¬comOf(e)=Send∨(∃e2⦂EVENT·¬(¬e2∈past∨¬comOf(e2)=Receive∨¬mesOf(e2)=mesOf(e)))∨¬mesOf(e)=m2)∨¬destOf(m2)=destOf(m)∨¬m2∈hcOf(m)"/>
+        <org.eventb.core.prPred name="p16" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT·e1 ↦ e2∈prec∧peerOf(e1)≠peerOf(e2)⇒(∃es⦂EVENT,er⦂EVENT·e1 ↦ es∈prec∧es ↦ er∈prec∧er ↦ e2∈prec∧peerOf(e1)=peerOf(es)∧comOf(es)=Send∧comOf(er)=Receive∧mesOf(es)=mesOf(er))">
+            <org.eventb.core.prIdent name="peerOf" org.eventb.core.type="ℙ(EVENT×PEER)"/>
+            <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p51" org.eventb.core.predicate="∀m2⦂MESSAGE·¬m2∈net∨¬origOf(m)=origOf(m2)∨¬destOf(m2)=p∨¬m2∈hcOf(m)"/>
+        <org.eventb.core.prPred name="p67" org.eventb.core.predicate="∀m2⦂MESSAGE·¬(∃e⦂EVENT·e∈past∧comOf(e)=Send∧(∀e2⦂EVENT·¬e2∈past∨¬comOf(e2)=Receive∨¬mesOf(e2)=mesOf(e))∧mesOf(e)=m2)∨¬destOf(m2)=destOf(m)∨¬m2∈hcOf(m)"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="∀m2⦂MESSAGE·m2∈net⇒m2∈dom(destOf)∧destOf∈MESSAGE ⇸ PEER∧(destOf(m2)=p⇒m∈dom(hcOf)∧hcOf∈MESSAGE ⇸ ℙ(MESSAGE))"/>
+        <org.eventb.core.prPred name="p38" org.eventb.core.predicate="∀m2⦂MESSAGE·m2∈net⇒m2∈dom(destOf)∧(destOf(m2)=p⇒m∈dom(hcOf)∧hcOf∈MESSAGE ⇸ ℙ(MESSAGE))"/>
+        <org.eventb.core.prPred name="p64" org.eventb.core.predicate="∃e⦂EVENT·e∈past∧comOf(e)=Send∧(∀e2⦂EVENT·¬e2∈past∨¬comOf(e2)=Receive∨¬mesOf(e2)=mesOf(e))∧mesOf(e)=m"/>
+        <org.eventb.core.prPred name="p56" org.eventb.core.predicate="¬m2∈net∨¬origOf(m)=origOf(m2)∨¬destOf(m2)=p∨¬m2∈hcOf(m)">
+            <org.eventb.core.prIdent name="m2" org.eventb.core.type="MESSAGE"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p80" org.eventb.core.predicate="(∀e⦂EVENT·¬e∈past∨¬comOf(e)=Send∨(∃e2⦂EVENT·e2∈past∧¬¬comOf(e2)=Receive∧¬¬mesOf(e2)=mesOf(e))∨¬mesOf(e)=m2)∨¬origOf(m)=origOf(m2)∨¬destOf(m2)=destOf(m)∨¬m2∈hcOf(m)">
+            <org.eventb.core.prIdent name="m2" org.eventb.core.type="MESSAGE"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p41" org.eventb.core.predicate="∀e⦂EVENT·e∈past∧comOf(e)=Send∧(∀e2⦂EVENT·¬(e2∈past∧comOf(e2)=Receive∧mesOf(e2)=mesOf(e)))⇒mesOf(e)∈net"/>
+        <org.eventb.core.prPred name="p54" org.eventb.core.predicate="m∈MESSAGE"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="m∈net"/>
+        <org.eventb.core.prPred name="p27" org.eventb.core.predicate="∀es1⦂EVENT,es2⦂EVENT·es1 ↦ es2∈prec∧¬es1=es2∧comOf(es2)=Send⇒mesOf(es1)∈hcOf(mesOf(es2))">
+            <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p73" org.eventb.core.predicate="∀m2⦂MESSAGE·(∀e⦂EVENT·¬e∈past∨¬comOf(e)=Send∨(∃e2⦂EVENT·e2∈past∧¬¬comOf(e2)=Receive∧¬¬mesOf(e2)=mesOf(e))∨¬mesOf(e)=m2)∨¬destOf(m2)=destOf(m)∨¬m2∈hcOf(m)"/>
+        <org.eventb.core.prPred name="p66" org.eventb.core.predicate="∀e⦂EVENT·e∈past∧comOf(e)=Send∧(∀e2⦂EVENT·¬e2∈past∨¬comOf(e2)=Receive∨¬mesOf(e2)=mesOf(e))⇒(∃e0⦂EVENT·e0∈past∧comOf(e0)=Send∧(∀e2⦂EVENT·¬e2∈past∨¬comOf(e2)=Receive∨¬mesOf(e2)=mesOf(e0))∧mesOf(e0)=mesOf(e))"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="COM={Send,Receive}"/>
+        <org.eventb.core.prPred name="p62" org.eventb.core.predicate="∀m2⦂MESSAGE·¬m2∈{e⦂EVENT·e∈past∧comOf(e)=Send∧(∀e2⦂EVENT·¬e2∈past∨¬comOf(e2)=Receive∨¬mesOf(e2)=mesOf(e)) ∣ mesOf(e)}∨¬destOf(m2)=destOf(m)∨¬m2∈hcOf(m)"/>
+        <org.eventb.core.prPred name="p81" org.eventb.core.predicate="(∀e⦂EVENT·¬e∈past∨¬comOf(e)=Send∨(∃e2⦂EVENT·e2∈past∧comOf(e2)=Receive∧¬¬mesOf(e2)=mesOf(e))∨¬mesOf(e)=m2)∨¬origOf(m)=origOf(m2)∨¬destOf(m2)=destOf(m)∨¬m2∈hcOf(m)">
+            <org.eventb.core.prIdent name="m2" org.eventb.core.type="MESSAGE"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p55" org.eventb.core.predicate="p∈PEER"/>
+        <org.eventb.core.prPred name="p53" org.eventb.core.predicate="hg∈ℙ(MESSAGE)"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="¬(∃m2⦂MESSAGE·m2∈net∧destOf(m2)=p∧m2∈hcOf(m))"/>
+        <org.eventb.core.prPred name="p19" org.eventb.core.predicate="∀e⦂EVENT·e∈past∧comOf(e)=Receive⇒¬mesOf(e)∈net"/>
+        <org.eventb.core.prPred name="p43" org.eventb.core.predicate="∀m2⦂MESSAGE·¬(m2∈net∧destOf(m2)=p∧m2∈hcOf(m))"/>
+        <org.eventb.core.prPred name="p47" org.eventb.core.predicate="net={e⦂EVENT·e∈past∧comOf(e)=Send∧(∀e2⦂EVENT·¬e2∈past∨¬comOf(e2)=Receive∨¬mesOf(e2)=mesOf(e)) ∣ mesOf(e)}"/>
+        <org.eventb.core.prPred name="p31" org.eventb.core.predicate="∀m⦂MESSAGE·m∈hg⇒¬m∈hgOf(m)">
+            <org.eventb.core.prIdent name="hgOf" org.eventb.core.type="ℙ(MESSAGE×ℙ(MESSAGE))"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p29" org.eventb.core.predicate="∀e1⦂EVENT,e2⦂EVENT,m1⦂MESSAGE,m2⦂MESSAGE·m1∈hg∧m2∈hg∧¬m1=m2∧e1 ↦ e2∈prec∧comOf(e2)=Send∧mesOf(e1)=m1∧mesOf(e2)=m2⇒m1∈hcOf(m2)">
+            <org.eventb.core.prIdent name="prec" org.eventb.core.type="ℙ(EVENT×EVENT)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p36" org.eventb.core.predicate="∀e⦂EVENT·e∈past⇒e∈dom(comOf)∧comOf∈EVENT ⇸ COM∧(comOf(e)=Send⇒(∀e2⦂EVENT·e2∈past⇒e2∈dom(comOf)∧(comOf(e2)=Receive⇒e2∈dom(mesOf)∧mesOf∈EVENT ⇸ MESSAGE∧e∈dom(mesOf))))"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL5:0"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r8" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalPP:1"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.rn"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
+        <org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.core.seqprover.eqL2:1"/>
+        <org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.heL2:1"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL4"/>
+    </org.eventb.core.prProof>
+</org.eventb.core.prFile>

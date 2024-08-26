@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.refinesMachine name="'" org.eventb.core.target="E6aFifonnEvent"/>
+<org.eventb.core.seesContext name="*" org.eventb.core.target="E__Messages"/>
+<org.eventb.core.variable name="(" org.eventb.core.identifier="past"/>
+<org.eventb.core.variable name="evt8" org.eventb.core.identifier="peerOf"/>
+<org.eventb.core.variable name="evt6" org.eventb.core.identifier="prec"/>
+<org.eventb.core.variable name="evt=" org.eventb.core.identifier="run"/>
+<org.eventb.core.variable name="evtA" org.eventb.core.identifier="mesOf"/>
+<org.eventb.core.variable name="evtB" org.eventb.core.identifier="comOf"/>
+<org.eventb.core.event name="evtC" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION"/>
+<org.eventb.core.event name="evtE" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="send">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="send"/>
+<org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="e ∈ EVENT ∖ past"/>
+<org.eventb.core.parameter name="(" org.eventb.core.comment="New event" org.eventb.core.identifier="e"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="past ≔ past ∪ {e}" org.eventb.core.label="act1"/>
+<org.eventb.core.parameter name="internal1" org.eventb.core.comment="Peer where the event occurs" org.eventb.core.identifier="p"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd2" org.eventb.core.predicate="p ∈ PEER"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="peerOf ≔ peerOf ∪ {e ↦ p}" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="prec ≔ prec&#10;       ∪ {e ↦ e}&#10;       ∪ {ep · ep ∈ past ∧ (∃ ep2 · ep2 ∈ past ∧ peerOf(ep2) = p ∧ ep ↦ ep2 ∈ prec) ∣ ep ↦ e}" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="run ≔ run&#10;      ∪ {e ↦ e}&#10;      ∪ {ep · ep ∈ past ∣ ep ↦ e}" org.eventb.core.label="act4"/>
+<org.eventb.core.action name="internal1" org.eventb.core.assignment="mesOf ≔ mesOf ∪ {e ↦ m}" org.eventb.core.label="act5"/>
+<org.eventb.core.action name="internal2" org.eventb.core.assignment="comOf ≔ comOf ∪ {e ↦ Send}" org.eventb.core.label="act6"/>
+<org.eventb.core.parameter name="*" org.eventb.core.comment="Sent message" org.eventb.core.identifier="m"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="m ∈ MESSAGE ∖ ran(mesOf)"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="ordering" org.eventb.core.predicate="∀ es, er · es ∈ past ∪ {e} ∧ er ∈ past ∪ {e}&#10;∧ (comOf ∪ {e ↦ Send})(es) = Send ∧ (comOf ∪ {e ↦ Send})(er) = Receive&#10;∧ (mesOf ∪ {e ↦ m})(es) = (mesOf ∪ {e ↦ m})(er)&#10;⇒ ¬ (∃ e2 · e2 ∈ (past ∪ {e}) ∖ {es, er} ∧ es ↦ e2 ∈ (run ∪ {e ↦ e} ∪ {ep · ep ∈ past ∣ ep ↦ e}) ∧ e2 ↦ er ∈ (run ∪ {e ↦ e} ∪ {ep · ep ∈ past ∣ ep ↦ e}))"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evtF" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="receive">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="receive"/>
+<org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="e ∈ EVENT ∖ past"/>
+<org.eventb.core.parameter name="internal1" org.eventb.core.comment="New event" org.eventb.core.identifier="e"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="past ≔ past ∪ {e}" org.eventb.core.label="act1"/>
+<org.eventb.core.parameter name="internal3" org.eventb.core.comment="Receiver" org.eventb.core.identifier="p"/>
+<org.eventb.core.guard name="internal1" org.eventb.core.label="grd4" org.eventb.core.predicate="p ∈ PEER"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="peerOf ≔ peerOf ∪ {e ↦ p}" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="internal1" org.eventb.core.assignment="prec ≔ prec&#10;       ∪ {e ↦ e}&#10;       ∪ {ep · ep ∈ past ∧ (∃ ep2 · ep2 ∈ past ∧ peerOf(ep2) = p ∧ ep ↦ ep2 ∈ prec) ∣ ep ↦ e}&#10;       ∪ {ep · ep ∈ past ∧ (∃ es · es ∈ past ∧ comOf(es) = Send ∧ mesOf(es) = m ∧ ep ↦ es ∈ prec) ∣ ep ↦ e} " org.eventb.core.label="act4"/>
+<org.eventb.core.action name="act1" org.eventb.core.assignment="run ≔ run&#10;      ∪ {e ↦ e}&#10;      ∪ {ep · ep ∈ past ∣ ep ↦ e}" org.eventb.core.label="act5"/>
+<org.eventb.core.parameter name="(" org.eventb.core.comment="Received message" org.eventb.core.identifier="m"/>
+<org.eventb.core.guard name="internal4" org.eventb.core.label="grd5" org.eventb.core.predicate="m ∈ MESSAGE"/>
+<org.eventb.core.guard name="internal5" org.eventb.core.label="grd6" org.eventb.core.predicate="∀ ep · ep ∈ past ∧ comOf(ep) = Receive ⇒ mesOf(ep) ≠ m"/>
+<org.eventb.core.guard name="internal6" org.eventb.core.label="grd7" org.eventb.core.predicate="∃ es · es ∈ past ∧ comOf(es) = Send ∧ mesOf(es) = m"/>
+<org.eventb.core.action name="internal8" org.eventb.core.assignment="mesOf ≔ mesOf ∪ {e ↦ m}" org.eventb.core.label="act6"/>
+<org.eventb.core.action name="internal9" org.eventb.core.assignment="comOf ≔ comOf ∪ {e ↦ Receive}" org.eventb.core.label="act7"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="ordering" org.eventb.core.predicate="∀ es, er · es ∈ past ∪ {e} ∧ er ∈ past ∪ {e}&#10;∧ (comOf ∪ {e ↦ Receive})(es) = Send ∧ (comOf ∪ {e ↦ Receive})(er) = Receive&#10;∧ (mesOf ∪ {e ↦ m})(es) = (mesOf ∪ {e ↦ m})(er)&#10;⇒ ¬ (∃ e2 · e2 ∈ (past ∪ {e}) ∖ {es, er} ∧ es ↦ e2 ∈ (run ∪ {e ↦ e} ∪ {ep · ep ∈ past ∣ ep ↦ e}) ∧ e2 ↦ er ∈ (run ∪ {e ↦ e} ∪ {ep · ep ∈ past ∣ ep ↦ e}))"/>
+</org.eventb.core.event>
+<org.eventb.core.invariant name="evtG" org.eventb.core.label="ordering" org.eventb.core.predicate="∀ es, er · es ∈ past ∧ er ∈ past&#10;∧ comOf(es) = Send ∧ comOf(er) = Receive&#10;∧ mesOf(es) = mesOf(er)&#10;⇒ ¬ (∃ e2 · e2 ∈ past ∖ {es, er} ∧ es ↦ e2 ∈ run ∧ e2 ↦ er ∈ run)"/>
+</org.eventb.core.machineFile>
